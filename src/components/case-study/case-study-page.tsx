@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { EvolutionTimeline } from "@/components/home/evolution-timeline";
+import { GenPulseCaseStudy } from "@/components/case-study/gen-pulse-case-study";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
 import type { Project } from "@/lib/projects";
@@ -14,17 +14,24 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
   const project = getProject(slug);
   if (!project) notFound();
 
+  if (slug === "gen-pulse") {
+    return (
+      <>
+        <SiteNav />
+        <main>
+          <GenPulseCaseStudy />
+        </main>
+        <SiteFooter />
+      </>
+    );
+  }
+
   return (
     <>
       <SiteNav />
       <main>
         <CaseStudyHero project={project} />
         <CaseStudyBody project={project} />
-        <section className="site-section">
-          <div className="site-container">
-            <EvolutionTimeline />
-          </div>
-        </section>
       </main>
       <SiteFooter />
     </>

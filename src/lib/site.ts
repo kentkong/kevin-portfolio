@@ -20,13 +20,6 @@ export const navLinks = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-export const evolutionSteps = [
-  { id: "gen-pulse", label: "Gen Pulse" },
-  { id: "pulse-ops", label: "PulseOps AI" },
-  { id: "sprintiq", label: "SprintIQ" },
-  { id: "next", label: "What's Next" },
-] as const;
-
 export const exploringTags = [
   "AI Product Design",
   "Cursor",

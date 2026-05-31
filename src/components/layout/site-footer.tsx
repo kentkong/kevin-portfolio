@@ -6,7 +6,10 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-container site-footer__inner">
         <div>
-          <p className="site-footer__headline">Let&apos;s Build Something Meaningful Together</p>
+          <p className="site-footer__headline">
+            Let&apos;s build something{" "}
+            <span className="site-accent">meaningful</span> together
+          </p>
           <p className="site-footer__copy">
             Product strategy, lifecycle operations, and AI-native demos.
           </p>

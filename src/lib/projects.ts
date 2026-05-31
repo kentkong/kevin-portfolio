@@ -10,8 +10,18 @@ export type Project = {
   tagline: string;
   headline: string;
   summary: string;
+  overview: string;
   liveUrl: string;
+  previewImageDesktop: string;
+  previewImageDesktopLight?: string;
+  previewImagesDesktop?: string[];
+  previewRotationIntervalMs?: number;
+  previewImageMobile?: string;
+  previewMobileAspectRatio?: string;
+  mobilePreviewNative?: boolean;
+  showMobilePreview?: boolean;
   accent: string;
+  themeColor: string;
   challenge: string;
   observation: string;
   hypothesis: string;
@@ -28,8 +38,13 @@ export const projects: Project[] = [
     headline: "Operational visibility for marketing leaders.",
     summary:
       "A real-time operational command centre that brings team visibility, delivery health and business signals into one place.",
+    overview:
+      "Gen Pulse answers the daily leadership question: what is happening across my team right now? It consolidates delivery health, team visibility, and priority signals into one calm command centre—built for marketing and CSM leaders who need clarity before depth.",
     liveUrl: "https://kentkong.github.io/gen-pulse-dashboard/",
+    previewImageDesktop: "/projects/gen-pulse-desktop-dark.png",
+    previewImageDesktopLight: "/projects/gen-pulse-desktop-light.png",
     accent: "from-amber-500/20 via-orange-500/10 to-transparent",
+    themeColor: "#f59e0b",
     challenge:
       "Marketing and customer success leaders need to answer operational questions in minutes—not after a stand-up, spreadsheet export, or Slack thread hunt. Who is available today? What work is blocked? Where are delivery risks? Which teams are overloaded?",
     observation:
@@ -73,8 +88,21 @@ export const projects: Project[] = [
     headline: "Turning operational data into actionable intelligence.",
     summary:
       "An AI-powered operations analyst that identifies risks, opportunities and recommendations from multiple business systems.",
+    overview:
+      "PulseOps AI models the intelligence layer lifecycle teams wish they had—connecting warehouse data, activation tools, and engagement platforms into one operational narrative with AI-generated insights and next-best actions.",
     liveUrl: "https://kentkong.github.io/pulse-ops-ai/",
+    previewImageDesktop: "/projects/pulse-ops/operations.png",
+    previewImagesDesktop: [
+      "/projects/pulse-ops/operations.png",
+      "/projects/pulse-ops/lifecycle.png",
+      "/projects/pulse-ops/workflows.png",
+      "/projects/pulse-ops/insights.png",
+      "/projects/pulse-ops/events.png",
+      "/projects/pulse-ops/architecture.png",
+    ],
+    previewRotationIntervalMs: 3200,
     accent: "from-yellow-500/15 via-zinc-500/10 to-transparent",
+    themeColor: "#eab308",
     challenge:
       "Lifecycle operations teams sit on rich customer data across warehouses, reverse ETL tools, and engagement platforms—but intelligence still lives in decks, exports, and ad hoc analysis. Risks surface late. Opportunities stay buried.",
     observation:
@@ -118,8 +146,19 @@ export const projects: Project[] = [
     headline: "From objectives to delivery-ready execution plans.",
     summary:
       "An AI strategist that transforms business goals into initiatives, stakeholders, risks, timelines and executive-ready plans.",
+    overview:
+      "SprintIQ closes the gap between stating an objective and producing a plan teams can execute. A guided studio turns goals into initiatives, stakeholders, risks, timelines, and executive briefs—structured enough to trust, fast enough to maintain momentum.",
     liveUrl: "https://kentkong.github.io/sprintiq-ai/",
+    previewImageDesktop: "/projects/sprintiq/objective.png",
+    previewImagesDesktop: [
+      "/projects/sprintiq/objective.png",
+      "/projects/sprintiq/blueprint.png",
+      "/projects/sprintiq/review.png",
+      "/projects/sprintiq/ready.png",
+    ],
+    previewRotationIntervalMs: 3200,
     accent: "from-cyan-500/20 via-violet-500/15 to-transparent",
+    themeColor: "#22d3ee",
     challenge:
       "Teams know what they want to achieve—but turning a business objective into a credible delivery plan still takes days of workshops, decks, and alignment meetings. Strategy stalls before execution starts.",
     observation:
