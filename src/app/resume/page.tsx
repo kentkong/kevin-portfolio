@@ -20,7 +20,7 @@ export default async function ResumePage() {
             </p>
             <p className="resume-page__intro">
               Share a few details below to request my resume. I review each request personally
-              and will follow up by email if there&apos;s a relevant opportunity to discuss.
+              and will follow up by email. Thanks so much.
             </p>
 
             <ResumeRequestForm disabled={!resumeAvailable} />
