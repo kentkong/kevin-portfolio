@@ -41,7 +41,7 @@ export async function submitStaticResumeRequest(form: ResumeFormPayload) {
       },
       body: JSON.stringify({
         access_key: accessKey,
-        subject: `Resume download: ${form.name}`,
+        subject: `Resume request (review): ${form.name}`,
         from_name: form.name,
         name: form.name,
         email: form.email,

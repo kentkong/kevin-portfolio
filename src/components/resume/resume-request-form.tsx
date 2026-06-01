@@ -2,10 +2,8 @@
 
 import { useState, type FormEvent } from "react";
 import {
-  getResumeDownloadUrl,
   isStaticResumeHost,
   submitStaticResumeRequest,
-  triggerResumeDownload,
 } from "@/lib/resume-submit";
 
 type FormState = {
@@ -87,12 +85,8 @@ export function ResumeRequestForm({ disabled = false }: ResumeRequestFormProps) 
           message: form.message.trim(),
         });
 
-        const downloaded = triggerResumeDownload();
         setSuccess(true);
         setForm(initialState);
-        if (!downloaded && !getResumeDownloadUrl()) {
-          setError(null);
-        }
         return;
       }
 
@@ -241,9 +235,8 @@ export function ResumeRequestForm({ disabled = false }: ResumeRequestFormProps) 
 
       {success ? (
         <div className="resume-form__alert resume-form__alert--success" role="status">
-          {getResumeDownloadUrl()
-            ? "Download started. Thank you — I&apos;ll be in touch if there&apos;s a good fit to discuss."
-            : "Thank you — I received your details and will follow up shortly."}
+          Thank you — I&apos;ll review your request and follow up by email if there&apos;s a good
+          fit to discuss.
         </div>
       ) : null}
 
@@ -252,7 +245,7 @@ export function ResumeRequestForm({ disabled = false }: ResumeRequestFormProps) 
         className="site-btn site-btn--ghost"
         disabled={disabled || submitting}
       >
-        {submitting ? "Preparing download…" : "Download Resume"}
+        {submitting ? "Sending request…" : "Request Resume"}
       </button>
     </form>
   );

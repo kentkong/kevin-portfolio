@@ -19,8 +19,8 @@ export default async function ResumePage() {
               Senior marketing and lifecycle leader · AI product builder · Delivery strategist
             </p>
             <p className="resume-page__intro">
-              Share a few details below to request my resume. I&apos;ll follow up if there&apos;s a
-              good fit to discuss.
+              Share a few details below to request my resume. I review each request personally
+              and will follow up by email if there&apos;s a relevant opportunity to discuss.
             </p>
 
             <ResumeRequestForm disabled={!resumeAvailable} />
