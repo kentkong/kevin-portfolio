@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState, type CSSProperties } from "react";
 
-type ImageFit = "cover" | "contain" | "fill";
+type ImageFit = "cover" | "contain" | "fill" | "top";
 
 type RotatingDeviceScreenProps = {
   images: string[];
@@ -24,6 +24,7 @@ export function RotatingDeviceScreen({
   screenBg = "#0a0a0b",
   priority,
 }: RotatingDeviceScreenProps) {
+  const fitClass = imageFit === "top" ? "cover" : imageFit;
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -48,7 +49,7 @@ export function RotatingDeviceScreen({
           fill
           unoptimized
           priority={priority && i === 0}
-          className={`device-screen__image device-screen__image--${imageFit} device-screen__slide ${i === index ? "device-screen__slide--active" : ""}`}
+          className={`device-screen__image device-screen__image--${fitClass} device-screen__slide ${i === index ? "device-screen__slide--active" : ""}`}
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       ))}

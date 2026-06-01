@@ -26,6 +26,8 @@ export type Project = {
   observation: string;
   hypothesis: string;
   solution: string;
+  demoMode?: string;
+  highlights: string[];
   learned: string[];
   walkthrough: CaseStudySection[];
 };
@@ -34,62 +36,42 @@ export const projects: Project[] = [
   {
     slug: "gen-pulse",
     name: "Gen Pulse",
-    tagline: "Operational visibility for marketing leaders.",
-    headline: "Operational visibility for marketing leaders.",
+    tagline: "Real-time operational visibility for modern teams.",
+    headline: "Real-time operational visibility for modern teams",
     summary:
-      "A real-time operational command centre that brings team visibility, delivery health and business signals into one place.",
-    overview:
-      "Gen Pulse answers the daily leadership question: what is happening across my team right now? It consolidates delivery health, team visibility, and priority signals into one calm command centre—built for marketing and CSM leaders who need clarity before depth.",
+      "Gen Pulse brings together delivery health, team presence, operational KPIs, workload, blockers, and business reporting into a single desktop and mobile experience.",
+    overview: "",
     liveUrl: "https://kentkong.github.io/gen-pulse-dashboard/",
     previewImageDesktop: "/projects/gen-pulse-desktop-dark.png",
     previewImageDesktopLight: "/projects/gen-pulse-desktop-light.png",
     accent: "from-amber-500/20 via-orange-500/10 to-transparent",
     themeColor: "#f59e0b",
     challenge:
-      "Marketing and customer success leaders need to answer operational questions in minutes—not after a stand-up, spreadsheet export, or Slack thread hunt. Who is available today? What work is blocked? Where are delivery risks? Which teams are overloaded?",
+      "Critical operational data lives across Jira, Slack, Workday, reporting platforms, calendars, and spreadsheets, making it difficult for teams and leaders to maintain a real-time view of delivery, capacity, and performance.",
     observation:
-      "Leaders were making decisions from fragmented signals across Jira, Slack, calendars, and status decks. The cost wasn't missing data—it was missing a shared operational picture.",
-    hypothesis:
-      "If daily leadership visibility were consolidated into one calm command centre—with glanceable stats, team presence, and delivery health—managers could intervene earlier and align teams faster.",
+      "Create a single operational command centre that gives everyone—from team members to directors—a live view of what matters most.",
+    hypothesis: "",
     solution:
-      "Gen Pulse became a daily command centre: Today at a Glance, team visibility, delivery health, kanban snapshots, and priority queues—designed for CSM and marketing ops leaders, not engineers.",
-    learned: [
-      "Leaders want clarity before depth—glance first, drill down second.",
-      "Operational products win when they respect how teams already work.",
-      "The best dashboard is the one that reduces meetings, not adds them.",
+      "Gen Pulse brings together delivery health, team presence, operational KPIs, workload, blockers, and business reporting into a single desktop and mobile experience. By combining data from systems such as Jira, Slack, Workday, and BI platforms, teams gain a shared real-time view of execution and performance without relying on status meetings or manual reporting.",
+    highlights: [
+      "Unified operational view across Jira, Slack, Workday, and reporting platforms",
+      "Desktop and mobile experience for real-time visibility anywhere",
+      "Team presence, PTO, availability, and coverage planning",
+      "Live KPIs, delivery health, blockers, risks, and SLA monitoring",
+      "Designed for team members, managers, directors, and operational leaders",
+      "Reduces reporting overhead while improving decision-making and execution",
     ],
-    walkthrough: [
-      {
-        title: "Today At A Glance",
-        description: "Tap-to-jump stats that orient the day in seconds.",
-        impact: "Replaced morning status round-ups with a single shared view.",
-      },
-      {
-        title: "Team Visibility",
-        description: "Coverage, capacity, and presence in one operational layer.",
-        impact: "Made staffing and escalation decisions faster and fairer.",
-      },
-      {
-        title: "Delivery Health",
-        description: "Inflow vs. resolved signals and SLA posture at a glance.",
-        impact: "Surfaced backlog pressure before it became a quarter-end surprise.",
-      },
-      {
-        title: "Operational Risks",
-        description: "Priority queues ranked by urgency and business impact.",
-        impact: "Helped leaders focus attention where it actually mattered.",
-      },
-    ],
+    learned: [],
+    walkthrough: [],
   },
   {
     slug: "pulse-ops",
-    name: "PulseOps AI",
-    tagline: "Turning operational data into actionable intelligence.",
-    headline: "Turning operational data into actionable intelligence.",
+    name: "Pulse-Ops AI",
+    tagline: "AI-powered operational intelligence.",
+    headline: "AI-powered operational intelligence.",
     summary:
-      "An AI-powered operations analyst that identifies risks, opportunities and recommendations from multiple business systems.",
-    overview:
-      "PulseOps AI models the intelligence layer lifecycle teams wish they had—connecting warehouse data, activation tools, and engagement platforms into one operational narrative with AI-generated insights and next-best actions.",
+      "Pulse-Ops AI helps leaders identify risks, opportunities, bottlenecks, and trends before they impact delivery or performance.",
+    overview: "",
     liveUrl: "https://kentkong.github.io/pulse-ops-ai/",
     previewImageDesktop: "/projects/pulse-ops/operations.png",
     previewImagesDesktop: [
@@ -104,50 +86,29 @@ export const projects: Project[] = [
     accent: "from-yellow-500/15 via-zinc-500/10 to-transparent",
     themeColor: "#eab308",
     challenge:
-      "Lifecycle operations teams sit on rich customer data across warehouses, reverse ETL tools, and engagement platforms—but intelligence still lives in decks, exports, and ad hoc analysis. Risks surface late. Opportunities stay buried.",
+      "Operational teams generate vast amounts of data but often struggle to identify the signals that require action.",
     observation:
-      "The stack was modern. The visibility wasn't. Teams had Snowflake, Hightouch, and Braze—but no intelligence layer connecting signals to action.",
-    hypothesis:
-      "An AI-native operations layer could unify lifecycle signals, explain what's changing, and recommend next-best actions without asking leaders to become analysts.",
+      "Create an AI analyst that turns operational data into insights, recommendations, and next-best actions.",
+    hypothesis: "",
     solution:
-      "PulseOps AI models an operational command centre across the lifecycle stack—executive KPIs, customer health, AI insights, workflow orchestration, and event streams—framed as portfolio-grade product thinking, not a BI screenshot.",
-    learned: [
-      "Operational AI must feel like a colleague, not a chart generator.",
-      "Integration stories matter as much as interface polish.",
-      "Generic language beats internal jargon when showcasing product thinking.",
+      "Pulse-Ops AI helps leaders identify risks, opportunities, bottlenecks, and trends before they impact delivery or performance.",
+    highlights: [
+      "Detects operational risks and emerging issues automatically",
+      "Surfaces trends, opportunities, and recommended actions",
+      "Provides real-time operational intelligence for leaders and managers",
+      "Reduces time spent manually analysing dashboards and reports",
     ],
-    walkthrough: [
-      {
-        title: "Executive Operations Dashboard",
-        description: "Portfolio KPIs, SLA posture, and engagement trends in one view.",
-        impact: "Gives leaders a credible ops narrative without a data team in the room.",
-      },
-      {
-        title: "Lifecycle Intelligence",
-        description: "Stage tracking, health scoring, and funnel visibility.",
-        impact: "Connects marketing motion to customer outcomes, not just campaign metrics.",
-      },
-      {
-        title: "AI Insights Engine",
-        description: "Generated summaries and recommendations from operational signals.",
-        impact: "Demonstrates how AI can compress analysis into decision-ready language.",
-      },
-      {
-        title: "Next-Best-Action",
-        description: "Prioritized recommendations tied to lifecycle context.",
-        impact: "Shows the leap from reporting to operational guidance.",
-      },
-    ],
+    learned: [],
+    walkthrough: [],
   },
   {
     slug: "sprintiq",
     name: "SprintIQ",
-    tagline: "From objectives to delivery-ready execution plans.",
-    headline: "From objectives to delivery-ready execution plans.",
+    tagline: "AI-powered delivery planning and execution.",
+    headline: "AI-powered delivery planning and execution",
     summary:
-      "An AI strategist that transforms business goals into initiatives, stakeholders, risks, timelines and executive-ready plans.",
-    overview:
-      "SprintIQ closes the gap between stating an objective and producing a plan teams can execute. A guided studio turns goals into initiatives, stakeholders, risks, timelines, and executive briefs—structured enough to trust, fast enough to maintain momentum.",
+      "SprintIQ converts business goals into delivery-ready plans, helping teams move from idea to execution faster.",
+    overview: "",
     liveUrl: "https://kentkong.github.io/sprintiq-ai/",
     previewImageDesktop: "/projects/sprintiq/objective.png",
     previewImagesDesktop: [
@@ -160,40 +121,24 @@ export const projects: Project[] = [
     accent: "from-cyan-500/20 via-violet-500/15 to-transparent",
     themeColor: "#22d3ee",
     challenge:
-      "Teams know what they want to achieve—but turning a business objective into a credible delivery plan still takes days of workshops, decks, and alignment meetings. Strategy stalls before execution starts.",
+      "Turning business objectives into actionable delivery plans often requires significant planning, stakeholder alignment, and manual coordination.",
     observation:
-      "The gap isn't ambition—it's translation. Leaders can articulate goals, but struggle to produce initiatives, stakeholders, risks, and timelines fast enough to maintain momentum.",
-    hypothesis:
-      "A guided AI studio could turn objectives into structured blueprints—with executive-ready outputs—while keeping humans in control of review and refinement.",
+      "Create an AI strategist that transforms objectives into structured delivery blueprints.",
+    hypothesis: "",
     solution:
-      "SprintIQ guides users through Objective → Blueprint → Review → Ready, generating initiatives, stakeholders, risks, timelines, and executive briefs from curated templates that feel credible, not generic.",
-    learned: [
-      "Workflow beats wizardry—structure builds trust in AI output.",
-      "Examples must produce distinct outcomes, not the same template every time.",
-      "The product story is about delivery readiness, not chat novelty.",
+      "SprintIQ converts business goals into delivery-ready plans, helping teams move from idea to execution faster. By transforming objectives into structured plans, teams can quickly understand priorities, stakeholders, risks, timelines, and next steps without spending days building delivery frameworks manually.",
+    demoMode:
+      "Users can instantly explore SprintIQ using a range of pre-built business scenarios and example objectives. From Braze migrations and onboarding transformations to churn reduction and revenue growth initiatives, Demo Mode allows visitors to experience the complete workflow and see how SprintIQ generates delivery-ready blueprints in real time.",
+    highlights: [
+      "Transforms business objectives into initiatives, milestones, risks, and delivery plans",
+      "Identifies stakeholders, dependencies, and execution risks automatically",
+      "Generates executive-ready summaries and leadership updates",
+      "Built-in demo scenarios and example objectives for instant exploration",
+      "Produces structured delivery blueprints in seconds",
+      "Reduces planning effort from days to minutes",
     ],
-    walkthrough: [
-      {
-        title: "Objective Studio",
-        description: "Define or select a mission with example-driven quick starts.",
-        impact: "Lowers the barrier from blank page to strategic intent.",
-      },
-      {
-        title: "Blueprint Generation",
-        description: "Initiatives, stakeholders, risks, and roadmap in one pass.",
-        impact: "Turns objectives into plans leaders can actually socialise.",
-      },
-      {
-        title: "Review & Copilot",
-        description: "Refinement step before plans go executive-facing.",
-        impact: "Keeps human judgment in the loop—AI assists, doesn't replace.",
-      },
-      {
-        title: "Ready To Deliver",
-        description: "Export-oriented checklist and executive brief.",
-        impact: "Bridges strategy artifacts to operational follow-through.",
-      },
-    ],
+    learned: [],
+    walkthrough: [],
   },
 ];
 

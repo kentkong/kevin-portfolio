@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, type ReactNode } from "react";
 import { RotatingDeviceScreen } from "@/components/ui/rotating-device-screen";
 
-type ImageFit = "cover" | "contain" | "fill";
+type ImageFit = "cover" | "contain" | "fill" | "top";
 
 type DeviceScreenProps = {
   src: string;
@@ -33,7 +33,15 @@ function DeviceScreen({
 
   return (
     <div className="device-screen" style={screenBg ? { background: screenBg } : undefined}>
-      {!failed ? (
+      {!failed && imageFit === "top" ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={src}
+          alt={alt}
+          className="device-screen__image device-screen__image--top"
+          onError={() => setFailed(true)}
+        />
+      ) : !failed ? (
         <Image
           src={src}
           alt={alt}

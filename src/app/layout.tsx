@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { DM_Sans, Outfit } from "next/font/google";
+import { DM_Sans, Space_Grotesk } from "next/font/google";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const outfit = Outfit({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const dmSans = DM_Sans({
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${dmSans.variable} scroll-smooth`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable} scroll-smooth`}>
       <body className="site-body">{children}</body>
     </html>
   );

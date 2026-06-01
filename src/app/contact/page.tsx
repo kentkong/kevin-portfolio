@@ -16,8 +16,8 @@ export default function ContactPage() {
             demos that tell a credible story.
           </p>
           <div className="contact-actions">
-            <Link href={`mailto:${site.email}`} className="site-btn site-btn--primary">
-              Email Kevin
+            <Link href={`mailto:${site.email}`} className="site-btn site-btn--ghost">
+              Email me
             </Link>
             <Link href={site.linkedin} target="_blank" rel="noreferrer" className="site-btn site-btn--ghost">
               LinkedIn

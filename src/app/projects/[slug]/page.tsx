@@ -1,15 +1,5 @@
-import { CaseStudyPage } from "@/components/case-study/case-study-page";
-import { projects } from "@/lib/projects";
+import { redirect } from "next/navigation";
 
-type PageProps = {
-  params: Promise<{ slug: string }>;
-};
-
-export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
-}
-
-export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
-  return <CaseStudyPage slug={slug} />;
+export default function ProjectCaseStudyRedirect() {
+  redirect("/#projects");
 }

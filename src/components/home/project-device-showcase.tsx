@@ -1,11 +1,45 @@
 "use client";
 
+import Link from "next/link";
+import { PulseOpsStackFlow } from "@/components/home/pulse-ops-stack-flow";
+import { SprintIQStackFlow } from "@/components/home/sprintiq-stack-flow";
 import { LaptopFrame, PhoneFrame } from "@/components/ui/device-frame";
 import type { Project } from "@/lib/projects";
 
 type ProjectDeviceShowcaseProps = {
   project: Project;
 };
+
+function LaptopActions({ project }: { project: Project }) {
+  return (
+    <div className="project-devices__actions">
+      <Link
+        href={project.liveUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="site-btn site-btn--ghost"
+      >
+        Open Live Demo
+      </Link>
+    </div>
+  );
+}
+
+function DeviceLabel({ project, mode }: { project: Project; mode: string }) {
+  return (
+    <p className="project-devices__label">
+      <span className="project-devices__label-name">{project.name}</span>
+      <span className="project-devices__label-mode"> · {mode}</span>
+    </p>
+  );
+}
+
+function deviceLayoutClass(hasLightDesktop: boolean, hasMobile: boolean) {
+  if (hasLightDesktop && hasMobile) return "project-devices project-devices--stacked-with-mobile";
+  if (hasLightDesktop) return "project-devices project-devices--stacked";
+  if (hasMobile) return "project-devices project-devices--dual";
+  return "project-devices";
+}
 
 export function ProjectDeviceShowcase({ project }: ProjectDeviceShowcaseProps) {
   const screenProps = {
@@ -16,55 +50,63 @@ export function ProjectDeviceShowcase({ project }: ProjectDeviceShowcaseProps) {
 
   const hasLightDesktop = Boolean(project.previewImageDesktopLight);
   const hasMobile = project.showMobilePreview && project.previewImageMobile;
+  const mobileScreenBg =
+    project.slug === "gen-pulse" ? "#f4f6fb" : "#eef0f8";
 
   return (
-    <div
-      className={`project-devices ${hasLightDesktop ? "project-devices--stacked" : ""} ${hasMobile ? "project-devices--dual" : ""}`}
-    >
-      <div className="project-devices__laptop">
-        <p className="project-devices__label">
-          {project.previewImagesDesktop
-            ? "Desktop · Live tour"
-            : hasLightDesktop
-              ? "Desktop · Dark mode"
-              : "Desktop"}
-        </p>
-        <LaptopFrame
-          slides={project.previewImagesDesktop}
-          rotationIntervalMs={project.previewRotationIntervalMs}
-          src={project.previewImagesDesktop ? undefined : project.previewImageDesktop}
-          alt={`${project.name} desktop preview`}
-          label="Desktop"
-          priority={project.slug === "gen-pulse"}
-          imageFit="cover"
-          screenBg={project.slug === "gen-pulse" ? "#0b1020" : "#f4f4f4"}
-          {...screenProps}
-        />
-      </div>
-
-      {hasLightDesktop && project.previewImageDesktopLight && (
-        <div className="project-devices__laptop">
-          <p className="project-devices__label">Desktop · Light mode</p>
+    <div className={deviceLayoutClass(hasLightDesktop, Boolean(hasMobile))}>
+      <div className="project-devices__laptops">
+        <div className="project-devices__laptop project-devices__laptop-card">
+          <DeviceLabel
+            project={project}
+            mode={
+              project.previewImagesDesktop
+                ? "Desktop · Live tour"
+                : hasLightDesktop
+                  ? "Desktop · Dark mode"
+                  : "Desktop"
+            }
+          />
+          <LaptopActions project={project} />
           <LaptopFrame
-            src={project.previewImageDesktopLight}
-            alt={`${project.name} desktop light mode preview`}
+            slides={project.previewImagesDesktop}
+            rotationIntervalMs={project.previewRotationIntervalMs}
+            src={project.previewImagesDesktop ? undefined : project.previewImageDesktop}
+            alt={`${project.name} desktop preview`}
             label="Desktop"
+            priority={project.slug === "gen-pulse"}
             imageFit="cover"
-            screenBg="#f7f7fb"
+            screenBg={project.slug === "gen-pulse" ? "#0b1020" : "#f4f4f4"}
             {...screenProps}
           />
+          {project.slug === "pulse-ops" ? <PulseOpsStackFlow /> : null}
+          {project.slug === "sprintiq" ? <SprintIQStackFlow /> : null}
         </div>
-      )}
+
+        {hasLightDesktop && project.previewImageDesktopLight && (
+          <div className="project-devices__laptop project-devices__laptop-card project-devices__laptop-card--plain">
+            <DeviceLabel project={project} mode="Desktop · Light mode" />
+            <LaptopFrame
+              src={project.previewImageDesktopLight}
+              alt={`${project.name} desktop light mode preview`}
+              label="Desktop"
+              imageFit="cover"
+              screenBg="#f7f7fb"
+              {...screenProps}
+            />
+          </div>
+        )}
+      </div>
 
       {hasMobile && (
-        <div className="project-devices__phone">
-          <p className="project-devices__label">Mobile</p>
+        <div className="project-devices__phone project-devices__phone-card">
+          <DeviceLabel project={project} mode="Mobile" />
           <PhoneFrame
             src={project.previewImageMobile!}
             alt={`${project.name} mobile preview`}
             label="Mobile"
             imageFit="cover"
-            screenBg="#eef0f8"
+            screenBg={mobileScreenBg}
             aspectRatio={project.previewMobileAspectRatio ?? "393 / 852"}
             {...screenProps}
           />
