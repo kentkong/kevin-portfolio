@@ -308,6 +308,7 @@ body.site-body > * {
 
 .project-showcase__section-label {
   margin: 0 0 2rem;
+  text-align: right;
 }
 
 .site-section__lead,
