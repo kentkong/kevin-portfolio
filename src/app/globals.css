@@ -242,6 +242,26 @@ body.site-body > * {
   margin-bottom: 0.04em;
 }
 
+.site-hero__intro {
+  margin: 1.25rem 0 0;
+  max-width: 44rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: var(--display-weight);
+  line-height: 1.75;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: #ffffff;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.4);
+}
+
+.project-showcase__section-label {
+  margin: 0 0 1.5rem;
+  color: #b8ecec;
+  opacity: 1;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+}
+
 .site-section__lead,
 .site-hero__lead {
   margin: 1.75rem 0 0;
