@@ -1247,6 +1247,8 @@ body.site-body > * {
 .device-screen--rotating .device-screen__slide {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   transition: opacity var(--fade-ms, 1400ms) ease-in-out;
 }
