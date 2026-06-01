@@ -5,7 +5,7 @@ export function ProjectShowcase() {
   return (
     <section id="projects" className="site-section site-section--compact-top">
       <div className="site-container">
-        <p className="site-label project-showcase__section-label">Featured Work</p>
+        <h2 className="project-showcase__section-label">Featured Work</h2>
 
         {projects.map((project, index) => (
           <ProjectShowcaseRow key={project.slug} project={project} index={index} />
