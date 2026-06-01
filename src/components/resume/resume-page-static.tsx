@@ -1,17 +1,9 @@
-import { ResumeRequestForm } from "@/components/resume/resume-request-form";
-import { ResumePageStatic } from "@/components/resume/resume-page-static";
+import Link from "next/link";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
-import { isResumeAvailable } from "@/lib/resume-access";
-import { isGithubPages } from "@/lib/site-config";
+import { site } from "@/lib/site";
 
-export default async function ResumePage() {
-  if (isGithubPages) {
-    return <ResumePageStatic />;
-  }
-
-  const resumeAvailable = await isResumeAvailable();
-
+export function ResumePageStatic() {
   return (
     <>
       <SiteNav />
@@ -23,7 +15,17 @@ export default async function ResumePage() {
             Senior marketing and lifecycle leader · AI product builder · Delivery strategist
           </p>
 
-          <ResumeRequestForm disabled={!resumeAvailable} />
+          <div className="resume-actions">
+            <Link
+              href={`mailto:${site.email}?subject=${encodeURIComponent("Resume request")}`}
+              className="site-btn site-btn--ghost"
+            >
+              Email for resume
+            </Link>
+            <Link href="/contact" className="site-btn site-btn--ghost">
+              Contact
+            </Link>
+          </div>
         </div>
       </main>
       <SiteFooter />
