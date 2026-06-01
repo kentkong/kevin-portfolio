@@ -1795,6 +1795,36 @@ body.site-body > * {
   text-decoration: underline;
 }
 
+/* Resume page */
+.site-page--resume .site-page__inner {
+  max-width: 48rem;
+}
+
+.resume-page__panel {
+  margin-top: 0.5rem;
+}
+
+.resume-page__intro {
+  margin: 1.75rem 0 0;
+  max-width: 38rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: var(--display-weight);
+  line-height: 1.75;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.resume-page__panel .resume-form {
+  margin-top: 1.5rem;
+}
+
+.resume-page__panel .resume-form__field input,
+.resume-page__panel .resume-form__field textarea {
+  background: rgba(0, 0, 0, 0.45);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 /* Resume / Contact */
 .resume-actions,
 .resume-links,
