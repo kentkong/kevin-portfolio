@@ -4,6 +4,9 @@ import { site } from "@/lib/site";
 import { basePath } from "@/lib/site-config";
 import "./globals.css";
 
+const siteUrl = "https://kentkong.github.io/kevin-portfolio";
+const ogImagePath = `${basePath}/og-linkedin.png`;
+
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
@@ -19,6 +22,29 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: site.title,
   description: site.description,
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    title: site.title,
+    description: site.description,
+    url: siteUrl,
+    siteName: site.name,
+    type: "website",
+    locale: "en_GB",
+    images: [
+      {
+        url: ogImagePath,
+        width: 1200,
+        height: 627,
+        alt: `${site.name} — ${site.headline}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    images: [ogImagePath],
+  },
 };
 
 export default function RootLayout({
