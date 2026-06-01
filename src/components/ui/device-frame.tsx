@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, type ReactNode } from "react";
+import { assetPath } from "@/lib/asset-path";
 import { RotatingDeviceScreen } from "@/components/ui/rotating-device-screen";
 
 type ImageFit = "cover" | "contain" | "fill" | "top";
@@ -30,20 +31,21 @@ function DeviceScreen({
   screenBg,
 }: DeviceScreenProps) {
   const [failed, setFailed] = useState(false);
+  const imageSrc = assetPath(src);
 
   return (
     <div className="device-screen" style={screenBg ? { background: screenBg } : undefined}>
       {!failed && imageFit === "top" ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={src}
+          src={imageSrc}
           alt={alt}
           className="device-screen__image device-screen__image--top"
           onError={() => setFailed(true)}
         />
       ) : !failed ? (
         <Image
-          src={src}
+          src={imageSrc}
           alt={alt}
           fill
           unoptimized

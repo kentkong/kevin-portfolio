@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState, type CSSProperties } from "react";
+import { assetPath } from "@/lib/asset-path";
 
 type ImageFit = "cover" | "contain" | "fill" | "top";
 

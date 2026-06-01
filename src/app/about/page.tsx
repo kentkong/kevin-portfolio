@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/asset-path";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
 import { site } from "@/lib/site";
@@ -13,7 +14,7 @@ export default function AboutPage() {
           <div className="site-page__about">
             <figure className="site-about__photo">
               <Image
-                src="/about/kevin-headshot.png"
+                src={assetPath("/about/kevin-headshot.png")}
                 alt="Portrait of Kevin Alan Mold"
                 width={320}
                 height={320}
