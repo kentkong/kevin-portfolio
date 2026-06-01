@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { PulseOpsStackFlow } from "@/components/home/pulse-ops-stack-flow";
+import { ProjectBrandName } from "@/components/home/project-brand-name";
 import { SprintIQStackFlow } from "@/components/home/sprintiq-stack-flow";
 import { LaptopFrame, PhoneFrame } from "@/components/ui/device-frame";
 import type { Project } from "@/lib/projects";
@@ -28,7 +29,9 @@ function LaptopActions({ project }: { project: Project }) {
 function DeviceLabel({ project, mode }: { project: Project; mode: string }) {
   return (
     <p className="project-devices__label">
-      <span className="project-devices__label-name">{project.name}</span>
+      <span className="project-devices__label-name">
+        <ProjectBrandName project={project} />
+      </span>
       <span className="project-devices__label-mode"> · {mode}</span>
     </p>
   );

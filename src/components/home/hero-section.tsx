@@ -5,13 +5,17 @@ export function HeroSection() {
     <section className="site-hero">
       <div className="site-container">
         <div className="site-hero__inner site-panel">
-          <ul className="site-hero__labels" aria-label="Focus areas">
-            {site.heroLabels.map((label) => (
-              <li key={label} className="site-label">
-                {label}
-              </li>
-            ))}
-          </ul>
+          <p className="site-hero__tagline" aria-label="Focus areas">
+            <span className="site-hero__tagline-part">{site.heroTagline[0]}</span>
+            <span className="site-hero__tagline-sep" aria-hidden="true">
+              /
+            </span>
+            <span className="site-hero__tagline-part">{site.heroTagline[1]}</span>
+            <span className="site-hero__tagline-sep" aria-hidden="true">
+              /
+            </span>
+            <span className="site-hero__tagline-part">{site.heroTagline[2]}</span>
+          </p>
           <h1 className="site-display-headline site-display-headline--hero">{site.headline}</h1>
           <p className="site-hero__intro">{site.heroIntro}</p>
         </div>

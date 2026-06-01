@@ -1,4 +1,5 @@
 import { ProjectDeviceShowcase } from "@/components/home/project-device-showcase";
+import { ProjectBrandName } from "@/components/home/project-brand-name";
 import type { Project } from "@/lib/projects";
 
 type ProjectShowcaseRowProps = {
@@ -11,7 +12,9 @@ export function ProjectShowcaseRow({ project, index }: ProjectShowcaseRowProps) 
     <article className={`project-showcase ${index > 0 ? "project-showcase--spaced" : ""}`}>
       <div className="site-panel project-showcase__resolution">
         <header className="project-showcase__project-intro">
-          <h2 className="project-showcase__hero-name">{project.name}</h2>
+          <h2 className="project-showcase__hero-name">
+            <ProjectBrandName project={project} />
+          </h2>
           <h3 className="project-showcase__title">{project.headline}</h3>
           {project.overview ? (
             <p className="project-showcase__overview-text">{project.overview}</p>

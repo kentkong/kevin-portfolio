@@ -483,6 +483,26 @@ body.site-body > * {
   width: 100%;
 }
 
+.site-hero__tagline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+  width: 100%;
+  margin: 0 0 1rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(0.5625rem, 1.05vw, 0.8125rem);
+  font-weight: var(--display-weight);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b8ecec;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+.site-hero__tagline-sep {
+  opacity: 0.65;
+}
+
 .site-hero__labels {
   display: flex;
   flex-direction: column;
@@ -616,6 +636,11 @@ body.site-body > * {
   text-transform: uppercase;
   color: #b8ecec;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+.project-brand-name__accent {
+  color: #c4b5fd;
+  text-shadow: 0 0 22px rgba(167, 139, 250, 0.45);
 }
 
 .project-showcase .project-devices {
