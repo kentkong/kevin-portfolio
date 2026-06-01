@@ -1149,6 +1149,24 @@ body.site-body > * {
   inset: 0;
 }
 
+.device-laptop__bezel .device-screen__image {
+  object-position: top center;
+}
+
+.device-laptop__bezel .device-screen--rotating .device-screen__slide {
+  opacity: 1;
+  z-index: 0;
+}
+
+.device-laptop__bezel .device-screen--rotating-live .device-screen__slide {
+  opacity: 0;
+}
+
+.device-laptop__bezel .device-screen--rotating-live .device-screen__slide--active {
+  opacity: 1;
+  z-index: 1;
+}
+
 .device-laptop__camera {
   position: absolute;
   top: 0.35rem;
@@ -1249,20 +1267,7 @@ body.site-body > * {
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
   transition: opacity var(--fade-ms, 1400ms) ease-in-out;
-}
-
-.device-screen--rotating .device-screen__slide--active {
-  opacity: 1;
-}
-
-.device-laptop__bezel .device-screen--rotating .device-screen__slide {
-  z-index: 0;
-}
-
-.device-laptop__bezel .device-screen--rotating .device-screen__slide--active {
-  z-index: 1;
 }
 
 .device-screen__fallback {
@@ -1318,10 +1323,6 @@ body.site-body > * {
   height: auto;
   max-width: none;
   object-fit: none;
-  object-position: top center;
-}
-
-.device-laptop__bezel .device-screen__image {
   object-position: top center;
 }
 
