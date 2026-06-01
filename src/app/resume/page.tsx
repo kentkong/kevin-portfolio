@@ -1,16 +1,11 @@
 import { ResumeRequestForm } from "@/components/resume/resume-request-form";
-import { ResumePageStatic } from "@/components/resume/resume-page-static";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
 import { isResumeAvailable } from "@/lib/resume-access";
-import { isGithubPages } from "@/lib/site-config";
+import { isStaticResumeHost } from "@/lib/resume-submit";
 
 export default async function ResumePage() {
-  if (isGithubPages) {
-    return <ResumePageStatic />;
-  }
-
-  const resumeAvailable = await isResumeAvailable();
+  const resumeAvailable = isStaticResumeHost() || (await isResumeAvailable());
 
   return (
     <>

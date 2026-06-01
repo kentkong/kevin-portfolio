@@ -1,6 +1,12 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import {
+  getResumeDownloadUrl,
+  isStaticResumeHost,
+  submitStaticResumeRequest,
+  triggerResumeDownload,
+} from "@/lib/resume-submit";
 
 type FormState = {
   name: string;
@@ -72,6 +78,24 @@ export function ResumeRequestForm({ disabled = false }: ResumeRequestFormProps) 
     setSubmitting(true);
 
     try {
+      if (isStaticResumeHost()) {
+        await submitStaticResumeRequest({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          company: form.company.trim(),
+          linkedin: form.linkedin.trim(),
+          message: form.message.trim(),
+        });
+
+        const downloaded = triggerResumeDownload();
+        setSuccess(true);
+        setForm(initialState);
+        if (!downloaded && !getResumeDownloadUrl()) {
+          setError(null);
+        }
+        return;
+      }
+
       const response = await fetch("/api/resume", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -217,7 +241,9 @@ export function ResumeRequestForm({ disabled = false }: ResumeRequestFormProps) 
 
       {success ? (
         <div className="resume-form__alert resume-form__alert--success" role="status">
-          Download started. Thank you — I&apos;ll be in touch if there&apos;s a good fit to discuss.
+          {getResumeDownloadUrl()
+            ? "Download started. Thank you — I&apos;ll be in touch if there&apos;s a good fit to discuss."
+            : "Thank you — I received your details and will follow up shortly."}
         </div>
       ) : null}
 
