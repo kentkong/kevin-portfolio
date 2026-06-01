@@ -35,6 +35,8 @@ jobs:
           GITHUB_PAGES: true
           NEXT_PUBLIC_GITHUB_PAGES: true
 
+      - run: touch out/.nojekyll
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
