@@ -222,7 +222,7 @@ body.site-body > * {
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
 }
 
-.site-hero__title {
+.site-display-headline {
   margin: 0;
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(2.25rem, 5.5vw, 4.25rem);
@@ -230,6 +230,17 @@ body.site-body > * {
   letter-spacing: var(--display-tracking);
   line-height: var(--display-leading);
   text-transform: uppercase;
+  background-size: 240% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 28px rgba(0, 0, 0, 0.38));
+  animation: site-hero-title-fade 16s ease-in-out infinite;
+}
+
+.site-display-headline--hero {
   background-image: linear-gradient(
     105deg,
     #ffffff 0%,
@@ -241,14 +252,19 @@ body.site-body > * {
     #b8ecec 84%,
     #ffffff 100%
   );
-  background-size: 240% 100%;
-  background-position: 0% 50%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 28px rgba(0, 0, 0, 0.38));
-  animation: site-hero-title-fade 16s ease-in-out infinite;
+}
+
+.site-display-headline--accent {
+  background-image: linear-gradient(
+    105deg,
+    #b8ecec 0%,
+    #ffffff 16%,
+    #8ed9d9 32%,
+    #b8ecec 48%,
+    #ffffff 64%,
+    #7fd4d4 80%,
+    #b8ecec 100%
+  );
 }
 
 @keyframes site-hero-title-fade {
@@ -263,7 +279,7 @@ body.site-body > * {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-hero__title {
+  .site-display-headline {
     animation: none;
     background-position: 40% 50%;
   }
@@ -292,14 +308,6 @@ body.site-body > * {
 
 .project-showcase__section-label {
   margin: 0 0 2rem;
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: clamp(2.25rem, 5.5vw, 4.25rem);
-  font-weight: var(--display-weight);
-  letter-spacing: var(--display-tracking);
-  line-height: var(--display-leading);
-  text-transform: uppercase;
-  color: #b8ecec;
-  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
 }
 
 .site-section__lead,

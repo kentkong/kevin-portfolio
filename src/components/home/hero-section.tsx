@@ -12,7 +12,7 @@ export function HeroSection() {
               </li>
             ))}
           </ul>
-          <h1 className="site-hero__title">{site.headline}</h1>
+          <h1 className="site-display-headline site-display-headline--hero">{site.headline}</h1>
           <p className="site-hero__intro">{site.heroIntro}</p>
         </div>
       </div>
