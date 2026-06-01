@@ -8,6 +8,7 @@ export const site = {
   github: "https://github.com/kentkong",
   label: "Marketing Leader · AI Product Builder · Delivery Strategist",
   headline: "Building practical Enterprise AI products for real-world teams.",
+  heroLabels: ["Marketing & lifecycle operations"],
   heroIntro:
     "Products inspired by real operational challenges I've encountered leading marketing, lifecycle, customer success, and operational teams. Each solution focuses on improving visibility, decision-making, and execution through thoughtful AI-powered experiences.",
   aboutBio: [
