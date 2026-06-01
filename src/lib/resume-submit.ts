@@ -18,32 +18,54 @@ export function getResumeDownloadUrl() {
   return path ? assetPath(path) : null;
 }
 
-export async function submitStaticResumeRequest(form: ResumeFormPayload) {
-  const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(site.email)}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      name: form.name,
-      email: form.email,
-      company: form.company || "—",
-      linkedin: form.linkedin || "—",
-      message: form.message || "—",
-      _subject: `Resume download: ${form.name}`,
-      _template: "table",
-      _captcha: "false",
-    }),
-  });
+function getWeb3FormsAccessKey() {
+  return process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim() ?? "";
+}
 
-  if (!response.ok) {
-    throw new Error("Unable to send your request. Please use the contact page.");
+export async function submitStaticResumeRequest(form: ResumeFormPayload) {
+  const accessKey = getWeb3FormsAccessKey();
+  if (!accessKey) {
+    throw new Error(
+      "Resume form is not configured yet. Please use the contact page or email Kevin directly.",
+    );
   }
 
-  const data = (await response.json().catch(() => null)) as { success?: string } | null;
-  if (data?.success !== "true") {
-    throw new Error("Unable to send your request. Please use the contact page.");
+  let response: Response;
+
+  try {
+    response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: accessKey,
+        subject: `Resume download: ${form.name}`,
+        from_name: form.name,
+        name: form.name,
+        email: form.email,
+        company: form.company || "—",
+        linkedin: form.linkedin || "—",
+        message: form.message || "—",
+      }),
+    });
+  } catch {
+    throw new Error(
+      "Unable to reach the form service. Check your connection and try again, or email Kevin directly.",
+    );
+  }
+
+  const data = (await response.json().catch(() => null)) as {
+    success?: boolean;
+    message?: string;
+  } | null;
+
+  if (!response.ok || !data?.success) {
+    throw new Error(
+      data?.message ??
+        "Unable to send your request. Please try again or use the contact page.",
+    );
   }
 }
 
