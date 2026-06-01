@@ -5,7 +5,7 @@ import { basePath } from "@/lib/site-config";
 import "./globals.css";
 
 const siteUrl = "https://kentkong.github.io/kevin-portfolio";
-const ogImagePath = `${basePath}/og-linkedin.png`;
+const ogImageUrl = `${siteUrl}/og-linkedin.png`;
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     images: [
       {
-        url: ogImagePath,
+        url: ogImageUrl,
         width: 1200,
         height: 627,
         alt: `${site.name} — ${site.headline}`,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: site.title,
     description: site.description,
-    images: [ogImagePath],
+    images: [ogImageUrl],
   },
 };
 
