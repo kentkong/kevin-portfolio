@@ -34,6 +34,43 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "lifecycle-architecture-studio",
+    name: "Lifecycle Architecture Studio",
+    tagline: "Interactive martech and AI architecture explorer.",
+    headline: "Explore modern customer engagement ecosystems",
+    summary:
+      "A premium interactive studio for understanding, designing, and exploring modern lifecycle marketing, data, and AI-powered engagement architectures.",
+    overview: "",
+    liveUrl: "https://kentkong.github.io/lifecycle-architecture-studio/",
+    previewImageDesktop: "/projects/lifecycle-architecture-studio/canvas.png",
+    previewImagesDesktop: [
+      "/projects/lifecycle-architecture-studio/canvas.png",
+      "/projects/lifecycle-architecture-studio/detail.png",
+    ],
+    previewRotationIntervalMs: 3200,
+    accent: "from-blue-500/20 via-slate-500/10 to-transparent",
+    themeColor: "#60a5fa",
+    challenge:
+      "Modern lifecycle teams operate across CRM, warehouse, reverse ETL, engagement, analytics, and AI platforms — but the architecture itself is rarely explained in a clear, visual way.",
+    observation:
+      "Create an educational architecture explorer where the stack is the product — not another dashboard or chatbot.",
+    hypothesis: "",
+    solution:
+      "Lifecycle Architecture Studio lets users explore how platforms like Salesforce, Snowflake, Hightouch, Braze, Segment, and OpenAI fit together. Click any node to learn what it does, why companies use it, where it sits in the stack, and how it integrates with the rest of the ecosystem.",
+    demoMode:
+      "Switch between recommended architecture templates — Enterprise Marketing Stack, Legacy Enterprise Stack, AI-Powered Lifecycle Stack, and CDP & Analytics Stack — then add or remove platforms to model your own ecosystem.",
+    highlights: [
+      "Full-screen interactive architecture canvas with animated connections",
+      "Educational platform detail panels for martech, data, and AI tools",
+      "Recommended stack templates for enterprise and modern lifecycle teams",
+      "Add, remove, and explore custom architecture combinations",
+      "Premium dark-mode product design inspired by Linear, Stripe, and ByteByteGo",
+      "Designed to teach where each platform fits and what problems it solves",
+    ],
+    learned: [],
+    walkthrough: [],
+  },
+  {
     slug: "gen-pulse",
     name: "Gen Pulse",
     tagline: "Real-time operational visibility for modern teams.",
