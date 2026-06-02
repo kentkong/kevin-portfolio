@@ -65,6 +65,17 @@ function DeviceScreen({
   );
 }
 
+function ComingSoonScreen({ screenBg }: { screenBg?: string }) {
+  return (
+    <div
+      className="device-screen device-screen--coming-soon"
+      style={screenBg ? { background: screenBg } : undefined}
+    >
+      <p className="device-screen__coming-soon">Coming Soon</p>
+    </div>
+  );
+}
+
 type LaptopFrameProps = {
   src?: string;
   slides?: string[];
@@ -77,12 +88,14 @@ type LaptopFrameProps = {
   priority?: boolean;
   imageFit?: ImageFit;
   screenBg?: string;
+  comingSoon?: boolean;
 };
 
 export function LaptopFrame({
   slides,
   rotationIntervalMs,
   src,
+  comingSoon,
   ...props
 }: LaptopFrameProps) {
   return (
@@ -90,7 +103,9 @@ export function LaptopFrame({
       <div className="device-laptop__lid">
         <div className="device-laptop__bezel">
           <div className="device-laptop__camera" aria-hidden />
-          {slides && slides.length > 0 ? (
+          {comingSoon ? (
+            <ComingSoonScreen screenBg={props.screenBg} />
+          ) : slides && slides.length > 0 ? (
             <RotatingDeviceScreen
               images={slides}
               alt={props.alt}

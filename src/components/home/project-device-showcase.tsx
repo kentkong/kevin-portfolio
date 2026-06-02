@@ -12,6 +12,8 @@ type ProjectDeviceShowcaseProps = {
 };
 
 function LaptopActions({ project }: { project: Project }) {
+  if (project.comingSoon) return null;
+
   return (
     <div className="project-devices__actions">
       <Link
@@ -63,11 +65,13 @@ export function ProjectDeviceShowcase({ project }: ProjectDeviceShowcaseProps) {
           <DeviceLabel
             project={project}
             mode={
-              project.previewImagesDesktop
-                ? "Desktop · Live tour"
-                : hasLightDesktop
-                  ? "Desktop · Dark mode"
-                  : "Desktop"
+              project.comingSoon
+                ? "Coming soon"
+                : project.previewImagesDesktop
+                  ? "Desktop · Live tour"
+                  : hasLightDesktop
+                    ? "Desktop · Dark mode"
+                    : "Desktop"
             }
           />
           <LaptopActions project={project} />
@@ -79,7 +83,8 @@ export function ProjectDeviceShowcase({ project }: ProjectDeviceShowcaseProps) {
             label="Desktop"
             priority={project.slug === "gen-pulse"}
             imageFit="cover"
-            screenBg={project.slug === "gen-pulse" ? "#0b1020" : "#f4f4f4"}
+            screenBg={project.comingSoon ? "#080a0d" : project.slug === "gen-pulse" ? "#0b1020" : "#f4f4f4"}
+            comingSoon={project.comingSoon}
             {...screenProps}
           />
           {project.slug === "pulse-ops" ? <PulseOpsStackFlow /> : null}

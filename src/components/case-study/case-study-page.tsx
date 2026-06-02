@@ -45,9 +45,11 @@ function CaseStudyHero({ project }: { project: Project }) {
         <p className="site-label">{project.name}</p>
         <h1 className="case-hero__title">{project.headline}</h1>
         <p className="case-hero__summary">{project.summary}</p>
-        <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="site-btn site-btn--primary">
-          Open Live Demo
-        </Link>
+        {!project.comingSoon ? (
+          <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="site-btn site-btn--primary">
+            Open Live Demo
+          </Link>
+        ) : null}
       </div>
     </section>
   );

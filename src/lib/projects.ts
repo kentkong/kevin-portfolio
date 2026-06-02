@@ -27,6 +27,7 @@ export type Project = {
   hypothesis: string;
   solution: string;
   demoMode?: string;
+  comingSoon?: boolean;
   highlights: string[];
   learned: string[];
   walkthrough: CaseStudySection[];
@@ -42,12 +43,8 @@ export const projects: Project[] = [
       "A premium interactive studio for understanding, designing, and exploring modern lifecycle marketing, data, and AI-powered engagement architectures.",
     overview: "",
     liveUrl: "https://kentkong.github.io/lifecycle-architecture-studio/",
-    previewImageDesktop: "/projects/lifecycle-architecture-studio/canvas.png",
-    previewImagesDesktop: [
-      "/projects/lifecycle-architecture-studio/canvas.png",
-      "/projects/lifecycle-architecture-studio/detail.png",
-    ],
-    previewRotationIntervalMs: 3200,
+    previewImageDesktop: "",
+    comingSoon: true,
     accent: "from-blue-500/20 via-slate-500/10 to-transparent",
     themeColor: "#60a5fa",
     challenge:

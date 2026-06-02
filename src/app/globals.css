@@ -1367,6 +1367,26 @@ body.site-body > * {
   transition: opacity var(--fade-ms, 1400ms) ease-in-out;
 }
 
+.device-screen--coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(59, 130, 246, 0.08), transparent 55%),
+    linear-gradient(180deg, #0a0c10 0%, #080a0d 100%);
+}
+
+.device-screen__coming-soon {
+  margin: 0;
+  font-size: clamp(1.35rem, 3.2vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
+  text-shadow: 0 0 40px rgba(96, 165, 250, 0.15);
+}
+
 .device-screen__fallback {
   display: flex;
   flex-direction: column;
