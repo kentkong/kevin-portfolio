@@ -87,9 +87,18 @@ export function ProjectDeviceShowcase({ project }: ProjectDeviceShowcaseProps) {
             comingSoon={project.comingSoon}
             {...screenProps}
           />
-          {project.slug === "pulse-ops" ? <PulseOpsStackFlow /> : null}
-          {project.slug === "sprintiq" ? <SprintIQStackFlow /> : null}
         </div>
+
+        {project.slug === "pulse-ops" ? (
+          <div className="project-devices__diagram">
+            <PulseOpsStackFlow />
+          </div>
+        ) : null}
+        {project.slug === "sprintiq" ? (
+          <div className="project-devices__diagram">
+            <SprintIQStackFlow />
+          </div>
+        ) : null}
 
         {hasLightDesktop && project.previewImageDesktopLight && (
           <div className="project-devices__laptop project-devices__laptop-card project-devices__laptop-card--plain">
