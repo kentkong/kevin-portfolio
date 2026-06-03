@@ -37,10 +37,10 @@ export const projects: Project[] = [
   {
     slug: "lifecycle-architecture-studio",
     name: "Lifecycle Architecture Studio",
-    tagline: "Interactive martech and AI architecture explorer.",
-    headline: "Explore modern customer engagement ecosystems",
+    tagline: "Visualizing modern customer engagement and AI ecosystems.",
+    headline: "Visualizing modern customer engagement and AI ecosystems.",
     summary:
-      "A premium interactive studio for understanding, designing, and exploring modern lifecycle marketing, data, and AI-powered engagement architectures.",
+      "Lifecycle Architecture Studio helps users understand how platforms such as Salesforce, Snowflake, Hightouch, Braze, Segment, and OpenAI work together within modern enterprise ecosystems.",
     overview: "",
     liveUrl: "https://kentkong.github.io/lifecycle-architecture-studio/",
     previewImageDesktop: "/projects/lifecycle-architecture-studio/modern-composable.png",
@@ -55,21 +55,20 @@ export const projects: Project[] = [
     accent: "from-blue-500/20 via-slate-500/10 to-transparent",
     themeColor: "#60a5fa",
     challenge:
-      "Modern lifecycle teams operate across CRM, warehouse, reverse ETL, engagement, analytics, and AI platforms — but the architecture itself is rarely explained in a clear, visual way.",
+      "Modern enterprise teams rely on increasingly complex CRM, data, activation, analytics, and AI platforms, but understanding how these systems fit together is often difficult.",
     observation:
-      "Create an educational architecture explorer where the stack is the product — not another dashboard or chatbot.",
+      "Create a visually engaging architecture explorer where the stack itself becomes the product.",
     hypothesis: "",
     solution:
-      "Lifecycle Architecture Studio lets users explore how platforms like Salesforce, Snowflake, Hightouch, Braze, Segment, and OpenAI fit together. Click any node to learn what it does, why companies use it, where it sits in the stack, and how it integrates with the rest of the ecosystem.",
+      "Lifecycle Architecture Studio helps users understand how platforms such as Salesforce, Snowflake, Hightouch, Braze, Segment, and OpenAI work together within modern enterprise ecosystems. Through interactive visualizations, users can explore data flows, platform roles, integrations, and real-world architecture patterns.",
     demoMode:
-      "Switch between five hub-and-spoke architecture templates — Legacy Enterprise, Modern Composable, AI-Powered Lifecycle, Product-Led Growth, and Customer 360 — then click any platform to explore what it does and how it connects.",
+      "Explore Legacy Enterprise, Modern Composable, AI-Powered Lifecycle, Product-Led Growth, and Customer 360 architectures, or build your own stack.",
     highlights: [
-      "Full-screen interactive architecture canvas with animated connections",
-      "Educational platform detail panels for martech, data, and AI tools",
-      "Recommended stack templates for enterprise and modern lifecycle teams",
-      "Add, remove, and explore custom architecture combinations",
-      "Premium dark-mode product design inspired by Linear, Stripe, and ByteByteGo",
-      "Designed to teach where each platform fits and what problems it solves",
+      "Interactive architecture visualizations with real-world enterprise examples",
+      "Explore CRM, data, activation, engagement, analytics, and AI ecosystems",
+      "Educational platform profiles and integration mapping",
+      "Custom stack modelling and architecture exploration",
+      "Premium visual design focused on clarity, learning, and discovery",
     ],
     learned: [],
     walkthrough: [],
