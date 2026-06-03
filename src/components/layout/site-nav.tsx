@@ -30,7 +30,7 @@ export function SiteNav() {
 
   return (
     <header className={`site-nav ${scrolled ? "site-nav--scrolled" : ""}`}>
-      <div className="site-container flex h-16 items-center justify-between gap-4">
+      <div className="site-container flex h-16 items-center justify-between gap-6">
         <Link
           href="/"
           className={`site-nav__brand${pathname === "/" ? " site-nav__brand--active" : ""}`}
@@ -39,7 +39,7 @@ export function SiteNav() {
           {site.name}
         </Link>
 
-        <nav className="site-nav__desktop hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -57,7 +57,7 @@ export function SiteNav() {
 
         <button
           type="button"
-          className="site-nav__toggle md:hidden"
+          className="site-nav__toggle"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="site-nav-mobile-menu"
@@ -72,7 +72,6 @@ export function SiteNav() {
       <div
         id="site-nav-mobile-menu"
         className={`site-nav__mobile-panel${menuOpen ? " site-nav__mobile-panel--open" : ""}`}
-        hidden={!menuOpen}
       >
         <nav className="site-container site-nav__mobile-nav" aria-label="Primary mobile">
           {navLinks.map((link) => {
