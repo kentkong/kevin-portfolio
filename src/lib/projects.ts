@@ -43,7 +43,15 @@ export const projects: Project[] = [
       "A premium interactive studio for understanding, designing, and exploring modern lifecycle marketing, data, and AI-powered engagement architectures.",
     overview: "",
     liveUrl: "https://kentkong.github.io/lifecycle-architecture-studio/",
-    previewImageDesktop: "",
+    previewImageDesktop: "/projects/lifecycle-architecture-studio/modern-composable.png",
+    previewImagesDesktop: [
+      "/projects/lifecycle-architecture-studio/modern-composable.png",
+      "/projects/lifecycle-architecture-studio/legacy-enterprise.png",
+      "/projects/lifecycle-architecture-studio/ai-powered-lifecycle.png",
+      "/projects/lifecycle-architecture-studio/product-led-growth.png",
+      "/projects/lifecycle-architecture-studio/customer-360.png",
+    ],
+    previewRotationIntervalMs: 3200,
     accent: "from-blue-500/20 via-slate-500/10 to-transparent",
     themeColor: "#60a5fa",
     challenge:
@@ -54,7 +62,7 @@ export const projects: Project[] = [
     solution:
       "Lifecycle Architecture Studio lets users explore how platforms like Salesforce, Snowflake, Hightouch, Braze, Segment, and OpenAI fit together. Click any node to learn what it does, why companies use it, where it sits in the stack, and how it integrates with the rest of the ecosystem.",
     demoMode:
-      "Switch between recommended architecture templates — Enterprise Marketing Stack, Legacy Enterprise Stack, AI-Powered Lifecycle Stack, and CDP & Analytics Stack — then add or remove platforms to model your own ecosystem.",
+      "Switch between five hub-and-spoke architecture templates — Legacy Enterprise, Modern Composable, AI-Powered Lifecycle, Product-Led Growth, and Customer 360 — then click any platform to explore what it does and how it connects.",
     highlights: [
       "Full-screen interactive architecture canvas with animated connections",
       "Educational platform detail panels for martech, data, and AI tools",

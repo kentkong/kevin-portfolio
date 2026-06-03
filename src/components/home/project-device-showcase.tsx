@@ -83,7 +83,7 @@ export function ProjectDeviceShowcase({ project }: ProjectDeviceShowcaseProps) {
             label="Desktop"
             priority={project.slug === "gen-pulse"}
             imageFit="cover"
-            screenBg={project.comingSoon ? "#080a0d" : project.slug === "gen-pulse" ? "#0b1020" : "#f4f4f4"}
+            screenBg={project.comingSoon ? "#080a0d" : project.slug === "gen-pulse" || project.slug === "lifecycle-architecture-studio" ? "#0b1020" : "#f4f4f4"}
             comingSoon={project.comingSoon}
             {...screenProps}
           />
