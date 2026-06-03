@@ -44,7 +44,6 @@ export const projects: Project[] = [
     overview: "",
     liveUrl: "https://kentkong.github.io/lifecycle-architecture-studio/",
     previewImageDesktop: "",
-    comingSoon: true,
     accent: "from-blue-500/20 via-slate-500/10 to-transparent",
     themeColor: "#60a5fa",
     challenge:
