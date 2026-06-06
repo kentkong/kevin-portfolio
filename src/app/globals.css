@@ -1104,9 +1104,13 @@ body.site-body > * {
 }
 
 .stack-flow__node--pulse {
-  color: var(--accent-soft);
-  border-color: rgba(94, 196, 196, 0.35);
-  background: linear-gradient(145deg, rgba(94, 196, 196, 0.14), rgba(94, 196, 196, 0.04));
+  color: #f1c40f;
+  border-color: rgba(241, 196, 15, 0.38);
+  background: linear-gradient(145deg, rgba(241, 196, 15, 0.14), rgba(241, 196, 15, 0.04));
+}
+
+.stack-flow__node--pulse.stack-flow__node--highlight {
+  box-shadow: 0 0 20px rgba(241, 196, 15, 0.18);
 }
 
 .stack-flow__node--objective {
