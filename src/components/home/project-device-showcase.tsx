@@ -20,7 +20,7 @@ function LaptopActions({ project }: { project: Project }) {
         href={project.liveUrl}
         target="_blank"
         rel="noreferrer"
-        className="site-btn site-btn--ghost"
+        className="site-btn site-btn--live-demo"
       >
         Open Live Demo
       </Link>
