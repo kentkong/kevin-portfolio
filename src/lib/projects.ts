@@ -107,10 +107,10 @@ export const projects: Project[] = [
   {
     slug: "pulse-ops",
     name: "Pulse-Ops AI",
-    tagline: "AI-powered operational intelligence.",
-    headline: "AI-powered operational intelligence.",
+    tagline: "AI intelligence layer for customer lifecycle operations.",
+    headline: "AI intelligence layer for customer lifecycle operations.",
     summary:
-      "Pulse-Ops AI helps leaders identify risks, opportunities, bottlenecks, and trends before they impact delivery or performance.",
+      "A stack-agnostic command center that unifies your data, activation, engagement, and AI tools into health scores, signals, and next-best actions.",
     overview: "",
     liveUrl: "https://kentkong.github.io/pulse-ops-ai/",
     previewImageDesktop: "/projects/pulse-ops/operations.png",
@@ -126,17 +126,20 @@ export const projects: Project[] = [
     accent: "from-yellow-500/15 via-zinc-500/10 to-transparent",
     themeColor: "#eab308",
     challenge:
-      "Operational teams generate vast amounts of data but often struggle to identify the signals that require action.",
+      "Lifecycle data is spread across warehouses, reverse-ETL tools, engagement platforms, and AI services — but ops leaders rarely have one place to see account health, emerging risk, and what to do next.",
     observation:
-      "Create an AI analyst that turns operational data into insights, recommendations, and next-best actions.",
+      "Create an intelligence layer that sits above the tools you already use, turning fragmented lifecycle data into actionable operational signals.",
     hypothesis: "",
     solution:
-      "Pulse-Ops AI helps leaders identify risks, opportunities, bottlenecks, and trends before they impact delivery or performance.",
+      "Pulse-Ops AI is the intelligence layer on your lifecycle stack — monitoring account health, surfacing AI-driven risks and opportunities, and orchestrating next actions across every stage. The live demo uses Snowflake, Hightouch, and Braze as a representative modern stack; in production, buyers plug in whichever data, activation, engagement, and AI apps fit their environment.",
+    demoMode:
+      "Example stack in the demo: Snowflake → Hightouch → Braze → Pulse-Ops AI. The architecture is integration-flexible — swap in your warehouse, CDP, engagement platform, or AI provider without changing the command-center experience.",
     highlights: [
-      "Detects operational risks and emerging issues automatically",
-      "Surfaces trends, opportunities, and recommended actions",
-      "Provides real-time operational intelligence for leaders and managers",
-      "Reduces time spent manually analysing dashboards and reports",
+      "Stack-agnostic intelligence layer — connect the modern apps your org already runs",
+      "Demo illustrates one lifecycle stack; production deployments adapt to your tooling",
+      "Unified account health, stage progression, and at-risk detection",
+      "AI signals with severity, confidence, and recommended next actions",
+      "Workflow orchestration from signal to action across connected systems",
     ],
     learned: [],
     walkthrough: [],
