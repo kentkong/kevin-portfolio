@@ -35,11 +35,25 @@ export const exploringGroups = [
   },
   {
     label: "AI & Engineering",
-    tags: ["Cursor", "Agentic Workflows", "Data Modelling"],
+    tags: ["Agentic Workflows", "Data Modelling"],
   },
   {
     label: "Data & Lifecycle Stack",
-    tags: ["Snowflake", "Hightouch", "Braze", "Lifecycle Automation"],
+    tags: ["Hightouch", "Lifecycle Automation"],
+  },
+  {
+    label: "Skills & Technologies",
+    tags: [
+      "Cursor",
+      "OpenAI",
+      "Claude",
+      "Next.js",
+      "React",
+      "SFMC",
+      "Braze",
+      "Snowflake",
+      "Jira",
+    ],
   },
 ] as const;
 
