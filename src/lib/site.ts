@@ -1,20 +1,18 @@
 export const site = {
   name: "Kevin Alan Mold",
-  title: "Kevin Alan Mold — AI Product Builder",
+  title: "Kevin Alan Mold — Design, Technology, Customer Experience",
   description:
-    "Enterprise AI product portfolio showcasing practical solutions for development teams, business owners, project managers, and leaders.",
+    "A multidisciplinary portfolio exploring the intersection of visual design, digital products, customer experience and technology.",
   email: "jovianuk@gmail.com",
   linkedin: "https://www.linkedin.com/in/kevinmold",
   github: "https://github.com/kentkong",
-  label: "Marketing Leader · AI Product Builder · Delivery Strategist",
-  headline: "Building practical Enterprise AI products for real-world teams.",
-  heroTagline: [
-    "Marketing & Lifecycle Operations",
-    "AI Product Builder",
-    "Delivery Strategist",
-  ],
+  label: "Design · Technology · Customer Experience",
+  headline: "Design. Technology. Customer Experience.",
+  heroTagline: ["Design", "Technology", "Customer Experience"],
   heroIntro:
-    "Products inspired by real operational challenges I've encountered leading marketing, lifecycle, customer success, and operational teams. Each solution focuses on improving visibility, decision-making, and execution through thoughtful AI-powered experiences.",
+    "A multidisciplinary portfolio exploring the intersection of visual design, digital products, customer experience and technology.",
+  heroExperience:
+    "Built on 17 years of corporate experience across CRM, lifecycle marketing, enterprise technology, operations and delivery.",
   aboutBio: [
     "I'm a Senior Marketing and Lifecycle leader with over 17 years of experience working for global organizations including Motorola, IBM, Hewlett Packard, Infor, Merkle, and most recently Gen Digital, where I manage the Norton Email Development team.",
     "With a background in Graphic and Web Design, I have a passion for combining business strategy, data, and modern design to solve real-world operational challenges. More recently, I've been building AI-powered products that improve visibility, simplify decision-making, and help teams work more effectively.",
@@ -23,9 +21,12 @@ export const site = {
 } as const;
 
 export const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Case Studies", href: "/#projects" },
+  { label: "Insights", href: "/thinking" },
   { label: "About", href: "/about" },
-  { label: "Resume", href: "/resume" },
-  { label: "Contact", href: "/contact" },
+  { label: "CV / Contact", href: "/contact" },
 ] as const;
 
 export const exploringGroups = [
