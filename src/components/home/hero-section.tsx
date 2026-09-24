@@ -14,6 +14,7 @@ export function HeroSection() {
         <div className="site-hero__grid">
           <div className="site-hero__copy">
             <div className="site-hero__headline-frame">
+              <p className="site-hero__signature">{site.name}</p>
               <h1 className="site-hero__statement" aria-label={site.headline}>
                 {site.heroTagline.map((item) => (
                   <span
@@ -33,7 +34,6 @@ export function HeroSection() {
                 ))}
               </h1>
             </div>
-            <p className="site-hero__signature">{site.name}</p>
             <p className="site-hero__intro">{site.heroIntro}</p>
             <div className="site-hero__actions" aria-label="Portfolio actions">
               <Link href="/#projects" className="site-btn site-btn--ink">
