@@ -398,6 +398,20 @@ body.site-body > * {
   box-shadow: 0 12px 30px rgba(31, 29, 26, 0.06);
 }
 
+.site-nav__inner {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+.site-nav__desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .site-nav__brand {
   position: relative;
   padding-bottom: 0.35rem;
@@ -759,6 +773,14 @@ body.site-body > * {
   max-width: 57rem;
 }
 
+.site-hero__headline-frame {
+  width: max-content;
+  max-width: calc(100vw - 4rem);
+  padding: clamp(1.25rem, 2.2vw, 2.1rem) clamp(1.25rem, 2.8vw, 2.6rem);
+  border: 1px solid rgba(31, 29, 26, 0.34);
+  background: transparent;
+}
+
 .site-hero__eyebrow {
   margin: 0 0 1.5rem;
   font-family: var(--font-display), system-ui, sans-serif;
@@ -789,9 +811,10 @@ body.site-body > * {
 }
 
 .site-hero__concept {
-  display: flex;
-  align-items: baseline;
-  gap: clamp(1rem, 2.5vw, 2.75rem);
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: clamp(1.25rem, 3.6vw, 4.25rem);
+  align-items: center;
   max-width: 100%;
 }
 
@@ -880,8 +903,8 @@ body.site-body > * {
 .site-hero__concept--long {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, clamp(28rem, 37vw, 32rem)) max-content;
-  column-gap: clamp(1rem, 2vw, 2.25rem);
+  grid-template-columns: minmax(0, clamp(27rem, 38vw, 32rem)) max-content;
+  column-gap: clamp(1.75rem, 3.6vw, 4.25rem);
   align-items: center;
   margin-top: 0.1rem;
 }
@@ -911,15 +934,22 @@ body.site-body > * {
   line-height: 1.2;
   text-transform: uppercase;
   white-space: nowrap;
-  color: #756f66;
+  color: #24211e;
 }
 
 .site-hero__concept-descriptor::before {
-  content: "";
-  display: block;
-  width: clamp(1rem, 2vw, 2rem);
-  height: 1px;
-  background: rgba(31, 29, 26, 0.26);
+  content: none;
+}
+
+.site-hero__signature {
+  margin: clamp(1.05rem, 2vw, 1.65rem) 0 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #24211e;
 }
 
 .site-hero__intro {
@@ -1051,6 +1081,10 @@ body.site-body > * {
 }
 
 @media (max-width: 767px) {
+  .site-nav__inner {
+    justify-content: flex-end;
+  }
+
   .site-hero {
     align-items: start;
     min-height: auto;
@@ -1059,6 +1093,12 @@ body.site-body > * {
 
   .site-hero__statement {
     font-size: clamp(3.6rem, 17vw, 5.5rem);
+  }
+
+  .site-hero__headline-frame {
+    width: 100%;
+    max-width: none;
+    padding: 1rem;
   }
 
   .site-hero__concept {

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { navLinks, site } from "@/lib/site";
+import { navLinks } from "@/lib/site";
 
 function useMobileNav() {
   const [isMobile, setIsMobile] = useState(false);
@@ -42,15 +42,7 @@ export function SiteNav() {
 
   return (
     <header className={`site-nav ${scrolled ? "site-nav--scrolled" : ""}`}>
-      <div className="site-container flex h-16 items-center justify-between gap-6">
-        <Link
-          href="/"
-          className={`site-nav__brand${pathname === "/" ? " site-nav__brand--active" : ""}`}
-          aria-current={pathname === "/" ? "page" : undefined}
-        >
-          {site.name}
-        </Link>
-
+      <div className="site-container site-nav__inner">
         {isMobileNav ? (
           <button
             type="button"
@@ -65,7 +57,7 @@ export function SiteNav() {
             <span className="site-nav__toggle-bar" />
           </button>
         ) : (
-          <nav className="flex items-center gap-8" aria-label="Primary">
+          <nav className="site-nav__desktop-nav" aria-label="Primary">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
 

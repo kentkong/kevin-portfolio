@@ -13,25 +13,27 @@ export function HeroSection() {
       <div className="site-container">
         <div className="site-hero__grid">
           <div className="site-hero__copy">
-            <p className="site-hero__eyebrow">Portfolio 2.0</p>
-            <h1 className="site-hero__statement" aria-label={site.headline}>
-              {site.heroTagline.map((item) => (
-                <span
-                  key={item.label}
-                  className={`site-hero__concept${
-                    item.label === "Customer Experience" ? " site-hero__concept--long" : ""
-                  }`}
-                >
-                  <span className="site-hero__concept-label">
-                    <span className="site-hero__concept-text">{item.label}.</span>
-                    <span className="site-hero__concept-light" aria-hidden="true">
-                      {item.label}.
+            <div className="site-hero__headline-frame">
+              <h1 className="site-hero__statement" aria-label={site.headline}>
+                {site.heroTagline.map((item) => (
+                  <span
+                    key={item.label}
+                    className={`site-hero__concept${
+                      item.label === "Customer Experience" ? " site-hero__concept--long" : ""
+                    }`}
+                  >
+                    <span className="site-hero__concept-label">
+                      <span className="site-hero__concept-text">{item.label}.</span>
+                      <span className="site-hero__concept-light" aria-hidden="true">
+                        {item.label}.
+                      </span>
                     </span>
+                    <span className="site-hero__concept-descriptor">{item.descriptor}</span>
                   </span>
-                  <span className="site-hero__concept-descriptor">{item.descriptor}</span>
-                </span>
-              ))}
-            </h1>
+                ))}
+              </h1>
+            </div>
+            <p className="site-hero__signature">{site.name}</p>
             <p className="site-hero__intro">{site.heroIntro}</p>
             <div className="site-hero__actions" aria-label="Portfolio actions">
               <Link href="/#projects" className="site-btn site-btn--ink">
