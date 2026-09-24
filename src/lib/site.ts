@@ -9,7 +9,7 @@ export const site = {
   label: "Design · Technology · Customer Experience",
   headline: "Design. Technology. Customer Experience.",
   heroTagline: [
-    { label: "Design", descriptor: "Visual · UX/UI Design" },
+    { label: "Design", descriptor: "Visual · UX/UI" },
     { label: "Technology", descriptor: "AI · Automation · MarTech" },
     { label: "Customer Experience", descriptor: "CRM · Lifecycle · Marketing" },
   ],
