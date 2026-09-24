@@ -663,52 +663,57 @@ body.site-body > * {
 }
 
 .site-hero__concept-label {
+  position: relative;
   color: #1f1d1a;
   line-height: 0.78;
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .site-hero__concept-label {
+  .site-hero__concept-label::after {
+    content: attr(data-light-text);
+    position: absolute;
+    inset: 0;
     background-image: linear-gradient(
       105deg,
-      #1f1d1a 0%,
-      #1f1d1a 24%,
-      #4a4554 36%,
-      #78849d 43%,
-      #73949b 49%,
-      #967d7a 56%,
-      #9b906f 62%,
-      #3f3a35 72%,
-      #1f1d1a 84%,
-      #1f1d1a 100%
+      transparent 0%,
+      transparent 30%,
+      rgba(190, 181, 224, 0.05) 37%,
+      rgba(165, 187, 220, 0.42) 44%,
+      rgba(159, 215, 216, 0.38) 50%,
+      rgba(219, 177, 168, 0.34) 57%,
+      rgba(226, 215, 159, 0.28) 64%,
+      rgba(190, 181, 224, 0.04) 71%,
+      transparent 78%,
+      transparent 100%
     );
-    background-size: 340% 100%;
-    background-position: 8% 50%;
+    background-size: 300% 100%;
+    background-position: 6% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    animation: site-hero-soft-light 28s ease-in-out infinite;
+    filter: blur(0.2px);
+    opacity: 0.72;
+    pointer-events: none;
+    animation: site-hero-soft-light 32s ease-in-out infinite;
   }
 }
 
 @keyframes site-hero-soft-light {
   0%,
   100% {
-    background-position: 8% 50%;
+    background-position: 6% 50%;
   }
 
   50% {
-    background-position: 92% 50%;
+    background-position: 94% 50%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-hero__concept-label {
+  .site-hero__concept-label::after {
     animation: none;
-    background-image: none;
-    color: #1f1d1a;
-    -webkit-text-fill-color: currentColor;
+    content: none;
   }
 }
 
