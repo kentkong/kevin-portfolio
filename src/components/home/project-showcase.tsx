@@ -248,6 +248,7 @@ function SprintIqVisual({ project }: { project: Project }) {
               src={assetPath(state.image)}
               alt={`${project.name} ${state.label} workflow screen`}
               fill
+              loading="eager"
               unoptimized
               sizes="(max-width: 768px) 78vw, 34vw"
               className="selected-sprint-card__image"
