@@ -4,6 +4,12 @@ import { site } from "@/lib/site";
 export function HeroSection() {
   return (
     <section className="site-hero">
+      <div className="site-hero__ambient" aria-hidden="true">
+        <span className="site-hero__ambient-field site-hero__ambient-field--lavender" />
+        <span className="site-hero__ambient-field site-hero__ambient-field--cyan" />
+        <span className="site-hero__ambient-field site-hero__ambient-field--blush" />
+        <span className="site-hero__ambient-field site-hero__ambient-field--warm" />
+      </div>
       <div className="site-container">
         <div className="site-hero__grid">
           <div className="site-hero__copy">
