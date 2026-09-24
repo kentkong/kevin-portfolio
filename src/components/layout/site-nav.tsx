@@ -71,7 +71,7 @@ export function SiteNav() {
 
               return (
                 <Link
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   className={`site-nav__link${isActive ? " site-nav__link--active" : ""}`}
                   aria-current={isActive ? "page" : undefined}
@@ -95,7 +95,7 @@ export function SiteNav() {
 
               return (
                 <Link
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   className={`site-nav__mobile-link${isActive ? " site-nav__mobile-link--active" : ""}`}
                   aria-current={isActive ? "page" : undefined}
