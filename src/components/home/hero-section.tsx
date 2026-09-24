@@ -40,10 +40,6 @@ export function HeroSection() {
               <span>years professional experience</span>
             </div>
             <p className="site-hero__card-copy">{site.heroExperience}</p>
-            <div className="site-hero__card-rule site-hero__card-rule--short" aria-hidden />
-            <p className="site-hero__card-note">
-              Design thinking shaped by real customer, business and technology systems.
-            </p>
           </aside>
         </div>
       </div>

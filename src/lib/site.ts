@@ -16,7 +16,7 @@ export const site = {
   heroIntro:
     "A multidisciplinary portfolio exploring the intersection of visual design, digital products, customer experience and technology.",
   heroExperience:
-    "Corporate experience across design, customer experience and technology-led delivery.",
+    "Corporate experience shaped by design, customer experience and technology-led delivery.",
   aboutBio: [
     "I'm a Senior Marketing and Lifecycle leader with over 17 years of experience working for global organizations including Motorola, IBM, Hewlett Packard, Infor, Merkle, and most recently Gen Digital, where I manage the Norton Email Development team.",
     "With a background in Graphic and Web Design, I have a passion for combining business strategy, data, and modern design to solve real-world operational challenges. More recently, I've been building AI-powered products that improve visibility, simplify decision-making, and help teams work more effectively.",
