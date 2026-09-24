@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { navLinks } from "@/lib/site";
+import { navLinks, site } from "@/lib/site";
 
 function useMobileNav() {
   const [isMobile, setIsMobile] = useState(false);
@@ -43,6 +43,10 @@ export function SiteNav() {
   return (
     <header className={`site-nav ${scrolled ? "site-nav--scrolled" : ""}`}>
       <div className="site-container site-nav__inner">
+        <Link href="/" className="site-nav__brand">
+          {site.name}
+        </Link>
+
         {isMobileNav ? (
           <button
             type="button"

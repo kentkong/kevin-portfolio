@@ -14,7 +14,6 @@ export function HeroSection() {
         <div className="site-hero__grid">
           <div className="site-hero__copy">
             <div className="site-hero__headline-frame">
-              <p className="site-hero__signature">{site.name}</p>
               <h1 className="site-hero__statement" aria-label={site.headline}>
                 {site.heroTagline.map((item) => (
                   <span
