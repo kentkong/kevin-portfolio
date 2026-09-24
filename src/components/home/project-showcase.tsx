@@ -204,6 +204,7 @@ function LifecycleVisual({ project }: { project: Project }) {
           intervalMs={project.previewRotationIntervalMs}
           imageFit="cover"
           screenBg="#0b1020"
+          priority
         />
       </div>
     </div>
@@ -222,6 +223,7 @@ function PulseOpsVisual({ project }: { project: Project }) {
           fallbackTitle={project.name}
           fallbackCopy={project.tagline}
           accentClass={project.accent}
+          priority
           imageFit="cover"
           screenBg="#f4f4f4"
         />
