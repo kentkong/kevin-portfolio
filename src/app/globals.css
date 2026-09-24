@@ -1083,7 +1083,7 @@ body.site-body > * {
   }
 
   .site-hero__editorial-card {
-    transform: translateY(clamp(4.75rem, 7vw, 7rem));
+    transform: translateY(clamp(6.75rem, 10vw, 9rem));
   }
 }
 
