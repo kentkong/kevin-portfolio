@@ -859,6 +859,7 @@ body.site-body > * {
 }
 
 .site-hero__concept--long {
+  position: relative;
   margin-top: 0.1rem;
 }
 
@@ -867,6 +868,13 @@ body.site-body > * {
   font-size: 0.74em;
   letter-spacing: -0.07em;
   line-height: 0.8;
+}
+
+.site-hero__concept--long .site-hero__concept-descriptor {
+  position: absolute;
+  left: clamp(28rem, 39vw, 34rem);
+  top: 48%;
+  transform: translateY(-50%);
 }
 
 .site-hero__concept-descriptor {
@@ -1043,6 +1051,11 @@ body.site-body > * {
 
   .site-hero__concept-descriptor::before {
     display: none;
+  }
+
+  .site-hero__concept--long .site-hero__concept-descriptor {
+    position: static;
+    transform: none;
   }
 
   .site-hero__concept--long .site-hero__concept-label {
