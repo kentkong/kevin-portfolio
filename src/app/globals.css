@@ -1078,6 +1078,10 @@ body.site-body > * {
   .site-hero__grid {
     grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.42fr);
   }
+
+  .site-hero__editorial-card {
+    transform: translateY(clamp(4.75rem, 7vw, 7rem));
+  }
 }
 
 @media (max-width: 767px) {
