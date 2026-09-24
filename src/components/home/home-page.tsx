@@ -10,8 +10,8 @@ export function HomePage() {
       <SiteNav />
       <main>
         <HeroSection />
-        <ProjectShowcase />
         <ExploreMyWork />
+        <ProjectShowcase />
       </main>
       <SiteFooter />
     </>

@@ -10,41 +10,44 @@ const plannedRoutes = {
 
 export function ExploreMyWork() {
   return (
-    <section className="explore-work" aria-labelledby="explore-work-title">
+    <section id="explore-work" className="explore-work" aria-labelledby="explore-work-title">
       <div className="site-container explore-work__container">
         <header className="explore-work__intro">
-          <p className="explore-work__eyebrow">Section 03</p>
+          <p className="explore-work__eyebrow">Section 02 / Explore My Work</p>
           <h2 id="explore-work-title" className="explore-work__title">
-            Explore My Work
+            Four connected bodies of work.
           </h2>
           <p className="explore-work__lead">
-            Four connected areas that broaden the portfolio beyond a single job title or
-            project type.
+            A multidisciplinary structure for UX and product design, CRM and customer
+            experience, applied automation, and image-led creative work.
           </p>
         </header>
 
         <div className="explore-work__grid" aria-label="Portfolio work disciplines">
           <article className="explore-chapter explore-chapter--ux">
             <div className="explore-chapter__copy">
-              <p className="explore-chapter__kicker">UX & Product Design</p>
+              <div className="explore-chapter__meta">
+                <span>01</span>
+                <p>UX & Product Design</p>
+              </div>
               <h3>Revival</h3>
               <p className="explore-chapter__proposition">
                 Visualise your motorcycle build before you build it.
               </p>
               <p>
-                An AI-assisted motorcycle customisation product concept in development,
-                grounded in a real planning problem from motorcycle customisation.
+                AI-assisted motorcycle customisation product concept.
               </p>
-              <p className="explore-chapter__route">Future route: {plannedRoutes.ux}</p>
+              <p className="explore-chapter__status">Product concept in development</p>
+              <p className="explore-chapter__route">Future destination: {plannedRoutes.ux}</p>
             </div>
 
             <div className="explore-chapter__visual explore-chapter__visual--revival">
-              <div className="revival-study-card">
-                <p>Product concept in development</p>
-                <span>Motorcycle imagery required</span>
+              <div className="revival-photo-slot">
+                <span>Motorcycle photograph area</span>
+                <p>Genuine Triumph imagery pending</p>
               </div>
-              <div className="revival-build-map" aria-hidden>
-                {["Tank", "Seat", "Bars", "Tyres", "Colour"].map((item) => (
+              <div className="revival-process-strip" aria-hidden="true">
+                {["Upload", "Identify", "Modify", "Compare"].map((item) => (
                   <span key={item}>{item}</span>
                 ))}
               </div>
@@ -53,13 +56,16 @@ export function ExploreMyWork() {
 
           <article className="explore-chapter explore-chapter--crm">
             <div className="explore-chapter__copy">
-              <p className="explore-chapter__kicker">CRM & Customer Experience</p>
-              <h3>Lifecycle systems and journey architecture</h3>
+              <div className="explore-chapter__meta">
+                <span>02</span>
+                <p>CRM & Customer Experience</p>
+              </div>
+              <h3>Lifecycle systems and journey architecture.</h3>
               <p>
                 CRM systems, lifecycle strategy and customer journeys designed around how
                 people actually move through products and services.
               </p>
-              <p className="explore-chapter__route">Future route: {plannedRoutes.crm}</p>
+              <p className="explore-chapter__route">Future destination: {plannedRoutes.crm}</p>
             </div>
 
             <div className="explore-chapter__visual explore-chapter__visual--crm">
@@ -75,13 +81,16 @@ export function ExploreMyWork() {
 
           <article className="explore-chapter explore-chapter--ai">
             <div className="explore-chapter__copy">
-              <p className="explore-chapter__kicker">AI & Automation</p>
-              <h3>Applied workflows, not AI theatre</h3>
+              <div className="explore-chapter__meta">
+                <span>03</span>
+                <p>AI & Automation</p>
+              </div>
+              <h3>Applied workflows and operational intelligence.</h3>
               <p>
                 AI-assisted experiences, workflow transformation and operational intelligence
                 built around practical decisions and next actions.
               </p>
-              <p className="explore-chapter__route">Future route: {plannedRoutes.ai}</p>
+              <p className="explore-chapter__route">Future destination: {plannedRoutes.ai}</p>
             </div>
 
             <div className="explore-chapter__visual explore-chapter__visual--ai">
@@ -97,17 +106,20 @@ export function ExploreMyWork() {
 
           <article className="explore-chapter explore-chapter--visual">
             <div className="explore-chapter__copy">
-              <p className="explore-chapter__kicker">Visual Design & Photography</p>
-              <h3>Image-led creative foundation</h3>
+              <div className="explore-chapter__meta">
+                <span>04</span>
+                <p>Visual Design & Photography</p>
+              </div>
+              <h3>Image-led creative foundation.</h3>
               <p>
                 A future space for graphic design, photography, visual experimentation and
                 editorial image-led work.
               </p>
-              <p className="explore-chapter__route">Future route: {plannedRoutes.visual}</p>
+              <p className="explore-chapter__route">Future destination: {plannedRoutes.visual}</p>
             </div>
 
             <div className="explore-chapter__visual explore-chapter__visual--placeholder">
-              <p>Genuine photography and design assets needed</p>
+              <p>Genuine photography and graphic design assets pending</p>
             </div>
           </article>
         </div>
