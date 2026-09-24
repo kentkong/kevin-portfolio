@@ -645,7 +645,7 @@ body.site-body > * {
 .site-hero__ambient-field--lavender {
   left: -18%;
   top: -4%;
-  background: radial-gradient(ellipse at center, rgba(196, 181, 253, 0.56), transparent 68%);
+  background: radial-gradient(ellipse at center, rgba(196, 181, 253, 0.68), transparent 68%);
   animation-delay: 0s;
 }
 
@@ -653,7 +653,7 @@ body.site-body > * {
   right: -16%;
   top: 0%;
   width: min(92rem, 126vw);
-  background: radial-gradient(ellipse at center, rgba(175, 224, 232, 0.56), transparent 68%);
+  background: radial-gradient(ellipse at center, rgba(175, 224, 232, 0.68), transparent 68%);
   animation-delay: -48s;
 }
 
@@ -661,7 +661,7 @@ body.site-body > * {
   left: 4%;
   bottom: -20%;
   width: min(88rem, 120vw);
-  background: radial-gradient(ellipse at center, rgba(231, 178, 168, 0.5), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(231, 178, 168, 0.62), transparent 70%);
   animation-delay: -32s;
 }
 
@@ -669,7 +669,7 @@ body.site-body > * {
   right: -22%;
   bottom: -12%;
   width: min(86rem, 118vw);
-  background: radial-gradient(ellipse at center, rgba(236, 223, 157, 0.48), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(236, 223, 157, 0.58), transparent 70%);
   animation-delay: -16s;
 }
 
@@ -680,17 +680,17 @@ body.site-body > * {
   }
 
   6% {
-    opacity: 0.12;
+    opacity: 0.18;
     transform: scale(1.01);
   }
 
   12.5% {
-    opacity: 0.24;
+    opacity: 0.34;
     transform: scale(1.035);
   }
 
   19% {
-    opacity: 0.1;
+    opacity: 0.16;
     transform: scale(1.01);
   }
 
@@ -747,31 +747,8 @@ body.site-body > * {
 .site-hero__concept-label {
   position: relative;
   isolation: isolate;
-  color: #1f1d1a;
+  color: #24211e;
   line-height: 0.78;
-}
-
-@supports (-webkit-text-stroke: 1px #000) {
-  .site-hero__concept-label {
-    color: rgba(31, 29, 26, 0.045);
-    -webkit-text-fill-color: rgba(31, 29, 26, 0.035);
-    -webkit-text-stroke: clamp(0.8px, 0.09vw, 1.35px) rgba(31, 29, 26, 0.82);
-    text-shadow:
-      0.012em 0.01em 0 rgba(31, 29, 26, 0.08),
-      -0.009em -0.006em 0 rgba(31, 29, 26, 0.045);
-  }
-
-  .site-hero__concept-label::before {
-    content: attr(data-light-text);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: clamp(0.45px, 0.055vw, 0.8px) rgba(31, 29, 26, 0.28);
-    transform: translate(0.012em, -0.008em);
-    pointer-events: none;
-  }
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -784,23 +761,23 @@ body.site-body > * {
       105deg,
       transparent 0%,
       transparent 18%,
-      rgba(191, 181, 228, 0.28) 28%,
-      rgba(170, 194, 229, 0.74) 38%,
-      rgba(151, 219, 221, 0.72) 47%,
-      rgba(222, 176, 168, 0.66) 57%,
-      rgba(232, 218, 151, 0.6) 67%,
-      rgba(191, 181, 228, 0.24) 78%,
+      rgba(191, 181, 228, 0.34) 28%,
+      rgba(170, 194, 229, 0.82) 38%,
+      rgba(151, 219, 221, 0.78) 47%,
+      rgba(222, 176, 168, 0.72) 57%,
+      rgba(232, 218, 151, 0.66) 67%,
+      rgba(191, 181, 228, 0.3) 78%,
       transparent 90%,
       transparent 100%
     );
-    background-size: 185% 100%;
+    background-size: 180% 100%;
     background-position: 4% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    filter: blur(0.22px);
-    opacity: 0.58;
+    filter: blur(0.2px);
+    opacity: 0.62;
     pointer-events: none;
     animation: site-hero-soft-light 21s ease-in-out infinite;
   }
@@ -826,7 +803,7 @@ body.site-body > * {
 
   .site-hero__ambient-field {
     animation: none;
-    opacity: 0.1;
+    opacity: 0.12;
   }
 }
 
