@@ -9,12 +9,19 @@ export function HeroSection() {
           <div className="site-hero__copy">
             <p className="site-hero__eyebrow">Portfolio 2.0</p>
             <h1 className="site-hero__statement" aria-label={site.headline}>
-              {site.heroTagline.map((line) => (
-                <span key={line}>{line}.</span>
+              {site.heroTagline.map((item) => (
+                <span
+                  key={item.label}
+                  className={`site-hero__concept${
+                    item.label === "Customer Experience" ? " site-hero__concept--long" : ""
+                  }`}
+                >
+                  <span className="site-hero__concept-label">{item.label}.</span>
+                  <span className="site-hero__concept-descriptor">{item.descriptor}</span>
+                </span>
               ))}
             </h1>
             <p className="site-hero__intro">{site.heroIntro}</p>
-            <p className="site-hero__experience">{site.heroExperience}</p>
             <div className="site-hero__actions" aria-label="Portfolio actions">
               <Link href="/#projects" className="site-btn site-btn--ink">
                 View Work
@@ -26,26 +33,17 @@ export function HeroSection() {
           </div>
 
           <aside className="site-hero__editorial-card" aria-label="Professional focus">
-            <p className="site-hero__card-label">Multidisciplinary practice</p>
+            <p className="site-hero__card-label">Professional foundation</p>
             <div className="site-hero__card-rule" aria-hidden />
-            <dl className="site-hero__focus-list">
-              <div>
-                <dt>Design foundation</dt>
-                <dd>Graphic design, visual communication, UX/UI and product thinking.</dd>
-              </div>
-              <div>
-                <dt>Customer experience</dt>
-                <dd>CRM, lifecycle journeys, marketing technology and customer operations.</dd>
-              </div>
-              <div>
-                <dt>Technology delivery</dt>
-                <dd>Enterprise systems, business analysis, automation and cross-functional delivery.</dd>
-              </div>
-            </dl>
-            <div className="site-hero__experience-mark" aria-hidden>
+            <div className="site-hero__experience-mark">
               <span>17</span>
-              <span>years corporate experience</span>
+              <span>years professional experience</span>
             </div>
+            <p className="site-hero__card-copy">{site.heroExperience}</p>
+            <div className="site-hero__card-rule site-hero__card-rule--short" aria-hidden />
+            <p className="site-hero__card-note">
+              Design thinking shaped by real customer, business and technology systems.
+            </p>
           </aside>
         </div>
       </div>
