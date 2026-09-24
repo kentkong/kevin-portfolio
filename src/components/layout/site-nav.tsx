@@ -34,16 +34,7 @@ export function SiteNav() {
   }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
-    if (!isMobileNav) {
-      setMenuOpen(false);
-      return;
-    }
-
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    document.body.style.overflow = isMobileNav && menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
@@ -108,6 +99,7 @@ export function SiteNav() {
                   href={link.href}
                   className={`site-nav__mobile-link${isActive ? " site-nav__mobile-link--active" : ""}`}
                   aria-current={isActive ? "page" : undefined}
+                  onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
                 </Link>

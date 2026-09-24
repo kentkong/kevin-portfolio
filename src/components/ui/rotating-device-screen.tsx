@@ -31,14 +31,19 @@ export function RotatingDeviceScreen({
   const resolvedImages = images.map(assetPath);
 
   useEffect(() => {
-    setIsLive(true);
-    if (resolvedImages.length <= 1) return;
+    const liveFrame = window.requestAnimationFrame(() => setIsLive(true));
+    if (resolvedImages.length <= 1) {
+      return () => window.cancelAnimationFrame(liveFrame);
+    }
 
     const timer = window.setInterval(() => {
       setIndex((current) => (current + 1) % resolvedImages.length);
     }, intervalMs);
 
-    return () => window.clearInterval(timer);
+    return () => {
+      window.cancelAnimationFrame(liveFrame);
+      window.clearInterval(timer);
+    };
   }, [resolvedImages.length, intervalMs]);
 
   return (
