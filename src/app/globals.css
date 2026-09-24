@@ -398,6 +398,10 @@ body.site-body > * {
   box-shadow: 0 12px 30px rgba(31, 29, 26, 0.06);
 }
 
+.site-nav .site-container {
+  max-width: 88rem;
+}
+
 .site-nav__inner {
   display: flex;
   height: 4rem;
