@@ -884,6 +884,10 @@ body.site-body > * {
   line-height: 0.8;
 }
 
+.site-hero__concept--long .site-hero__concept-label::after {
+  height: 2.18em;
+}
+
 .site-hero__concept--long .site-hero__concept-descriptor {
   position: static;
   transform: none;
