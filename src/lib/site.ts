@@ -9,14 +9,14 @@ export const site = {
   label: "Design · Technology · Customer Experience",
   headline: "Design. Technology. Customer Experience.",
   heroTagline: [
-    { label: "Design", descriptor: "UX/UI Design" },
-    { label: "Technology", descriptor: "AI & Automation" },
-    { label: "Customer Experience", descriptor: "CRM & Lifecycle" },
+    { label: "Design", descriptor: "Visual · UX/UI Design" },
+    { label: "Technology", descriptor: "AI · Automation · MarTech" },
+    { label: "Customer Experience", descriptor: "CRM · Lifecycle · Marketing" },
   ],
   heroIntro:
     "A multidisciplinary portfolio exploring the intersection of visual design, digital products, customer experience and technology.",
   heroExperience:
-    "Corporate experience shaped by design, customer experience and technology-led delivery.",
+    "17 years across CRM & marketing, technology, operational leadership and design-led delivery.",
   aboutBio: [
     "I'm a Senior Marketing and Lifecycle leader with over 17 years of experience working for global organizations including Motorola, IBM, Hewlett Packard, Infor, Merkle, and most recently Gen Digital, where I manage the Norton Email Development team.",
     "With a background in Graphic and Web Design, I have a passion for combining business strategy, data, and modern design to solve real-world operational challenges. More recently, I've been building AI-powered products that improve visibility, simplify decision-making, and help teams work more effectively.",

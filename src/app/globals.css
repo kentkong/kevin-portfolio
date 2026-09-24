@@ -746,8 +746,32 @@ body.site-body > * {
 
 .site-hero__concept-label {
   position: relative;
+  isolation: isolate;
   color: #1f1d1a;
   line-height: 0.78;
+}
+
+@supports (-webkit-text-stroke: 1px #000) {
+  .site-hero__concept-label {
+    color: rgba(31, 29, 26, 0.045);
+    -webkit-text-fill-color: rgba(31, 29, 26, 0.035);
+    -webkit-text-stroke: clamp(0.8px, 0.09vw, 1.35px) rgba(31, 29, 26, 0.82);
+    text-shadow:
+      0.012em 0.01em 0 rgba(31, 29, 26, 0.08),
+      -0.009em -0.006em 0 rgba(31, 29, 26, 0.045);
+  }
+
+  .site-hero__concept-label::before {
+    content: attr(data-light-text);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: clamp(0.45px, 0.055vw, 0.8px) rgba(31, 29, 26, 0.28);
+    transform: translate(0.012em, -0.008em);
+    pointer-events: none;
+  }
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -755,29 +779,30 @@ body.site-body > * {
     content: attr(data-light-text);
     position: absolute;
     inset: 0;
+    z-index: 1;
     background-image: linear-gradient(
       105deg,
       transparent 0%,
-      transparent 22%,
-      rgba(191, 181, 228, 0.24) 31%,
-      rgba(170, 194, 229, 0.76) 40%,
-      rgba(151, 219, 221, 0.7) 48%,
-      rgba(222, 176, 168, 0.64) 57%,
-      rgba(232, 218, 151, 0.58) 66%,
-      rgba(191, 181, 228, 0.22) 74%,
-      transparent 84%,
+      transparent 18%,
+      rgba(191, 181, 228, 0.28) 28%,
+      rgba(170, 194, 229, 0.74) 38%,
+      rgba(151, 219, 221, 0.72) 47%,
+      rgba(222, 176, 168, 0.66) 57%,
+      rgba(232, 218, 151, 0.6) 67%,
+      rgba(191, 181, 228, 0.24) 78%,
+      transparent 90%,
       transparent 100%
     );
-    background-size: 200% 100%;
+    background-size: 185% 100%;
     background-position: 4% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    filter: blur(0.18px);
-    opacity: 0.92;
+    filter: blur(0.22px);
+    opacity: 0.58;
     pointer-events: none;
-    animation: site-hero-soft-light 22s ease-in-out infinite;
+    animation: site-hero-soft-light 21s ease-in-out infinite;
   }
 }
 
@@ -795,7 +820,8 @@ body.site-body > * {
 @media (prefers-reduced-motion: reduce) {
   .site-hero__concept-label::after {
     animation: none;
-    content: none;
+    background-position: 54% 50%;
+    opacity: 0.32;
   }
 
   .site-hero__ambient-field {
