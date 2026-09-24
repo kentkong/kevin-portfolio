@@ -663,7 +663,53 @@ body.site-body > * {
 }
 
 .site-hero__concept-label {
+  color: #1f1d1a;
   line-height: 0.78;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .site-hero__concept-label {
+    background-image: linear-gradient(
+      105deg,
+      #1f1d1a 0%,
+      #1f1d1a 24%,
+      #4a4554 36%,
+      #78849d 43%,
+      #73949b 49%,
+      #967d7a 56%,
+      #9b906f 62%,
+      #3f3a35 72%,
+      #1f1d1a 84%,
+      #1f1d1a 100%
+    );
+    background-size: 340% 100%;
+    background-position: 8% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: site-hero-soft-light 28s ease-in-out infinite;
+  }
+}
+
+@keyframes site-hero-soft-light {
+  0%,
+  100% {
+    background-position: 8% 50%;
+  }
+
+  50% {
+    background-position: 92% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-hero__concept-label {
+    animation: none;
+    background-image: none;
+    color: #1f1d1a;
+    -webkit-text-fill-color: currentColor;
+  }
 }
 
 .site-hero__concept--long {
