@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { PulseOpsStackFlow } from "@/components/home/pulse-ops-stack-flow";
-import { SprintIQStackFlow } from "@/components/home/sprintiq-stack-flow";
 import { LaptopFrame, PhoneFrame } from "@/components/ui/device-frame";
 import { RotatingDeviceScreen } from "@/components/ui/rotating-device-screen";
 import { assetPath } from "@/lib/asset-path";
