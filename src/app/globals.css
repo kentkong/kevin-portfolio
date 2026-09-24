@@ -776,7 +776,10 @@ body.site-body > * {
 .site-hero__headline-frame {
   width: max-content;
   max-width: calc(100vw - 4rem);
-  padding: clamp(1.25rem, 2.2vw, 2.1rem) clamp(1.25rem, 2.8vw, 2.6rem);
+  padding:
+    clamp(1.25rem, 2.2vw, 2.1rem)
+    clamp(1.25rem, 2.8vw, 2.6rem)
+    clamp(0.95rem, 1.45vw, 1.35rem);
   border: 1px solid rgba(31, 29, 26, 0.34);
   background: transparent;
 }
