@@ -22,8 +22,11 @@ export function HeroSection() {
                     item.label === "Customer Experience" ? " site-hero__concept--long" : ""
                   }`}
                 >
-                  <span className="site-hero__concept-label" data-light-text={`${item.label}.`}>
-                    {item.label}.
+                  <span className="site-hero__concept-label">
+                    <span className="site-hero__concept-text">{item.label}.</span>
+                    <span className="site-hero__concept-light" aria-hidden="true">
+                      {item.label}.
+                    </span>
                   </span>
                   <span className="site-hero__concept-descriptor">{item.descriptor}</span>
                 </span>
