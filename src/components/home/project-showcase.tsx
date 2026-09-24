@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { PulseOpsStackFlow } from "@/components/home/pulse-ops-stack-flow";
 import { LaptopFrame, PhoneFrame } from "@/components/ui/device-frame";
 import { RotatingDeviceScreen } from "@/components/ui/rotating-device-screen";
@@ -238,11 +238,10 @@ function PulseOpsVisual({ project }: { project: Project }) {
 function SprintIqVisual({ project }: { project: Project }) {
   return (
     <div className="selected-visual selected-visual--sprintiq">
-      {sprintStates.map((state, index) => (
+      {sprintStates.map((state) => (
         <div
           key={state.label}
           className="selected-sprint-card"
-          style={{ "--sequence-index": index } as CSSProperties}
         >
           <p className="selected-sprint-card__label">{state.label}</p>
           <div className="selected-sprint-card__screen">
