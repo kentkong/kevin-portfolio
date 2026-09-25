@@ -1956,17 +1956,6 @@ body.site-body > * {
   line-height: 0.9;
 }
 
-.explore-chapter__revival-wordmark {
-  width: min(100%, 23rem);
-  max-width: none;
-}
-
-.explore-chapter__revival-wordmark img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .explore-chapter--crm h3 {
   max-width: 10ch;
   font-size: clamp(2.15rem, 3.35vw, 3.75rem);

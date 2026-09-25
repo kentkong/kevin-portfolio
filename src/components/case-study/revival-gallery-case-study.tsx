@@ -63,26 +63,19 @@ export function RevivalGalleryCaseStudy() {
             <span>UX &amp; PRODUCT DESIGN</span>
           </div>
 
-          <div
+          <h1
             style={{
               margin: "clamp(2.75rem, 6vw, 5rem) 0 1.3rem",
-              maxWidth: "42rem",
+              fontFamily: "var(--font-body), Inter, system-ui, sans-serif",
+              fontSize: "clamp(5rem, 9vw, 8.5rem)",
+              fontWeight: 500,
+              letterSpacing: "-0.08em",
+              lineHeight: 0.88,
+              textTransform: "none",
             }}
           >
-            <Image
-              src={assetPath("/projects/revival/brand/revival-wordmark.png")}
-              alt="Revival"
-              width={1024}
-              height={200}
-              priority
-              unoptimized
-              style={{
-                display: "block",
-                width: "100%",
-                height: "auto",
-              }}
-            />
-          </div>
+            Revival
+          </h1>
           <p
             style={{
               maxWidth: "64rem",

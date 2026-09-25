@@ -34,16 +34,7 @@ export function ExploreMyWork() {
                 <span>01</span>
                 <p>UX & Product Design</p>
               </div>
-              <h3 className="explore-chapter__revival-wordmark">
-                <Image
-                  src={assetPath("/projects/revival/brand/revival-wordmark.png")}
-                  alt="Revival"
-                  width={1024}
-                  height={200}
-                  priority
-                  unoptimized
-                />
-              </h3>
+              <h3>Revival</h3>
               <p className="explore-chapter__proposition">
                 Visualise your dream Triumph Desert Sled motorcycle build before you buy it.
               </p>
