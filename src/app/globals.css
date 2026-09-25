@@ -4299,9 +4299,10 @@ body.site-body > * {
 }
 
 .revival-case__master figcaption {
-  display: flex;
-  gap: 1rem;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.8rem 1rem;
+  align-items: center;
   margin-top: 0.8rem;
   font-size: 0.95rem;
   color: rgba(242, 234, 217, 0.72);
@@ -4312,6 +4313,23 @@ body.site-body > * {
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--revival-orange);
+}
+
+.revival-case__master figcaption p {
+  margin: 0;
+}
+
+.revival-case__master figcaption a {
+  justify-self: end;
+  padding: 0.48rem 0.62rem;
+  border: 1px solid rgba(226, 87, 34, 0.62);
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
   text-transform: uppercase;
   color: var(--revival-orange);
 }
@@ -4466,6 +4484,11 @@ body.site-body > * {
   .revival-case__master figcaption span {
     display: block;
     margin-bottom: 0.35rem;
+  }
+
+  .revival-case__master figcaption a {
+    display: inline-block;
+    margin-top: 0.7rem;
   }
 }
 

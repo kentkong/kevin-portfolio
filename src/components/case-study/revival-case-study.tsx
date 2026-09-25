@@ -258,7 +258,10 @@ export function RevivalCaseStudy() {
             </Link>
             <figcaption>
               <span>{screen.label}</span>
-              {screen.title}
+              <p>{screen.title}</p>
+              <Link href={assetPath(screen.image)} target="_blank" rel="noreferrer">
+                Open full-size design ↗
+              </Link>
             </figcaption>
           </figure>
         ))}
