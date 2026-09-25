@@ -49,13 +49,15 @@ export function ExploreMyWork() {
             </div>
 
             <div className="explore-chapter__visual explore-chapter__visual--revival">
-              <Image
-                src={assetPath("/projects/revival/masters/01-tank-colour-decals.png")}
-                alt="Revival Triumph Desert Sled product concept"
-                fill
-                unoptimized
-                sizes="(max-width: 900px) 100vw, 42vw"
-              />
+              <div className="revival-thumbnail-image">
+                <Image
+                  src={assetPath("/projects/revival/masters/01-tank-colour-decals.png")}
+                  alt="Revival Triumph Desert Sled product concept"
+                  fill
+                  unoptimized
+                  sizes="(max-width: 900px) 100vw, 42vw"
+                />
+              </div>
               <div className="revival-process-strip" aria-hidden="true">
                 {["Original", "Configure", "Live Build", "Generate"].map((item) => (
                   <span key={item}>{item}</span>

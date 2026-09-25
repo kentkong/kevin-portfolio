@@ -2037,7 +2037,8 @@ body.site-body > * {
   display: flex;
   min-height: 21rem;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0.7rem;
   margin: clamp(1.5rem, 3vw, 2.5rem);
   margin-top: auto;
   padding: clamp(1rem, 2vw, 1.5rem);
@@ -5402,6 +5403,37 @@ body.site-body > * {
 
 .revival-process-strip span {
   background: rgba(242, 234, 217, 0.84);
+}
+
+.revival-thumbnail-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 768 / 512;
+  overflow: hidden;
+  border: 1px solid rgba(31, 29, 26, 0.12);
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.revival-thumbnail-image img {
+  inset: 0 !important;
+  z-index: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 1 !important;
+}
+
+.explore-chapter__visual--revival .revival-process-strip {
+  position: relative;
+  inset: auto;
+  z-index: 1;
+  margin-top: 0.7rem;
+}
+
+.explore-chapter__visual--revival .revival-process-strip span {
+  background: rgba(242, 234, 217, 0.94);
+  box-shadow: 0 8px 18px rgba(31, 29, 26, 0.08);
 }
 
 @media (max-width: 980px) {
