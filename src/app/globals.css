@@ -979,53 +979,44 @@ body.site-body > * {
     background-image: linear-gradient(
       105deg,
       transparent 0%,
-      rgba(186, 228, 205, 0.48) 8%,
-      rgba(129, 212, 236, 0.88) 20%,
-      rgba(191, 181, 228, 0.82) 33%,
-      rgba(241, 148, 182, 0.84) 47%,
-      rgba(255, 180, 111, 0.86) 61%,
-      rgba(236, 223, 157, 0.74) 74%,
-      rgba(104, 216, 142, 0.68) 88%,
+      transparent 18%,
+      rgba(186, 228, 205, 0.2) 28%,
+      rgba(129, 212, 236, 0.42) 38%,
+      rgba(191, 181, 228, 0.38) 48%,
+      rgba(241, 148, 182, 0.34) 58%,
+      rgba(255, 180, 111, 0.34) 68%,
+      rgba(236, 223, 157, 0.28) 78%,
+      transparent 90%,
       transparent 100%
     );
-    background-size: 145% 100%;
-    background-position: -18% 50%;
+    background-size: 190% 100%;
+    background-position: 0% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    filter: blur(0.12px) saturate(1.15);
-    opacity: 0.86;
+    filter: blur(0.2px) saturate(1.02);
+    opacity: 0.4;
     pointer-events: none;
-    animation: site-hero-soft-light 2.4s ease-in-out infinite;
+    animation: site-hero-soft-light 18s ease-in-out infinite;
   }
 }
 
 @keyframes site-hero-soft-light {
   0% {
-    background-position: -18% 50%;
-    opacity: 0.42;
-    filter: blur(0.12px) saturate(1.05);
+    background-position: 0% 50%;
+    opacity: 0.28;
+    filter: blur(0.22px) saturate(1);
   }
-  24% {
-    background-position: 18% 50%;
-    opacity: 0.94;
-    filter: blur(0.08px) saturate(1.35);
-  }
-  48% {
-    background-position: 52% 50%;
-    opacity: 0.56;
-    filter: blur(0.16px) saturate(1.12);
-  }
-  72% {
-    background-position: 86% 50%;
-    opacity: 0.98;
-    filter: blur(0.06px) saturate(1.45);
+  45% {
+    background-position: 74% 50%;
+    opacity: 0.52;
+    filter: blur(0.18px) saturate(1.08);
   }
   100% {
-    background-position: 118% 50%;
-    opacity: 0.42;
-    filter: blur(0.12px) saturate(1.05);
+    background-position: 106% 50%;
+    opacity: 0.28;
+    filter: blur(0.22px) saturate(1);
   }
 }
 
