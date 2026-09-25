@@ -979,37 +979,55 @@ body.site-body > * {
     background-image: linear-gradient(
       105deg,
       transparent 0%,
-      transparent 18%,
-      rgba(191, 181, 228, 0.34) 28%,
-      rgba(170, 194, 229, 0.82) 38%,
-      rgba(151, 219, 221, 0.78) 47%,
-      rgba(222, 176, 168, 0.72) 57%,
-      rgba(232, 218, 151, 0.66) 67%,
-      rgba(191, 181, 228, 0.3) 78%,
-      transparent 90%,
+      transparent 12%,
+      rgba(186, 228, 205, 0.58) 20%,
+      rgba(129, 212, 236, 0.88) 30%,
+      rgba(191, 181, 228, 0.82) 40%,
+      rgba(241, 148, 182, 0.84) 50%,
+      rgba(255, 180, 111, 0.86) 60%,
+      rgba(236, 223, 157, 0.74) 70%,
+      rgba(104, 216, 142, 0.68) 80%,
+      transparent 92%,
       transparent 100%
     );
-    background-size: 180% 100%;
-    background-position: 4% 50%;
+    background-size: 235% 100%;
+    background-position: 0% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    filter: blur(0.2px);
-    opacity: 0.62;
+    filter: blur(0.12px) saturate(1.15);
+    opacity: 0.86;
     pointer-events: none;
-    animation: site-hero-soft-light 21s ease-in-out infinite;
+    animation: site-hero-soft-light 2.4s ease-in-out infinite;
   }
 }
 
 @keyframes site-hero-soft-light {
-  0%,
-  100% {
-    background-position: 4% 50%;
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.42;
+    filter: blur(0.12px) saturate(1.05);
   }
-
-  50% {
-    background-position: 96% 50%;
+  24% {
+    background-position: 34% 50%;
+    opacity: 0.94;
+    filter: blur(0.08px) saturate(1.35);
+  }
+  48% {
+    background-position: 68% 50%;
+    opacity: 0.56;
+    filter: blur(0.16px) saturate(1.12);
+  }
+  72% {
+    background-position: 100% 50%;
+    opacity: 0.98;
+    filter: blur(0.06px) saturate(1.45);
+  }
+  100% {
+    background-position: 128% 50%;
+    opacity: 0.42;
+    filter: blur(0.12px) saturate(1.05);
   }
 }
 
