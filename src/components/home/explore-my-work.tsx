@@ -15,13 +15,16 @@ export function ExploreMyWork() {
       <div className="site-container explore-work__container">
         <header className="explore-work__intro">
           <p className="explore-work__eyebrow">Section 02 / Explore My Work</p>
-          <h2 id="explore-work-title" className="explore-work__title">
-            Four connected bodies of work.
+          <h2 id="explore-work-title" className="explore-work__discipline-heading">
+            <span className="explore-work__discipline">
+              <span>01</span>
+              <strong>UX &amp; Product Design</strong>
+            </span>
+            <span className="explore-work__discipline">
+              <span>02</span>
+              <strong>CRM &amp; Customer Experience</strong>
+            </span>
           </h2>
-          <p className="explore-work__lead">
-            A multidisciplinary structure for UX and product design, CRM and customer
-            experience, applied automation, and image-led creative work.
-          </p>
         </header>
 
         <div className="explore-work__grid" aria-label="Portfolio work disciplines">
@@ -31,7 +34,16 @@ export function ExploreMyWork() {
                 <span>01</span>
                 <p>UX & Product Design</p>
               </div>
-              <h3>Revival</h3>
+              <h3 className="explore-chapter__revival-wordmark">
+                <Image
+                  src={assetPath("/projects/revival/brand/revival-wordmark.png")}
+                  alt="Revival"
+                  width={1024}
+                  height={200}
+                  priority
+                  unoptimized
+                />
+              </h3>
               <p className="explore-chapter__proposition">
                 Visualise your dream Triumph Desert Sled motorcycle build before you buy it.
               </p>

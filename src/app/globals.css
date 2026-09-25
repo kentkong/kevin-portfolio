@@ -1824,12 +1824,38 @@ body.site-body > * {
   line-height: 0.86;
 }
 
-.explore-work__lead {
-  max-width: 30rem;
+.explore-work__discipline-heading {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 8vw, 8rem);
   margin: 0;
-  font-size: clamp(1rem, 1.35vw, 1.18rem);
-  line-height: 1.7;
-  color: rgba(31, 29, 26, 0.62);
+  font-family: var(--font-display), system-ui, sans-serif;
+  color: #1f1d1a;
+}
+
+.explore-work__discipline {
+  display: grid;
+  gap: clamp(0.35rem, 0.8vw, 0.65rem);
+}
+
+.explore-work__discipline span {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: clamp(0.84rem, 1.3vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  color: rgba(31, 29, 26, 0.48);
+}
+
+.explore-work__discipline strong {
+  display: block;
+  max-width: 13ch;
+  font-size: clamp(3.2rem, 7vw, 7.6rem);
+  font-weight: 500;
+  letter-spacing: -0.08em;
+  line-height: 0.86;
+  text-transform: uppercase;
 }
 
 .explore-work__grid {
@@ -1928,6 +1954,17 @@ body.site-body > * {
   font-weight: 500;
   letter-spacing: -0.075em;
   line-height: 0.9;
+}
+
+.explore-chapter__revival-wordmark {
+  width: min(100%, 23rem);
+  max-width: none;
+}
+
+.explore-chapter__revival-wordmark img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .explore-chapter--crm h3 {
@@ -2192,6 +2229,16 @@ body.site-body > * {
 @media (max-width: 640px) {
   .explore-work {
     padding-block: 4rem;
+  }
+
+  .explore-work__discipline-heading {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .explore-work__discipline strong {
+    max-width: 11ch;
+    font-size: clamp(3rem, 18vw, 5rem);
   }
 
   .explore-chapter,
