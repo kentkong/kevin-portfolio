@@ -979,19 +979,17 @@ body.site-body > * {
     background-image: linear-gradient(
       105deg,
       transparent 0%,
-      transparent 12%,
-      rgba(186, 228, 205, 0.58) 20%,
-      rgba(129, 212, 236, 0.88) 30%,
-      rgba(191, 181, 228, 0.82) 40%,
-      rgba(241, 148, 182, 0.84) 50%,
-      rgba(255, 180, 111, 0.86) 60%,
-      rgba(236, 223, 157, 0.74) 70%,
-      rgba(104, 216, 142, 0.68) 80%,
-      transparent 92%,
+      rgba(186, 228, 205, 0.48) 8%,
+      rgba(129, 212, 236, 0.88) 20%,
+      rgba(191, 181, 228, 0.82) 33%,
+      rgba(241, 148, 182, 0.84) 47%,
+      rgba(255, 180, 111, 0.86) 61%,
+      rgba(236, 223, 157, 0.74) 74%,
+      rgba(104, 216, 142, 0.68) 88%,
       transparent 100%
     );
-    background-size: 235% 100%;
-    background-position: 0% 50%;
+    background-size: 145% 100%;
+    background-position: -18% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1005,27 +1003,27 @@ body.site-body > * {
 
 @keyframes site-hero-soft-light {
   0% {
-    background-position: 0% 50%;
+    background-position: -18% 50%;
     opacity: 0.42;
     filter: blur(0.12px) saturate(1.05);
   }
   24% {
-    background-position: 34% 50%;
+    background-position: 18% 50%;
     opacity: 0.94;
     filter: blur(0.08px) saturate(1.35);
   }
   48% {
-    background-position: 68% 50%;
+    background-position: 52% 50%;
     opacity: 0.56;
     filter: blur(0.16px) saturate(1.12);
   }
   72% {
-    background-position: 100% 50%;
+    background-position: 86% 50%;
     opacity: 0.98;
     filter: blur(0.06px) saturate(1.45);
   }
   100% {
-    background-position: 128% 50%;
+    background-position: 118% 50%;
     opacity: 0.42;
     filter: blur(0.12px) saturate(1.05);
   }
