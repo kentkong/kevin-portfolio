@@ -135,11 +135,23 @@ function SelectedProjectArticle({
     >
       <div className="selected-project__copy">
         <p className="selected-project__discipline">{config.discipline}</p>
-        <h3 className="selected-project__title">
-          <Link href={project.liveUrl} target="_blank" rel="noreferrer">
-            {project.name}
-          </Link>
-        </h3>
+        <div className="selected-project__title-row">
+          <h3 className="selected-project__title">
+            <Link href={project.liveUrl} target="_blank" rel="noreferrer">
+              {project.name}
+            </Link>
+          </h3>
+          {project.slug === "gen-pulse" ? (
+            <Image
+              src={assetPath("/projects/gen-pulse/avast-norton-logo-lockup.png")}
+              alt="Avast and Norton logos"
+              width={918}
+              height={140}
+              className="selected-project__brand-lockup"
+              unoptimized
+            />
+          ) : null}
+        </div>
         <p className="selected-project__description">{config.description}</p>
         {project.slug === "gen-pulse" ? <GenPulseProjectDetails /> : null}
         <Link

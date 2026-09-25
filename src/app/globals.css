@@ -1449,6 +1449,20 @@ body.site-body > * {
   line-height: 0.88;
 }
 
+.selected-project__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.25rem;
+  align-items: center;
+}
+
+.selected-project__brand-lockup {
+  display: block;
+  width: clamp(10.5rem, 18vw, 16.5rem);
+  height: auto;
+  object-fit: contain;
+}
+
 .selected-project__title a,
 .selected-project__visual-link {
   color: inherit;
