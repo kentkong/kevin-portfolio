@@ -33,7 +33,7 @@ export function ExploreMyWork() {
               </div>
               <h3>Revival</h3>
               <p className="explore-chapter__proposition">
-                Visualise your motorcycle build before you build it.
+                Visualise your dream Triumph Desert Sled motorcycle build before you buy it.
               </p>
               <p>
                 AI-assisted Triumph Desert Sled product concept.

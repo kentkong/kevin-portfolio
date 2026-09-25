@@ -63,7 +63,7 @@ export function RevivalCaseStudy() {
           <p className="revival-case__eyebrow">UX / Product Design Case Study</p>
           <h1>REVIVAL</h1>
           <p className="revival-case__proposition">
-            Visualise your motorcycle build before you build it.
+            Visualise your dream Triumph Desert Sled motorcycle build before you buy it.
           </p>
           <p className="revival-case__intro">
             Revival explores how a rider could transform an ordinary classic Triumph into a

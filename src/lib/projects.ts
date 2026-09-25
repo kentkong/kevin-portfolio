@@ -37,7 +37,7 @@ export const projects: Project[] = [
   {
     slug: "revival",
     name: "REVIVAL",
-    tagline: "Visualise your motorcycle build before you build it.",
+    tagline: "Visualise your dream Triumph Desert Sled motorcycle build before you buy it.",
     headline: "Visualising a classic Triumph Desert Sled build before committing to the physical build.",
     summary:
       "A flagship UX and product design case study exploring how a rider could configure a classic Triumph Desert Sled visually before committing to parts, fabrication and workshop work.",
