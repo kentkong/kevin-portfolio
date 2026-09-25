@@ -980,12 +980,12 @@ body.site-body > * {
       105deg,
       transparent 0%,
       transparent 18%,
-      rgba(186, 228, 205, 0.2) 28%,
-      rgba(129, 212, 236, 0.42) 38%,
-      rgba(191, 181, 228, 0.38) 48%,
-      rgba(241, 148, 182, 0.34) 58%,
-      rgba(255, 180, 111, 0.34) 68%,
-      rgba(236, 223, 157, 0.28) 78%,
+      rgba(186, 228, 205, 0.1) 28%,
+      rgba(129, 212, 236, 0.22) 38%,
+      rgba(191, 181, 228, 0.2) 48%,
+      rgba(241, 148, 182, 0.18) 58%,
+      rgba(255, 180, 111, 0.18) 68%,
+      rgba(236, 223, 157, 0.14) 78%,
       transparent 90%,
       transparent 100%
     );
@@ -996,26 +996,26 @@ body.site-body > * {
     color: transparent;
     -webkit-text-fill-color: transparent;
     filter: blur(0.2px) saturate(1.02);
-    opacity: 0.4;
+    opacity: 0.18;
     pointer-events: none;
-    animation: site-hero-soft-light 18s ease-in-out infinite;
+    animation: site-hero-soft-light 28s ease-in-out infinite;
   }
 }
 
 @keyframes site-hero-soft-light {
   0% {
     background-position: 0% 50%;
-    opacity: 0.28;
+    opacity: 0.08;
     filter: blur(0.22px) saturate(1);
   }
   45% {
     background-position: 74% 50%;
-    opacity: 0.52;
-    filter: blur(0.18px) saturate(1.08);
+    opacity: 0.22;
+    filter: blur(0.2px) saturate(1.04);
   }
   100% {
     background-position: 106% 50%;
-    opacity: 0.28;
+    opacity: 0.08;
     filter: blur(0.22px) saturate(1);
   }
 }
