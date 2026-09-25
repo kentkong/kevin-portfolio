@@ -926,8 +926,11 @@ body.site-body > * {
 }
 
 .site-hero__concept--long .site-hero__concept-descriptor {
+  display: grid;
+  gap: 0.18rem;
   position: static;
   transform: none;
+  white-space: normal;
 }
 
 .site-hero__concept-descriptor {

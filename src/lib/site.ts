@@ -1,20 +1,20 @@
 export const site = {
   name: "Kevin Alan Mold",
-  title: "Kevin Alan Mold — Design, Technology, Customer Experience",
+  title: "Kevin Alan Mold — Design, Marketing & Technology",
   description:
-    "A multidisciplinary portfolio exploring the intersection of visual design, digital products, customer experience and technology.",
+    "A multidisciplinary portfolio spanning CRM and marketing, visual design, digital products, applications, customer experience and technology solutions for corporate teams.",
   email: "jovianuk@gmail.com",
   linkedin: "https://www.linkedin.com/in/kevinmold",
   github: "https://github.com/kentkong",
-  label: "Design · Technology · Customer Experience",
-  headline: "Design. Technology. Customer Experience.",
+  label: "Design · Marketing · Technology",
+  headline: "Design. Marketing. & Technology.",
   heroTagline: [
-    { label: "Design", descriptor: "Visual · UX/UI" },
-    { label: "Technology", descriptor: "AI · Automation · MarTech" },
-    { label: "Customer Experience", descriptor: "CRM · Lifecycle · Marketing" },
+    { label: "Design", descriptor: "UX · Product · Visual" },
+    { label: "Marketing", descriptor: "CRM · Lifecycle · MarTech" },
+    { label: "& Technology", descriptor: "AI · Automation · Technology\nApps · Operations · Customer Experience" },
   ],
   heroIntro:
-    "A multidisciplinary portfolio exploring the intersection of visual design, digital products, customer experience and technology.",
+    "A multidisciplinary portfolio spanning CRM & marketing, visual design, digital products, applications, customer experience and technology solutions for corporate teams.",
   heroExperience:
     "17 years across CRM & marketing, technology, operational leadership and design-led delivery.",
   aboutBio: [
