@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GenPulseCaseStudy } from "@/components/case-study/gen-pulse-case-study";
-import { RevivalCaseStudy } from "@/components/case-study/revival-case-study";
+import { RevivalGalleryCaseStudy } from "@/components/case-study/revival-gallery-case-study";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
 import type { Project } from "@/lib/projects";
@@ -32,7 +32,7 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
       <>
         <SiteNav />
         <main>
-          <RevivalCaseStudy />
+          <RevivalGalleryCaseStudy />
         </main>
         <SiteFooter />
       </>
