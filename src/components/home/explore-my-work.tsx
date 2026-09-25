@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { assetPath } from "@/lib/asset-path";
 
 const plannedRoutes = {
@@ -35,19 +36,24 @@ export function ExploreMyWork() {
                 Visualise your motorcycle build before you build it.
               </p>
               <p>
-                AI-assisted motorcycle customisation product concept.
+                AI-assisted Triumph Desert Sled product concept.
               </p>
-              <p className="explore-chapter__status">Product concept in development</p>
-              <p className="explore-chapter__route">Future destination: {plannedRoutes.ux}</p>
+              <p className="explore-chapter__status">Independent product concept / high-fidelity prototype</p>
+              <Link href="/projects/revival" className="explore-chapter__route">
+                View Revival case study ↗
+              </Link>
             </div>
 
             <div className="explore-chapter__visual explore-chapter__visual--revival">
-              <div className="revival-photo-slot">
-                <span>Motorcycle photograph area</span>
-                <p>Genuine Triumph imagery pending</p>
-              </div>
+              <Image
+                src={assetPath("/projects/revival/masters/01-tank-colour-decals.png")}
+                alt="Revival Triumph Desert Sled product concept"
+                fill
+                unoptimized
+                sizes="(max-width: 900px) 100vw, 42vw"
+              />
               <div className="revival-process-strip" aria-hidden="true">
-                {["Upload", "Identify", "Modify", "Compare"].map((item) => (
+                {["Original", "Configure", "Live Build", "Generate"].map((item) => (
                   <span key={item}>{item}</span>
                 ))}
               </div>

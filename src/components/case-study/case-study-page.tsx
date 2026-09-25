@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GenPulseCaseStudy } from "@/components/case-study/gen-pulse-case-study";
+import { RevivalCaseStudy } from "@/components/case-study/revival-case-study";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
 import type { Project } from "@/lib/projects";
@@ -20,6 +21,18 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
         <SiteNav />
         <main>
           <GenPulseCaseStudy />
+        </main>
+        <SiteFooter />
+      </>
+    );
+  }
+
+  if (slug === "revival") {
+    return (
+      <>
+        <SiteNav />
+        <main>
+          <RevivalCaseStudy />
         </main>
         <SiteFooter />
       </>

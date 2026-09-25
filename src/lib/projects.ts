@@ -35,6 +35,44 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "revival",
+    name: "REVIVAL",
+    tagline: "Visualise your motorcycle build before you build it.",
+    headline: "Visualising a classic Triumph Desert Sled build before committing to the physical build.",
+    summary:
+      "A flagship UX and product design case study exploring how a rider could configure a classic Triumph Desert Sled visually before committing to parts, fabrication and workshop work.",
+    overview: "",
+    liveUrl: "/projects/revival",
+    previewImageDesktop: "/projects/revival/masters/01-tank-colour-decals.png",
+    previewImagesDesktop: [
+      "/projects/revival/masters/01-tank-colour-decals.png",
+      "/projects/revival/masters/02-wheels-tyres.png",
+      "/projects/revival/masters/03-exhaust.png",
+      "/projects/revival/masters/04-accessories.png",
+    ],
+    previewRotationIntervalMs: 3600,
+    accent: "from-orange-500/20 via-stone-500/10 to-transparent",
+    themeColor: "#d94f1f",
+    challenge:
+      "Planning a custom classic motorcycle build is difficult because tank, tyres, stance, bars, seat, exhaust and paint choices are hard to judge in isolation.",
+    observation:
+      "Create a visual planning tool where the motorcycle remains central and component decisions accumulate into one coherent intended build.",
+    hypothesis:
+      "If riders can compare an original motorcycle with a cumulative live build, they can communicate design intent more clearly before physical workshop decisions begin.",
+    solution:
+      "Revival proposes a Triumph Desert Sled builder that separates deterministic component configuration from later generative visualisation, helping a rider build it before they build it.",
+    demoMode:
+      "Independent product concept and high-fidelity prototype. Not a launched production product.",
+    highlights: [
+      "Original → Live Build → Generated Revival journey",
+      "Eight-part Desert Sled configuration architecture",
+      "Build Tape specification language for communicating design decisions",
+      "Desert Modernism visual system inspired by Triumph workshop documentation and California desert racing",
+    ],
+    learned: [],
+    walkthrough: [],
+  },
+  {
     slug: "lifecycle-architecture-studio",
     name: "Lifecycle Architecture Studio",
     tagline: "Visualizing modern customer engagement and AI ecosystems.",
