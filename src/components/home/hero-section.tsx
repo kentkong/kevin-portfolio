@@ -11,26 +11,22 @@ export function HeroSection() {
         <span className="site-hero__ambient-field site-hero__ambient-field--warm" />
       </div>
       <div className="site-container">
-        <div className="site-hero__grid">
+        <div className="site-hero__grid site-hero__grid--paired">
           <div className="site-hero__copy">
             <div className="site-hero__headline-frame">
-              <h1 className="site-hero__statement" aria-label={site.headline}>
+              <h1 className="site-hero__statement site-hero__statement--paired" aria-label={site.headline}>
                 {site.heroTagline.map((item) => (
-                  <span key={item.label} className="site-hero__concept">
+                  <span key={item.label} className="site-hero__concept site-hero__concept--paired">
                     <span className="site-hero__concept-label">
                       <span className="site-hero__concept-text">{item.label}.</span>
                       <span className="site-hero__concept-light" aria-hidden="true">
                         {item.label}.
                       </span>
                     </span>
+                    <span className="site-hero__concept-descriptor">{item.descriptor}</span>
                   </span>
                 ))}
               </h1>
-            </div>
-            <div className="site-hero__focus-list" aria-label="Portfolio focus areas">
-              {site.heroFocusLines.map((line) => (
-                <span key={line}>{line}</span>
-              ))}
             </div>
             <p className="site-hero__intro">{site.heroIntro}</p>
             <div className="site-hero__actions" aria-label="Portfolio actions">
@@ -42,16 +38,6 @@ export function HeroSection() {
               </Link>
             </div>
           </div>
-
-          <aside className="site-hero__editorial-card" aria-label="Professional focus">
-            <p className="site-hero__card-label">Professional foundation</p>
-            <div className="site-hero__card-rule" aria-hidden />
-            <div className="site-hero__experience-mark">
-              <span>17</span>
-              <span>years professional experience</span>
-            </div>
-            <p className="site-hero__card-copy">{site.heroExperience}</p>
-          </aside>
         </div>
       </div>
     </section>

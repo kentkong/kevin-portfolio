@@ -778,6 +778,14 @@ body.site-body > * {
   max-width: 57rem;
 }
 
+.site-hero__grid--paired {
+  display: block;
+}
+
+.site-hero__grid--paired .site-hero__copy {
+  max-width: min(100%, 72rem);
+}
+
 .site-hero__headline-frame {
   width: max-content;
   max-width: calc(100vw - 4rem);
@@ -812,6 +820,19 @@ body.site-body > * {
   color: #1f1d1a;
 }
 
+.site-hero__grid--paired .site-hero__headline-frame {
+  width: 100%;
+  max-width: 72rem;
+  padding: clamp(1.25rem, 2vw, 1.9rem) clamp(1.25rem, 2.5vw, 2.25rem);
+}
+
+.site-hero__statement--paired {
+  gap: clamp(1.45rem, 2.4vw, 2.2rem);
+  font-size: clamp(2.45rem, 5.6vw, 5.6rem);
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
 .site-hero__concept,
 .site-hero__concept-label,
 .site-hero__concept-descriptor {
@@ -824,6 +845,25 @@ body.site-body > * {
   column-gap: clamp(1.25rem, 3.6vw, 4.25rem);
   align-items: center;
   max-width: 100%;
+}
+
+.site-hero__concept--paired {
+  grid-template-columns: minmax(13rem, 0.9fr) minmax(19rem, 1fr);
+  column-gap: clamp(2rem, 5vw, 6rem);
+  width: 100%;
+}
+
+.site-hero__concept--paired .site-hero__concept-descriptor {
+  justify-self: end;
+  align-self: center;
+  margin: 0;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: clamp(0.82rem, 1.05vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  line-height: 1.35;
+  text-align: right;
+  white-space: normal;
 }
 
 .site-hero__concept-label {
