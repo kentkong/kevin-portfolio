@@ -3701,6 +3701,650 @@ body.site-body > * {
   margin-top: 0.5rem;
 }
 
+/* Revival visual exploration */
+.revival-page {
+  overflow: hidden;
+  background: #f2eadc;
+  color: #1c1916;
+}
+
+.revival-shell {
+  width: 100%;
+  max-width: 88rem;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.revival-kicker,
+.revival-chapter,
+.revival-meta dt,
+.revival-meta dd,
+.revival-product-panel__eyebrow,
+.revival-product-panel__group span,
+.revival-product-screen__topbar,
+.revival-dna__list,
+.revival-note,
+.revival-product__note,
+.revival-photo + figcaption,
+.revival-origin__visual figcaption,
+.revival-dna__image figcaption,
+.revival-archive__image figcaption {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.revival-wordmark {
+  margin: 0 0 clamp(1.5rem, 4vw, 4rem);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: 0.48em;
+}
+
+.revival-kicker,
+.revival-chapter {
+  margin: 0;
+  font-size: 0.72rem;
+  color: rgba(28, 25, 22, 0.58);
+}
+
+.revival-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100svh - 4rem);
+  padding-block: clamp(5rem, 9vw, 8rem);
+  background:
+    linear-gradient(90deg, rgba(28, 25, 22, 0.06) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(28, 25, 22, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 78% 18%, rgba(178, 86, 39, 0.14), transparent 26rem),
+    #f2eadc;
+  background-size: 5.75rem 5.75rem, 5.75rem 5.75rem, auto, auto;
+}
+
+.revival-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(116deg, transparent 0 55%, rgba(28, 25, 22, 0.09) 55% 55.12%, transparent 55.12% 100%),
+    linear-gradient(160deg, transparent 0 80%, rgba(178, 86, 39, 0.24) 80% 80.12%, transparent 80.12% 100%);
+}
+
+.revival-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+}
+
+.revival-hero h1,
+.revival-archive h2,
+.revival-dna h2,
+.revival-origin h2,
+.revival-interface h2,
+.revival-product h2 {
+  margin: 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.085em;
+  line-height: 0.83;
+  text-transform: uppercase;
+}
+
+.revival-hero h1 {
+  font-size: clamp(4.75rem, 11vw, 11rem);
+}
+
+.revival-hero__lead {
+  max-width: 38rem;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  font-size: clamp(1.05rem, 1.45vw, 1.28rem);
+  line-height: 1.7;
+  color: rgba(28, 25, 22, 0.7);
+}
+
+.revival-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 38rem;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+}
+
+.revival-meta div {
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(28, 25, 22, 0.22);
+}
+
+.revival-meta dt,
+.revival-meta dd {
+  margin: 0;
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+.revival-meta dt {
+  color: rgba(28, 25, 22, 0.52);
+}
+
+.revival-meta dd {
+  margin-top: 0.45rem;
+  color: #1c1916;
+}
+
+.revival-photo {
+  min-height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.revival-photo--hero {
+  min-height: clamp(33rem, 46vw, 44rem);
+  border: 1px solid rgba(28, 25, 22, 0.16);
+  filter: contrast(1.05) saturate(0.82);
+}
+
+.revival-photo + figcaption,
+.revival-origin__visual figcaption,
+.revival-dna__image figcaption,
+.revival-archive__image figcaption {
+  margin-top: 0.85rem;
+  font-size: 0.62rem;
+  color: rgba(28, 25, 22, 0.5);
+}
+
+.revival-archive {
+  padding-block: clamp(6rem, 10vw, 10rem);
+  background:
+    linear-gradient(90deg, rgba(242, 234, 220, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(242, 234, 220, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 80% 22%, rgba(188, 76, 34, 0.2), transparent 28rem),
+    #11100d;
+  background-size: 5.75rem 5.75rem, 5.75rem 5.75rem, auto, auto;
+  color: #f2eadc;
+}
+
+.revival-archive__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 0.5fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.revival-archive h2,
+.revival-dna h2,
+.revival-origin h2,
+.revival-interface h2 {
+  margin-top: 1.2rem;
+  font-size: clamp(3.4rem, 8vw, 8.4rem);
+}
+
+.revival-archive .revival-chapter {
+  color: rgba(242, 234, 220, 0.58);
+}
+
+.revival-archive__statement {
+  align-self: end;
+  max-width: 31rem;
+}
+
+.revival-archive__statement p {
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.8;
+  color: rgba(242, 234, 220, 0.72);
+}
+
+.revival-archive__statement .revival-note {
+  margin-top: 1.5rem;
+  font-size: 0.64rem;
+  line-height: 1.6;
+  color: rgba(242, 234, 220, 0.45);
+}
+
+.revival-archive__image {
+  grid-column: 1 / 2;
+  margin: 0;
+}
+
+.revival-archive__image .revival-photo {
+  min-height: clamp(28rem, 43vw, 40rem);
+  filter: grayscale(1) contrast(1.15);
+  opacity: 0.92;
+}
+
+.revival-archive__image figcaption {
+  color: rgba(242, 234, 220, 0.5);
+}
+
+.revival-archive__type {
+  align-self: stretch;
+  display: grid;
+  align-content: space-between;
+  min-height: clamp(28rem, 43vw, 40rem);
+  padding: clamp(1.25rem, 3vw, 2.4rem);
+  border: 1px solid rgba(242, 234, 220, 0.18);
+  color: #f2eadc;
+}
+
+.revival-archive__type span {
+  display: block;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(1.8rem, 4vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.revival-archive__type strong {
+  display: block;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(6rem, 15vw, 16rem);
+  font-weight: 700;
+  letter-spacing: -0.12em;
+  line-height: 0.75;
+  color: #ba5126;
+}
+
+.revival-dna {
+  padding-block: clamp(6rem, 10vw, 9rem);
+  background: #ede0ca;
+}
+
+.revival-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(18rem, 0.4fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+  margin-bottom: clamp(3rem, 6vw, 5.5rem);
+}
+
+.revival-dna__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(18rem, 0.38fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: stretch;
+}
+
+.revival-dna__image {
+  margin: 0;
+}
+
+.revival-dna__image .revival-photo {
+  min-height: clamp(31rem, 45vw, 43rem);
+  filter: saturate(0.82) contrast(1.04);
+}
+
+.revival-dna__list {
+  display: grid;
+  align-content: start;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(28, 25, 22, 0.22);
+}
+
+.revival-dna__list li {
+  padding: 1.05rem 0;
+  border-bottom: 1px solid rgba(28, 25, 22, 0.18);
+  font-size: clamp(0.86rem, 1.2vw, 1.05rem);
+  color: rgba(28, 25, 22, 0.75);
+}
+
+.revival-origin {
+  padding-block: clamp(6rem, 10vw, 10rem);
+  background: #f7f1e6;
+}
+
+.revival-origin__grid {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.42fr) minmax(0, 0.58fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.revival-origin__copy p {
+  max-width: 38rem;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  line-height: 1.8;
+  color: rgba(28, 25, 22, 0.68);
+}
+
+.revival-origin blockquote {
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(28, 25, 22, 0.26);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(1.6rem, 3vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.revival-origin__visual {
+  margin: 0;
+}
+
+.revival-origin__visual .revival-photo {
+  min-height: clamp(27rem, 42vw, 39rem);
+  background-size: contain;
+  background-color: #1c1916;
+}
+
+.revival-interface {
+  padding-block: clamp(6rem, 10vw, 9rem);
+  background: #171512;
+  color: #f7f1e6;
+}
+
+.revival-interface__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(18rem, 0.45fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+}
+
+.revival-interface .revival-chapter {
+  color: rgba(247, 241, 230, 0.58);
+}
+
+.revival-interface__intro p:not(.revival-chapter) {
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.8;
+  color: rgba(247, 241, 230, 0.72);
+}
+
+.revival-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: clamp(3rem, 7vw, 6rem) 0 0;
+  padding: 1px;
+  background: rgba(247, 241, 230, 0.18);
+  list-style: none;
+}
+
+.revival-flow li {
+  min-height: 8rem;
+  padding: 1.1rem;
+  background: #171512;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: rgba(247, 241, 230, 0.76);
+}
+
+.revival-product {
+  padding-block: clamp(6rem, 10vw, 10rem);
+  background:
+    linear-gradient(90deg, rgba(28, 25, 22, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(28, 25, 22, 0.035) 1px, transparent 1px),
+    #f3eadc;
+  background-size: 5.75rem 5.75rem;
+}
+
+.revival-product__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.revival-product h2 {
+  font-size: clamp(3rem, 7vw, 7.4rem);
+}
+
+.revival-product-screen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
+  grid-template-rows: auto minmax(30rem, 1fr);
+  border: 1px solid rgba(28, 25, 22, 0.18);
+  background: #11100d;
+  color: #f7f1e6;
+}
+
+.revival-product-screen__topbar {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid rgba(247, 241, 230, 0.12);
+  font-size: 0.68rem;
+}
+
+.revival-product-screen__canvas {
+  position: relative;
+  min-height: 34rem;
+  overflow: hidden;
+}
+
+.revival-photo--product {
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  filter: saturate(0.72) contrast(1.06);
+}
+
+.revival-product-screen__canvas::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(17, 16, 13, 0.08), transparent 18%, transparent 72%, rgba(17, 16, 13, 0.42)),
+    linear-gradient(180deg, rgba(17, 16, 13, 0.08), transparent 65%, rgba(17, 16, 13, 0.52));
+}
+
+.revival-hotspot {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.34rem 0.48rem;
+  border: 1px solid rgba(247, 241, 230, 0.58);
+  background: rgba(17, 16, 13, 0.66);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.revival-hotspot--tank {
+  left: 44%;
+  top: 35%;
+}
+
+.revival-hotspot--seat {
+  left: 25%;
+  top: 42%;
+}
+
+.revival-hotspot--tyre {
+  right: 12%;
+  bottom: 16%;
+}
+
+.revival-hotspot--engine {
+  left: 43%;
+  bottom: 26%;
+  border-color: rgba(186, 81, 38, 0.7);
+  color: #f1b18c;
+}
+
+.revival-product-panel {
+  padding: clamp(1.25rem, 2vw, 1.8rem);
+  border-left: 1px solid rgba(247, 241, 230, 0.12);
+  background: #15130f;
+}
+
+.revival-product-panel__eyebrow {
+  margin: 0;
+  font-size: 0.62rem;
+  color: rgba(247, 241, 230, 0.45);
+}
+
+.revival-product-panel h3 {
+  margin: 0.8rem 0 1.2rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.revival-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.revival-actions button,
+.revival-generate {
+  border: 1px solid rgba(247, 241, 230, 0.18);
+  background: transparent;
+  color: #f7f1e6;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.revival-actions button {
+  padding: 0.72rem 0.55rem;
+}
+
+.revival-actions .revival-actions__active {
+  border-color: #dfc99d;
+  background: #dfc99d;
+  color: #15130f;
+}
+
+.revival-product-panel__group {
+  margin-top: 1.6rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(247, 241, 230, 0.12);
+}
+
+.revival-product-panel__group span {
+  display: block;
+  font-size: 0.62rem;
+  color: rgba(247, 241, 230, 0.45);
+}
+
+.revival-product-panel__group p {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(247, 241, 230, 0.74);
+}
+
+.revival-product-panel__group ul {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revival-product-panel__group li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: rgba(247, 241, 230, 0.74);
+}
+
+.revival-product-panel__group strong {
+  color: #f7f1e6;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.revival-generate {
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 0.95rem 1rem;
+  background: #ba5126;
+  border-color: #ba5126;
+}
+
+.revival-product__note {
+  max-width: 46rem;
+  margin: 1.25rem 0 0;
+  font-size: 0.62rem;
+  line-height: 1.6;
+  color: rgba(28, 25, 22, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .revival-hero__grid,
+  .revival-archive__grid,
+  .revival-section-heading,
+  .revival-dna__layout,
+  .revival-origin__grid,
+  .revival-interface__intro,
+  .revival-product-screen {
+    grid-template-columns: 1fr;
+  }
+
+  .revival-product-panel {
+    border-top: 1px solid rgba(247, 241, 230, 0.12);
+    border-left: none;
+  }
+
+  .revival-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .revival-shell {
+    padding-inline: 1rem;
+  }
+
+  .revival-meta,
+  .revival-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .revival-hero h1 {
+    font-size: clamp(4rem, 20vw, 5.4rem);
+  }
+
+  .revival-archive h2,
+  .revival-dna h2,
+  .revival-origin h2,
+  .revival-interface h2,
+  .revival-product h2 {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .revival-photo,
+  .revival-photo--hero,
+  .revival-product-screen__canvas {
+    min-height: 24rem;
+  }
+}
+
 /* Gen Pulse narrative case study */
 .gp-story-hero {
   border-bottom: 1px solid var(--border);
