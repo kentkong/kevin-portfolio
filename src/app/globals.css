@@ -1545,11 +1545,18 @@ body.site-body > * {
 
 .selected-visual--gen-pulse {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(8rem, 15vw, 12rem);
+  grid-template-columns: minmax(0, 1fr) clamp(7rem, 11vw, 9.5rem);
   gap: clamp(1rem, 2.5vw, 2rem);
-  align-items: end;
-  min-height: clamp(28rem, 45vw, 42rem);
+  align-items: center;
+  min-height: auto;
   padding: clamp(1rem, 3vw, 3rem) 0;
+}
+
+.selected-visual__laptops {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.6rem);
+  min-width: 0;
+  width: 100%;
 }
 
 .selected-visual__laptop {

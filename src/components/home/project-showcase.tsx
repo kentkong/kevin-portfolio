@@ -206,17 +206,28 @@ function GenPulseProjectDetails() {
 function GenPulseVisual({ project }: { project: Project }) {
   return (
     <div className="selected-visual selected-visual--gen-pulse">
-      <div className="selected-visual__laptop">
+      <div className="selected-visual__laptops">
         <LaptopFrame
           src={project.previewImageDesktop}
           alt="Gen Pulse desktop operational dashboard"
-          label="Desktop"
+          label="Dark mode desktop"
           fallbackTitle={project.name}
           fallbackCopy={project.tagline}
           accentClass={project.accent}
           priority
           imageFit="cover"
           screenBg="#0b1020"
+        />
+        <LaptopFrame
+          src={project.previewImageDesktopLight}
+          alt="Gen Pulse light mode desktop operational dashboard"
+          label="Light mode desktop"
+          fallbackTitle={project.name}
+          fallbackCopy={project.tagline}
+          accentClass={project.accent}
+          priority
+          imageFit="cover"
+          screenBg="#f4f6fb"
         />
       </div>
       <div className="selected-visual__phone">
