@@ -1457,8 +1457,12 @@ body.site-body > * {
 }
 
 .selected-project__brand-lockup {
+  position: absolute;
+  top: clamp(3.4rem, 4.6vw, 4.8rem);
+  right: clamp(2rem, 4vw, 3rem);
+  z-index: 3;
   display: block;
-  width: clamp(10.5rem, 18vw, 16.5rem);
+  width: clamp(14rem, 24vw, 22rem);
   height: auto;
   object-fit: contain;
 }
@@ -1724,6 +1728,12 @@ body.site-body > * {
 
   .selected-project__description {
     max-width: 38rem;
+  }
+
+  .selected-project__brand-lockup {
+    position: static;
+    width: min(18rem, 72vw);
+    margin: -0.25rem 0 0;
   }
 
   .selected-visual--pulse-ops {
