@@ -15,31 +15,22 @@ export function HeroSection() {
           <div className="site-hero__copy">
             <div className="site-hero__headline-frame">
               <h1 className="site-hero__statement" aria-label={site.headline}>
-                {site.heroTagline.map((item) => {
-                  const isLongConcept = item.label === "& Technology";
-
-                  return (
-                    <span
-                      key={item.label}
-                      className={`site-hero__concept${
-                        isLongConcept ? " site-hero__concept--long" : ""
-                      }`}
-                    >
-                      <span className="site-hero__concept-label">
-                        <span className="site-hero__concept-text">{item.label}.</span>
-                        <span className="site-hero__concept-light" aria-hidden="true">
-                          {item.label}.
-                        </span>
-                      </span>
-                      <span className="site-hero__concept-descriptor">
-                        {item.descriptor.split("\n").map((line) => (
-                          <span key={line}>{line}</span>
-                        ))}
+                {site.heroTagline.map((item) => (
+                  <span key={item.label} className="site-hero__concept">
+                    <span className="site-hero__concept-label">
+                      <span className="site-hero__concept-text">{item.label}.</span>
+                      <span className="site-hero__concept-light" aria-hidden="true">
+                        {item.label}.
                       </span>
                     </span>
-                  );
-                })}
+                  </span>
+                ))}
               </h1>
+            </div>
+            <div className="site-hero__focus-list" aria-label="Portfolio focus areas">
+              {site.heroFocusLines.map((line) => (
+                <span key={line}>{line}</span>
+              ))}
             </div>
             <p className="site-hero__intro">{site.heroIntro}</p>
             <div className="site-hero__actions" aria-label="Portfolio actions">

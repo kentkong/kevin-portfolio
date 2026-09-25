@@ -9,9 +9,15 @@ export const site = {
   label: "Design · Marketing · Technology",
   headline: "Design. Marketing. & Technology.",
   heroTagline: [
-    { label: "Design", descriptor: "UX · Product · Visual" },
-    { label: "Marketing", descriptor: "CRM · Lifecycle · MarTech" },
-    { label: "& Technology", descriptor: "AI · Automation · Technology\nApps · Operations · Customer Experience" },
+    { label: "Design" },
+    { label: "Marketing" },
+    { label: "& Technology" },
+  ],
+  heroFocusLines: [
+    "UX · PRODUCT · VISUAL",
+    "CRM · LIFECYCLE · MARTECH",
+    "AI · AUTOMATION · TECHNOLOGY",
+    "APPS · OPERATIONS · CUSTOMER EXPERIENCE",
   ],
   heroIntro:
     "A multidisciplinary portfolio spanning CRM & marketing, visual design, digital products, applications, customer experience and technology solutions for corporate teams.",

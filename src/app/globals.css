@@ -952,6 +952,19 @@ body.site-body > * {
   content: none;
 }
 
+.site-hero__focus-list {
+  display: grid;
+  gap: 0.35rem;
+  margin: clamp(1.3rem, 2.4vw, 2rem) 0 0;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: clamp(0.86rem, 1.15vw, 1.05rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: #24211e;
+}
+
 .site-hero__signature {
   margin: 0 0 clamp(1rem, 1.8vw, 1.6rem);
   font-family: var(--font-display), system-ui, sans-serif;
