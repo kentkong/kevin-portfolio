@@ -1545,10 +1545,10 @@ body.site-body > * {
 
 .selected-visual--gen-pulse {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(7rem, 11vw, 9.5rem);
-  gap: clamp(1rem, 2.5vw, 2rem);
+  grid-template-columns: minmax(0, 1fr) clamp(6.75rem, 10vw, 8.75rem);
+  gap: clamp(1rem, 2vw, 1.6rem);
   align-items: center;
-  min-height: auto;
+  min-height: clamp(26rem, 42vw, 38rem);
   padding: clamp(1rem, 3vw, 3rem) 0;
 }
 
