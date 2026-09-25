@@ -1468,6 +1468,61 @@ body.site-body > * {
   border-bottom: 1px solid currentColor;
 }
 
+.selected-project__details {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.35rem;
+}
+
+.selected-project__details > div {
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(31, 29, 26, 0.12);
+}
+
+.selected-project__details span {
+  display: block;
+  margin-bottom: 0.42rem;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: #756f66;
+}
+
+.selected-project__details p,
+.selected-project__details li {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.58;
+  color: #5f584f;
+}
+
+.selected-project__capabilities ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.selected-project__capabilities li {
+  position: relative;
+  padding-left: 0.9rem;
+}
+
+.selected-project__capabilities li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 0.32rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.48;
+}
+
 .selected-project__visual-link {
   display: block;
 }
@@ -1489,20 +1544,25 @@ body.site-body > * {
 }
 
 .selected-visual--gen-pulse {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(8rem, 15vw, 12rem);
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: end;
   min-height: clamp(28rem, 45vw, 42rem);
   padding: clamp(1rem, 3vw, 3rem) 0;
 }
 
 .selected-visual__laptop {
-  width: min(58rem, 92%);
+  min-width: 0;
+  width: 100%;
 }
 
 .selected-visual__phone {
-  position: absolute;
-  right: 0;
-  bottom: clamp(0.5rem, 4vw, 3rem);
+  position: relative;
+  right: auto;
+  bottom: auto;
   z-index: 2;
-  width: clamp(8.5rem, 16vw, 13rem);
+  width: 100%;
 }
 
 .selected-visual--browser {
@@ -1665,6 +1725,7 @@ body.site-body > * {
 
   .selected-visual--gen-pulse {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 1rem;
     min-height: auto;
     padding: 0;

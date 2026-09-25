@@ -18,8 +18,7 @@ const selectedProjects: SelectedProject[] = [
   {
     slug: "gen-pulse",
     discipline: "Operations / Internal Product / Digital Experience",
-    description:
-      "A real-time operational command centre for delivery health, team presence, workload, blockers and business reporting.",
+    description: "Real-time operational visibility for modern teams.",
   },
   {
     slug: "lifecycle-architecture-studio",
@@ -46,6 +45,15 @@ const sprintStates = [
   { label: "Blueprint", image: "/projects/sprintiq/blueprint.png" },
   { label: "Review", image: "/projects/sprintiq/review.png" },
   { label: "Ready", image: "/projects/sprintiq/ready.png" },
+];
+
+const genPulseCapabilities = [
+  "Unified operational view across core business systems",
+  "Desktop and mobile real-time visibility",
+  "Team presence, PTO, availability and coverage",
+  "KPIs, delivery health, blockers, risks and SLAs",
+  "Views for teams, managers and operational leaders",
+  "Reduced manual reporting and status updates",
 ];
 
 function getProject(slug: SelectedProject["slug"]) {
@@ -133,6 +141,7 @@ function SelectedProjectArticle({
           </Link>
         </h3>
         <p className="selected-project__description">{config.description}</p>
+        {project.slug === "gen-pulse" ? <GenPulseProjectDetails /> : null}
         <Link
           href={project.liveUrl}
           target="_blank"
@@ -153,6 +162,44 @@ function SelectedProjectArticle({
         {visual}
       </Link>
     </article>
+  );
+}
+
+function GenPulseProjectDetails() {
+  return (
+    <div className="selected-project__details selected-project__details--gen-pulse">
+      <div>
+        <span>The challenge</span>
+        <p>
+          Operational data is spread across Jira, Slack, Workday, reporting platforms and
+          spreadsheets, making it difficult to maintain a clear view of delivery, capacity and
+          performance.
+        </p>
+      </div>
+      <div>
+        <span>The idea</span>
+        <p>
+          Create a single operational command centre giving teams and leaders a live view of what
+          matters most.
+        </p>
+      </div>
+      <div>
+        <span>The solution</span>
+        <p>
+          Gen Pulse brings together delivery health, team presence, workload, blockers and
+          operational KPIs in one desktop and mobile experience, creating a shared view of execution
+          without relying on status meetings or manual reporting.
+        </p>
+      </div>
+      <div className="selected-project__capabilities">
+        <span>Key capabilities</span>
+        <ul>
+          {genPulseCapabilities.map((capability) => (
+            <li key={capability}>{capability}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
 
