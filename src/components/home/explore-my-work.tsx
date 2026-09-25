@@ -39,12 +39,12 @@ export function ExploreMyWork() {
                 AI-assisted Triumph Desert Sled product concept.
               </p>
               <p className="explore-chapter__status">Independent product concept / high-fidelity prototype</p>
-              <Link href="/projects/revival" className="explore-chapter__route">
-                View Revival case study ↗
-              </Link>
             </div>
 
             <div className="explore-chapter__visual explore-chapter__visual--revival">
+              <Link href="/projects/revival" className="revival-case-study-pulse">
+                View Revival case study ↗
+              </Link>
               <Image
                 src={assetPath("/projects/revival/masters/01-tank-colour-decals.png")}
                 alt="Revival Triumph Desert Sled product concept"
