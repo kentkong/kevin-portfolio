@@ -11,19 +11,8 @@ const plannedRoutes = {
 
 export function ExploreMyWork() {
   return (
-    <section id="explore-work" className="explore-work" aria-labelledby="explore-work-title">
+    <section id="explore-work" className="explore-work" aria-label="Explore my work">
       <div className="site-container explore-work__container">
-        <header className="explore-work__intro">
-          <p className="explore-work__eyebrow">Section 02 / Explore My Work</p>
-          <h2 id="explore-work-title" className="explore-work__title">
-            Products, systems and customer experiences.
-          </h2>
-          <p className="explore-work__lead">
-            A focused selection of UX concepts, lifecycle CRM systems, AI-assisted workflows and
-            visual design foundations.
-          </p>
-        </header>
-
         <div className="explore-work__grid" aria-label="Portfolio work disciplines">
           <article className="explore-chapter explore-chapter--ux">
             <div className="explore-chapter__copy">
