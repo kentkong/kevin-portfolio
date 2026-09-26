@@ -133,16 +133,6 @@ function SelectedProjectArticle({
     <article
       className={`selected-project selected-project--${config.slug} selected-project--${variant}`}
     >
-      {project.slug === "gen-pulse" ? (
-        <Image
-          src={assetPath("/projects/gen-pulse/avast-norton-logo-lockup.png")}
-          alt="Avast and Norton logos"
-          width={918}
-          height={140}
-          className="selected-project__brand-lockup"
-          unoptimized
-        />
-      ) : null}
       <div className="selected-project__copy">
         <p className="selected-project__discipline">{config.discipline}</p>
         <div className="selected-project__title-row">
@@ -153,6 +143,16 @@ function SelectedProjectArticle({
           </h3>
         </div>
         <p className="selected-project__description">{config.description}</p>
+        {project.slug === "gen-pulse" ? (
+          <Image
+            src={assetPath("/projects/gen-pulse/avast-norton-logo-lockup.png")}
+            alt="Avast and Norton logos"
+            width={918}
+            height={140}
+            className="selected-project__brand-lockup"
+            unoptimized
+          />
+        ) : null}
         <Link
           href={project.liveUrl}
           target="_blank"
