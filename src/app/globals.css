@@ -2506,18 +2506,20 @@ body.site-body > * {
 }
 
 .selected-project__discipline {
+  width: fit-content;
   margin: 0 0 1rem;
+  padding-bottom: 0.38rem;
+  border-bottom: 1px solid rgba(31, 29, 26, 0.28);
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 0.72rem;
+  font-size: clamp(0.86rem, 1.15vw, 1.05rem);
   font-weight: 700;
   letter-spacing: 0.13em;
   line-height: 1.45;
   text-transform: uppercase;
-  color: #756f66;
+  color: #1f1d1a;
 }
 
 .selected-project--revival .selected-project__discipline {
-  font-size: clamp(0.86rem, 1.15vw, 1.05rem);
   color: #1f1d1a;
 }
 
@@ -2528,6 +2530,7 @@ body.site-body > * {
   font-weight: 500;
   letter-spacing: -0.075em;
   line-height: 0.88;
+  color: #171512;
 }
 
 .selected-project__title-row {
@@ -2559,7 +2562,7 @@ body.site-body > * {
   margin: 1.25rem 0 0;
   font-size: 1rem;
   line-height: 1.7;
-  color: #5f584f;
+  color: #443d35;
 }
 
 .selected-project__link {
@@ -2590,12 +2593,12 @@ body.site-body > * {
   display: block;
   margin-bottom: 0.42rem;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.13em;
   line-height: 1.25;
   text-transform: uppercase;
-  color: #756f66;
+  color: #1f1d1a;
 }
 
 .selected-project__details p,
@@ -2603,7 +2606,7 @@ body.site-body > * {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.58;
-  color: #5f584f;
+  color: #443d35;
 }
 
 .selected-project__capabilities ul {
@@ -2659,8 +2662,7 @@ body.site-body > * {
 
 .selected-visual .device-laptop__lid,
 .selected-visual .device-phone__shell,
-.selected-browser,
-.selected-sprint-card {
+.selected-browser {
   box-shadow: 0 26px 70px rgba(31, 29, 26, 0.16);
 }
 
@@ -2725,86 +2727,12 @@ body.site-body > * {
 }
 
 .selected-visual--pulse-ops {
-  min-height: clamp(24rem, 38vw, 34rem);
+  min-height: clamp(22rem, 36vw, 32rem);
   padding-block: clamp(1rem, 2.5vw, 2.5rem);
 }
 
-.selected-visual--pulse-ops::before {
-  content: "";
-  position: absolute;
-  right: 12%;
-  top: 48%;
-  width: 30%;
-  height: 1px;
-  background: rgba(31, 29, 26, 0.14);
-}
-
-.selected-visual__pulse-laptop {
-  position: relative;
-  z-index: 1;
-  min-width: 0;
-  width: min(53rem, 84%);
-}
-
-.selected-visual__stack {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  z-index: 2;
-  width: clamp(13rem, 22vw, 18rem);
-  transform: translateY(-50%);
-}
-
-.selected-visual__stack .stack-flow {
-  background: rgba(255, 252, 246, 0.82);
-  border: 1px solid rgba(31, 29, 26, 0.12);
-  color: #1f1d1a;
-  box-shadow: 0 22px 60px rgba(31, 29, 26, 0.1);
-}
-
 .selected-visual--sprintiq {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(0.65rem, 1.15vw, 0.9rem);
-  align-items: start;
-  padding-block: clamp(0.5rem, 1.5vw, 1rem);
-}
-
-.selected-sprint-card {
-  position: relative;
-  align-self: start;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  margin-top: 0 !important;
-  overflow: hidden;
-  border: 1px solid rgba(31, 29, 26, 0.14);
-  background: #fffdf8;
-  transform: translateY(0) !important;
-}
-
-.selected-sprint-card__label {
-  margin: 0;
-  padding: 0.7rem 0.8rem;
-  border-bottom: 1px solid rgba(31, 29, 26, 0.1);
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #5f584f;
-}
-
-.selected-sprint-card__screen {
-  position: relative;
-  flex: 1 0 auto;
-  height: clamp(10.5rem, 17vw, 15rem);
-  overflow: hidden;
-  background: #f5f5f5;
-}
-
-.selected-sprint-card__image {
-  object-fit: cover;
+  padding-block: clamp(1rem, 2.5vw, 2.5rem);
 }
 
 @media (max-width: 1024px) {
@@ -2832,23 +2760,8 @@ body.site-body > * {
   }
 
   .selected-visual--pulse-ops {
-    display: grid;
     min-height: auto;
     padding-block: 0;
-  }
-
-  .selected-visual__stack {
-    position: relative;
-    right: auto;
-    top: auto;
-    width: min(30rem, 100%);
-    max-width: 30rem;
-    margin: 0;
-    transform: none;
-  }
-
-  .selected-visual--pulse-ops::before {
-    display: none;
   }
 }
 
@@ -2880,16 +2793,7 @@ body.site-body > * {
   }
 
   .selected-visual--sprintiq {
-    grid-template-columns: 1fr;
-  }
-
-  .selected-sprint-card {
-    transform: none;
-  }
-
-  .selected-sprint-card__screen {
-    height: auto;
-    aspect-ratio: 16 / 10;
+    padding-block: 0;
   }
 }
 

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { PulseOpsStackFlow } from "@/components/home/pulse-ops-stack-flow";
 import { LaptopFrame, PhoneFrame } from "@/components/ui/device-frame";
 import { RotatingDeviceScreen } from "@/components/ui/rotating-device-screen";
 import { assetPath } from "@/lib/asset-path";
@@ -43,13 +42,6 @@ const selectedProjects: SelectedProject[] = [
     description:
       "A workflow concept that turns business objectives into structured delivery plans, milestones, risks and next steps.",
   },
-];
-
-const sprintStates = [
-  { label: "Objective", image: "/projects/sprintiq/objective.png" },
-  { label: "Blueprint", image: "/projects/sprintiq/blueprint.png" },
-  { label: "Review", image: "/projects/sprintiq/review.png" },
-  { label: "Ready", image: "/projects/sprintiq/ready.png" },
 ];
 
 const genPulseCapabilities = [
@@ -299,23 +291,18 @@ function LifecycleVisual({ project }: { project: Project }) {
 function PulseOpsVisual({ project }: { project: Project }) {
   return (
     <div className="selected-visual selected-visual--pulse-ops">
-      <div className="selected-visual__pulse-laptop">
-        <LaptopFrame
-          slides={project.previewImagesDesktop}
-          rotationIntervalMs={project.previewRotationIntervalMs}
-          alt="Pulse-Ops AI operational intelligence screens"
-          label="Desktop"
-          fallbackTitle={project.name}
-          fallbackCopy={project.tagline}
-          accentClass={project.accent}
-          priority
-          imageFit="cover"
-          screenBg="#f4f4f4"
-        />
-      </div>
-      <div className="selected-visual__stack">
-        <PulseOpsStackFlow />
-      </div>
+      <LaptopFrame
+        slides={project.previewImagesDesktop}
+        rotationIntervalMs={project.previewRotationIntervalMs}
+        alt="Pulse-Ops AI operational intelligence screens"
+        label="Desktop"
+        fallbackTitle={project.name}
+        fallbackCopy={project.tagline}
+        accentClass={project.accent}
+        priority
+        imageFit="cover"
+        screenBg="#f4f4f4"
+      />
     </div>
   );
 }
@@ -323,25 +310,18 @@ function PulseOpsVisual({ project }: { project: Project }) {
 function SprintIqVisual({ project }: { project: Project }) {
   return (
     <div className="selected-visual selected-visual--sprintiq">
-      {sprintStates.map((state) => (
-        <div
-          key={state.label}
-          className="selected-sprint-card"
-        >
-          <p className="selected-sprint-card__label">{state.label}</p>
-          <div className="selected-sprint-card__screen">
-            <Image
-              src={assetPath(state.image)}
-              alt={`${project.name} ${state.label} workflow screen`}
-              fill
-              loading="eager"
-              unoptimized
-              sizes="(max-width: 768px) 78vw, 34vw"
-              className="selected-sprint-card__image"
-            />
-          </div>
-        </div>
-      ))}
+      <LaptopFrame
+        slides={project.previewImagesDesktop}
+        rotationIntervalMs={project.previewRotationIntervalMs}
+        alt="SprintIQ planning workflow screens"
+        label="Desktop"
+        fallbackTitle={project.name}
+        fallbackCopy={project.tagline}
+        accentClass={project.accent}
+        priority
+        imageFit="cover"
+        screenBg="#f4f7fb"
+      />
     </div>
   );
 }
