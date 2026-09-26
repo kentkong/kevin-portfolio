@@ -13,6 +13,13 @@ const HEIGHT = 1000;
 const CAPTURES = [
   { theme: "dark", team: "avast", filename: "gen-pulse-desktop-dark.png", mobile: false },
   { theme: "light", team: "email-norton", filename: "gen-pulse-desktop-light.png", mobile: false },
+  {
+    theme: "dark",
+    team: "avast",
+    filename: "gen-pulse-mobile-dark.png",
+    mobile: true,
+    metaFilename: "gen-pulse-mobile-dark.meta.json",
+  },
 ];
 
 const MOBILE_WIDTH = 393;

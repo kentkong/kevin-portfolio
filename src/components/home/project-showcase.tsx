@@ -256,7 +256,7 @@ function GenPulseVisual({ project }: { project: Project }) {
       </div>
       <div className="selected-visual__phone">
         <PhoneFrame
-          src="/projects/gen-pulse-mobile-light.png"
+          src="/projects/gen-pulse-mobile-dark.png"
           alt="Gen Pulse mobile experience"
           label="Mobile"
           fallbackTitle={project.name}
