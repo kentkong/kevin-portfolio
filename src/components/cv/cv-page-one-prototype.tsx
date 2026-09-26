@@ -135,10 +135,6 @@ export function CvPageOnePrototype() {
                 <br />
                 &amp; Design.
               </h1>
-              <p className="cv-web-hero__pillars">
-                Marketing &amp; Lifecycle CRM · Operational Management &amp; Leadership · UX/UI
-                &amp; Visual Design
-              </p>
             </div>
             <div className="cv-web-hero__aside">
               <div className="cv-web-hero__metadata" aria-label="CV summary metadata">
