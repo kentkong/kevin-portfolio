@@ -82,12 +82,8 @@ export function ProjectShowcase() {
         <header className="selected-work__intro">
           <p className="selected-work__eyebrow">Section 03</p>
           <h2 id="selected-work-title" className="selected-work__title">
-            Selected Work
+            Applications &amp; Case Studies
           </h2>
-          <p className="selected-work__lead">
-            A focused selection of digital products, lifecycle systems and AI-assisted workflows
-            that give visual evidence to the portfolio positioning.
-          </p>
         </header>
 
         <div className="selected-work__projects">
@@ -232,6 +228,7 @@ function RevivalVisual({ project }: { project: Project }) {
   return (
     <div className="selected-visual selected-visual--revival">
       <div className="selected-revival-frame">
+        <p className="selected-revival-frame__label">UX / Product Design / Visual Design</p>
         <Image
           src={assetPath(project.previewImageDesktop)}
           alt="Revival Triumph Desert Sled product concept"
