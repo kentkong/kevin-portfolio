@@ -766,17 +766,6 @@ body.site-body > * {
   align-items: start;
 }
 
-.cv-document__identity p:last-child {
-  margin: 4mm 0 0;
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  line-height: 1.4;
-  text-transform: uppercase;
-  color: var(--cv-muted);
-}
-
 .cv-document__kicker {
   margin-bottom: 4mm;
   font-size: 1rem;
@@ -801,21 +790,8 @@ body.site-body > * {
   text-transform: uppercase;
 }
 
-.cv-document__positioning p,
-.cv-document__descriptor {
+.cv-document__positioning p {
   margin: 0;
-}
-
-.cv-document__descriptor {
-  max-width: 29rem;
-  margin-top: 4mm;
-  font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.62rem;
-  font-weight: 500;
-  letter-spacing: normal;
-  line-height: 1.35;
-  text-transform: none;
-  color: var(--cv-muted);
 }
 
 .cv-document__capabilities {

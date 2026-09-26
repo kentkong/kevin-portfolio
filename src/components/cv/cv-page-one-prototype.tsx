@@ -18,17 +18,6 @@ const capabilityGroups = [
   },
 ];
 
-const proofPoints = [
-  {
-    value: "17 YEARS",
-    label: "International Corporate Experience",
-  },
-  {
-    value: "BA (HONS)",
-    label: "Graphic & Web Design — 2:1",
-  },
-];
-
 const genDigitalBullets = [
   "Lead global lifecycle marketing operations supporting Norton customer engagement programmes reaching millions of customers worldwide.",
   "Lead, hire and develop distributed teams of up to 20 specialists, with responsibility for onboarding, performance management, resource planning and capability development.",
@@ -274,10 +263,6 @@ export function CvDocumentPageOne() {
             <p>CRM • Marketing • Customer Experience</p>
             <p>UX/UI • Product Design • AI &amp; Automation</p>
           </div>
-          <p className="cv-document__descriptor">
-            17 years in enterprise technology &amp; customer experience / BA (Hons) Graphic &amp;
-            Web Design / UX/UI &amp; Digital Design
-          </p>
         </div>
         <p className="cv-document__contact">
           Prague / Czech Republic
@@ -297,15 +282,6 @@ export function CvDocumentPageOne() {
             {group.items.map((item) => (
               <span key={item}>{item}</span>
             ))}
-          </div>
-        ))}
-      </div>
-
-      <div className="cv-document__proof" aria-label="Professional proof points">
-        {proofPoints.map((point) => (
-          <div key={point.value}>
-            <strong>{point.value}</strong>
-            <span>{point.label}</span>
           </div>
         ))}
       </div>
@@ -458,7 +434,7 @@ export function CvDocumentPageTwo() {
         </div>
         <div className="cv-additional">
           <span>English — Native | Czech — A2 (actively developing)</span>
-          <span>British citizen and Czech permanent resident, with over 16 years of international professional experience in Prague.</span>
+          <span>British citizen and Czech permanent resident.</span>
         </div>
       </section>
     </article>
