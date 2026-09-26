@@ -260,8 +260,10 @@ export function CvDocumentPageOne() {
         <div className="cv-document__identity">
           <h2>Kevin Alan Mold</h2>
           <div className="cv-document__positioning">
-            <p>CRM • Marketing • Customer Experience</p>
-            <p>UX/UI • Product Design • AI &amp; Automation</p>
+            <p>
+              Marketing &amp; Lifecycle CRM · Operational Management &amp; Leadership · UX/UI
+              &amp; Visual Design
+            </p>
           </div>
         </div>
         <p className="cv-document__contact">
