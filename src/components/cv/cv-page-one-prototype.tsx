@@ -165,25 +165,24 @@ export function CvPageOnePrototype() {
           <div className="cv-web-hero__grid">
             <div>
               <h1 id="cv-prototype-title">
-                Experience across customers, technology &amp; design.
+                Where customer experience meets technology &amp; design.
               </h1>
-              <div className="cv-web-hero__focus" aria-label="Professional focus areas">
-                <span>CRM / Lifecycle</span>
-                <span>Operations</span>
-                <span>UX/UI / Product</span>
-                <span>AI / Automation</span>
-              </div>
             </div>
             <div className="cv-web-hero__aside">
               <p>
-                Senior CRM, marketing operations and customer experience leadership with a genuine
-                graphic, web and digital design foundation.
+                17 years spanning CRM, marketing operations, enterprise technology and customer
+                experience — complemented by a background in graphic design, UX/UI and digital
+                product design.
               </p>
+              <div className="cv-web-hero__metadata" aria-label="CV summary metadata">
+                <span>Prague / CZ</span>
+                <span>17 years experience</span>
+                <span>BA (Hons) Graphic &amp; Web Design</span>
+              </div>
               <div className="cv-web-hero__actions">
                 <a href={cvPdfHref} download>
                   Download CV ↓
                 </a>
-                <a href="#cv-document-spread">View spread ↓</a>
                 <Link href="/contact">Contact →</Link>
               </div>
             </div>
