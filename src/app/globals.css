@@ -1118,6 +1118,22 @@ body.site-body > * {
   color: var(--cv-ink);
 }
 
+.cv-print-document {
+  display: grid;
+  gap: 2rem;
+  min-height: 100vh;
+  padding: 2rem 0;
+  background: var(--cv-paper);
+}
+
+.cv-print-document .cv-document-page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  border: 0;
+  box-shadow: none;
+}
+
 @media (max-width: 1050px) {
   .cv-web-hero__grid,
   .cv-spread,
@@ -1166,6 +1182,27 @@ body.site-body > * {
     margin: 0;
     border: 0;
     box-shadow: none;
+  }
+
+  .cv-print-document {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    background: var(--cv-paper) !important;
+  }
+
+  .cv-print-document .cv-document-page {
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    overflow: hidden;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .cv-print-document .cv-document-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
   }
 }
 

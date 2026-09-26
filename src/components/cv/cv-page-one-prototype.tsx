@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { basePath } from "@/lib/site-config";
+
+const cvPdfHref = `${basePath}/kevin-alan-mold-cv.pdf`;
 
 const capabilityGroups = [
   {
@@ -177,7 +180,10 @@ export function CvPageOnePrototype() {
                 graphic, web and digital design foundation.
               </p>
               <div className="cv-web-hero__actions">
-                <a href="#cv-document-spread">View CV ↓</a>
+                <a href={cvPdfHref} download>
+                  Download CV ↓
+                </a>
+                <a href="#cv-document-spread">View spread ↓</a>
                 <Link href="/contact">Contact →</Link>
               </div>
             </div>
@@ -239,7 +245,9 @@ export function CvPageOnePrototype() {
             <a href="https://www.linkedin.com/in/kevinmold" target="_blank" rel="noreferrer">
               LinkedIn →
             </a>
-            <a href="#cv-document-spread">Download CV →</a>
+            <a href={cvPdfHref} download>
+              Download CV →
+            </a>
           </div>
         </div>
       </footer>
@@ -247,7 +255,16 @@ export function CvPageOnePrototype() {
   );
 }
 
-function CvDocumentPageOne() {
+export function CvDocumentPages() {
+  return (
+    <>
+      <CvDocumentPageOne />
+      <CvDocumentPageTwo />
+    </>
+  );
+}
+
+export function CvDocumentPageOne() {
   return (
     <article id="cv-page-01" className="cv-document-page" aria-label="Kevin Alan Mold CV page one">
       <header className="cv-document__hero">
@@ -349,7 +366,7 @@ function CvDocumentPageOne() {
   );
 }
 
-function CvDocumentPageTwo() {
+export function CvDocumentPageTwo() {
   return (
     <article id="cv-page-02" className="cv-document-page" aria-label="Kevin Alan Mold CV page two">
       <section className="cv-document__section cv-document__experience cv-document__section--first">
