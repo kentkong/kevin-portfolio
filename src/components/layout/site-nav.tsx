@@ -25,8 +25,8 @@ function LinkedInIcon() {
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      width="18"
-      height="18"
+      width="24"
+      height="24"
       focusable="false"
       className="site-nav__linkedin-svg"
     >

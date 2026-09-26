@@ -153,13 +153,7 @@ function SelectedProjectArticle({
         />
       ) : null}
       <div className="selected-project__copy">
-        <p
-          className={`selected-project__discipline${
-            project.slug === "revival" ? " selected-project__discipline--hidden" : ""
-          }`}
-        >
-          {config.discipline}
-        </p>
+        <p className="selected-project__discipline">{config.discipline}</p>
         <div className="selected-project__title-row">
           <h3 className="selected-project__title">
             <Link href={project.liveUrl} target="_blank" rel="noreferrer">
@@ -234,7 +228,6 @@ function RevivalVisual({ project }: { project: Project }) {
   return (
     <div className="selected-visual selected-visual--revival">
       <div className="selected-revival-frame">
-        <p className="selected-revival-frame__label">UX / Product Design / Visual Design</p>
         <Image
           src={assetPath(project.previewImageDesktop)}
           alt="Revival Triumph Desert Sled product concept"

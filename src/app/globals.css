@@ -1476,8 +1476,8 @@ body.site-body > * {
 }
 
 .site-nav__linkedin-svg {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1.45rem;
+  height: 1.45rem;
 }
 
 .site-nav__link:hover,
@@ -2472,6 +2472,7 @@ body.site-body > * {
 
 .selected-project--revival {
   --selected-project-bg: rgba(191, 92, 35, 0.045);
+  align-items: start;
 }
 
 .selected-project--lifecycle-architecture-studio {
@@ -2515,8 +2516,9 @@ body.site-body > * {
   color: #756f66;
 }
 
-.selected-project__discipline--hidden {
-  display: none;
+.selected-project--revival .selected-project__discipline {
+  font-size: clamp(0.86rem, 1.15vw, 1.05rem);
+  color: #1f1d1a;
 }
 
 .selected-project__title {
@@ -2648,24 +2650,6 @@ body.site-body > * {
   border: 1px solid rgba(31, 29, 26, 0.14);
   background: #ebe3d6;
   box-shadow: 0 26px 70px rgba(31, 29, 26, 0.16);
-}
-
-.selected-revival-frame__label {
-  position: absolute;
-  top: clamp(0.85rem, 1.6vw, 1.25rem);
-  left: clamp(0.85rem, 1.6vw, 1.25rem);
-  z-index: 2;
-  margin: 0;
-  padding: 0.55rem 0.7rem;
-  background: rgba(247, 243, 235, 0.88);
-  border: 1px solid rgba(31, 29, 26, 0.14);
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: clamp(0.86rem, 1.15vw, 1.05rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  line-height: 1.15;
-  text-transform: uppercase;
-  color: #1f1d1a;
 }
 
 .selected-revival-frame__image {
