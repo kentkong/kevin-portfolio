@@ -732,7 +732,7 @@ body.site-body > * {
 
 .cv-spread .cv-document-page {
   width: min(100%, 36rem);
-  min-height: 75.25rem;
+  min-height: 86rem;
   padding: clamp(1.45rem, 2vw, 2.15rem);
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.26);
   transition:
