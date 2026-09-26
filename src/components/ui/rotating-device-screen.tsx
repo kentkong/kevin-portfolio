@@ -20,7 +20,7 @@ export function RotatingDeviceScreen({
   images,
   alt,
   intervalMs = 3200,
-  fadeMs = 900,
+  fadeMs = 1400,
   imageFit = "cover",
   screenBg = "#0a0a0b",
   priority,
