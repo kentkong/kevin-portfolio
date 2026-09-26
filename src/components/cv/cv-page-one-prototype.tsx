@@ -1,12 +1,18 @@
 import Link from "next/link";
 
-const capabilities = [
-  "CRM & Lifecycle",
-  "Operations",
-  "Product & UX",
-  "AI & Automation",
-  "Leadership",
-  "Business Analysis",
+const capabilityGroups = [
+  {
+    label: "CRM / Customer",
+    items: ["CRM & Lifecycle", "Marketing Operations", "Customer Experience"],
+  },
+  {
+    label: "Design / Product",
+    items: ["UX/UI Design", "Product Design", "Visual Design"],
+  },
+  {
+    label: "Tech / Delivery",
+    items: ["AI & Automation", "Business Analysis", "Leadership"],
+  },
 ];
 
 const proofPoints = [
@@ -15,12 +21,8 @@ const proofPoints = [
     label: "International Corporate Experience",
   },
   {
-    value: "GLOBAL",
-    label: "Customer Engagement",
-  },
-  {
-    value: "20",
-    label: "Team Leadership",
+    value: "BA (HONS)",
+    label: "Graphic & Web Design — 2:1",
   },
 ];
 
@@ -62,49 +64,69 @@ const earlierBullets = [
 ];
 
 const coreStrengths = [
-  "CRM & Lifecycle Marketing",
-  "Marketing Operations",
-  "MarTech",
-  "People Leadership",
-  "Team Development",
-  "Operational Management",
-  "Business Analysis",
-  "Requirements Gathering",
-  "Solution Design",
-  "Project Management",
-  "Agile/Scrum",
-  "Process Improvement",
-  "Executive Communication",
-  "Presentations",
-  "Stakeholder Management",
-  "Product",
-  "Engineering",
-  "UX/UI",
-  "Visual & Application Design",
-  "Data & Customer Analytics",
-  "Performance Measurement",
-  "Reporting",
-  "AI & Workflow Automation",
-  "Strategic Problem Solving",
-  "Technical Expertise",
+  {
+    label: "CRM & Operations",
+    items: [
+      "CRM & Lifecycle Marketing",
+      "Marketing Operations",
+      "MarTech",
+      "People Leadership",
+      "Team Development",
+      "Operational Management",
+    ],
+  },
+  {
+    label: "Analysis & Delivery",
+    items: [
+      "Business Analysis",
+      "Requirements Gathering",
+      "Solution Design",
+      "Project Management",
+      "Agile/Scrum",
+      "Process Improvement",
+      "Executive Communication",
+      "Presentations",
+      "Stakeholder Management",
+    ],
+  },
+  {
+    label: "Product, Design & Data",
+    items: [
+      "Product",
+      "Engineering",
+      "UX/UI",
+      "Visual & Application Design",
+      "Data & Customer Analytics",
+      "Performance Measurement",
+      "Reporting",
+      "AI & Workflow Automation",
+      "Strategic Problem Solving",
+      "Technical Expertise",
+    ],
+  },
 ];
 
 const technologies = [
   {
     label: "CRM & Marketing",
-    items: "Salesforce Marketing Cloud (SFMC) • Braze • Iterable • CRM & Marketing Automation Platforms",
+    items: [
+      "Salesforce Marketing Cloud (SFMC)",
+      "Braze",
+      "Iterable",
+      "CRM & Marketing Automation Platforms",
+    ],
   },
   {
     label: "Data & Analytics",
-    items: "SQL • Snowflake • Hightouch • BigQuery / GCP • EasyBI",
+    items: ["SQL", "Snowflake", "Hightouch", "BigQuery / GCP", "EasyBI"],
   },
   {
     label: "Delivery & Collaboration",
-    items: "Jira • Agile/Scrum • Backlog Management • Sprint Planning",
+    items: ["Jira", "Agile/Scrum", "Backlog Management", "Sprint Planning"],
   },
   {
     label: "AI & Digital",
-    items: "AI Workflow Automation • Cursor AI • UX/UI & Digital Design • HTML • CSS • JavaScript",
+    items: ["AI Workflow Automation", "Cursor AI", "UX/UI & Digital Design", "HTML", "CSS", "JavaScript"],
   },
 ];
 
@@ -134,10 +156,39 @@ const projectLinks = [
 export function CvPageOnePrototype() {
   return (
     <section className="cv-prototype cv-prototype--editorial" aria-labelledby="cv-prototype-title">
+      <div className="cv-web-hero">
+        <div className="site-container cv-prototype__container">
+          <p className="cv-web-hero__eyebrow">01 / Curriculum Vitae</p>
+          <div className="cv-web-hero__grid">
+            <div>
+              <h1 id="cv-prototype-title">
+                Experience across customers, technology &amp; design.
+              </h1>
+              <div className="cv-web-hero__focus" aria-label="Professional focus areas">
+                <span>CRM / Lifecycle</span>
+                <span>Operations</span>
+                <span>UX/UI / Product</span>
+                <span>AI / Automation</span>
+              </div>
+            </div>
+            <div className="cv-web-hero__aside">
+              <p>
+                Senior CRM, marketing operations and customer experience leadership with a genuine
+                graphic, web and digital design foundation.
+              </p>
+              <div className="cv-web-hero__actions">
+                <a href="#cv-document-spread">View CV ↓</a>
+                <Link href="/contact">Contact →</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="cv-document-spread" className="cv-spread-stage">
         <div className="site-container cv-prototype__container">
           <div className="cv-spread-stage__intro">
-            <p id="cv-prototype-title">Curriculum Vitae</p>
+            <p>02 / Document preview</p>
             <span>Authoritative CV content integrated. PDF generation is paused for layout review.</span>
           </div>
           <div className="cv-spread">
@@ -201,12 +252,18 @@ function CvDocumentPageOne() {
     <article id="cv-page-01" className="cv-document-page" aria-label="Kevin Alan Mold CV page one">
       <header className="cv-document__hero">
         <div className="cv-document__identity">
-          <p className="cv-document__kicker">Kevin Alan Mold</p>
-          <h2>Marketing, Operations &amp; Customer Experience Leader</h2>
-          <p>CRM / Lifecycle — Product / UX — AI / Automation</p>
+          <h2>Kevin Alan Mold</h2>
+          <div className="cv-document__positioning">
+            <p>CRM • Marketing • Customer Experience</p>
+            <p>UX/UI • Product Design • AI &amp; Automation</p>
+          </div>
+          <p className="cv-document__descriptor">
+            17 years in enterprise technology &amp; customer experience / BA (Hons) Graphic &amp;
+            Web Design / UX/UI &amp; Digital Design
+          </p>
         </div>
         <p className="cv-document__contact">
-          PRG / CZ
+          Prague / Czech Republic
           <br />
           +420 774358879
           <br />
@@ -217,8 +274,13 @@ function CvDocumentPageOne() {
       </header>
 
       <div className="cv-document__capabilities" aria-label="Capability index">
-        {capabilities.map((capability) => (
-          <span key={capability}>{capability}</span>
+        {capabilityGroups.map((group) => (
+          <div key={group.label}>
+            <h3>{group.label}</h3>
+            {group.items.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
         ))}
       </div>
 
@@ -318,9 +380,12 @@ function CvDocumentPageTwo() {
           <span>03</span>
           <p>Core strengths / Expertise</p>
         </div>
-        <div className="cv-matrix cv-matrix--dense">
-          {coreStrengths.map((item) => (
-            <span key={item}>{item}</span>
+        <div className="cv-strength-groups">
+          {coreStrengths.map((group) => (
+            <div key={group.label}>
+              <h3>{group.label}</h3>
+              <p>{group.items.join(" · ")}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -334,7 +399,7 @@ function CvDocumentPageTwo() {
           {technologies.map((group) => (
             <div key={group.label}>
               <h3>{group.label}</h3>
-              <p>{group.items}</p>
+              <p>{group.items.join(" · ")}</p>
             </div>
           ))}
         </div>
