@@ -175,12 +175,9 @@ export function CvPageOnePrototype() {
               </p>
             </div>
             <div className="cv-web-hero__aside">
-              <p>
-                17 years of international corporate experience across customer experience,
-                technology, operations and digital delivery.
-              </p>
               <div className="cv-web-hero__metadata" aria-label="CV summary metadata">
                 <span>BA (Hons) Graphic &amp; Web Design — 2:1</span>
+                <span>Prague College — Web Design Graduate, 2016</span>
                 <span>Prague, CZ</span>
               </div>
               <div className="cv-web-hero__actions">
