@@ -977,12 +977,12 @@ body.site-body > * {
     overflow: visible;
     line-height: inherit;
     background-image:
-      radial-gradient(circle at center, rgba(255, 199, 83, 0.38) 0 18%, transparent 48%),
-      radial-gradient(ellipse at center, rgba(83, 91, 230, 0.42) 0 22%, transparent 54%),
-      radial-gradient(ellipse at center, rgba(255, 77, 110, 0.42) 0 24%, transparent 58%),
-      radial-gradient(circle at center, rgba(224, 55, 179, 0.36) 0 20%, transparent 52%),
-      radial-gradient(circle at center, rgba(255, 130, 18, 0.32) 0 20%, transparent 54%),
-      radial-gradient(ellipse at center, rgba(132, 224, 199, 0.24) 0 20%, transparent 56%);
+      radial-gradient(circle at center, rgba(255, 199, 83, 0.58) 0 18%, transparent 48%),
+      radial-gradient(ellipse at center, rgba(83, 91, 230, 0.62) 0 22%, transparent 54%),
+      radial-gradient(ellipse at center, rgba(255, 77, 110, 0.62) 0 24%, transparent 58%),
+      radial-gradient(circle at center, rgba(224, 55, 179, 0.5) 0 20%, transparent 52%),
+      radial-gradient(circle at center, rgba(255, 130, 18, 0.48) 0 20%, transparent 54%),
+      radial-gradient(ellipse at center, rgba(132, 224, 199, 0.36) 0 20%, transparent 56%);
     background-size: 54% 74%, 72% 58%, 68% 72%, 48% 64%, 58% 70%, 82% 74%;
     background-position: 4% 54%, 74% 7%, 92% 48%, 38% 68%, 18% 96%, 82% 88%;
     background-repeat: no-repeat;
@@ -991,7 +991,7 @@ body.site-body > * {
     color: transparent;
     -webkit-text-fill-color: transparent;
     filter: saturate(1.08);
-    opacity: 0.36;
+    opacity: 0.48;
     pointer-events: none;
     animation: site-hero-soft-light 18s ease-in-out infinite;
   }
@@ -1001,19 +1001,19 @@ body.site-body > * {
   0% {
     background-position: 4% 54%, 74% 7%, 92% 48%, 38% 68%, 18% 96%, 82% 88%;
     background-size: 54% 74%, 72% 58%, 68% 72%, 48% 64%, 58% 70%, 82% 74%;
-    opacity: 0.22;
+    opacity: 0.34;
     filter: saturate(1.02);
   }
   48% {
     background-position: 16% 38%, 62% 18%, 78% 58%, 48% 48%, 30% 78%, 68% 74%;
     background-size: 68% 88%, 86% 72%, 76% 82%, 62% 78%, 72% 82%, 94% 86%;
-    opacity: 0.46;
-    filter: saturate(1.18);
+    opacity: 0.68;
+    filter: saturate(1.24);
   }
   100% {
     background-position: 28% 70%, 48% 4%, 66% 38%, 60% 78%, 42% 98%, 52% 92%;
     background-size: 56% 76%, 74% 62%, 70% 74%, 50% 66%, 60% 72%, 84% 76%;
-    opacity: 0.22;
+    opacity: 0.34;
     filter: saturate(1.02);
   }
 }
