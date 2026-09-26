@@ -2,6 +2,7 @@
 @source "../components/case-study/revival-gallery-case-study.tsx";
 @source "../components/home/explore-my-work.tsx";
 @source "../components/home/project-showcase.tsx";
+@source "../components/layout/site-nav.tsx";
 @source "../components/cv/cv-page-one-prototype.tsx";
 
 :root {
@@ -2514,7 +2515,7 @@ body.site-body > * {
   color: #756f66;
 }
 
-.selected-project--revival .selected-project__discipline {
+.selected-project__discipline--hidden {
   display: none;
 }
 
