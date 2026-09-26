@@ -15,16 +15,13 @@ export function ExploreMyWork() {
       <div className="site-container explore-work__container">
         <header className="explore-work__intro">
           <p className="explore-work__eyebrow">Section 02 / Explore My Work</p>
-          <h2 id="explore-work-title" className="explore-work__discipline-heading">
-            <span className="explore-work__discipline">
-              <span>01</span>
-              <strong>UX &amp; Product Design</strong>
-            </span>
-            <span className="explore-work__discipline">
-              <span>02</span>
-              <strong>CRM &amp; Customer Experience</strong>
-            </span>
+          <h2 id="explore-work-title" className="explore-work__title">
+            Products, systems and customer experiences.
           </h2>
+          <p className="explore-work__lead">
+            A focused selection of UX concepts, lifecycle CRM systems, AI-assisted workflows and
+            visual design foundations.
+          </p>
         </header>
 
         <div className="explore-work__grid" aria-label="Portfolio work disciplines">
