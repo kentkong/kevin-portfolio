@@ -47,15 +47,6 @@ const sprintStates = [
   { label: "Ready", image: "/projects/sprintiq/ready.png" },
 ];
 
-const genPulseCapabilities = [
-  "Unified operational view across core business systems",
-  "Desktop and mobile real-time visibility",
-  "Team presence, PTO, availability and coverage",
-  "KPIs, delivery health, blockers, risks and SLAs",
-  "Views for teams, managers and operational leaders",
-  "Reduced manual reporting and status updates",
-];
-
 function getProject(slug: SelectedProject["slug"]) {
   const project = projects.find((item) => item.slug === slug);
   if (!project) {
@@ -88,28 +79,24 @@ export function ProjectShowcase() {
           <SelectedProjectArticle
             project={genPulse}
             config={selectedProjects[0]}
-            variant="flagship"
             visual={<GenPulseVisual project={genPulse} />}
           />
 
           <SelectedProjectArticle
             project={lifecycleStudio}
             config={selectedProjects[1]}
-            variant="wide"
             visual={<LifecycleVisual project={lifecycleStudio} />}
           />
 
           <SelectedProjectArticle
             project={pulseOps}
             config={selectedProjects[2]}
-            variant="technology"
             visual={<PulseOpsVisual project={pulseOps} />}
           />
 
           <SelectedProjectArticle
             project={sprintIq}
             config={selectedProjects[3]}
-            variant="sequence"
             visual={<SprintIqVisual project={sprintIq} />}
           />
         </div>
@@ -121,28 +108,14 @@ export function ProjectShowcase() {
 function SelectedProjectArticle({
   project,
   config,
-  variant,
   visual,
 }: {
   project: Project;
   config: SelectedProject;
-  variant: "flagship" | "wide" | "technology" | "sequence";
   visual: ReactNode;
 }) {
   return (
-    <article
-      className={`selected-project selected-project--${config.slug} selected-project--${variant}`}
-    >
-      {project.slug === "gen-pulse" ? (
-        <Image
-          src={assetPath("/projects/gen-pulse/avast-norton-logo-lockup.png")}
-          alt="Avast and Norton logos"
-          width={918}
-          height={140}
-          className="selected-project__brand-lockup"
-          unoptimized
-        />
-      ) : null}
+    <article className={`selected-project selected-project--${config.slug}`}>
       <div className="selected-project__copy">
         <p className="selected-project__discipline">{config.discipline}</p>
         <div className="selected-project__title-row">
@@ -153,7 +126,6 @@ function SelectedProjectArticle({
           </h3>
         </div>
         <p className="selected-project__description">{config.description}</p>
-        {project.slug === "gen-pulse" ? <GenPulseProjectDetails /> : null}
         <Link
           href={project.liveUrl}
           target="_blank"
@@ -174,44 +146,6 @@ function SelectedProjectArticle({
         {visual}
       </Link>
     </article>
-  );
-}
-
-function GenPulseProjectDetails() {
-  return (
-    <div className="selected-project__details selected-project__details--gen-pulse">
-      <div>
-        <span>The challenge</span>
-        <p>
-          Operational data is spread across Jira, Slack, Workday, reporting platforms and
-          spreadsheets, making it difficult to maintain a clear view of delivery, capacity and
-          performance.
-        </p>
-      </div>
-      <div>
-        <span>The idea</span>
-        <p>
-          Create a single operational command centre giving teams and leaders a live view of what
-          matters most.
-        </p>
-      </div>
-      <div>
-        <span>The solution</span>
-        <p>
-          Gen Pulse brings together delivery health, team presence, workload, blockers and
-          operational KPIs in one desktop and mobile experience, creating a shared view of execution
-          without relying on status meetings or manual reporting.
-        </p>
-      </div>
-      <div className="selected-project__capabilities">
-        <span>Key capabilities</span>
-        <ul>
-          {genPulseCapabilities.map((capability) => (
-            <li key={capability}>{capability}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
   );
 }
 
