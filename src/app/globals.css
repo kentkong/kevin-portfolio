@@ -976,55 +976,53 @@ body.site-body > * {
     padding-bottom: 0.32em;
     overflow: visible;
     line-height: inherit;
-    background-image: linear-gradient(
-      105deg,
-      transparent 0%,
-      transparent 18%,
-      rgba(186, 228, 205, 0.1) 28%,
-      rgba(129, 212, 236, 0.22) 38%,
-      rgba(191, 181, 228, 0.2) 48%,
-      rgba(241, 148, 182, 0.18) 58%,
-      rgba(255, 180, 111, 0.18) 68%,
-      rgba(236, 223, 157, 0.14) 78%,
-      transparent 90%,
-      transparent 100%
-    );
-    background-size: 190% 100%;
-    background-position: 0% 50%;
+    background-image:
+      radial-gradient(circle at center, rgba(255, 199, 83, 0.38) 0 18%, transparent 48%),
+      radial-gradient(ellipse at center, rgba(83, 91, 230, 0.42) 0 22%, transparent 54%),
+      radial-gradient(ellipse at center, rgba(255, 77, 110, 0.42) 0 24%, transparent 58%),
+      radial-gradient(circle at center, rgba(224, 55, 179, 0.36) 0 20%, transparent 52%),
+      radial-gradient(circle at center, rgba(255, 130, 18, 0.32) 0 20%, transparent 54%),
+      radial-gradient(ellipse at center, rgba(132, 224, 199, 0.24) 0 20%, transparent 56%);
+    background-size: 54% 74%, 72% 58%, 68% 72%, 48% 64%, 58% 70%, 82% 74%;
+    background-position: 4% 54%, 74% 7%, 92% 48%, 38% 68%, 18% 96%, 82% 88%;
+    background-repeat: no-repeat;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    filter: blur(0.2px) saturate(1.02);
-    opacity: 0.18;
+    filter: saturate(1.08);
+    opacity: 0.36;
     pointer-events: none;
-    animation: site-hero-soft-light 28s ease-in-out infinite;
+    animation: site-hero-soft-light 18s ease-in-out infinite;
   }
 }
 
 @keyframes site-hero-soft-light {
   0% {
-    background-position: 0% 50%;
-    opacity: 0.08;
-    filter: blur(0.22px) saturate(1);
-  }
-  45% {
-    background-position: 74% 50%;
+    background-position: 4% 54%, 74% 7%, 92% 48%, 38% 68%, 18% 96%, 82% 88%;
+    background-size: 54% 74%, 72% 58%, 68% 72%, 48% 64%, 58% 70%, 82% 74%;
     opacity: 0.22;
-    filter: blur(0.2px) saturate(1.04);
+    filter: saturate(1.02);
+  }
+  48% {
+    background-position: 16% 38%, 62% 18%, 78% 58%, 48% 48%, 30% 78%, 68% 74%;
+    background-size: 68% 88%, 86% 72%, 76% 82%, 62% 78%, 72% 82%, 94% 86%;
+    opacity: 0.46;
+    filter: saturate(1.18);
   }
   100% {
-    background-position: 106% 50%;
-    opacity: 0.08;
-    filter: blur(0.22px) saturate(1);
+    background-position: 28% 70%, 48% 4%, 66% 38%, 60% 78%, 42% 98%, 52% 92%;
+    background-size: 56% 76%, 74% 62%, 70% 74%, 50% 66%, 60% 72%, 84% 76%;
+    opacity: 0.22;
+    filter: saturate(1.02);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .site-hero__concept-light {
     animation: none;
-    background-position: 54% 50%;
-    opacity: 0.32;
+    background-position: 16% 38%, 62% 18%, 78% 58%, 48% 48%, 30% 78%, 68% 74%;
+    opacity: 0.28;
   }
 
   .site-hero__ambient-field {
