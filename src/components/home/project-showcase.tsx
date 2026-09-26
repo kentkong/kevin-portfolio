@@ -233,11 +233,17 @@ function RevivalVisual({ project }: { project: Project }) {
 }
 
 function GenPulseVisual({ project }: { project: Project }) {
+  const desktopScreens = [
+    project.previewImageDesktop,
+    project.previewImageDesktopLight ?? project.previewImageDesktop,
+  ];
+
   return (
     <div className="selected-visual selected-visual--gen-pulse">
       <div className="selected-visual__laptops">
         <LaptopFrame
-          src={project.previewImageDesktop}
+          slides={desktopScreens}
+          rotationIntervalMs={2800}
           alt="Gen Pulse desktop operational dashboard"
           label="Dark mode desktop"
           fallbackTitle={project.name}
