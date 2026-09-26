@@ -9,12 +9,17 @@ import type { Project } from "@/lib/projects";
 import { projects } from "@/lib/projects";
 
 type SelectedProject = {
-  slug: "gen-pulse" | "lifecycle-architecture-studio" | "pulse-ops" | "sprintiq";
+  slug: "revival" | "gen-pulse" | "lifecycle-architecture-studio" | "pulse-ops" | "sprintiq";
   discipline: string;
   description: string;
 };
 
 const selectedProjects: SelectedProject[] = [
+  {
+    slug: "revival",
+    discipline: "UX / Product Design / Visual Design",
+    description: "Visualise your dream Triumph Desert Sled motorcycle build before you buy it.",
+  },
   {
     slug: "gen-pulse",
     discipline: "Operations / Internal Product / Digital Experience",
@@ -65,6 +70,7 @@ function getProject(slug: SelectedProject["slug"]) {
 }
 
 export function ProjectShowcase() {
+  const revival = getProject("revival");
   const genPulse = getProject("gen-pulse");
   const lifecycleStudio = getProject("lifecycle-architecture-studio");
   const pulseOps = getProject("pulse-ops");
@@ -86,29 +92,36 @@ export function ProjectShowcase() {
 
         <div className="selected-work__projects">
           <SelectedProjectArticle
-            project={genPulse}
+            project={revival}
             config={selectedProjects[0]}
+            variant="wide"
+            visual={<RevivalVisual project={revival} />}
+          />
+
+          <SelectedProjectArticle
+            project={genPulse}
+            config={selectedProjects[1]}
             variant="flagship"
             visual={<GenPulseVisual project={genPulse} />}
           />
 
           <SelectedProjectArticle
             project={lifecycleStudio}
-            config={selectedProjects[1]}
+            config={selectedProjects[2]}
             variant="wide"
             visual={<LifecycleVisual project={lifecycleStudio} />}
           />
 
           <SelectedProjectArticle
             project={pulseOps}
-            config={selectedProjects[2]}
+            config={selectedProjects[3]}
             variant="technology"
             visual={<PulseOpsVisual project={pulseOps} />}
           />
 
           <SelectedProjectArticle
             project={sprintIq}
-            config={selectedProjects[3]}
+            config={selectedProjects[4]}
             variant="sequence"
             visual={<SprintIqVisual project={sprintIq} />}
           />
@@ -210,6 +223,24 @@ function GenPulseProjectDetails() {
             <li key={capability}>{capability}</li>
           ))}
         </ul>
+      </div>
+    </div>
+  );
+}
+
+function RevivalVisual({ project }: { project: Project }) {
+  return (
+    <div className="selected-visual selected-visual--revival">
+      <div className="selected-revival-frame">
+        <Image
+          src={assetPath(project.previewImageDesktop)}
+          alt="Revival Triumph Desert Sled product concept"
+          fill
+          unoptimized
+          sizes="(max-width: 900px) 100vw, 56vw"
+          className="selected-revival-frame__image"
+          priority
+        />
       </div>
     </div>
   );

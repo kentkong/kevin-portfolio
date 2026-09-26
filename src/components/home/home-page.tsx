@@ -1,4 +1,3 @@
-import { ExploreMyWork } from "@/components/home/explore-my-work";
 import { HeroSection } from "@/components/home/hero-section";
 import { ProjectShowcase } from "@/components/home/project-showcase";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -10,7 +9,6 @@ export function HomePage() {
       <SiteNav />
       <main>
         <HeroSection />
-        <ExploreMyWork />
         <ProjectShowcase />
       </main>
       <SiteFooter />

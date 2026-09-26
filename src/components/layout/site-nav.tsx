@@ -1,5 +1,6 @@
 "use client";
 
+import { Linkedin } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -76,6 +77,15 @@ export function SiteNav() {
                 </Link>
               );
             })}
+            <a
+              href={site.linkedin}
+              className="site-nav__icon-link"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={14} strokeWidth={2.2} aria-hidden="true" />
+            </a>
           </nav>
         )}
       </div>
@@ -101,6 +111,16 @@ export function SiteNav() {
                 </Link>
               );
             })}
+            <a
+              href={site.linkedin}
+              className="site-nav__mobile-link site-nav__mobile-link--icon"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMenuOpen(false)}
+            >
+              LinkedIn
+              <Linkedin size={14} strokeWidth={2.2} aria-hidden="true" />
+            </a>
           </nav>
         </div>
       ) : null}
