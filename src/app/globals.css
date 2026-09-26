@@ -2670,6 +2670,7 @@ body.site-body > * {
 }
 
 .selected-visual--gen-pulse {
+  --gen-pulse-phone-width: clamp(5.5rem, 8.4vw, 7.8rem);
   min-height: clamp(22rem, 36vw, 32rem);
   padding-block: clamp(1rem, 2.5vw, 2.5rem);
 }
@@ -2688,10 +2689,10 @@ body.site-body > * {
 
 .selected-visual__phone {
   position: absolute;
-  right: clamp(0.75rem, 1.5vw, 1.4rem);
+  left: calc((var(--gen-pulse-phone-width) + clamp(0.75rem, 1.2vw, 1rem)) * -1);
   bottom: clamp(0.7rem, 1.3vw, 1.2rem);
   z-index: 2;
-  width: clamp(5.5rem, 8.4vw, 7.8rem);
+  width: var(--gen-pulse-phone-width);
 }
 
 .selected-project__details-popout {
@@ -2831,6 +2832,7 @@ body.site-body > * {
 
   .selected-visual__phone {
     position: relative;
+    left: auto;
     right: auto;
     bottom: auto;
     justify-self: end;
