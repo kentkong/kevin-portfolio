@@ -733,6 +733,8 @@ body.site-body > * {
 .cv-spread .cv-document-page {
   width: min(100%, 36rem);
   min-height: 86rem;
+  max-height: 86rem;
+  overflow: hidden;
   padding: clamp(1.45rem, 2vw, 2.15rem);
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.26);
   transition:
@@ -741,6 +743,7 @@ body.site-body > * {
 }
 
 .cv-document__hero {
+  padding-bottom: 5mm;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: start;
 }
@@ -764,17 +767,17 @@ body.site-body > * {
 
 .cv-document__hero h2 {
   max-width: 17ch;
-  font-size: clamp(1.6rem, 2.2vw, 2.15rem);
+  font-size: clamp(1.35rem, 1.9vw, 1.85rem);
 }
 
 .cv-document__capabilities {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 3mm 8mm;
-  margin-top: 7mm;
+  gap: 2mm 7mm;
+  margin-top: 4mm;
   border: 0;
   border-top: 1px solid var(--cv-rule);
   border-bottom: 1px solid var(--cv-rule);
-  padding-block: 4mm;
+  padding-block: 3mm;
   background: transparent;
 }
 
@@ -786,8 +789,8 @@ body.site-body > * {
 
 .cv-document__proof {
   gap: 0;
-  margin-top: 7mm;
-  padding-block: 5mm;
+  margin-top: 4mm;
+  padding-block: 3.5mm;
 }
 
 .cv-document__proof div {
@@ -799,16 +802,26 @@ body.site-body > * {
 }
 
 .cv-document__proof strong {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
 }
 
 .cv-document__section {
   grid-template-columns: minmax(4.8rem, 0.24fr) minmax(0, 1fr);
-  gap: clamp(0.9rem, 2vw, 1.6rem);
+  gap: clamp(0.75rem, 1.6vw, 1.2rem);
+  padding-top: 5mm;
 }
 
 .cv-document__section--first {
   padding-top: 0;
+}
+
+.cv-document__profile-copy p {
+  font-size: 0.56rem;
+  line-height: 1.26;
+}
+
+.cv-spread .cv-role + .cv-role {
+  margin-top: 4mm;
 }
 
 .cv-role--primary {
@@ -818,8 +831,8 @@ body.site-body > * {
 }
 
 .cv-role__header {
-  grid-template-columns: 5.5rem minmax(0, 1fr);
-  gap: 1.2rem;
+  grid-template-columns: 4.9rem minmax(0, 1fr);
+  gap: 0.8rem;
 }
 
 .cv-role__meta {
@@ -839,18 +852,20 @@ body.site-body > * {
 }
 
 .cv-role__bullets {
-  display: grid;
-  gap: 1.15mm;
-  margin: 3mm 0 0;
+  columns: 2;
+  column-gap: 4mm;
+  margin: 2mm 0 0;
   padding: 0;
   list-style: none;
-  font-size: 0.55rem;
-  line-height: 1.26;
+  font-size: 0.43rem;
+  line-height: 1.18;
   color: var(--cv-muted);
 }
 
 .cv-role__bullets li {
   position: relative;
+  break-inside: avoid;
+  margin-bottom: 1mm;
   padding-left: 2.6mm;
 }
 
@@ -891,13 +906,13 @@ body.site-body > * {
 }
 
 .cv-matrix--dense {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .cv-matrix--dense span {
-  padding: 2mm;
-  font-size: 0.46rem;
-  line-height: 1.18;
+  padding: 1.4mm;
+  font-size: 0.34rem;
+  line-height: 1.12;
 }
 
 .cv-tech-list,
