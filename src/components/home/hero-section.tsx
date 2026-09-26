@@ -28,8 +28,7 @@ export function HeroSection() {
             </div>
             <div className="site-hero__pillar-grid" aria-label="Portfolio focus areas">
               {site.heroPillars.map((pillar) => (
-                <div className="site-hero__pillar" key={pillar.number}>
-                  <span>{pillar.number}</span>
+                <div className="site-hero__pillar" key={pillar.title}>
                   <strong>{pillar.title}</strong>
                   <p>{pillar.subtitle}</p>
                 </div>

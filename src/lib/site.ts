@@ -14,10 +14,10 @@ export const site = {
     { label: "& Technology" },
   ],
   heroPillars: [
-    { number: "01", title: "UX / PRODUCT", subtitle: "Visual Design" },
-    { number: "02", title: "CRM / LIFECYCLE", subtitle: "Marketing Apps" },
-    { number: "03", title: "AI / AUTOMATION", subtitle: "Technology" },
-    { number: "04", title: "APPS / OPERATIONS", subtitle: "Customer Experience" },
+    { title: "UX / PRODUCT", subtitle: "Visual Design" },
+    { title: "CRM / LIFECYCLE", subtitle: "Marketing Apps" },
+    { title: "AI / AUTOMATION", subtitle: "Technology" },
+    { title: "APPS / OPERATIONS", subtitle: "Customer Experience" },
   ],
   heroIntro:
     "A multidisciplinary portfolio spanning CRM & marketing, visual design, digital products, applications, customer experience and technology.",
