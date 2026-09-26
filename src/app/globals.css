@@ -2488,16 +2488,13 @@ body.site-body > * {
 }
 
 .selected-project--flagship,
-.selected-project--technology {
+.selected-project--technology,
+.selected-project--sequence {
   grid-template-columns: minmax(16rem, 0.33fr) minmax(0, 0.67fr);
 }
 
 .selected-project--wide {
   grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
-}
-
-.selected-project--sequence {
-  grid-template-columns: minmax(16rem, 0.28fr) minmax(0, 0.72fr);
 }
 
 .selected-project__copy {
@@ -2667,12 +2664,8 @@ body.site-body > * {
 }
 
 .selected-visual--gen-pulse {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(6.75rem, 10vw, 8.75rem);
-  gap: clamp(1rem, 2vw, 1.6rem);
-  align-items: center;
-  min-height: clamp(26rem, 42vw, 38rem);
-  padding: clamp(1rem, 3vw, 3rem) 0;
+  min-height: clamp(22rem, 36vw, 32rem);
+  padding-block: clamp(1rem, 2.5vw, 2.5rem);
 }
 
 .selected-visual__laptops {
@@ -2688,11 +2681,60 @@ body.site-body > * {
 }
 
 .selected-visual__phone {
-  position: relative;
-  right: auto;
-  bottom: auto;
+  position: absolute;
+  right: clamp(0.75rem, 1.5vw, 1.4rem);
+  bottom: clamp(0.7rem, 1.3vw, 1.2rem);
   z-index: 2;
-  width: 100%;
+  width: clamp(5.5rem, 8.4vw, 7.8rem);
+}
+
+.selected-project__details-popout {
+  position: absolute;
+  right: clamp(1rem, 2vw, 1.6rem);
+  bottom: clamp(1rem, 2vw, 1.6rem);
+  z-index: 4;
+  width: min(26rem, calc(100% - 2rem));
+  max-height: min(30rem, calc(100% - 2rem));
+  overflow: auto;
+  padding: clamp(0.9rem, 1.4vw, 1.15rem);
+  border: 1px solid rgba(31, 29, 26, 0.14);
+  background: rgba(247, 243, 235, 0.94);
+  color: #1f1d1a;
+  box-shadow: 0 24px 70px rgba(31, 29, 26, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.6rem);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.selected-visual--gen-pulse:hover .selected-project__details-popout,
+.selected-project__visual-link:focus-visible .selected-project__details-popout {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.selected-project__details-popout .selected-project__details {
+  gap: 0.7rem;
+  margin-top: 0;
+}
+
+.selected-project__details-popout .selected-project__details > div {
+  padding-top: 0.7rem;
+}
+
+.selected-project__details-popout .selected-project__details span {
+  margin-bottom: 0.32rem;
+  font-size: 0.64rem;
+}
+
+.selected-project__details-popout .selected-project__details p,
+.selected-project__details-popout .selected-project__details li {
+  font-size: 0.78rem;
+  line-height: 1.45;
 }
 
 .selected-visual--browser {

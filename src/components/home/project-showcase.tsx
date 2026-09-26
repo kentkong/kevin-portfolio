@@ -153,7 +153,6 @@ function SelectedProjectArticle({
           </h3>
         </div>
         <p className="selected-project__description">{config.description}</p>
-        {project.slug === "gen-pulse" ? <GenPulseProjectDetails /> : null}
         <Link
           href={project.liveUrl}
           target="_blank"
@@ -261,6 +260,9 @@ function GenPulseVisual({ project }: { project: Project }) {
           screenBg="#f4f6fb"
           aspectRatio="393 / 852"
         />
+      </div>
+      <div className="selected-project__details-popout">
+        <GenPulseProjectDetails />
       </div>
     </div>
   );
