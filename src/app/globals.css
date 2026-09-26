@@ -427,8 +427,8 @@ body.site-body > * {
 .cv-document__section-body > p {
   margin: 0;
   max-width: 38rem;
-  font-size: 0.9rem;
-  line-height: 1.62;
+  font-size: 0.78rem;
+  line-height: 1.48;
 }
 
 .cv-document__section-body > p + p {
@@ -838,6 +838,32 @@ body.site-body > * {
   color: var(--cv-muted);
 }
 
+.cv-role__bullets {
+  display: grid;
+  gap: 1.15mm;
+  margin: 3mm 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.55rem;
+  line-height: 1.26;
+  color: var(--cv-muted);
+}
+
+.cv-role__bullets li {
+  position: relative;
+  padding-left: 2.6mm;
+}
+
+.cv-role__bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.52em;
+  width: 1.1mm;
+  height: 1px;
+  background: var(--cv-accent);
+}
+
 .cv-role__focus span {
   border: 0;
   border-top: 1px solid rgba(23, 21, 18, 0.16);
@@ -864,6 +890,16 @@ body.site-body > * {
   text-transform: uppercase;
 }
 
+.cv-matrix--dense {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cv-matrix--dense span {
+  padding: 2mm;
+  font-size: 0.46rem;
+  line-height: 1.18;
+}
+
 .cv-tech-list,
 .cv-education,
 .cv-additional {
@@ -886,8 +922,8 @@ body.site-body > * {
 .cv-education span {
   display: block;
   margin: 1mm 0 0;
-  font-size: 0.78rem;
-  line-height: 1.5;
+  font-size: 0.58rem;
+  line-height: 1.32;
   color: var(--cv-muted);
 }
 
