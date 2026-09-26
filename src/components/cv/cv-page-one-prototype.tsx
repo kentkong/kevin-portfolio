@@ -122,29 +122,6 @@ const technologies = [
   },
 ];
 
-const projectLinks = [
-  {
-    title: "Lifecycle Architecture Studio",
-    meta: "CRM / Customer Experience",
-    href: "/projects/lifecycle-architecture-studio",
-  },
-  {
-    title: "Gen Pulse",
-    meta: "Product / Operations",
-    href: "/projects/gen-pulse",
-  },
-  {
-    title: "Revival",
-    meta: "Product / UX / AI",
-    href: "/projects/revival",
-  },
-  {
-    title: "SprintIQ",
-    meta: "AI / Operations",
-    href: "/projects/sprintiq",
-  },
-];
-
 export function CvPageOnePrototype() {
   return (
     <section className="cv-prototype cv-prototype--editorial" aria-labelledby="cv-prototype-title">
@@ -205,41 +182,6 @@ export function CvPageOnePrototype() {
         </div>
       </div>
 
-      <div className="cv-beyond">
-        <div className="site-container cv-prototype__container">
-          <p className="cv-beyond__eyebrow">03 / Beyond the CV</p>
-          <div className="cv-beyond__grid">
-            <h2>Selected work translating experience into products, systems and customer experiences.</h2>
-            <div className="cv-beyond__projects">
-              {projectLinks.map((project) => (
-                <Link href={project.href} key={project.href} className="cv-beyond__project">
-                  <span>{project.meta}</span>
-                  <strong>{project.title}</strong>
-                </Link>
-              ))}
-              <Link href="/#explore-work" className="cv-beyond__all">
-                Explore all projects →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <footer className="cv-contact">
-        <div className="site-container cv-prototype__container">
-          <h2>Let&apos;s work together.</h2>
-          <p>Prague / Czech Republic</p>
-          <div>
-            <a href="mailto:jovianuk@gmail.com">Email →</a>
-            <a href="https://www.linkedin.com/in/kevinmold" target="_blank" rel="noreferrer">
-              LinkedIn →
-            </a>
-            <a href={cvPdfHref} download>
-              Download CV →
-            </a>
-          </div>
-        </div>
-      </footer>
     </section>
   );
 }
