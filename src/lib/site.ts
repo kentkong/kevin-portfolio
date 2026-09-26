@@ -35,7 +35,7 @@ export const navLinks = [
   { label: "Work", href: "/#explore-work" },
   { label: "About", href: "/about" },
   { label: "Insights", href: "/thinking" },
-  { label: "CV / Contact", href: "/contact" },
+  { label: "CV", href: "/cv" },
 ] as const;
 
 export const exploringGroups = [
