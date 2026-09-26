@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @source "../components/case-study/revival-gallery-case-study.tsx";
 @source "../components/home/explore-my-work.tsx";
+@source "../components/cv/cv-page-one-prototype.tsx";
 
 :root {
   --bg: #0e1114;
