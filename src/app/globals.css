@@ -831,7 +831,7 @@ body.site-body > * {
 }
 
 .cv-role__header {
-  grid-template-columns: 6.6rem minmax(0, 1fr);
+  grid-template-columns: 8.4rem minmax(0, 1fr);
   gap: 0.75rem;
 }
 
@@ -839,7 +839,7 @@ body.site-body > * {
   order: 0;
   text-align: left;
   color: var(--cv-accent);
-  font-size: 0.42rem;
+  font-size: 0.36rem;
   letter-spacing: 0.1em;
   white-space: normal;
 }
