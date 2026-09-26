@@ -1,4 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
+import { assetPath } from "@/lib/asset-path";
+import { site } from "@/lib/site";
 import { basePath } from "@/lib/site-config";
 
 const cvPdfHref = `${basePath}/kevin-alan-mold-cv.pdf`;
@@ -148,6 +151,23 @@ export function CvPageOnePrototype() {
                 </a>
                 <Link href="/contact">Contact →</Link>
               </div>
+            </div>
+          </div>
+          <div className="cv-web-hero__about">
+            <figure className="cv-web-hero__portrait">
+              <Image
+                src={assetPath("/kevin-profile.jpg")}
+                alt="Portrait of Kevin Alan Mold"
+                width={220}
+                height={220}
+                priority
+                className="cv-web-hero__portrait-img"
+              />
+            </figure>
+            <div className="cv-web-hero__bio">
+              {site.aboutBio.map((paragraph) => (
+                <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+              ))}
             </div>
           </div>
         </div>
