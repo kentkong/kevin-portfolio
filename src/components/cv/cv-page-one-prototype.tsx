@@ -134,39 +134,10 @@ const projectLinks = [
 export function CvPageOnePrototype() {
   return (
     <section className="cv-prototype cv-prototype--editorial" aria-labelledby="cv-prototype-title">
-      <div className="cv-web-hero">
-        <div className="site-container cv-prototype__container">
-          <p className="cv-web-hero__eyebrow">01 / Curriculum Vitae</p>
-          <div className="cv-web-hero__grid">
-            <div>
-              <h1 id="cv-prototype-title">
-                17 years across customers, technology &amp; digital experience.
-              </h1>
-              <div className="cv-web-hero__focus" aria-label="Professional focus areas">
-                <span>CRM / Lifecycle</span>
-                <span>Operations</span>
-                <span>Product / UX</span>
-                <span>AI / Automation</span>
-              </div>
-            </div>
-            <div className="cv-web-hero__aside">
-              <p>
-                Product Editorial CV direction for a senior CRM, marketing operations and customer
-                experience leader with product, UX and AI capability.
-              </p>
-              <div className="cv-web-hero__actions">
-                <a href="#cv-document-spread">View CV ↓</a>
-                <Link href="/contact">Contact →</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div id="cv-document-spread" className="cv-spread-stage">
         <div className="site-container cv-prototype__container">
           <div className="cv-spread-stage__intro">
-            <p>02 / Document preview</p>
+            <p id="cv-prototype-title">Curriculum Vitae</p>
             <span>Authoritative CV content integrated. PDF generation is paused for layout review.</span>
           </div>
           <div className="cv-spread">

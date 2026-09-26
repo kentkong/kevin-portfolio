@@ -242,6 +242,10 @@ body.site-body > * {
   max-width: 78rem;
 }
 
+.cv-prototype--editorial .cv-prototype__container {
+  max-width: 92rem;
+}
+
 .cv-prototype__intro {
   display: grid;
   grid-template-columns: minmax(0, 0.72fr) minmax(18rem, 0.28fr);
@@ -649,7 +653,7 @@ body.site-body > * {
 }
 
 .cv-spread-stage {
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(7rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 7rem);
   background:
     linear-gradient(90deg, rgba(244, 241, 232, 0.035) 1px, transparent 1px),
     linear-gradient(180deg, rgba(244, 241, 232, 0.03) 1px, transparent 1px),
@@ -731,9 +735,9 @@ body.site-body > * {
 }
 
 .cv-spread .cv-document-page {
-  width: min(100%, 36rem);
-  min-height: 86rem;
-  max-height: 86rem;
+  width: min(100%, 40rem);
+  min-height: 90rem;
+  max-height: 90rem;
   overflow: hidden;
   padding: clamp(1.45rem, 2vw, 2.15rem);
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.26);
