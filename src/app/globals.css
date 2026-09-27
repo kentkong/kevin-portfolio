@@ -1620,17 +1620,16 @@ body.site-body > * {
 
 .about-profile__positioning {
   margin: 1.45rem 0 0;
-  max-width: none;
+  max-width: 20em;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: clamp(1.22rem, 1.9vw, 1.68rem);
+  font-size: clamp(1.28rem, 2vw, 1.76rem);
   font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 1.16;
+  line-height: 1.18;
 }
 
 .about-profile__positioning span {
   display: block;
-  white-space: nowrap;
 }
 
 .about-profile__copy {
@@ -2049,8 +2048,6 @@ body.site-body > * {
     padding-top: 0;
   }
 
-  .about-profile__positioning span {
-    white-space: normal;
   }
 
   .about-profile__portrait {

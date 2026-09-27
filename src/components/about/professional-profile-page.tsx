@@ -17,7 +17,8 @@ export function ProfessionalProfilePage() {
               <h1 id="about-profile-title">Kevin Alan Mold</h1>
               <p className="about-profile__positioning">
                 <span>CRM, Marketing &amp; Operations Manager</span>
-                <span>with a background in UX/UI &amp; Visual Design</span>
+                <span>with a background in UX/UI</span>
+                <span>&amp; Visual Design</span>
               </p>
               <div className="about-profile__copy">
                 <p>
