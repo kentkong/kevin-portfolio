@@ -144,14 +144,24 @@ function SelectedProjectArticle({
         </div>
         <p className="selected-project__description">{config.description}</p>
         {project.slug === "gen-pulse" ? (
-          <Image
-            src={assetPath("/projects/gen-pulse/avast-norton-logo-lockup.png")}
-            alt="Avast and Norton logos"
-            width={918}
-            height={140}
-            className="selected-project__brand-lockup"
-            unoptimized
-          />
+          <div className="selected-project__brand-row" aria-label="Gen Digital, Avast and Norton logos">
+            <Image
+              src={assetPath("/logos/about/gen-digital.svg")}
+              alt="Gen Digital logo"
+              width={108}
+              height={42}
+              className="selected-project__brand-logo selected-project__brand-logo--gen"
+              unoptimized
+            />
+            <Image
+              src={assetPath("/projects/gen-pulse/avast-norton-logo-lockup.png")}
+              alt="Avast and Norton logos"
+              width={918}
+              height={140}
+              className="selected-project__brand-lockup"
+              unoptimized
+            />
+          </div>
         ) : null}
         <Link
           href={project.liveUrl}
@@ -159,8 +169,14 @@ function SelectedProjectArticle({
           rel="noreferrer"
           className="selected-project__link"
         >
-          View Live Project ↗
+          View live project ↗
         </Link>
+        {project.slug === "gen-pulse" ? (
+          <details className="selected-project__details-toggle">
+            <summary>Project details ↓</summary>
+            <GenPulseProjectDetails />
+          </details>
+        ) : null}
       </div>
 
       <Link
@@ -266,9 +282,6 @@ function GenPulseVisual({ project }: { project: Project }) {
           screenBg="#f4f6fb"
           aspectRatio="393 / 852"
         />
-      </div>
-      <div className="selected-project__details-popout">
-        <GenPulseProjectDetails />
       </div>
     </div>
   );

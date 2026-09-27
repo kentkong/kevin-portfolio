@@ -3481,11 +3481,30 @@ body.site-body > * {
   align-items: center;
 }
 
+.selected-project__brand-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.05rem;
+  align-items: center;
+  margin: 1.15rem 0 0;
+}
+
+.selected-project__brand-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.selected-project__brand-logo--gen {
+  max-width: 4.9rem;
+  max-height: 1.9rem;
+}
+
 .selected-project__brand-lockup {
   display: block;
-  width: min(14rem, 84%);
+  width: min(12.5rem, 70%);
   height: auto;
-  margin: 1.15rem 0 0;
   object-fit: contain;
 }
 
@@ -3514,6 +3533,33 @@ body.site-body > * {
   color: #1f1d1a;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
+}
+
+.selected-project__details-toggle {
+  margin-top: 0.85rem;
+}
+
+.selected-project__details-toggle summary {
+  display: inline-flex;
+  width: fit-content;
+  cursor: pointer;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+  text-transform: uppercase;
+  color: #1f1d1a;
+  border-bottom: 1px solid currentColor;
+}
+
+.selected-project__details-toggle summary::marker,
+.selected-project__details-toggle summary::-webkit-details-marker {
+  display: none;
+}
+
+.selected-project__details-toggle .selected-project__details {
+  max-width: 31rem;
 }
 
 .selected-project__details {
