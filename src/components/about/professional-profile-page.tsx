@@ -161,7 +161,7 @@ const expertiseColumns = [
 const experience = [
   {
     company: "Gen Digital",
-    logos: [{ alt: "Gen Digital", label: "Gen", variant: "gen" }],
+    logos: [{ src: "/logos/about/gen-digital.svg", alt: "Gen Digital" }],
     title: "Manager — Email Platform",
     description:
       "Lead global lifecycle marketing operations supporting Norton customer engagement programmes reaching millions of customers worldwide.",
@@ -169,7 +169,7 @@ const experience = [
   },
   {
     company: "Merkle",
-    logos: [{ alt: "Merkle", label: "Merkle", variant: "merkle" }],
+    logos: [{ src: "/logos/about/merkle.svg", alt: "Merkle" }],
     title: "Business Analyst",
     description:
       "Led requirements discovery and analysis, translating business and customer needs into functional requirements and scalable Salesforce-based solutions.",
@@ -177,7 +177,7 @@ const experience = [
   },
   {
     company: "Infor",
-    logos: [{ alt: "Infor", label: "Infor", variant: "infor" }],
+    logos: [{ src: "/logos/about/infor.svg", alt: "Infor" }],
     title: "Support Consultant & Analyst",
     description:
       "Delivered advanced technical and application support for enterprise ERP environments, diagnosing complex software, data and system issues for international business customers.",
@@ -186,10 +186,10 @@ const experience = [
   {
     company: "Earlier Enterprise Technology & Operations",
     logos: [
-      { alt: "IBM", label: "IBM", variant: "ibm" },
+      { src: "/logos/about/ibm.svg", alt: "IBM" },
       { src: "/logos/about/hp.svg", alt: "Hewlett Packard" },
       { src: "/logos/about/motorola.svg", alt: "Motorola" },
-      { alt: "Ariba", label: "Ariba", variant: "ariba" },
+      { src: "/logos/about/sap-ariba.svg", alt: "SAP Ariba" },
     ],
     title: "Enterprise Technology & Operations",
     description:
@@ -202,9 +202,9 @@ const toolRows = [
   {
     category: "CRM & Marketing Technology",
     tools: [
-      { alt: "Salesforce Marketing Cloud", label: "salesforce marketing cloud", variant: "salesforce" },
-      { alt: "Braze", label: "braze", variant: "braze" },
-      { alt: "Iterable", label: "Iterable", variant: "iterable" },
+      { src: "/logos/about/salesforce.svg", alt: "Salesforce Marketing Cloud" },
+      { src: "/logos/about/braze.svg", alt: "Braze" },
+      { src: "/logos/about/iterable.svg", alt: "Iterable" },
     ],
   },
   {
@@ -218,9 +218,9 @@ const toolRows = [
   {
     category: "Design & Creative",
     tools: [
-      { alt: "Adobe Photoshop", label: "Photoshop", variant: "adobe-ps" },
-      { alt: "Adobe Illustrator", label: "Illustrator", variant: "adobe-ai" },
-      { alt: "Adobe InDesign", label: "InDesign", variant: "adobe-id" },
+      { src: "/logos/about/photoshop.svg", alt: "Adobe Photoshop" },
+      { src: "/logos/about/illustrator.svg", alt: "Adobe Illustrator" },
+      { src: "/logos/about/indesign.svg", alt: "Adobe InDesign" },
     ],
   },
 ];
