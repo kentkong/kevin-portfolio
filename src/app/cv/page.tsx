@@ -1,14 +1,12 @@
-import { CvPageOnePrototype } from "@/components/cv/cv-page-one-prototype";
+import { ProfessionalProfilePage } from "@/components/about/professional-profile-page";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteNav } from "@/components/layout/site-nav";
 
-export default function CvPrototypePage() {
+export default function CvPage() {
   return (
     <>
       <SiteNav />
-      <main>
-        <CvPageOnePrototype />
-      </main>
+      <ProfessionalProfilePage />
       <SiteFooter />
     </>
   );
