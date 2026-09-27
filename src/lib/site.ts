@@ -33,7 +33,7 @@ export const site = {
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "Insights", href: "/thinking" },
-  { label: "CV", href: "/cv" },
+  { label: "About", href: "/cv" },
 ] as const;
 
 export const exploringGroups = [
