@@ -1159,11 +1159,11 @@ body.site-body > * {
 }
 
 .cv-spread .cv-document-page {
-  width: min(100%, 42rem);
-  min-height: auto;
-  max-height: none;
-  aspect-ratio: 210 / 297;
-  padding: clamp(1.65rem, 2.15vw, 2.25rem);
+  width: 210mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  padding: 14mm 15mm 13mm;
+  zoom: 0.806;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
