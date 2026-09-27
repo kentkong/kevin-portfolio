@@ -152,7 +152,7 @@ const experience = [
   {
     company: "Gen Digital",
     logos: [{ src: "/logos/about/gen-digital.svg", alt: "Gen Digital" }],
-    title: "Manager — Email Platform",
+    title: "Manager - Norton Email Marketing Team",
     description:
       "Lead global lifecycle marketing operations supporting Norton customer engagement programmes reaching millions of customers worldwide.",
     date: "Mar 2023 — Jun 2026",

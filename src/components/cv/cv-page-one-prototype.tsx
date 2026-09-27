@@ -218,7 +218,7 @@ export function CvDocumentPageOne() {
           <CvRole
             dates="Mar 2023—Jun 1st 2026"
             company="Gen Digital / Norton"
-            title="Manager — Email Platform"
+            title="Manager - Norton Email Marketing Team"
             location="Prague"
             bullets={genDigitalBullets}
             primary
