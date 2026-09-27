@@ -6,17 +6,27 @@ import {
   ArrowRight,
   Bell,
   CheckCircle2,
+  AlertTriangle,
+  Brain,
+  Database,
+  GitBranch,
+  LayoutDashboard,
+  Layers,
+  MessageSquare,
+  Radio,
   Search,
+  Sparkles,
   UserCircle,
+  Users,
 } from "lucide-react";
 
 type TrendPoint = { label: string; value: number; secondary?: number };
 
 const stackIntegrations = [
-  { name: "Snowflake", role: "Data Warehouse", latency: "12ms", meta: "2.4M events/day" },
-  { name: "Hightouch", role: "Reverse ETL", latency: "340ms", meta: "34 active syncs" },
-  { name: "Braze", role: "Engagement", latency: "89ms", meta: "12K sends/day" },
-  { name: "Pulse-Ops AI", role: "Intelligence", latency: "Real-time", meta: "5 active signals" },
+  { name: "Snowflake", role: "Data Warehouse", latency: "12ms", meta: "2.4M events/day", hue: "snowflake" },
+  { name: "Hightouch", role: "Reverse ETL", latency: "340ms", meta: "34 active syncs", hue: "hightouch" },
+  { name: "Braze", role: "Engagement", latency: "89ms", meta: "12K sends/day", hue: "braze" },
+  { name: "Pulse-Ops AI", role: "Intelligence", latency: "Real-time", meta: "5 active signals", hue: "pulse" },
 ];
 
 const workflows = [
@@ -190,6 +200,15 @@ const engagementTrend: TrendPoint[] = [
   { label: "Sun", value: 63, secondary: 60 },
 ];
 
+const navItems = [
+  { label: "Command", icon: LayoutDashboard, hue: "command" },
+  { label: "Lifecycle", icon: Users, hue: "lifecycle" },
+  { label: "Workflows", icon: GitBranch, hue: "workflow" },
+  { label: "Signals", icon: Brain, hue: "signals" },
+  { label: "Events", icon: Radio, hue: "events" },
+  { label: "Stack", icon: Layers, hue: "stack" },
+];
+
 const totalTriggers = workflows.reduce((sum, workflow) => sum + workflow.triggered, 0);
 const activeWorkflows = workflows.filter((workflow) => workflow.status === "Active").length;
 const pausedWorkflows = workflows.length - activeWorkflows;
@@ -198,10 +217,20 @@ const averageCompletion = Math.round(
 );
 
 function PulseOpsMark() {
+  const nodes = [
+    [8, 8],
+    [16, 8],
+    [24, 8],
+    [8, 16],
+    [16, 16],
+    [8, 24],
+    [20, 24],
+  ];
+
   return (
-    <span className="po-mark" aria-hidden>
-      <svg viewBox="0 0 32 32" fill="none">
-        <g stroke="currentColor" strokeOpacity="0.14" strokeWidth="0.5">
+    <span className="po-mark logo-mark" aria-hidden>
+      <svg viewBox="0 0 32 32" className="logo-mark__glyph" fill="none">
+        <g stroke="#ffffff" strokeOpacity="0.12" strokeWidth="0.45">
           <line x1="8" y1="5" x2="8" y2="27" />
           <line x1="16" y1="5" x2="16" y2="27" />
           <line x1="24" y1="5" x2="24" y2="27" />
@@ -209,15 +238,32 @@ function PulseOpsMark() {
           <line x1="5" y1="16" x2="27" y2="16" />
           <line x1="5" y1="24" x2="27" y2="24" />
         </g>
-        <path d="M8 8 H24 M8 8 V24 M8 16 H20 M20 16 V24 M20 24 H24 M24 8 V24" stroke="currentColor" strokeWidth="1.7" strokeLinecap="square" />
-        {[8, 16, 24].map((x) => (
-          <rect key={`top-${x}`} x={x - 1.5} y={6.5} width="3" height="3" rx="0.65" fill="currentColor" />
+        <g fill="#ffffff" fillOpacity="0.08">
+          <rect x="14.5" y="22.5" width="3" height="3" rx="0.5" />
+          <rect x="22.5" y="14.5" width="3" height="3" rx="0.5" />
+        </g>
+        <path className="logo-mark__lane-flow" d="M8 8 H24" stroke="#f1c40f" strokeWidth="1.65" strokeLinecap="square" />
+        <g stroke="#f1c40f" strokeWidth="1.65" strokeLinecap="square" strokeLinejoin="miter">
+          <path d="M8 8 V24" />
+          <path d="M8 16 H20" />
+          <path d="M20 16 V24" />
+          <path d="M20 24 H24" />
+          <path d="M24 8 V24" />
+        </g>
+        {nodes.map(([x, y]) => (
+          <rect key={`${x}-${y}`} x={x - 1.5} y={y - 1.5} width="3" height="3" rx="0.65" fill="#f1c40f" />
         ))}
-        {[8, 16, 20, 24].map((x, index) => (
-          <rect key={`node-${x}-${index}`} x={x - 1.5} y={(index < 2 ? 16 : 24) - 1.5} width="3" height="3" rx="0.65" fill="currentColor" />
-        ))}
-        <circle cx="24" cy="24" r="2" fill="currentColor" />
+        <circle className="logo-mark__hub" cx="24" cy="24" r="2" fill="#f1c40f" />
       </svg>
+    </span>
+  );
+}
+
+function StackIntegrationMark({ name }: { name: string }) {
+  const Icon = name === "Snowflake" ? Database : name === "Hightouch" ? Layers : name === "Braze" ? MessageSquare : Sparkles;
+  return (
+    <span className={`po-stack-mark po-stack-mark--${name === "Pulse-Ops AI" ? "pulse" : name.toLowerCase()}`} aria-hidden>
+      <Icon size={14} strokeWidth={2.1} />
     </span>
   );
 }
@@ -268,6 +314,13 @@ function ModuleHeader({ eyebrow, title, text }: { eyebrow?: string; title: strin
   );
 }
 
+function healthState(score: number) {
+  if (score < 45) return "critical";
+  if (score < 60) return "risk";
+  if (score < 75) return "watch";
+  return "healthy";
+}
+
 export function PulseOpsCommandWireframe() {
   const criticalSignal = aiInsights[0];
 
@@ -283,7 +336,7 @@ export function PulseOpsCommandWireframe() {
           __html: `
             body.site-body {
               --portfolio-border-size: 0px;
-              background: #e8e5dc !important;
+              background: #f6f6f8 !important;
               background-image: none !important;
             }
             body.site-body::before,
@@ -299,9 +352,16 @@ export function PulseOpsCommandWireframe() {
           <span>Pulse-Ops <strong>AI</strong></span>
         </Link>
         <div className="po-app-nav__links">
-          {["Command", "Lifecycle", "Workflows", "Signals", "Events", "Stack"].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>
-          ))}
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <a key={item.label} className={`po-nav-tab po-nav-tab--${item.hue}`} href={`#${item.label.toLowerCase()}`}>
+                <span className="po-nav-tab__bg" aria-hidden />
+                <Icon size={13} aria-hidden />
+                {item.label}
+              </a>
+            );
+          })}
         </div>
         <div className="po-app-nav__tools">
           <span>Last 7 days</span>
@@ -326,12 +386,16 @@ export function PulseOpsCommandWireframe() {
           </div>
         </div>
         <div className="po-intro__system" aria-label="Pulse-Ops system sketch">
-          {stackIntegrations.map((item) => (
-            <div key={item.name}>
-              <span>{item.name}</span>
-              <strong>{item.latency}</strong>
-            </div>
-          ))}
+          {stackIntegrations.map((item) => {
+            return (
+              <div className={`po-stack-node po-stack-node--${item.hue}`} key={item.name}>
+                <StackIntegrationMark name={item.name} />
+                <span>{item.name}</span>
+                <strong>{item.latency}</strong>
+                <small>{item.meta}</small>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -410,7 +474,7 @@ export function PulseOpsCommandWireframe() {
       <section id="priority-actions" className="po-section">
         <div className="po-critical po-card">
           <div>
-            <p className="po-alert-label">Critical signal</p>
+            <p className="po-alert-label"><AlertTriangle size={14} aria-hidden /> Critical signal</p>
             <h2>{criticalSignal.title}</h2>
             <p>{criticalSignal.summary}</p>
           </div>
@@ -438,7 +502,7 @@ export function PulseOpsCommandWireframe() {
                 <tr key={item.title}>
                   <td><span className={`po-priority po-priority--${item.priority.toLowerCase()}`}>{item.priority}</span></td>
                   <td>{item.title}</td>
-                  <td>{item.category}</td>
+                  <td><span className={`po-signal-type po-signal-type--${item.category.toLowerCase().replace(/\s+/g, "-")}`}>{item.category}</span></td>
                   <td>{item.accounts}</td>
                   <td>{item.detected}</td>
                   <td>{item.confidence}%</td>
@@ -463,7 +527,7 @@ export function PulseOpsCommandWireframe() {
               {workflows.map((workflow) => (
                 <tr key={workflow.name}>
                   <td>{workflow.name}</td>
-                  <td>{workflow.status}</td>
+                  <td><span className={`po-status-badge po-status-badge--${workflow.status.toLowerCase()}`}>{workflow.status}</span></td>
                   <td>{workflow.triggered.toLocaleString()}</td>
                   <td>{Math.round(workflow.triggered * workflow.completed / 100).toLocaleString()}</td>
                   <td>{workflow.completed}%</td>
@@ -487,11 +551,15 @@ export function PulseOpsCommandWireframe() {
               </header>
               <div>
                 {column.accounts.map(([account, score, signal, owner]) => (
-                  <article key={account}>
+                  <article className={`po-board__account--${healthState(Number(score))}`} key={account}>
                     <h3>{account}</h3>
                     <p>{signal}</p>
+                    <div className="po-board__health" aria-hidden>
+                      <i style={{ width: `${score}%` }} />
+                    </div>
                     <footer>
-                      <span>Health {score}</span>
+                      <span className="po-board__score">Health {score}</span>
+                      <span>{column.title}</span>
                       <span>{owner}</span>
                     </footer>
                   </article>
@@ -519,7 +587,7 @@ export function PulseOpsCommandWireframe() {
                   <td>{item.accounts}</td>
                   <td>{item.impact}</td>
                   <td>{item.confidence}%</td>
-                  <td>{item.priority}</td>
+                  <td><span className={`po-priority po-priority--${item.priority.toLowerCase()}`}>{item.priority}</span></td>
                   <td><a href="#signals">{item.action}</a></td>
                 </tr>
               ))}
@@ -536,7 +604,7 @@ export function PulseOpsCommandWireframe() {
               <div key={`${time}-${title}`}>
                 <span>{time}</span>
                 <strong>{title}</strong>
-                <small>{company} · {type} · {severity}</small>
+                <small>{company} · {type} · <em className={`po-event-severity po-event-severity--${severity.toLowerCase()}`}>{severity}</em></small>
               </div>
             ))}
             <a href="#events">View all events <ArrowRight size={14} /></a>
@@ -547,6 +615,7 @@ export function PulseOpsCommandWireframe() {
           <div className="po-card po-integration-list">
             {stackIntegrations.map((item) => (
               <div key={`status-${item.name}`}>
+                <StackIntegrationMark name={item.name} />
                 <span>{item.name}</span>
                 <small>{item.role}</small>
                 <strong>{item.name === "Pulse-Ops AI" ? "Operational" : "Connected"}</strong>
