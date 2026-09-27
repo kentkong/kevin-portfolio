@@ -3483,8 +3483,8 @@ body.site-body > * {
 
 .selected-project__brand-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem 1.05rem;
+  flex-wrap: nowrap;
+  gap: 0.65rem;
   align-items: center;
   margin: 1.15rem 0 0;
 }
@@ -3497,13 +3497,13 @@ body.site-body > * {
 }
 
 .selected-project__brand-logo--gen {
-  max-width: 4.9rem;
-  max-height: 1.9rem;
+  max-width: 3.1rem;
+  max-height: 1.25rem;
 }
 
 .selected-project__brand-lockup {
   display: block;
-  width: min(12.5rem, 70%);
+  width: min(10.75rem, 72%);
   height: auto;
   object-fit: contain;
 }
