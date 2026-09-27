@@ -8,7 +8,7 @@ export function ProfessionalProfilePage() {
     <main className="about-profile" aria-labelledby="about-profile-title">
       <div className="about-profile__sheet">
         <section className="about-profile__section about-profile__hero">
-          <SectionLabel number="01" label="About" />
+          <SectionLabel label="About" />
           <div className="about-profile__hero-grid">
             <div className="about-profile__intro">
               <h1 id="about-profile-title">Kevin Alan Mold</h1>
@@ -254,10 +254,14 @@ function ToolLogo({ logo }: { logo: Logo }) {
   );
 }
 
-function SectionLabel({ number, label }: { number: string; label: string }) {
+function SectionLabel({ number, label }: { number?: string; label: string }) {
   return (
-    <div className="about-profile__section-label">
-      <span>{number}</span>
+    <div
+      className={`about-profile__section-label${
+        number ? "" : " about-profile__section-label--solo"
+      }`}
+    >
+      {number ? <span>{number}</span> : null}
       <span>{label}</span>
       <i aria-hidden />
     </div>

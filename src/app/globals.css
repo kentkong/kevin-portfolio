@@ -1595,6 +1595,10 @@ body.site-body > * {
   text-transform: uppercase;
 }
 
+.about-profile__section-label--solo {
+  grid-template-columns: auto 1fr;
+}
+
 .about-profile__section-label i {
   display: block;
   width: 2.2rem;
@@ -1644,12 +1648,13 @@ body.site-body > * {
   margin-top: clamp(1.9rem, 3vw, 2.65rem);
   padding-top: clamp(1.25rem, 2vw, 1.7rem);
   border-top: 1px solid var(--about-rule);
-  color: var(--about-muted);
+  color: #26323c;
 }
 
 .about-profile__copy p {
   margin: 0;
   font-size: clamp(1.02rem, 1.2vw, 1.12rem);
+  font-weight: 500;
   line-height: 1.6;
 }
 
