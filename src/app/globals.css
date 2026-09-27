@@ -1568,7 +1568,13 @@ body.site-body > * {
 }
 
 .about-profile__hero {
+  display: block;
   padding-top: 0;
+}
+
+.about-profile__hero .about-profile__section-label {
+  width: 11rem;
+  margin-bottom: clamp(1.5rem, 2.8vw, 2.3rem);
 }
 
 .about-profile__section-label {
