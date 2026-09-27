@@ -1750,6 +1750,7 @@ body.site-body > * {
   max-width: 10.4rem;
   height: auto;
   max-height: 3.8rem;
+  mix-blend-mode: multiply;
   object-fit: contain;
 }
 
