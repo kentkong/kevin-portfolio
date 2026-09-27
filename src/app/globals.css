@@ -3539,6 +3539,16 @@ body.site-body > * {
   margin-top: 0.85rem;
 }
 
+.selected-project__details-toggle[open] {
+  position: relative;
+  z-index: 6;
+  width: min(22rem, 100%);
+  margin-left: -0.9rem;
+  padding: 0.75rem 0.9rem 1rem;
+  border: 1px solid rgba(31, 29, 26, 0.12);
+  background: rgba(247, 243, 235, 0.94);
+}
+
 .selected-project__details-toggle summary {
   display: inline-flex;
   width: fit-content;
@@ -3551,6 +3561,7 @@ body.site-body > * {
   text-transform: uppercase;
   color: #1f1d1a;
   border-bottom: 1px solid currentColor;
+  list-style: none;
 }
 
 .selected-project__details-toggle summary::marker,
