@@ -41,15 +41,7 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
   }
 
   if (slug === "pulse-ops") {
-    return (
-      <>
-        <SiteNav />
-        <main>
-          <PulseOpsCommandWireframe />
-        </main>
-        <SiteFooter />
-      </>
-    );
+    return <PulseOpsCommandWireframe />;
   }
 
   return (

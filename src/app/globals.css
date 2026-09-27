@@ -6228,7 +6228,7 @@ body.site-body > * {
   --po-accent: #d0a70d;
   --po-critical: #b44b43;
   min-height: 100vh;
-  padding: clamp(5rem, 7vw, 7rem) clamp(1rem, 3vw, 2.5rem) clamp(4rem, 6vw, 6rem);
+  padding: 0 0 clamp(3rem, 5vw, 5rem);
   background: var(--po-bg);
   color: var(--po-ink);
 }
@@ -6236,7 +6236,7 @@ body.site-body > * {
 .po-app-nav,
 .po-intro,
 .po-section {
-  width: min(100%, 88rem);
+  width: 100%;
   margin-inline: auto;
 }
 
@@ -6249,8 +6249,9 @@ body.site-body > * {
   gap: 1.25rem;
   align-items: center;
   min-height: 3.4rem;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem clamp(1rem, 2vw, 2rem);
   border: 1px solid var(--po-rule);
+  border-inline: 0;
   background: rgba(244, 242, 236, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -6326,10 +6327,10 @@ body.site-body > * {
 
 .po-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: end;
-  padding: clamp(2rem, 5vw, 4.5rem) 0 clamp(1.75rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.34fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+  padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1rem, 2vw, 2rem);
   border-bottom: 1px solid var(--po-rule);
 }
 
@@ -6339,28 +6340,28 @@ body.site-body > * {
 }
 
 .po-intro h1 {
-  max-width: 13ch;
+  max-width: none;
   margin: 0;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: clamp(2.4rem, 6vw, 5.8rem);
+  font-size: clamp(1.55rem, 2.8vw, 2.75rem);
   font-weight: 700;
-  letter-spacing: -0.08em;
-  line-height: 0.9;
+  letter-spacing: -0.055em;
+  line-height: 1;
 }
 
 .po-intro p {
   max-width: 48rem;
-  margin: 1.25rem 0 0;
+  margin: 0.6rem 0 0;
   color: var(--po-muted);
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
-  line-height: 1.7;
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+  line-height: 1.55;
 }
 
 .po-status-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
-  margin-top: 1.35rem;
+  margin-top: 0.9rem;
 }
 
 .po-status-row span {
@@ -6402,7 +6403,7 @@ body.site-body > * {
 }
 
 .po-section {
-  padding-block: clamp(1.4rem, 3.2vw, 2.75rem);
+  padding: clamp(1.25rem, 2.6vw, 2.25rem) clamp(1rem, 2vw, 2rem);
   border-bottom: 1px solid var(--po-rule);
 }
 
@@ -6836,10 +6837,6 @@ body.site-body > * {
 }
 
 @media (max-width: 700px) {
-  .po-wireframe {
-    padding-inline: 0.75rem;
-  }
-
   .po-app-nav__tools {
     display: none;
   }

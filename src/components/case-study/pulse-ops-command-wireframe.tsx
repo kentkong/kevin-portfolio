@@ -261,11 +261,10 @@ export function PulseOpsCommandWireframe() {
 
       <section id="command" className="po-intro">
         <div>
-          <p className="po-eyebrow">Wireframe / Command overview</p>
+          <p className="po-eyebrow">Pulse-Ops AI</p>
           <h1 id="pulse-ops-wireframe-title">Lifecycle Operations for Smarter Customer Growth</h1>
           <p>
-            Monitors the full customer lifecycle stack, turns live data into actionable insights,
-            prioritises what matters with AI, and helps operations, marketing and CX teams move faster.
+            Monitor lifecycle health, AI signals and operational actions across the full customer stack.
           </p>
           <div className="po-status-row">
             <span><CheckCircle2 size={14} /> All systems operational</span>
