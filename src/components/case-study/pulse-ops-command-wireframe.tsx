@@ -413,6 +413,7 @@ function StackFlowHorizontal() {
               <div>
                 <p>{layer.name}</p>
                 <span className="stack-flow-strip__latency">{layer.latency}</span>
+                <small>{layer.meta}</small>
               </div>
             </div>
             {index < stackIntegrations.length - 1 ? (
@@ -533,7 +534,7 @@ export function PulseOpsCommandWireframe() {
           __html: `
             body.site-body {
               --portfolio-border-size: 0px;
-              background: #f6f6f8 !important;
+              background: #edf2f7 !important;
               background-image: none !important;
             }
             body.site-body::before,
@@ -576,8 +577,8 @@ export function PulseOpsCommandWireframe() {
             <PulseOpsMark />
             <div>
               <p className="po-eyebrow">Pulse-Ops AI</p>
-              <h1 id="pulse-ops-wireframe-title">Lifecycle Operations Command Centre</h1>
-              <p>AI-powered lifecycle intelligence, workflow orchestration and customer health monitoring.</p>
+              <h1 id="pulse-ops-wireframe-title">Pulse-Ops AI Command Centre</h1>
+              <p>Lifecycle intelligence, workflow orchestration and customer health monitoring.</p>
             </div>
           </div>
           <div className="po-status-row">
@@ -672,6 +673,11 @@ export function PulseOpsCommandWireframe() {
               <h2>{criticalSignal.title}</h2>
               <p>{criticalSignal.summary}</p>
               <small>{criticalSignal.accounts} need action today · {criticalSignal.confidence}% confidence · {criticalSignal.impact} potential impact</small>
+              <div className="po-critical-signal__metrics">
+                <span><strong>{criticalSignal.confidence}%</strong><small>AI confidence</small></span>
+                <span><strong>{criticalSignal.accounts}</strong><small>Accounts affected</small></span>
+                <span><strong>{criticalSignal.impact}</strong><small>MRR impact</small></span>
+              </div>
             </div>
           </div>
           <a href="#priority-actions">View at-risk accounts <ArrowRight size={14} /></a>
