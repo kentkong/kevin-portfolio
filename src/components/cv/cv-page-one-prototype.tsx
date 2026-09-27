@@ -1,24 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { assetPath } from "@/lib/asset-path";
 import { site } from "@/lib/site";
 import { basePath } from "@/lib/site-config";
 
 const cvPdfHref = `${basePath}/kevin-alan-mold-cv.pdf`;
 
-const capabilityGroups = [
-  {
-    label: "CRM / Customer",
-    items: ["CRM & Lifecycle", "Marketing Operations", "Customer Experience"],
-  },
-  {
-    label: "Design / Product",
-    items: ["UX/UI Design", "Product Design", "Visual Design"],
-  },
-  {
-    label: "Tech / Delivery",
-    items: ["AI & Automation", "Business Analysis", "Leadership"],
-  },
+const expertiseColumns = [
+  ["CRM & Lifecycle", "Marketing Operations", "Customer Experience"],
+  ["Operational Leadership", "Business Analysis", "Project Delivery"],
+  ["UX/UI & Visual Design", "AI & Automation", "Data & Analytics"],
 ];
 
 const genDigitalBullets = [
@@ -58,49 +50,6 @@ const earlierBullets = [
   "Built the technical and operational foundation for later progression into Business Analysis, Agile delivery, CRM technology, project delivery and operational leadership.",
 ];
 
-const coreStrengths = [
-  {
-    label: "CRM & Operations",
-    items: [
-      "CRM & Lifecycle Marketing",
-      "Marketing Operations",
-      "MarTech",
-      "People Leadership",
-      "Team Development",
-      "Operational Management",
-    ],
-  },
-  {
-    label: "Analysis & Delivery",
-    items: [
-      "Business Analysis",
-      "Requirements Gathering",
-      "Solution Design",
-      "Project Management",
-      "Agile/Scrum",
-      "Process Improvement",
-      "Executive Communication",
-      "Presentations",
-      "Stakeholder Management",
-    ],
-  },
-  {
-    label: "Product, Design & Data",
-    items: [
-      "Product",
-      "Engineering",
-      "UX/UI",
-      "Visual & Application Design",
-      "Data & Customer Analytics",
-      "Performance Measurement",
-      "Reporting",
-      "AI & Workflow Automation",
-      "Strategic Problem Solving",
-      "Technical Expertise",
-    ],
-  },
-];
-
 const technologies = [
   {
     label: "CRM & Marketing",
@@ -120,7 +69,7 @@ const technologies = [
     items: ["Jira", "Agile/Scrum", "Backlog Management", "Sprint Planning"],
   },
   {
-    label: "AI & Digital",
+    label: "AI, Design & Digital",
     items: ["AI Workflow Automation", "Cursor AI", "UX/UI & Digital Design", "HTML", "CSS", "JavaScript"],
   },
 ];
@@ -214,44 +163,21 @@ export function CvDocumentPages() {
 export function CvDocumentPageOne() {
   return (
     <article id="cv-page-01" className="cv-document-page" aria-label="Kevin Alan Mold CV page one">
-      <header className="cv-document__hero">
-        <div className="cv-document__identity">
-          <h2>Kevin Alan Mold</h2>
-          <div className="cv-document__positioning">
-            <p>
-              Marketing &amp; Lifecycle CRM · Operational Management &amp; Leadership · UX/UI
-              &amp; Visual Design
-            </p>
-          </div>
-        </div>
-        <p className="cv-document__contact">
-          Prague / Czech Republic
+      <header className="cv-document__header">
+        <h2>Kevin Alan Mold</h2>
+        <p className="cv-document__headline">
+          CRM, Marketing Operations
           <br />
-          +420 774358879
-          <br />
-          jovianuk@gmail.com
-          <br />
-          linkedin.com/in/kevinmold →
+          &amp; Customer Experience
+        </p>
+        <p className="cv-document__subhead">Leadership · UX/UI · Digital Design</p>
+        <p className="cv-document__contact-row">
+          Prague, CZ · +420 774358879 · jovianuk@gmail.com · LinkedIn · Portfolio
         </p>
       </header>
 
-      <div className="cv-document__capabilities" aria-label="Capability index">
-        {capabilityGroups.map((group) => (
-          <div key={group.label}>
-            <h3>{group.label}</h3>
-            {group.items.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
-        ))}
-      </div>
-
-      <section className="cv-document__section cv-document__profile">
-        <div className="cv-document__section-label">
-          <span>01</span>
-          <p>Profile</p>
-        </div>
-        <div className="cv-document__section-body cv-document__profile-copy">
+      <CvSection number="01" title="Profile">
+        <div className="cv-document__profile-copy">
           <p>
             Marketing, operations and customer experience leader with 17 years of international corporate
             experience spanning CRM and lifecycle marketing, customer platforms, business analysis,
@@ -273,14 +199,22 @@ export function CvDocumentPageOne() {
             improve customer experience and business performance.
           </p>
         </div>
-      </section>
+      </CvSection>
 
-      <section className="cv-document__section cv-document__experience">
-        <div className="cv-document__section-label">
-          <span>02</span>
-          <p>Experience</p>
+      <CvSection number="02" title="Core Expertise">
+        <div className="cv-expertise-grid" aria-label="Core expertise">
+          {expertiseColumns.map((column) => (
+            <div key={column.join("-")}>
+              {column.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          ))}
         </div>
-        <div className="cv-document__section-body">
+      </CvSection>
+
+      <CvSection number="03" title="Experience" className="cv-document__experience">
+        <div className="cv-document__roles">
           <CvRole
             dates="Mar 2023—Jun 1st 2026"
             company="Gen Digital / Norton"
@@ -297,7 +231,7 @@ export function CvDocumentPageOne() {
             bullets={merkleBullets}
           />
         </div>
-      </section>
+      </CvSection>
     </article>
   );
 }
@@ -305,12 +239,13 @@ export function CvDocumentPageOne() {
 export function CvDocumentPageTwo() {
   return (
     <article id="cv-page-02" className="cv-document-page" aria-label="Kevin Alan Mold CV page two">
-      <section className="cv-document__section cv-document__experience cv-document__section--first">
-        <div className="cv-document__section-label">
-          <span>02</span>
-          <p>Experience continued</p>
-        </div>
-        <div className="cv-document__section-body">
+      <header className="cv-document__continuation-header">
+        <span>Kevin Alan Mold</span>
+        <span>02 / 02</span>
+      </header>
+
+      <CvSection number="04" title="Experience Continued" className="cv-document__experience">
+        <div className="cv-document__roles">
           <CvRole
             dates="Sep 2016—Dec 2020"
             company="Infor"
@@ -326,43 +261,20 @@ export function CvDocumentPageTwo() {
             bullets={earlierBullets}
           />
         </div>
-      </section>
+      </CvSection>
 
-      <section className="cv-document__section">
-        <div className="cv-document__section-label">
-          <span>03</span>
-          <p>Core strengths / Expertise</p>
-        </div>
-        <div className="cv-strength-groups">
-          {coreStrengths.map((group) => (
-            <div key={group.label}>
-              <h3>{group.label}</h3>
-              <p>{group.items.join(" · ")}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="cv-document__section">
-        <div className="cv-document__section-label">
-          <span>04</span>
-          <p>Technology</p>
-        </div>
+      <CvSection number="05" title="Technology">
         <div className="cv-tech-list">
           {technologies.map((group) => (
             <div key={group.label}>
-              <h3>{group.label}</h3>
+              <h3>{group.label.toUpperCase()}</h3>
               <p>{group.items.join(" · ")}</p>
             </div>
           ))}
         </div>
-      </section>
+      </CvSection>
 
-      <section className="cv-document__section">
-        <div className="cv-document__section-label">
-          <span>05</span>
-          <p>Education</p>
-        </div>
+      <CvSection number="06" title="Education">
         <div className="cv-education">
           <p>
             <strong>BA (Hons) Graphic &amp; Web Design — 2:1</strong>
@@ -385,19 +297,38 @@ export function CvDocumentPageTwo() {
             </span>
           </p>
         </div>
-      </section>
+      </CvSection>
 
-      <section className="cv-document__section">
-        <div className="cv-document__section-label">
-          <span>06</span>
-          <p>Additional information</p>
-        </div>
+      <CvSection number="07" title="Additional Information">
         <div className="cv-additional">
-          <span>English — Native | Czech — A2 (actively developing)</span>
-          <span>British citizen and Czech permanent resident.</span>
+          <span>English — Native</span>
+          <span>Czech — A2 (actively developing)</span>
+          <span>British citizen · Czech permanent resident</span>
         </div>
-      </section>
+      </CvSection>
     </article>
+  );
+}
+
+function CvSection({
+  number,
+  title,
+  className,
+  children,
+}: {
+  number: string;
+  title: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  return (
+    <section className={`cv-document__section${className ? ` ${className}` : ""}`}>
+      <div className="cv-document__section-heading">
+        <span>{number}</span>
+        <h3>{title}</h3>
+      </div>
+      <div className="cv-document__section-content">{children}</div>
+    </section>
   );
 }
 
@@ -414,13 +345,11 @@ function CvRole({ dates, company, title, location, bullets, primary = false }: C
   return (
     <article className={`cv-role${primary ? " cv-role--primary" : ""}`}>
       <div className="cv-role__header">
+        <p className="cv-role__company">{company}</p>
         <p className="cv-role__meta">{dates}</p>
-        <div>
-          <p className="cv-role__company">{company}</p>
-          <h3>{title}</h3>
-          <p className="cv-role__location">{location}</p>
-        </div>
       </div>
+      <h4>{title}</h4>
+      <p className="cv-role__location">{location}</p>
       <ul className="cv-role__bullets">
         {bullets.map((bullet) => (
           <li key={bullet}>{bullet}</li>
