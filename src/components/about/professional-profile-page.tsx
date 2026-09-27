@@ -68,14 +68,7 @@ export function ProfessionalProfilePage() {
                 <div className="about-profile__marker" aria-hidden />
                 <div className="about-profile__logo-cell">
                   {role.logos.map((logo) => (
-                    <Image
-                      key={logo.src}
-                      src={assetPath(logo.src)}
-                      alt={logo.alt}
-                      width={180}
-                      height={80}
-                      unoptimized
-                    />
+                    <LogoMark key={logo.alt} logo={logo} />
                   ))}
                 </div>
                 <div>
@@ -96,14 +89,7 @@ export function ProfessionalProfilePage() {
                 <h2>{row.category}</h2>
                 <div className="about-profile__tool-logos">
                   {row.tools.map((tool) => (
-                    <Image
-                      key={tool.src}
-                      src={assetPath(tool.src)}
-                      alt={tool.alt}
-                      width={190}
-                      height={80}
-                      unoptimized
-                    />
+                    <LogoMark key={tool.alt} logo={tool} />
                   ))}
                 </div>
               </div>
@@ -175,7 +161,7 @@ const expertiseColumns = [
 const experience = [
   {
     company: "Gen Digital",
-    logos: [{ src: "/logos/about/gen-digital.png", alt: "Gen Digital" }],
+    logos: [{ alt: "Gen Digital", label: "Gen", variant: "gen" }],
     title: "Manager — Email Platform",
     description:
       "Lead global lifecycle marketing operations supporting Norton customer engagement programmes reaching millions of customers worldwide.",
@@ -183,7 +169,7 @@ const experience = [
   },
   {
     company: "Merkle",
-    logos: [{ src: "/logos/about/merkle.png", alt: "Merkle" }],
+    logos: [{ alt: "Merkle", label: "Merkle", variant: "merkle" }],
     title: "Business Analyst",
     description:
       "Led requirements discovery and analysis, translating business and customer needs into functional requirements and scalable Salesforce-based solutions.",
@@ -191,7 +177,7 @@ const experience = [
   },
   {
     company: "Infor",
-    logos: [{ src: "/logos/about/infor.png", alt: "Infor" }],
+    logos: [{ alt: "Infor", label: "Infor", variant: "infor" }],
     title: "Support Consultant & Analyst",
     description:
       "Delivered advanced technical and application support for enterprise ERP environments, diagnosing complex software, data and system issues for international business customers.",
@@ -200,10 +186,10 @@ const experience = [
   {
     company: "Earlier Enterprise Technology & Operations",
     logos: [
-      { src: "/logos/about/ibm.png", alt: "IBM" },
+      { alt: "IBM", label: "IBM", variant: "ibm" },
       { src: "/logos/about/hp.svg", alt: "Hewlett Packard" },
       { src: "/logos/about/motorola.svg", alt: "Motorola" },
-      { src: "/logos/about/ariba.png", alt: "Ariba" },
+      { alt: "Ariba", label: "Ariba", variant: "ariba" },
     ],
     title: "Enterprise Technology & Operations",
     description:
@@ -216,9 +202,9 @@ const toolRows = [
   {
     category: "CRM & Marketing Technology",
     tools: [
-      { src: "/logos/about/salesforce.png", alt: "Salesforce Marketing Cloud" },
-      { src: "/logos/about/braze.png", alt: "Braze" },
-      { src: "/logos/about/iterable.png", alt: "Iterable" },
+      { alt: "Salesforce Marketing Cloud", label: "salesforce marketing cloud", variant: "salesforce" },
+      { alt: "Braze", label: "braze", variant: "braze" },
+      { alt: "Iterable", label: "Iterable", variant: "iterable" },
     ],
   },
   {
@@ -232,12 +218,42 @@ const toolRows = [
   {
     category: "Design & Creative",
     tools: [
-      { src: "/logos/about/photoshop.png", alt: "Adobe Photoshop" },
-      { src: "/logos/about/illustrator.png", alt: "Adobe Illustrator" },
-      { src: "/logos/about/indesign.png", alt: "Adobe InDesign" },
+      { alt: "Adobe Photoshop", label: "Photoshop", variant: "adobe-ps" },
+      { alt: "Adobe Illustrator", label: "Illustrator", variant: "adobe-ai" },
+      { alt: "Adobe InDesign", label: "InDesign", variant: "adobe-id" },
     ],
   },
 ];
+
+type Logo = {
+  src?: string;
+  alt: string;
+  label?: string;
+  variant?: string;
+};
+
+function LogoMark({ logo }: { logo: Logo }) {
+  if (logo.src) {
+    return (
+      <Image
+        src={assetPath(logo.src)}
+        alt={logo.alt}
+        width={190}
+        height={80}
+        unoptimized
+      />
+    );
+  }
+
+  return (
+    <span
+      className={`about-profile__logo-mark about-profile__logo-mark--${logo.variant ?? "text"}`}
+      aria-label={logo.alt}
+    >
+      {logo.label}
+    </span>
+  );
+}
 
 function SectionLabel({ number, label }: { number: string; label: string }) {
   return (
