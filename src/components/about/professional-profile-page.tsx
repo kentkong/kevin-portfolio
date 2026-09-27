@@ -17,8 +17,7 @@ export function ProfessionalProfilePage() {
               <h1 id="about-profile-title">Kevin Alan Mold</h1>
               <p className="about-profile__positioning">
                 <span>CRM, Marketing &amp; Operations Manager</span>
-                <span>with a background in UX/UI</span>
-                <span>&amp; Visual Design</span>
+                <span>with a background in UX/UI &amp; Visual Design</span>
               </p>
               <div className="about-profile__copy">
                 <p>
@@ -111,8 +110,8 @@ export function ProfessionalProfilePage() {
               <Link className="about-profile__button" href={`mailto:${site.email}`}>
                 Get in touch <span aria-hidden>→</span>
               </Link>
-              <a className="about-profile__button about-profile__button--secondary" href={cvPdfHref} download>
-                Download CV <span aria-hidden>↓</span>
+              <a className="about-profile__icon-link about-profile__icon-link--text" href={cvPdfHref} download>
+                CV
               </a>
               <Link
                 className="about-profile__icon-link"
@@ -122,9 +121,6 @@ export function ProfessionalProfilePage() {
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon />
-              </Link>
-              <Link className="about-profile__icon-link" href={`mailto:${site.email}`} aria-label="Email">
-                <MailIcon />
               </Link>
             </div>
           </div>
@@ -276,25 +272,3 @@ function LinkedInIcon() {
   );
 }
 
-function MailIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.8"
-        d="M4 6h16v12H4z"
-      />
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.8"
-        d="m4 7 8 6 8-6"
-      />
-    </svg>
-  );
-}

@@ -1620,9 +1620,9 @@ body.site-body > * {
 
 .about-profile__positioning {
   margin: 1.45rem 0 0;
-  max-width: 20em;
+  max-width: 28em;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: clamp(1.28rem, 2vw, 1.76rem);
+  font-size: clamp(1.15rem, 1.72vw, 1.52rem);
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.18;
@@ -1630,6 +1630,7 @@ body.site-body > * {
 
 .about-profile__positioning span {
   display: block;
+  white-space: nowrap;
 }
 
 .about-profile__copy {
@@ -2037,6 +2038,13 @@ body.site-body > * {
   height: 1.2rem;
 }
 
+.about-profile__icon-link--text {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
 @media (max-width: 900px) {
   .about-profile__section,
   .about-profile__hero-grid,
@@ -2046,6 +2054,10 @@ body.site-body > * {
 
   .about-profile__intro {
     padding-top: 0;
+  }
+
+  .about-profile__positioning span {
+    white-space: normal;
   }
 
   .about-profile__portrait {
