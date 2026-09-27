@@ -85,7 +85,7 @@ export function ProfessionalProfilePage() {
                 <h2>{row.category}</h2>
                 <div className="about-profile__tool-logos">
                   {row.tools.map((tool) => (
-                    <LogoMark key={tool.alt} logo={tool} />
+                    <ToolLogo key={tool.alt} logo={tool} />
                   ))}
                 </div>
               </div>
@@ -200,17 +200,17 @@ const toolRows = [
   {
     category: "Product & Delivery",
     tools: [
-      { src: "/logos/about/jira.svg", alt: "Jira" },
-      { src: "/logos/about/figma.svg", alt: "Figma" },
-      { src: "/logos/about/cursor.svg", alt: "Cursor" },
+      { src: "/logos/about/jira.svg", alt: "Jira", label: "Jira" },
+      { src: "/logos/about/figma.svg", alt: "Figma", label: "Figma" },
+      { src: "/logos/about/cursor.svg", alt: "Cursor", label: "Cursor" },
     ],
   },
   {
     category: "Design & Creative",
     tools: [
-      { src: "/logos/about/photoshop.svg", alt: "Adobe Photoshop" },
-      { src: "/logos/about/illustrator.svg", alt: "Adobe Illustrator" },
-      { src: "/logos/about/indesign.svg", alt: "Adobe InDesign" },
+      { src: "/logos/about/photoshop.svg", alt: "Adobe Photoshop", label: "Photoshop" },
+      { src: "/logos/about/illustrator.svg", alt: "Adobe Illustrator", label: "Illustrator" },
+      { src: "/logos/about/indesign.svg", alt: "Adobe InDesign", label: "InDesign" },
     ],
   },
 ];
@@ -242,6 +242,15 @@ function LogoMark({ logo }: { logo: Logo }) {
     >
       {logo.label}
     </span>
+  );
+}
+
+function ToolLogo({ logo }: { logo: Logo }) {
+  return (
+    <div className="about-profile__tool-logo-item">
+      <LogoMark logo={logo} />
+      {logo.label ? <span>{logo.label}</span> : null}
+    </div>
   );
 }
 
