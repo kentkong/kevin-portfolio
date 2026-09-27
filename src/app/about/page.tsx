@@ -65,7 +65,14 @@ export default function AboutPage() {
                 <div className="about-profile__marker" aria-hidden />
                 <div className="about-profile__logo-cell">
                   {role.logos.map((logo) => (
-                    <img key={logo.src} src={assetPath(logo.src)} alt={logo.alt} />
+                    <Image
+                      key={logo.src}
+                      src={assetPath(logo.src)}
+                      alt={logo.alt}
+                      width={180}
+                      height={80}
+                      unoptimized
+                    />
                   ))}
                 </div>
                 <div>
@@ -86,7 +93,14 @@ export default function AboutPage() {
                 <h2>{row.category}</h2>
                 <div className="about-profile__tool-logos">
                   {row.tools.map((tool) => (
-                    <img key={tool.src} src={assetPath(tool.src)} alt={tool.alt} />
+                    <Image
+                      key={tool.src}
+                      src={assetPath(tool.src)}
+                      alt={tool.alt}
+                      width={190}
+                      height={80}
+                      unoptimized
+                    />
                   ))}
                 </div>
               </div>
