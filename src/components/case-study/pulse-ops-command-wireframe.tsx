@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {
-  Activity,
   ArrowRight,
   Bell,
   CheckCircle2,
@@ -10,7 +9,6 @@ import {
   Search,
   Sparkles,
   UserCircle,
-  Workflow,
 } from "lucide-react";
 
 type TrendPoint = { label: string; value: number; secondary?: number };
