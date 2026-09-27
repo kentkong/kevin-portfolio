@@ -1644,7 +1644,7 @@ body.site-body > * {
   width: clamp(18rem, 30vw, 24rem);
   aspect-ratio: 1;
   margin: 0;
-  transform: translateY(-0.75rem);
+  transform: translateY(-1.45rem);
 }
 
 .about-profile__portrait::before {
@@ -1770,34 +1770,34 @@ body.site-body > * {
 
 .about-profile__logo-mark--gen {
   color: #2447ff;
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: -0.08em;
   text-transform: none;
 }
 
 .about-profile__logo-mark--merkle {
   color: #285180;
-  font-size: 1.05rem;
+  font-size: 1.45rem;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
 .about-profile__logo-mark--infor {
   color: #d52b2b;
-  font-size: 1.65rem;
+  font-size: 2.4rem;
   letter-spacing: -0.05em;
 }
 
 .about-profile__logo-mark--ibm {
   color: #2d63b8;
-  font-size: 1.05rem;
+  font-size: 1.45rem;
   letter-spacing: 0.08em;
 }
 
 .about-profile__logo-mark--ariba {
   color: #3f2c26;
-  font-size: 0.74rem;
-  letter-spacing: 0.22em;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -1894,21 +1894,21 @@ body.site-body > * {
 
 .about-profile__logo-mark--salesforce {
   color: #178fc3;
-  font-size: 0.95rem;
+  font-size: 1.35rem;
   letter-spacing: -0.06em;
   text-transform: lowercase;
 }
 
 .about-profile__logo-mark--braze {
   color: #0b1018;
-  font-size: 2.1rem;
+  font-size: 2.7rem;
   font-style: italic;
   letter-spacing: -0.08em;
 }
 
 .about-profile__logo-mark--iterable {
   color: #57305f;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   letter-spacing: -0.03em;
 }
 
@@ -1917,7 +1917,7 @@ body.site-body > * {
 .about-profile__logo-mark--adobe-id {
   gap: 0.45rem;
   font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -1932,7 +1932,7 @@ body.site-body > * {
   justify-content: center;
   border-radius: 0.2rem;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 700;
 }
 
