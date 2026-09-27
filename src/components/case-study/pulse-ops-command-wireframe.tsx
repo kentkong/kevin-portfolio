@@ -1,13 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect } from "react";
 import {
   ArrowRight,
   Bell,
   CheckCircle2,
-  Database,
-  Layers,
-  MessageSquare,
   Search,
-  Sparkles,
   UserCircle,
 } from "lucide-react";
 
@@ -148,6 +147,39 @@ const lifecycleDistribution = [
   ["At Risk", 23],
 ];
 
+const lifecycleBoard = [
+  {
+    title: "Onboarding",
+    accounts: [
+      ["NovaTech Solutions", 62, "Integration stalled", "Alex Rivera"],
+      ["MediaStream Pro", 55, "Day 18 — no team invite", "Sam Patel"],
+      ["BrightPath CRM", 71, "Healthy progression", "Jordan Lee"],
+    ],
+  },
+  {
+    title: "Activation",
+    accounts: [
+      ["CloudScale Inc", 78, "Milestone due", "Jordan Lee"],
+      ["LogiChain", 83, "Activation healthy", "Jordan Lee"],
+    ],
+  },
+  {
+    title: "Adoption",
+    accounts: [
+      ["DataPulse Analytics", 91, "Power user", "Alex Rivera"],
+      ["SyncWave", 86, "Feature adoption", "Sam Patel"],
+    ],
+  },
+  {
+    title: "Renewal",
+    accounts: [["HealthBridge", 72, "Renewal in 25d", "Jordan Lee"]],
+  },
+  {
+    title: "Intervention",
+    accounts: [["RetailEdge", 38, "14d inactive", "Alex Rivera"]],
+  },
+];
+
 const engagementTrend: TrendPoint[] = [
   { label: "Mon", value: 72, secondary: 68 },
   { label: "Tue", value: 74, secondary: 70 },
@@ -239,6 +271,11 @@ function ModuleHeader({ eyebrow, title, text }: { eyebrow?: string; title: strin
 export function PulseOpsCommandWireframe() {
   const criticalSignal = aiInsights[0];
 
+  useEffect(() => {
+    document.body.classList.add("pulse-ops-product-body");
+    return () => document.body.classList.remove("pulse-ops-product-body");
+  }, []);
+
   return (
     <article className="po-wireframe" aria-labelledby="pulse-ops-wireframe-title">
       <nav className="po-app-nav" aria-label="Pulse-Ops wireframe navigation">
@@ -283,7 +320,7 @@ export function PulseOpsCommandWireframe() {
         </div>
       </section>
 
-      <section className="po-section">
+      <section className="po-section po-section--glance">
         <ModuleHeader title="Today at a glance" text="Key signals across your customer lifecycle." />
         <div className="po-kpi-grid">
           {[
@@ -302,46 +339,8 @@ export function PulseOpsCommandWireframe() {
         </div>
       </section>
 
-      <section id="stack" className="po-section">
-        <div className="po-card po-stack-card">
-          <ModuleHeader title="Lifecycle stack" text="All systems operational" />
-          <div className="po-stack-flow">
-            {stackIntegrations.map((item, index) => (
-              <div className="po-stack-flow__item" key={item.name}>
-                <div>
-                  {index === 0 ? <Database size={18} /> : index === 1 ? <Layers size={18} /> : index === 2 ? <MessageSquare size={18} /> : <Sparkles size={18} />}
-                  <span>{item.name}</span>
-                  <small>{item.latency}</small>
-                </div>
-                {index < stackIntegrations.length - 1 ? <ArrowRight size={18} aria-hidden /> : null}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="signals" className="po-section">
-        <div className="po-critical po-card">
-          <div>
-            <p className="po-alert-label">Critical signal</p>
-            <h2>{criticalSignal.title}</h2>
-            <p>{criticalSignal.summary}</p>
-          </div>
-          <dl>
-            <div><dt>Confidence</dt><dd>{criticalSignal.confidence}%</dd></div>
-            <div><dt>Potential impact</dt><dd>{criticalSignal.impact}</dd></div>
-          </dl>
-          <a href="#priority-actions">View at-risk accounts <ArrowRight size={14} /></a>
-        </div>
-        <div className="po-demo-path">
-          {["Review AI signal", "Inspect at-risk accounts", "Activate workflow"].map((step, index) => (
-            <span key={step}><strong>{String(index + 1).padStart(2, "0")}</strong>{step}</span>
-          ))}
-        </div>
-      </section>
-
       <section id="lifecycle" className="po-section">
-        <ModuleHeader title="Lifecycle intelligence" text="Customer health, engagement trend and lifecycle movement." />
+        <ModuleHeader title="Lifecycle operations" text="Command-centre modules for lifecycle health, engagement, AI signals and workflow activity." />
         <div className="po-analytics-grid">
           <div className="po-card po-card--large">
             <h3>Lifecycle health score</h3>
@@ -356,6 +355,11 @@ export function PulseOpsCommandWireframe() {
             <h3>Audience growth</h3>
             <strong>847 accounts</strong>
             <Sparkline values={[760, 781, 795, 812, 829, 847]} />
+            <div className="po-mini-segments">
+              {lifecycleDistribution.slice(0, 4).map(([label, value]) => (
+                <span key={label}>{label}<strong>{value}</strong></span>
+              ))}
+            </div>
           </div>
           <div className="po-card">
             <h3>Campaign / lifecycle performance</h3>
@@ -370,20 +374,6 @@ export function PulseOpsCommandWireframe() {
             <h3>Operational efficiency</h3>
             <strong>14 days avg.</strong>
             <p>New customer onboarding duration with day-3 integration nudge recommended.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="po-section">
-        <ModuleHeader title="Customer + AI intelligence" text="Segments, signal categories and workflow activity." />
-        <div className="po-three-grid">
-          <div className="po-card">
-            <h3>Customer segments</h3>
-            <div className="po-segment-list">
-              {lifecycleDistribution.map(([label, value]) => (
-                <span key={label}><i style={{ width: `${Number(value) / 3.12}%` }} />{label}<strong>{value}</strong></span>
-              ))}
-            </div>
           </div>
           <div className="po-card">
             <h3>AI signal breakdown</h3>
@@ -403,6 +393,23 @@ export function PulseOpsCommandWireframe() {
       </section>
 
       <section id="priority-actions" className="po-section">
+        <div className="po-critical po-card">
+          <div>
+            <p className="po-alert-label">Critical signal</p>
+            <h2>{criticalSignal.title}</h2>
+            <p>{criticalSignal.summary}</p>
+          </div>
+          <dl>
+            <div><dt>Confidence</dt><dd>{criticalSignal.confidence}%</dd></div>
+            <div><dt>Potential impact</dt><dd>{criticalSignal.impact}</dd></div>
+          </dl>
+          <a href="#priority-actions">View at-risk accounts <ArrowRight size={14} /></a>
+        </div>
+        <div className="po-demo-path">
+          {["Review AI signal", "Inspect at-risk accounts", "Activate workflow"].map((step, index) => (
+            <span key={step}><strong>{String(index + 1).padStart(2, "0")}</strong>{step}</span>
+          ))}
+        </div>
         <ModuleHeader title="Priority actions" text="AI-recommended next steps." />
         <div className="po-table-wrap">
           <table className="po-table">
@@ -451,6 +458,32 @@ export function PulseOpsCommandWireframe() {
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section className="po-section">
+        <ModuleHeader title="Lifecycle operations board" text="Operational CRM-style account movement across lifecycle stages." />
+        <div className="po-board">
+          {lifecycleBoard.map((column) => (
+            <div className="po-board__column" key={column.title}>
+              <header>
+                <span>{column.title}</span>
+                <strong>{column.accounts.length}</strong>
+              </header>
+              <div>
+                {column.accounts.map(([account, score, signal, owner]) => (
+                  <article key={account}>
+                    <h3>{account}</h3>
+                    <p>{signal}</p>
+                    <footer>
+                      <span>Health {score}</span>
+                      <span>{owner}</span>
+                    </footer>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
