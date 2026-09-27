@@ -2,9 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { assetPath } from "@/lib/asset-path";
 import { site } from "@/lib/site";
-import { basePath } from "@/lib/site-config";
-
-const cvPdfHref = `${basePath}/kevin-alan-mold-cv.pdf`;
 
 export function ProfessionalProfilePage() {
   return (
@@ -110,9 +107,6 @@ export function ProfessionalProfilePage() {
               <Link className="about-profile__button" href={`mailto:${site.email}`}>
                 Get in touch <span aria-hidden>→</span>
               </Link>
-              <a className="about-profile__icon-link about-profile__icon-link--text" href={cvPdfHref} download>
-                CV
-              </a>
               <Link
                 className="about-profile__icon-link"
                 href={site.linkedin}
