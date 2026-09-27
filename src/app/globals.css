@@ -1900,7 +1900,8 @@ body.site-body > * {
 
 .about-profile__tool-logo-item img {
   display: block;
-  width: min(8.5rem, 82%);
+  width: 8.5rem;
+  max-width: 82%;
   height: 3rem;
   margin-inline: auto;
   object-fit: contain;
