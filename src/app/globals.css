@@ -3685,6 +3685,15 @@ body.site-body > * {
   bottom: clamp(0.7rem, 1.3vw, 1.2rem);
   z-index: 2;
   width: var(--gen-pulse-phone-width);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.selected-project--gen-pulse:has(.selected-project__details-toggle[open]) .selected-visual__phone {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-0.5rem);
 }
 
 .selected-project__details-popout {
