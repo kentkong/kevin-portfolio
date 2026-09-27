@@ -1548,8 +1548,12 @@ body.site-body > * {
   --about-accent: #6f8795;
   padding: clamp(4rem, 6vw, 6.5rem) clamp(1.35rem, 4vw, 4rem) clamp(5.5rem, 8vw, 8rem);
   background:
+    linear-gradient(90deg, rgba(34, 64, 83, 0.055) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(34, 64, 83, 0.045) 1px, transparent 1px),
     radial-gradient(circle at 76% 8%, rgba(19, 53, 72, 0.045), transparent 20rem),
     var(--about-bg);
+  background-size: 5.5rem 5.5rem, 5.5rem 5.5rem, auto, auto;
+  background-position: center top, center top, center top, center top;
   color: var(--about-ink);
 }
 
@@ -1656,27 +1660,6 @@ body.site-body > * {
   aspect-ratio: 1;
   margin: 0;
   transform: translateY(-3.4rem);
-}
-
-.about-profile__portrait::before {
-  content: "";
-  position: absolute;
-  inset: -1.55rem;
-  border: 1px solid rgba(55, 91, 112, 0.72);
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-  border-radius: 999px;
-}
-
-.about-profile__portrait::after {
-  content: "";
-  position: absolute;
-  right: -1.9rem;
-  top: -2.2rem;
-  width: 1px;
-  height: 7.5rem;
-  background: rgba(55, 91, 112, 0.62);
-  box-shadow: -1.5rem 21rem 0 rgba(55, 91, 112, 0.42);
 }
 
 .about-profile__portrait img {
