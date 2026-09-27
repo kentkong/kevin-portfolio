@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { ProjectBrandName } from "@/components/home/project-brand-name";
 import { LaptopFrame, PhoneFrame } from "@/components/ui/device-frame";
 import { RotatingDeviceScreen } from "@/components/ui/rotating-device-screen";
 import { assetPath } from "@/lib/asset-path";
@@ -138,7 +139,7 @@ function SelectedProjectArticle({
         <div className="selected-project__title-row">
           <h3 className="selected-project__title">
             <Link href={project.liveUrl} target="_blank" rel="noreferrer">
-              {project.name}
+              <ProjectBrandName project={project} />
             </Link>
           </h3>
         </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GenPulseArchitectureDiagram } from "@/components/case-study/gen-pulse-architecture-diagram";
 import { ProjectDeviceShowcase } from "@/components/home/project-device-showcase";
+import { ProjectBrandName } from "@/components/home/project-brand-name";
 import { genPulseStory } from "@/lib/gen-pulse-content";
 import { getProject } from "@/lib/projects";
 
@@ -18,7 +19,9 @@ export function GenPulseCaseStudy() {
           <ProjectDeviceShowcase project={project} />
         </div>
         <div className="site-container gp-story-hero__copy">
-          <p className="site-label">{story.title}</p>
+          <p className="site-label gp-story-hero__brand">
+            <ProjectBrandName project={project} />
+          </p>
           <h1 className="gp-story-hero__title">{project.headline}</h1>
           <p className="gp-story-hero__value">{story.valueProposition}</p>
           <Link
