@@ -20,20 +20,6 @@ export function ProfessionalProfilePage() {
                 <br />
                 with a background in UX/UI &amp; Visual Design
               </p>
-              <div className="about-profile__copy">
-                <p>
-                  I&apos;m a marketing, operations and customer experience manager with over 17 years of
-                  international corporate experience across CRM and lifecycle marketing, customer
-                  platforms, business analysis, project management, Agile delivery, technology and people
-                  leadership.
-                </p>
-                <p>
-                  My background in graphic and web design gives me a strong visual and user-centred
-                  perspective to the way I approach products, systems and customer experiences —
-                  connecting customer needs, data, technology and design to create better business
-                  outcomes.
-                </p>
-              </div>
             </div>
             <figure className="about-profile__portrait">
               <Image
@@ -44,6 +30,18 @@ export function ProfessionalProfilePage() {
                 priority
               />
             </figure>
+          </div>
+          <div className="about-profile__copy">
+            <p>
+              I&apos;m a marketing, operations and customer experience manager with over 17 years of
+              international corporate experience across CRM and lifecycle marketing, customer platforms,
+              business analysis, project management, Agile delivery, technology and people leadership.
+            </p>
+            <p>
+              My background in graphic and web design gives me a strong visual and user-centred
+              perspective to the way I approach products, systems and customer experiences — connecting
+              customer needs, data, technology and design to create better business outcomes.
+            </p>
           </div>
         </section>
 
