@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { CSSProperties, ReactNode } from "react";
 import { useEffect } from "react";
 import {
   ArrowRight,
@@ -8,25 +9,62 @@ import {
   CheckCircle2,
   AlertTriangle,
   Brain,
+  Clock,
   Database,
   GitBranch,
+  Info,
   LayoutDashboard,
   Layers,
+  Mail,
   MessageSquare,
+  Pause,
+  Play,
   Radio,
+  RefreshCw,
   Search,
   Sparkles,
+  Ticket,
+  TrendingUp,
   UserCircle,
   Users,
+  Zap,
 } from "lucide-react";
 
 type TrendPoint = { label: string; value: number; secondary?: number };
 
 const stackIntegrations = [
-  { name: "Snowflake", role: "Data Warehouse", latency: "12ms", meta: "2.4M events/day", hue: "snowflake" },
-  { name: "Hightouch", role: "Reverse ETL", latency: "340ms", meta: "34 active syncs", hue: "hightouch" },
-  { name: "Braze", role: "Engagement", latency: "89ms", meta: "12K sends/day", hue: "braze" },
-  { name: "Pulse-Ops AI", role: "Intelligence", latency: "Real-time", meta: "5 active signals", hue: "pulse" },
+  {
+    id: "snowflake",
+    name: "Snowflake",
+    role: "Data Warehouse",
+    latency: "12ms",
+    meta: "2.4M events/day",
+    icon: Database,
+  },
+  {
+    id: "hightouch",
+    name: "Hightouch",
+    role: "Reverse ETL",
+    latency: "340ms",
+    meta: "34 active syncs",
+    icon: Layers,
+  },
+  {
+    id: "braze",
+    name: "Braze",
+    role: "Engagement",
+    latency: "89ms",
+    meta: "12K sends/day",
+    icon: MessageSquare,
+  },
+  {
+    id: "pulseops",
+    name: "Pulse-Ops AI",
+    role: "Intelligence",
+    latency: "Real-time",
+    meta: "5 active signals",
+    icon: Sparkles,
+  },
 ];
 
 const workflows = [
@@ -35,6 +73,9 @@ const workflows = [
     status: "Active",
     triggered: 1247,
     completed: 78,
+    duration: "14 days",
+    dependencies: ["Snowflake: signup event", "Hightouch: audience sync"],
+    recommendation: "Add day-3 integration nudge — accounts receiving it activate 22% faster",
     trend: [62, 66, 70, 72, 76, 78],
     action: "View",
   },
@@ -43,6 +84,9 @@ const workflows = [
     status: "Active",
     triggered: 892,
     completed: 62,
+    duration: "9 days",
+    dependencies: ["Snowflake: usage threshold", "Braze: in-app prompt"],
+    recommendation: "Shift milestone prompt earlier for accounts with two admin users.",
     trend: [52, 56, 58, 59, 61, 62],
     action: "View",
   },
@@ -51,6 +95,9 @@ const workflows = [
     status: "Active",
     triggered: 156,
     completed: 45,
+    duration: "3 days",
+    dependencies: ["Hightouch: risk cohort", "Braze: retention canvas"],
+    recommendation: "Route critical accounts to CSM review before campaign activation.",
     trend: [38, 41, 40, 43, 44, 45],
     action: "Review",
   },
@@ -59,6 +106,9 @@ const workflows = [
     status: "Active",
     triggered: 234,
     completed: 88,
+    duration: "25 days",
+    dependencies: ["Snowflake: renewal date", "Pulse-Ops AI: forecast"],
+    recommendation: "Add executive sponsor task for accounts with declining NPS.",
     trend: [82, 83, 84, 86, 87, 88],
     action: "View",
   },
@@ -67,6 +117,9 @@ const workflows = [
     status: "Paused",
     triggered: 67,
     completed: 34,
+    duration: "18 days",
+    dependencies: ["Snowflake: product usage", "Hightouch: expansion segment"],
+    recommendation: "Resume after enterprise tier messaging is updated.",
     trend: [28, 29, 31, 33, 34, 34],
     action: "Resume",
   },
@@ -75,6 +128,9 @@ const workflows = [
     status: "Active",
     triggered: 445,
     completed: 91,
+    duration: "2 hrs",
+    dependencies: ["Support: ticket event", "Braze: service update"],
+    recommendation: "Keep active; this workflow is protecting high-severity tickets.",
     trend: [84, 86, 88, 89, 90, 91],
     action: "View",
   },
@@ -201,12 +257,12 @@ const engagementTrend: TrendPoint[] = [
 ];
 
 const navItems = [
-  { label: "Command", icon: LayoutDashboard, hue: "command" },
+  { label: "Command", icon: LayoutDashboard, hue: "snowflake" },
   { label: "Lifecycle", icon: Users, hue: "lifecycle" },
-  { label: "Workflows", icon: GitBranch, hue: "workflow" },
-  { label: "Signals", icon: Brain, hue: "signals" },
+  { label: "Workflows", icon: GitBranch, hue: "hightouch" },
+  { label: "Signals", icon: Brain, hue: "braze" },
   { label: "Events", icon: Radio, hue: "events" },
-  { label: "Stack", icon: Layers, hue: "stack" },
+  { label: "Stack", icon: Layers, hue: "architecture" },
 ];
 
 const totalTriggers = workflows.reduce((sum, workflow) => sum + workflow.triggered, 0);
@@ -262,26 +318,47 @@ function PulseOpsMark() {
 function StackIntegrationMark({ name }: { name: string }) {
   const Icon = name === "Snowflake" ? Database : name === "Hightouch" ? Layers : name === "Braze" ? MessageSquare : Sparkles;
   return (
-    <span className={`po-stack-mark po-stack-mark--${name === "Pulse-Ops AI" ? "pulse" : name.toLowerCase()}`} aria-hidden>
+    <span className={`po-stack-mark stack-integration-mark stack-integration-mark--${name === "Pulse-Ops AI" ? "pulse" : name.toLowerCase()}`} aria-hidden>
       <Icon size={14} strokeWidth={2.1} />
     </span>
   );
 }
 
-function Sparkline({ values }: { values: number[] }) {
+function Badge({ children, tone = "default" }: { children: ReactNode; tone?: "default" | "secondary" | "success" | "warning" | "destructive" | "outline" | "info" }) {
+  return <span className={`po-badge po-badge--${tone}`}>{children}</span>;
+}
+
+function Progress({ value, tone = "primary" }: { value: number; tone?: "primary" | "health" | "danger" }) {
+  return (
+    <span className="po-progress" aria-hidden>
+      <i className={`po-progress__bar po-progress__bar--${tone}`} style={{ width: `${Math.min(100, Math.max(0, value))}%` }} />
+    </span>
+  );
+}
+
+function Sparkline({ values, color = "#f1c40f", height = 40 }: { values: number[]; color?: string; height?: number }) {
   const min = Math.min(...values);
   const max = Math.max(...values);
+  const gradientId = `spark-${color.replace("#", "")}-${values.length}-${values[0]}`;
   const points = values
     .map((value, index) => {
       const x = (index / (values.length - 1)) * 100;
-      const y = 34 - ((value - min) / Math.max(max - min, 1)) * 28;
+      const y = height - ((value - min) / Math.max(max - min, 1)) * (height - 6) - 3;
       return `${x},${y}`;
     })
     .join(" ");
+  const areaPoints = `0,${height} ${points} 100,${height}`;
 
   return (
-    <svg className="po-sparkline" viewBox="0 0 100 40" aria-hidden>
-      <polyline points={points} fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+    <svg className="po-sparkline" viewBox={`0 0 100 ${height}`} aria-hidden>
+      <defs>
+        <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={color} stopOpacity="0.25" />
+          <stop offset="100%" stopColor={color} stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <polygon points={areaPoints} fill={`url(#${gradientId})`} />
+      <polyline points={points} fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -291,9 +368,9 @@ function TrendChart({ data }: { data: TrendPoint[] }) {
   const secondary = data.map((point) => point.secondary ?? point.value);
   return (
     <div className="po-trend-chart">
-      <Sparkline values={primary} />
+      <Sparkline values={primary} color="#9d4db8" height={110} />
       <div className="po-trend-chart__secondary">
-        <Sparkline values={secondary} />
+        <Sparkline values={secondary} color="#4a78b0" height={110} />
       </div>
       <div className="po-chart-labels">
         {data.map((point) => (
@@ -316,9 +393,129 @@ function ModuleHeader({ eyebrow, title, text }: { eyebrow?: string; title: strin
 
 function healthState(score: number) {
   if (score < 45) return "critical";
-  if (score < 60) return "risk";
+  if (score < 60) return "at-risk";
   if (score < 75) return "watch";
   return "healthy";
+}
+
+function StackFlowHorizontal() {
+  return (
+    <div className="stack-flow-strip">
+      {stackIntegrations.map((layer, index) => {
+        const Icon = layer.icon;
+        return (
+          <div key={layer.id} className="stack-flow-strip__segment">
+            <div className={`stack-flow-strip__node stack-flow-strip__node--${layer.id}`}>
+              <span className="stack-flow-strip__status" title={`${layer.name} operational`} aria-label={`${layer.name} operational`}>
+                <span className="stack-flow-strip__status-dot animate-live-dot" aria-hidden />
+              </span>
+              <Icon className="stack-flow-strip__icon" aria-hidden />
+              <div>
+                <p>{layer.name}</p>
+                <span className="stack-flow-strip__latency">{layer.latency}</span>
+              </div>
+            </div>
+            {index < stackIntegrations.length - 1 ? (
+              <div className="stack-flow-strip__connector" style={{ "--connector-delay": `${index * 0.55}s` } as CSSProperties} aria-hidden>
+                <span className="stack-flow-strip__connector-rail">
+                  <span className="stack-flow-strip__connector-beam" />
+                </span>
+                <svg width="10" height="12" className="stack-flow-strip__connector-arrow">
+                  <polygon points="0,3 8,6 0,9" fill="currentColor" />
+                </svg>
+              </div>
+            ) : null}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function LifecycleStackStrip() {
+  return (
+    <section className="orchestration-strip workspace-context-strip" aria-label="Lifecycle stack">
+      <div className="section-band-dark__bg" aria-hidden />
+      <div className="orchestration-strip__inner">
+        <div className="orchestration-strip__headline">
+          <div className="orchestration-strip__title-row">
+            <h2 className="orchestration-strip__title">Pulse-Ops AI · Lifecycle Stack</h2>
+            <span className="orchestration-strip__status-pill">All systems operational</span>
+          </div>
+          <p className="orchestration-strip__thesis">
+            Monitors your full lifecycle stack and turns live data into health scores, AI signals, and prioritized actions.
+          </p>
+          <p className="orchestration-strip__context">2 at-risk accounts · 5 AI signals active today</p>
+        </div>
+        <StackFlowHorizontal />
+      </div>
+    </section>
+  );
+}
+
+function OriginalWorkflowCard({ workflow }: { workflow: (typeof workflows)[number] }) {
+  const isPaused = workflow.status === "Paused";
+  const StatusIcon = isPaused ? Pause : Play;
+  return (
+    <article className={`po-workflow-card glass-card ${isPaused ? "po-workflow-card--paused" : ""}`}>
+      <div className="po-workflow-card__title-row">
+        <h3>{workflow.name}</h3>
+        <Badge tone={isPaused ? "warning" : "success"}>
+          <StatusIcon size={10} aria-hidden />
+          {workflow.status}
+        </Badge>
+      </div>
+      <p>{workflow.recommendation}</p>
+      <div className="po-workflow-card__stats">
+        <span><strong>{workflow.triggered.toLocaleString()}</strong><small>Triggers</small></span>
+        <span><strong>{workflow.completed}%</strong><small>Completion</small></span>
+        <span><strong>{workflow.duration}</strong><small>Avg duration</small></span>
+      </div>
+      <Progress value={workflow.completed} />
+      <div className="po-workflow-card__deps">
+        {workflow.dependencies.map((dependency) => (
+          <Badge key={dependency} tone="outline">{dependency}</Badge>
+        ))}
+      </div>
+      <div className="po-workflow-card__ai">
+        <Sparkles size={13} aria-hidden />
+        <span>AI Recommendation</span>
+      </div>
+    </article>
+  );
+}
+
+function InsightCard({ insight }: { insight: (typeof aiInsights)[number] }) {
+  const severityTone = insight.priority === "Critical" ? "destructive" : insight.priority === "High" ? "warning" : "secondary";
+  const CategoryIcon = insight.category === "Churn Risk" ? AlertTriangle : insight.category === "Onboarding" ? Users : insight.category === "Support" ? Clock : insight.category === "Renewal" ? RefreshCw : TrendingUp;
+  return (
+    <article className={`po-insight-card glass-card ${insight.priority === "Critical" ? "po-insight-card--critical" : ""}`}>
+      <span className="po-insight-card__icon"><CategoryIcon size={16} aria-hidden /></span>
+      <div>
+        <div className="po-insight-card__meta">
+          <h3>{insight.title}</h3>
+          <Badge tone={severityTone}>{insight.priority}</Badge>
+          <Badge tone="outline">{insight.category}</Badge>
+          <Badge tone="secondary">Pulse-Ops AI</Badge>
+        </div>
+        <p>{insight.summary}</p>
+        <div className="po-insight-card__confidence">
+          <span>AI Confidence</span>
+          <Progress value={insight.confidence} tone={insight.priority === "Critical" ? "danger" : "primary"} />
+          <strong>{insight.confidence}%</strong>
+        </div>
+        <div className="po-insight-card__action">
+          <strong>Recommended Action</strong>
+          <span>{insight.action} · {insight.impact}</span>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function EventIcon({ type, severity }: { type: string; severity: string }) {
+  const Icon = type.includes("Support") ? Ticket : type.includes("Feature") ? Zap : type.includes("Upgrade") ? TrendingUp : type.includes("Churn") ? AlertTriangle : type.includes("Campaign") ? Mail : severity === "High" ? AlertTriangle : Info;
+  return <Icon size={14} aria-hidden />;
 }
 
 export function PulseOpsCommandWireframe() {
@@ -355,8 +552,9 @@ export function PulseOpsCommandWireframe() {
           {navItems.map((item) => {
             const Icon = item.icon;
             return (
-              <a key={item.label} className={`po-nav-tab po-nav-tab--${item.hue}`} href={`#${item.label.toLowerCase()}`}>
+              <a key={item.label} className={`po-nav-tab nav-tab nav-tab--${item.hue}`} href={`#${item.label.toLowerCase()}`}>
                 <span className="po-nav-tab__bg" aria-hidden />
+                <span className="nav-tab__stripe" aria-hidden />
                 <Icon size={13} aria-hidden />
                 {item.label}
               </a>
@@ -371,13 +569,17 @@ export function PulseOpsCommandWireframe() {
         </div>
       </nav>
 
-      <section id="command" className="po-intro">
-        <div>
-          <p className="po-eyebrow">Pulse-Ops AI</p>
-          <h1 id="pulse-ops-wireframe-title">Lifecycle Operations Command Centre</h1>
-          <p>
-            AI-powered lifecycle intelligence, workflow orchestration and customer health monitoring.
-          </p>
+      <section id="command" className="po-command-banner command-banner">
+        <div className="command-banner__bg" aria-hidden />
+        <div className="po-command-banner__inner">
+          <div className="po-command-banner__brand">
+            <PulseOpsMark />
+            <div>
+              <p className="po-eyebrow">Pulse-Ops AI</p>
+              <h1 id="pulse-ops-wireframe-title">Lifecycle Operations Command Centre</h1>
+              <p>AI-powered lifecycle intelligence, workflow orchestration and customer health monitoring.</p>
+            </div>
+          </div>
           <div className="po-status-row">
             <span><CheckCircle2 size={14} /> All systems operational</span>
             <span>{activeWorkflows} active workflows</span>
@@ -385,34 +587,24 @@ export function PulseOpsCommandWireframe() {
             <span>{averageCompletion}% average completion</span>
           </div>
         </div>
-        <div className="po-intro__system" aria-label="Pulse-Ops system sketch">
-          {stackIntegrations.map((item) => {
-            return (
-              <div className={`po-stack-node po-stack-node--${item.hue}`} key={item.name}>
-                <StackIntegrationMark name={item.name} />
-                <span>{item.name}</span>
-                <strong>{item.latency}</strong>
-                <small>{item.meta}</small>
-              </div>
-            );
-          })}
-        </div>
       </section>
+
+      <LifecycleStackStrip />
 
       <section className="po-section po-section--glance">
         <ModuleHeader title="Today at a glance" text="Key signals across your customer lifecycle." />
         <div className="po-kpi-grid">
           {[
-            ["Active workflows", activeWorkflows, "+2 vs last week", [3, 4, 4, 5, 5, activeWorkflows]],
-            ["Total triggers", totalTriggers.toLocaleString(), "+12% vs last week", [2110, 2280, 2450, 2600, 2810, totalTriggers]],
-            ["Avg. completion rate", `${averageCompletion}%`, "+8% vs last week", [58, 59, 61, 63, 65, averageCompletion]],
-            ["AI signals detected", aiInsights.length, "1 critical now", [2, 3, 4, 5, 5, aiInsights.length]],
-          ].map(([label, value, detail, trend]) => (
-            <div className="po-card po-kpi" key={label as string}>
+            ["Active workflows", activeWorkflows, "+2 vs last week", [3, 4, 4, 5, 5, activeWorkflows], "#1a1a1a"],
+            ["Total triggers", totalTriggers.toLocaleString(), "+12% vs last week", [2110, 2280, 2450, 2600, 2810, totalTriggers], "#4a78b0"],
+            ["Avg. completion rate", `${averageCompletion}%`, "+8% vs last week", [58, 59, 61, 63, 65, averageCompletion], "#27ae60"],
+            ["AI signals detected", aiInsights.length, "1 critical now", [2, 3, 4, 5, 5, aiInsights.length], "#e74c3c"],
+          ].map(([label, value, detail, trend, color]) => (
+            <div className="po-kpi glance-stat-card" key={label as string}>
               <span>{label}</span>
               <strong>{value}</strong>
               <small>{detail}</small>
-              <Sparkline values={trend as number[]} />
+              <Sparkline values={trend as number[]} color={color as string} height={28} />
             </div>
           ))}
         </div>
@@ -421,26 +613,26 @@ export function PulseOpsCommandWireframe() {
       <section id="lifecycle" className="po-section">
         <ModuleHeader title="Lifecycle operations" text="Command-centre modules for lifecycle health, engagement, AI signals and workflow activity." />
         <div className="po-analytics-grid">
-          <div className="po-card po-card--large">
+          <div className="po-card po-card--large glass-card po-module--lifecycle">
             <h3>Lifecycle health score</h3>
             <div className="po-health-score"><strong>78%</strong><span>-2.1% vs prior week</span></div>
-            <Sparkline values={[82, 81, 80, 79, 79, 78, 78]} />
+            <Sparkline values={[82, 81, 80, 79, 79, 78, 78]} color="#c9a000" />
           </div>
-          <div className="po-card po-card--large">
+          <div className="po-card po-card--large glass-card po-module--workflow">
             <h3>Engagement trend</h3>
             <TrendChart data={engagementTrend} />
           </div>
-          <div className="po-card">
+          <div className="po-card glass-card po-module--snowflake">
             <h3>Audience growth</h3>
             <strong>847 accounts</strong>
-            <Sparkline values={[760, 781, 795, 812, 829, 847]} />
+            <Sparkline values={[760, 781, 795, 812, 829, 847]} color="#4a78b0" />
             <div className="po-mini-segments">
               {lifecycleDistribution.slice(0, 4).map(([label, value]) => (
                 <span key={label}>{label}<strong>{value}</strong></span>
               ))}
             </div>
           </div>
-          <div className="po-card">
+          <div className="po-card glass-card po-module--lifecycle">
             <h3>Campaign / lifecycle performance</h3>
             <strong>38% activated</strong>
             <div className="po-bar-list">
@@ -449,12 +641,12 @@ export function PulseOpsCommandWireframe() {
               ))}
             </div>
           </div>
-          <div className="po-card">
+          <div className="po-card glass-card po-module--events">
             <h3>Operational efficiency</h3>
             <strong>14 days avg.</strong>
             <p>New customer onboarding duration with day-3 integration nudge recommended.</p>
           </div>
-          <div className="po-card">
+          <div className="po-card glass-card po-module--signals">
             <h3>AI signal breakdown</h3>
             <div className="po-signal-breakdown">
               {["Churn Risk", "Expansion", "Onboarding", "Support", "Renewal"].map((label, index) => (
@@ -462,32 +654,60 @@ export function PulseOpsCommandWireframe() {
               ))}
             </div>
           </div>
-          <div className="po-card">
+          <div className="po-card glass-card po-module--workflow">
             <h3>Workflow activity</h3>
             <strong>{averageCompletion}% completion</strong>
             <p>{activeWorkflows} active / {pausedWorkflows} paused lifecycle automations.</p>
-            <Sparkline values={[58, 59, 61, 63, 65, averageCompletion]} />
+            <Sparkline values={[58, 59, 61, 63, 65, averageCompletion]} color="#9d4db8" />
           </div>
         </div>
       </section>
 
       <section id="priority-actions" className="po-section">
-        <div className="po-critical po-card">
-          <div>
-            <p className="po-alert-label"><AlertTriangle size={14} aria-hidden /> Critical signal</p>
-            <h2>{criticalSignal.title}</h2>
-            <p>{criticalSignal.summary}</p>
+        <div className="critical-signal-banner po-critical-signal">
+          <div className="po-critical-signal__main">
+            <AlertTriangle className="po-critical-signal__icon" aria-hidden />
+            <div>
+              <p className="po-alert-label">Critical signal</p>
+              <h2>{criticalSignal.title}</h2>
+              <p>{criticalSignal.summary}</p>
+              <small>{criticalSignal.accounts} need action today · {criticalSignal.confidence}% confidence · {criticalSignal.impact} potential impact</small>
+            </div>
           </div>
-          <dl>
-            <div><dt>Confidence</dt><dd>{criticalSignal.confidence}%</dd></div>
-            <div><dt>Potential impact</dt><dd>{criticalSignal.impact}</dd></div>
-          </dl>
           <a href="#priority-actions">View at-risk accounts <ArrowRight size={14} /></a>
         </div>
         <div className="po-demo-path">
           {["Review AI signal", "Inspect at-risk accounts", "Activate workflow"].map((step, index) => (
             <span key={step}><strong>{String(index + 1).padStart(2, "0")}</strong>{step}</span>
           ))}
+        </div>
+        <div className="ai-intelligence-band po-ai-intelligence-band">
+          <div className="po-ai-intelligence-band__panel">
+            <p>Anomaly · {criticalSignal.confidence}% confidence</p>
+            <h3>{criticalSignal.title}</h3>
+            <span>{criticalSignal.summary}</span>
+            <small>{criticalSignal.accounts} affected</small>
+          </div>
+          <div className="po-ai-intelligence-band__panel po-ai-intelligence-band__panel--wide">
+            <p>Next best action</p>
+            <div>
+              <h3>RetailEdge</h3>
+              <Badge tone="destructive">Critical</Badge>
+            </div>
+            <span>→ Trigger lifecycle nurture</span>
+            <small>$3,200 MRR · Alex Rivera · Health 38</small>
+          </div>
+          <div className="po-ai-intelligence-band__panel">
+            <p>Priority queue</p>
+            {lifecycleBoard.flatMap((column) => column.accounts).slice(0, 3).map(([account, score, signal]) => (
+              <div className="po-priority-mini" key={`priority-${account}`}>
+                <strong>{account}</strong>
+                <span>{score}</span>
+                <Progress value={Number(score)} tone={Number(score) < 45 ? "danger" : "primary"} />
+                <small>{signal}</small>
+              </div>
+            ))}
+          </div>
         </div>
         <ModuleHeader title="Priority actions" text="AI-recommended next steps." />
         <div className="po-table-wrap">
@@ -516,27 +736,10 @@ export function PulseOpsCommandWireframe() {
 
       <section id="workflows" className="po-section">
         <ModuleHeader title="Workflow performance" text="Live status across lifecycle automations." />
-        <div className="po-table-wrap">
-          <table className="po-table">
-            <thead>
-              <tr>
-                {["Workflow", "Status", "Triggered", "Completed", "Conversion / completion", "Trend", "Action"].map((head) => <th key={head}>{head}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {workflows.map((workflow) => (
-                <tr key={workflow.name}>
-                  <td>{workflow.name}</td>
-                  <td><span className={`po-status-badge po-status-badge--${workflow.status.toLowerCase()}`}>{workflow.status}</span></td>
-                  <td>{workflow.triggered.toLocaleString()}</td>
-                  <td>{Math.round(workflow.triggered * workflow.completed / 100).toLocaleString()}</td>
-                  <td>{workflow.completed}%</td>
-                  <td><Sparkline values={workflow.trend} /></td>
-                  <td><a href="#workflows">{workflow.action}</a></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="po-workflow-grid">
+          {workflows.map((workflow) => (
+            <OriginalWorkflowCard key={workflow.name} workflow={workflow} />
+          ))}
         </div>
       </section>
 
@@ -544,14 +747,14 @@ export function PulseOpsCommandWireframe() {
         <ModuleHeader title="Lifecycle operations board" text="Operational CRM-style account movement across lifecycle stages." />
         <div className="po-board">
           {lifecycleBoard.map((column) => (
-            <div className="po-board__column" key={column.title}>
+            <div className={`po-board__column surface-lane ${column.title === "Intervention" ? "surface-lane--alert" : column.title === "Onboarding" ? "surface-lane--active" : ""}`} key={column.title}>
               <header>
-                <span>{column.title}</span>
+                <span>{column.accounts.some(([, score]) => Number(score) < 60) ? <i className="lane-alert-dot animate-live-dot" aria-hidden /> : null}{column.title}</span>
                 <strong>{column.accounts.length}</strong>
               </header>
               <div>
                 {column.accounts.map(([account, score, signal, owner]) => (
-                  <article className={`po-board__account--${healthState(Number(score))}`} key={account}>
+                  <button type="button" className={`kanban-card surface-card po-board__account--${healthState(Number(score))}`} key={account}>
                     <h3>{account}</h3>
                     <p>{signal}</p>
                     <div className="po-board__health" aria-hidden>
@@ -562,7 +765,7 @@ export function PulseOpsCommandWireframe() {
                       <span>{column.title}</span>
                       <span>{owner}</span>
                     </footer>
-                  </article>
+                  </button>
                 ))}
               </div>
             </div>
@@ -572,39 +775,28 @@ export function PulseOpsCommandWireframe() {
 
       <section className="po-section">
         <ModuleHeader title="Recent signals" text="Latest AI insights across your customer base." />
-        <div className="po-table-wrap">
-          <table className="po-table">
-            <thead>
-              <tr>
-                {["Time", "Signal", "Accounts", "Impact", "Confidence", "Status", "Action"].map((head) => <th key={head}>{head}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {aiInsights.map((item) => (
-                <tr key={`recent-${item.title}`}>
-                  <td>{item.detected}</td>
-                  <td>{item.title}</td>
-                  <td>{item.accounts}</td>
-                  <td>{item.impact}</td>
-                  <td>{item.confidence}%</td>
-                  <td><span className={`po-priority po-priority--${item.priority.toLowerCase()}`}>{item.priority}</span></td>
-                  <td><a href="#signals">{item.action}</a></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="po-insight-grid">
+          {aiInsights.map((item) => (
+            <InsightCard key={`recent-${item.title}`} insight={item} />
+          ))}
         </div>
       </section>
 
       <section id="events" className="po-section po-bottom-grid">
         <div>
           <ModuleHeader title="Recent activity / events" text="Most useful recent items from the event stream." />
-          <div className="po-card po-event-list">
+          <div className="po-card po-event-list po-event-feed">
             {recentEvents.map(([time, title, company, type, severity]) => (
-              <div key={`${time}-${title}`}>
-                <span>{time}</span>
-                <strong>{title}</strong>
-                <small>{company} · {type} · <em className={`po-event-severity po-event-severity--${severity.toLowerCase()}`}>{severity}</em></small>
+              <div className="po-event-feed__row" key={`${time}-${title}`}>
+                <span className={`po-event-feed__icon po-event-severity--${severity.toLowerCase()}`}>
+                  <EventIcon type={type} severity={severity} />
+                </span>
+                <div>
+                  <strong>{title}</strong>
+                  <small>{company} · {type}</small>
+                </div>
+                <Badge tone={severity === "High" ? "destructive" : severity === "Medium" ? "warning" : "secondary"}>{severity}</Badge>
+                <time>{time}</time>
               </div>
             ))}
             <a href="#events">View all events <ArrowRight size={14} /></a>
@@ -614,7 +806,7 @@ export function PulseOpsCommandWireframe() {
           <ModuleHeader title="Integrations / system status" text="Compact connected-systems summary." />
           <div className="po-card po-integration-list">
             {stackIntegrations.map((item) => (
-              <div key={`status-${item.name}`}>
+              <div className={`stack-flow-strip__node stack-flow-strip__node--${item.id}`} key={`status-${item.name}`}>
                 <StackIntegrationMark name={item.name} />
                 <span>{item.name}</span>
                 <small>{item.role}</small>
