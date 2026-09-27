@@ -278,6 +278,21 @@ export function PulseOpsCommandWireframe() {
 
   return (
     <article className="po-wireframe" aria-labelledby="pulse-ops-wireframe-title">
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            body.site-body {
+              --portfolio-border-size: 0px;
+              background: #e8e5dc !important;
+              background-image: none !important;
+            }
+            body.site-body::before,
+            body.site-body::after {
+              display: none !important;
+            }
+          `,
+        }}
+      />
       <nav className="po-app-nav" aria-label="Pulse-Ops wireframe navigation">
         <Link href="#command" className="po-app-nav__brand">
           <PulseOpsMark />
@@ -299,9 +314,9 @@ export function PulseOpsCommandWireframe() {
       <section id="command" className="po-intro">
         <div>
           <p className="po-eyebrow">Pulse-Ops AI</p>
-          <h1 id="pulse-ops-wireframe-title">Lifecycle Operations for Smarter Customer Growth</h1>
+          <h1 id="pulse-ops-wireframe-title">Lifecycle Operations Command Centre</h1>
           <p>
-            Monitor lifecycle health, AI signals and operational actions across the full customer stack.
+            AI-powered lifecycle intelligence, workflow orchestration and customer health monitoring.
           </p>
           <div className="po-status-row">
             <span><CheckCircle2 size={14} /> All systems operational</span>
