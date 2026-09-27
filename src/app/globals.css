@@ -7277,8 +7277,36 @@ body.site-body.pulse-ops-product-body::after {
 
 /* Literal Pulse-Ops component migration layer */
 .po-command-banner {
+  position: relative;
+  overflow: hidden;
   width: min(100%, var(--po-dashboard-width));
   margin: 0.75rem auto 0;
+  padding: clamp(1.35rem, 2.4vw, 2.15rem) clamp(1rem, 2vw, 2rem);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.16);
+  color: #1a1a1a;
+}
+
+.command-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: #bfd4eb;
+  background-image:
+    linear-gradient(102deg, rgba(210, 230, 250, 0.92), rgba(166, 196, 226, 0.72)),
+    var(--po-texture-hero);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: normal, soft-light;
+  pointer-events: none;
+}
+
+.command-banner__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 82% 16%, rgba(52, 152, 219, 0.22), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
 }
 
 .po-command-banner__inner {
