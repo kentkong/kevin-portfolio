@@ -740,7 +740,7 @@ export function PulseOpsCommandWireframe() {
         </div>
       </section>
 
-      <section id="workflows" className="po-section">
+      <section id="workflows" className="po-section po-section--workflows">
         <ModuleHeader title="Workflow performance" text="Live status across lifecycle automations." />
         <div className="po-workflow-grid">
           {workflows.map((workflow) => (
@@ -749,7 +749,7 @@ export function PulseOpsCommandWireframe() {
         </div>
       </section>
 
-      <section className="po-section">
+      <section className="po-section po-section--board">
         <ModuleHeader title="Lifecycle operations board" text="Operational CRM-style account movement across lifecycle stages." />
         <div className="po-board">
           {lifecycleBoard.map((column) => (
@@ -779,7 +779,7 @@ export function PulseOpsCommandWireframe() {
         </div>
       </section>
 
-      <section className="po-section">
+      <section className="po-section po-section--signals-feed">
         <ModuleHeader title="Recent signals" text="Latest AI insights across your customer base." />
         <div className="po-insight-grid">
           {aiInsights.map((item) => (
@@ -788,7 +788,7 @@ export function PulseOpsCommandWireframe() {
         </div>
       </section>
 
-      <section id="events" className="po-section po-bottom-grid">
+      <section id="events" className="po-section po-bottom-grid po-section--operations-footer">
         <div>
           <ModuleHeader title="Recent activity / events" text="Most useful recent items from the event stream." />
           <div className="po-card po-event-list po-event-feed">
