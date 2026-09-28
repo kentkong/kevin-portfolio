@@ -635,7 +635,6 @@ function ProductShellNav({ current }: { current: PulseOpsViewConfig }) {
 }
 
 function PulseOpsHero({ current }: { current: PulseOpsViewConfig }) {
-  const PageIcon = current.icon;
   return (
     <section id={current.id} className={`po-command-banner command-banner po-product-hero po-product-hero--${current.className}`}>
       <div className="command-banner__bg" aria-hidden />
@@ -651,16 +650,12 @@ function PulseOpsHero({ current }: { current: PulseOpsViewConfig }) {
               </div>
             </div>
           </div>
-          <p>{current.summary}</p>
         </div>
         <div className="po-hero-page-lockup" aria-label={`${current.label} current page`}>
           <div>
             <span>Current view</span>
             <strong>{current.label}</strong>
           </div>
-          <span className="po-hero-page-icon" aria-hidden>
-            <PageIcon strokeWidth={1.8} />
-          </span>
         </div>
       </div>
     </section>
