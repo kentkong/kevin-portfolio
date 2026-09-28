@@ -482,8 +482,8 @@ const pulseOpsViews: PulseOpsViewConfig[] = [
     label: "Command",
     href: "/projects/pulse-ops/command",
     icon: LayoutDashboard,
-    accent: "#8db9c8",
-    accentRgb: "141, 185, 200",
+    accent: "#6aaed6",
+    accentRgb: "106, 174, 214",
     className: "command",
     eyebrow: "AI lifecycle operations",
     summary: "Lifecycle intelligence, workflow orchestration and customer health in one operating view.",
@@ -493,8 +493,8 @@ const pulseOpsViews: PulseOpsViewConfig[] = [
     label: "Lifecycle",
     href: "/projects/pulse-ops/lifecycle",
     icon: Users,
-    accent: "#77aa94",
-    accentRgb: "119, 170, 148",
+    accent: "#62b790",
+    accentRgb: "98, 183, 144",
     className: "lifecycle",
     eyebrow: "Customer portfolio health",
     summary: "Stage progression, health movement and account risk across the customer lifecycle.",
@@ -504,8 +504,8 @@ const pulseOpsViews: PulseOpsViewConfig[] = [
     label: "Workflows",
     href: "/projects/pulse-ops/workflows",
     icon: GitBranch,
-    accent: "#9f91ca",
-    accentRgb: "159, 145, 202",
+    accent: "#a88be4",
+    accentRgb: "168, 139, 228",
     className: "workflows",
     eyebrow: "Lifecycle orchestration",
     summary: "Automations triggered from warehouse events, synced audiences and engagement journeys.",
@@ -515,8 +515,8 @@ const pulseOpsViews: PulseOpsViewConfig[] = [
     label: "Signals",
     href: "/projects/pulse-ops/signals",
     icon: Brain,
-    accent: "#d5a3ad",
-    accentRgb: "213, 163, 173",
+    accent: "#e68aa3",
+    accentRgb: "230, 138, 163",
     className: "signals",
     eyebrow: "AI signal intelligence",
     summary: "Cross-stack risks, opportunities and next-best actions synthesized by Pulse-Ops AI.",
@@ -526,8 +526,8 @@ const pulseOpsViews: PulseOpsViewConfig[] = [
     label: "Events",
     href: "/projects/pulse-ops/events",
     icon: Radio,
-    accent: "#d5ad77",
-    accentRgb: "213, 173, 119",
+    accent: "#e0ab62",
+    accentRgb: "224, 171, 98",
     className: "events",
     eyebrow: "Operational event stream",
     summary: "Customer activity, lifecycle triggers and system events feeding real-time orchestration.",
@@ -537,8 +537,8 @@ const pulseOpsViews: PulseOpsViewConfig[] = [
     label: "Stack",
     href: "/projects/pulse-ops/stack",
     icon: Layers,
-    accent: "#68777c",
-    accentRgb: "104, 119, 124",
+    accent: "#56666e",
+    accentRgb: "86, 102, 110",
     className: "stack",
     eyebrow: "Architecture and integrations",
     summary: "Snowflake to Hightouch to Braze to Pulse-Ops AI, monitored as one operational system.",
@@ -976,8 +976,8 @@ export function PulseOpsCommandWireframe({ view = "command" }: { view?: PulseOps
   return (
     <article className={`po-wireframe po-wireframe--${current.className}`} aria-labelledby="pulse-ops-wireframe-title" style={{ "--po-page-accent": current.accent, "--po-page-accent-rgb": current.accentRgb } as CSSProperties}>
       <style dangerouslySetInnerHTML={{ __html: `body.site-body { --portfolio-border-size: 0px; background: #eaf3f4 !important; background-image: none !important; } body.site-body::before, body.site-body::after { display: none !important; }` }} />
-      <ProductShellNav current={current} />
       <PulseOpsHero current={current} />
+      <ProductShellNav current={current} />
       <PulseOpsViewContent view={current.id} />
     </article>
   );

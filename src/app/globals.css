@@ -10026,7 +10026,31 @@ body.site-body.pulse-ops-product-body {
 }
 
 .po-app-nav {
+  position: relative;
+  top: auto;
   display: grid;
+  grid-template-columns: 1fr;
+  min-height: 2.55rem;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 2vw, 1.65rem);
+  border: 1px solid rgba(119, 143, 150, 0.22);
+  border-top: 0;
+  border-radius: 0;
+  background: rgba(237, 246, 247, 0.82);
+  box-shadow: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.po-app-nav__brand,
+.po-app-nav__tools {
+  display: none;
+}
+
+.po-app-nav__links {
+  justify-content: flex-start;
+  gap: clamp(1rem, 2.2vw, 1.65rem);
+  overflow-x: auto;
 }
 
 .po-app-nav__links a:first-child {
@@ -10040,9 +10064,9 @@ body.site-body.pulse-ops-product-body {
 }
 
 .po-app-nav__links a.is-active {
-  color: #172529;
-  background: rgba(var(--po-page-accent-rgb), 0.14);
-  box-shadow: inset 0 0 0 1px rgba(var(--po-page-accent-rgb), 0.26);
+  color: color-mix(in srgb, var(--po-page-accent) 54%, #172529);
+  background: transparent;
+  box-shadow: none;
 }
 
 .po-app-nav__links a.is-active .po-nav-tab__bg,
@@ -10055,6 +10079,41 @@ body.site-body.pulse-ops-product-body {
   background: var(--po-page-accent);
 }
 
+.po-app-nav__links a {
+  min-height: 2.55rem;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #60747a;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.075em;
+}
+
+.po-app-nav__links a > svg {
+  display: none;
+}
+
+.po-app-nav__links a::before {
+  content: "";
+  width: 0.52rem;
+  height: 0.12rem;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.58;
+}
+
+.po-app-nav__links .po-nav-tab__bg {
+  display: none;
+}
+
+.po-app-nav__links .nav-tab__stripe {
+  inset: auto 0 0.36rem;
+  height: 2px;
+  opacity: 0;
+}
+
 .po-tool-icon {
   display: inline-flex;
   align-items: center;
@@ -10064,6 +10123,7 @@ body.site-body.pulse-ops-product-body {
 .po-product-hero {
   overflow: hidden;
   border-color: rgba(255, 255, 255, 0.72);
+  border-radius: 1.8rem 1.8rem 0 0;
   color: #172529;
 }
 
@@ -10073,8 +10133,8 @@ body.site-body.pulse-ops-product-body {
     linear-gradient(
       118deg,
       rgba(255, 255, 255, 0.86) 0%,
-      rgba(239, 247, 248, 0.82) 56%,
-      rgba(var(--po-page-accent-rgb), 0.18) 100%
+      rgba(239, 247, 248, 0.84) 54%,
+      rgba(var(--po-page-accent-rgb), 0.2) 100%
     ),
     radial-gradient(circle at 14% 24%, rgba(255, 255, 255, 0.84), transparent 15rem),
     linear-gradient(90deg, rgba(var(--po-page-accent-rgb), 0.09) 1px, transparent 1px),
@@ -10095,6 +10155,7 @@ body.site-body.pulse-ops-product-body {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: clamp(1rem, 4vw, 3rem);
   align-items: center;
+  min-height: 8.25rem;
 }
 
 .po-hero-brand {
@@ -10179,10 +10240,21 @@ body.site-body.pulse-ops-product-body {
 
 .po-hero-page-lockup strong {
   color: #172529;
-  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  font-size: clamp(2rem, 4.4vw, 4.1rem);
   font-weight: 360;
   letter-spacing: -0.08em;
   line-height: 0.9;
+}
+
+.po-hero-page-lockup strong::after {
+  content: "";
+  display: block;
+  width: 3.2rem;
+  height: 0.16rem;
+  margin: 0.55rem 0 0 auto;
+  border-radius: 999px;
+  background: var(--po-page-accent);
+  opacity: 0.7;
 }
 
 .po-hero-page-icon {
@@ -10198,6 +10270,37 @@ body.site-body.pulse-ops-product-body {
     rgba(var(--po-page-accent-rgb), 0.15);
   color: color-mix(in srgb, var(--po-page-accent) 72%, #172529);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.48);
+}
+
+.po-wireframe--stack .po-product-hero .command-banner__bg {
+  background-color: #e5ecee;
+  background-image:
+    linear-gradient(
+      118deg,
+      rgba(255, 255, 255, 0.86) 0%,
+      rgba(234, 241, 243, 0.82) 50%,
+      rgba(86, 102, 110, 0.24) 100%
+    ),
+    radial-gradient(circle at 14% 24%, rgba(255, 255, 255, 0.82), transparent 15rem),
+    linear-gradient(90deg, rgba(86, 102, 110, 0.1) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(86, 102, 110, 0.085) 1px, transparent 1px),
+    var(--po-texture-hero);
+}
+
+.po-wireframe--signals .po-critical-signal {
+  border-color: rgba(230, 138, 163, 0.32);
+}
+
+.po-wireframe--workflows .po-view-screen .po-workflow-card::before {
+  background: #a88be4;
+}
+
+.po-wireframe--events .po-event-feed__icon {
+  color: #b87824;
+}
+
+.po-wireframe--lifecycle .po-journey-row .po-progress__bar {
+  background: #62b790;
 }
 
 .po-hero-page-icon svg {
