@@ -9702,6 +9702,89 @@ body.site-body.pulse-ops-product-body {
   }
 }
 
+/* Pulse-Ops slim product typography pass */
+.po-wireframe {
+  font-family: var(--font-product), Inter, ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.006em;
+}
+
+.po-app-nav__brand {
+  min-width: 7.4rem;
+  gap: 0;
+  font-family: var(--font-product), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.po-command-banner__brand {
+  gap: 0;
+}
+
+.po-command-banner h1 {
+  font-family: var(--font-product), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+}
+
+.po-command-banner p:not(.po-eyebrow),
+.po-module-header span,
+.po-card p,
+.po-workflow-card p,
+.po-insight-card p,
+.po-board__column p,
+.po-table td,
+.po-event-feed__row small,
+.po-event-feed__row time {
+  font-weight: 400;
+}
+
+.po-eyebrow,
+.po-app-nav__links a,
+.po-app-nav__tools,
+.po-module-header p,
+.po-alert-label,
+.po-table th,
+.po-card h3 {
+  font-family: var(--font-product), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+}
+
+.po-module-header h2 {
+  font-family: var(--font-product), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 430;
+  letter-spacing: -0.065em;
+}
+
+.po-kpi strong,
+.po-card > strong,
+.po-health-score strong,
+.po-workflow-card__stats strong {
+  font-family: var(--font-product), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.065em;
+}
+
+.po-workflow-card h3,
+.po-insight-card h3,
+.po-board__column h3,
+.po-ai-intelligence-band__panel h3,
+.orchestration-strip__title,
+.stack-flow-strip__node p {
+  font-family: var(--font-product), Inter, ui-sans-serif, system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.028em;
+}
+
+.po-badge,
+.po-priority,
+.po-status-badge,
+.po-signal-type {
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
 /* Revival simplified approved artwork gallery */
 .revival-gallery {
   --revival-cream: #efe4cf;

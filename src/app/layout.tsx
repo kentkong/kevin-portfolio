@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Space_Grotesk } from "next/font/google";
+import { DM_Sans, Inter, Space_Grotesk } from "next/font/google";
 import { site } from "@/lib/site";
 import { basePath } from "@/lib/site-config";
 import "./globals.css";
@@ -17,6 +17,12 @@ const dmSans = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+const inter = Inter({
+  variable: "--font-product",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -53,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable} scroll-smooth`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable} ${inter.variable} scroll-smooth`}>
       <body
         className="site-body"
         style={{

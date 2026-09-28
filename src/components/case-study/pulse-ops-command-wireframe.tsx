@@ -546,7 +546,6 @@ export function PulseOpsCommandWireframe() {
       />
       <nav className="po-app-nav" aria-label="Pulse-Ops wireframe navigation">
         <Link href="#command" className="po-app-nav__brand">
-          <PulseOpsMark />
           <span>Pulse-Ops <strong>AI</strong></span>
         </Link>
         <div className="po-app-nav__links">
@@ -574,7 +573,6 @@ export function PulseOpsCommandWireframe() {
         <div className="command-banner__bg" aria-hidden />
         <div className="po-command-banner__inner">
           <div className="po-command-banner__brand">
-            <PulseOpsMark />
             <div>
               <p className="po-eyebrow">Pulse-Ops AI</p>
               <h1 id="pulse-ops-wireframe-title">Pulse-Ops AI Command Centre</h1>
