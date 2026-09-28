@@ -150,7 +150,7 @@ export const projects: Project[] = [
     summary:
       "A stack-agnostic command center that unifies your data, activation, engagement, and AI tools into health scores, signals, and next-best actions.",
     overview: "",
-    liveUrl: "https://kentkong.github.io/pulse-ops-ai/",
+    liveUrl: "/projects/pulse-ops/command",
     previewImageDesktop: "/projects/pulse-ops/operations.png",
     previewImagesDesktop: ["/projects/pulse-ops/operations.png"],
     previewRotationIntervalMs: 3200,

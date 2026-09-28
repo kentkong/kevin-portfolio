@@ -4,18 +4,18 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.join(__dirname, "../public/projects/pulse-ops");
-const base = "https://kentkong.github.io/pulse-ops-ai";
+const base = "http://127.0.0.1:43020/projects/pulse-ops";
 
 const WIDTH = 1600;
 const HEIGHT = 1000;
 
 const pages = [
-  { slug: "operations", path: "/" },
+  { slug: "operations", path: "/command" },
   { slug: "lifecycle", path: "/lifecycle" },
   { slug: "workflows", path: "/workflows" },
-  { slug: "insights", path: "/insights" },
+  { slug: "insights", path: "/signals" },
   { slug: "events", path: "/events" },
-  { slug: "architecture", path: "/architecture" },
+  { slug: "architecture", path: "/stack" },
 ];
 
 const browser = await chromium.launch();
