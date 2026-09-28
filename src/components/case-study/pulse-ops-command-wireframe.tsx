@@ -1,22 +1,30 @@
 "use client";
 
+import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { useEffect } from "react";
 import {
   ArrowRight,
   AlertTriangle,
+  Bell,
+  Brain,
   Clock,
   Database,
+  GitBranch,
   Info,
   Layers,
+  LayoutDashboard,
   Mail,
   MessageSquare,
   Pause,
   Play,
+  Radio,
   RefreshCw,
+  Search,
   Sparkles,
   Ticket,
   TrendingUp,
+  UserCircle,
   Users,
   Zap,
 } from "lucide-react";
@@ -454,56 +462,216 @@ function EventIcon({ type, severity }: { type: string; severity: string }) {
   return <Icon size={14} aria-hidden />;
 }
 
-export function PulseOpsCommandWireframe() {
-  const criticalSignal = aiInsights[0];
+export type PulseOpsView = "command" | "lifecycle" | "workflows" | "signals" | "events" | "stack";
 
-  useEffect(() => {
-    document.body.classList.add("pulse-ops-product-body");
-    return () => document.body.classList.remove("pulse-ops-product-body");
-  }, []);
+type PulseOpsViewConfig = {
+  id: PulseOpsView;
+  label: string;
+  href: string;
+  icon: typeof LayoutDashboard;
+  accent: string;
+  accentRgb: string;
+  className: string;
+  eyebrow: string;
+  summary: string;
+};
 
+const pulseOpsViews: PulseOpsViewConfig[] = [
+  {
+    id: "command",
+    label: "Command",
+    href: "/projects/pulse-ops/command",
+    icon: LayoutDashboard,
+    accent: "#8db9c8",
+    accentRgb: "141, 185, 200",
+    className: "command",
+    eyebrow: "AI lifecycle operations",
+    summary: "Lifecycle intelligence, workflow orchestration and customer health in one operating view.",
+  },
+  {
+    id: "lifecycle",
+    label: "Lifecycle",
+    href: "/projects/pulse-ops/lifecycle",
+    icon: Users,
+    accent: "#77aa94",
+    accentRgb: "119, 170, 148",
+    className: "lifecycle",
+    eyebrow: "Customer portfolio health",
+    summary: "Stage progression, health movement and account risk across the customer lifecycle.",
+  },
+  {
+    id: "workflows",
+    label: "Workflows",
+    href: "/projects/pulse-ops/workflows",
+    icon: GitBranch,
+    accent: "#9f91ca",
+    accentRgb: "159, 145, 202",
+    className: "workflows",
+    eyebrow: "Lifecycle orchestration",
+    summary: "Automations triggered from warehouse events, synced audiences and engagement journeys.",
+  },
+  {
+    id: "signals",
+    label: "Signals",
+    href: "/projects/pulse-ops/signals",
+    icon: Brain,
+    accent: "#d5a3ad",
+    accentRgb: "213, 163, 173",
+    className: "signals",
+    eyebrow: "AI signal intelligence",
+    summary: "Cross-stack risks, opportunities and next-best actions synthesized by Pulse-Ops AI.",
+  },
+  {
+    id: "events",
+    label: "Events",
+    href: "/projects/pulse-ops/events",
+    icon: Radio,
+    accent: "#d5ad77",
+    accentRgb: "213, 173, 119",
+    className: "events",
+    eyebrow: "Operational event stream",
+    summary: "Customer activity, lifecycle triggers and system events feeding real-time orchestration.",
+  },
+  {
+    id: "stack",
+    label: "Stack",
+    href: "/projects/pulse-ops/stack",
+    icon: Layers,
+    accent: "#68777c",
+    accentRgb: "104, 119, 124",
+    className: "stack",
+    eyebrow: "Architecture and integrations",
+    summary: "Snowflake to Hightouch to Braze to Pulse-Ops AI, monitored as one operational system.",
+  },
+];
+
+const pulseOpsViewMap = new Map<PulseOpsView, PulseOpsViewConfig>(pulseOpsViews.map((view) => [view.id, view]));
+
+const lifecycleCustomers = [
+  ["NovaTech Solutions", "Onboarding", 62, "Integration stalled", "Alex Rivera", "$2.4K"],
+  ["CloudScale Inc", "Activation", 78, "Milestone due", "Jordan Lee", "$4.8K"],
+  ["DataPulse Analytics", "Adoption", 91, "Power user", "Alex Rivera", "$8.2K"],
+  ["HealthBridge", "Renewal", 72, "Renewal in 25d", "Jordan Lee", "$9.6K"],
+  ["RetailEdge", "Intervention", 38, "14d inactive", "Alex Rivera", "$3.2K"],
+  ["MediaStream Pro", "Onboarding", 55, "API migration tickets", "Sam Patel", "$1.8K"],
+];
+
+const eventSources = [
+  ["Snowflake", "Product usage, subscriptions", "12ms", "Active"],
+  ["Braze", "Campaign delivery, canvas steps", "89ms", "Active"],
+  ["Zendesk", "Support tickets, CSAT", "240ms", "Active"],
+  ["Hightouch", "Segment updates, score changes", "340ms", "Active"],
+];
+
+const dataFlows = [
+  ["Snowflake", "Hightouch", "Customer profiles, usage events, subscription data"],
+  ["Hightouch", "Braze", "Audience segments, churn scores, engagement attributes"],
+  ["Braze", "Pulse-Ops AI", "Journey activity, delivery events, engagement signals"],
+  ["Snowflake", "Pulse-Ops AI", "Raw event stream, health indicators, SLA data"],
+];
+
+const stackResponsibilities = [
+  ["Snowflake", "Data Layer", ["Customer profiles", "Product usage", "Subscription and billing", "Support history"]],
+  ["Hightouch", "Orchestration Layer", ["Reverse ETL", "Lifecycle segmentation", "Risk-score sync", "Attribute activation"]],
+  ["Braze", "Engagement Layer", ["Onboarding canvases", "Adoption messaging", "Retention campaigns", "Renewal flows"]],
+  ["Pulse-Ops AI", "Intelligence Layer", ["Operational visibility", "AI lifecycle signals", "Workflow priority", "Next-best action"]],
+];
+
+function HeroBrushStroke({ className }: { className?: string }) {
   return (
-    <article className="po-wireframe" aria-labelledby="pulse-ops-wireframe-title">
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            body.site-body {
-              --portfolio-border-size: 0px;
-              background: #eaf3f4 !important;
-              background-image: none !important;
-            }
-            body.site-body::before,
-            body.site-body::after {
-              display: none !important;
-            }
-          `,
-        }}
-      />
-      <section id="command" className="po-command-banner command-banner">
-        <div className="command-banner__bg" aria-hidden />
-        <div className="po-command-banner__inner">
-          <div className="po-command-banner__brand">
-            <div>
-              <p className="po-eyebrow">AI lifecycle operations</p>
-              <h1 id="pulse-ops-wireframe-title">Pulse-Ops AI</h1>
+    <svg className={className} viewBox="0 0 520 72" preserveAspectRatio="none" aria-hidden>
+      <path d="M-24 38 C48 22 118 46 196 34 C274 22 352 44 430 30 C508 16 548 36 560 32 L564 46 C520 54 448 42 372 50 C296 58 220 44 144 52 C68 60 8 48 -24 42 Z" fill="#1a1a1a" fillOpacity="0.07" />
+      <path d="M-32 42 C36 24 108 50 188 36 C268 22 348 48 428 34 C508 20 552 40 568 36 L572 50 C512 58 432 46 352 54 C272 62 192 48 112 56 C32 64 -8 52 -32 46 Z" fill="#f1c40f" fillOpacity="0.34" />
+      <path d="M-18 40 C62 30 142 44 222 36 C302 28 382 42 462 34 C502 30 538 38 552 36" fill="none" stroke="#f1c40f" strokeWidth="2.5" strokeOpacity="0.22" strokeLinecap="round" />
+      <path d="M12 48 C92 54 172 46 252 50 C332 54 412 46 492 48" fill="none" stroke="#f1c40f" strokeWidth="1.5" strokeOpacity="0.14" strokeLinecap="round" />
+      <ellipse cx="88" cy="30" rx="10" ry="3.5" fill="#f1c40f" fillOpacity="0.18" transform="rotate(-12 88 30)" />
+      <ellipse cx="310" cy="52" rx="14" ry="4" fill="#f1c40f" fillOpacity="0.14" transform="rotate(8 310 52)" />
+      <ellipse cx="470" cy="38" rx="7" ry="2.5" fill="#f1c40f" fillOpacity="0.16" transform="rotate(-6 470 38)" />
+    </svg>
+  );
+}
+
+function PulseOpsLogoMark({ className = "po-mini-logo" }: { className?: string }) {
+  return (
+    <span className={className} aria-hidden>
+      <svg viewBox="0 0 32 32" fill="none">
+        <path d="M6 16h7.25M18.75 16H26" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" />
+        <path d="M16 6v7.25M16 18.75V26" stroke="currentColor" strokeWidth="2.1" strokeLinecap="round" />
+        <circle cx="16" cy="16" r="4.25" fill="currentColor" fillOpacity="0.16" stroke="currentColor" strokeWidth="1.8" />
+        <circle cx="16" cy="16" r="1.45" fill="currentColor" />
+      </svg>
+    </span>
+  );
+}
+
+function ProductShellNav({ current }: { current: PulseOpsViewConfig }) {
+  return (
+    <nav className="po-app-nav" aria-label="Pulse-Ops application">
+      <Link href="/projects/pulse-ops/command" className="po-app-nav__brand" aria-label="Pulse-Ops AI Command">
+        <PulseOpsLogoMark />
+      </Link>
+      <div className="po-app-nav__links" role="list">
+        {pulseOpsViews.map((item) => {
+          const Icon = item.icon;
+          const isActive = item.id === current.id;
+          return (
+            <Link key={item.id} href={item.href} className={`po-nav-tab po-nav-tab--${item.className} nav-tab--${item.className} ${isActive ? "is-active" : ""}`} aria-current={isActive ? "page" : undefined}>
+              <span className="po-nav-tab__bg" aria-hidden />
+              <Icon size={14} strokeWidth={2.1} aria-hidden />
+              {item.label}
+              <span className="nav-tab__stripe" aria-hidden />
+            </Link>
+          );
+        })}
+      </div>
+      <div className="po-app-nav__tools" aria-label="Pulse-Ops utilities">
+        <span>Last 7 days</span>
+        <span className="po-tool-icon"><Search size={14} aria-hidden />Search</span>
+        <span className="po-tool-icon"><Bell size={14} aria-hidden />2</span>
+        <span className="po-tool-icon"><UserCircle size={16} aria-hidden />KK</span>
+      </div>
+    </nav>
+  );
+}
+
+function PulseOpsHero({ current }: { current: PulseOpsViewConfig }) {
+  const PageIcon = current.icon;
+  return (
+    <section id={current.id} className={`po-command-banner command-banner po-product-hero po-product-hero--${current.className}`}>
+      <div className="command-banner__bg" aria-hidden />
+      <div className="po-command-banner__inner po-product-hero__inner">
+        <div className="po-hero-brand">
+          <div className="po-hero-brand__lockup">
+            <HeroBrushStroke className="po-hero-brush" />
+            <div className="po-hero-brand__content">
+              <PulseOpsLogoMark className="po-hero-mark" />
+              <div>
+                <p className="po-eyebrow">{current.eyebrow}</p>
+                <h1 id="pulse-ops-wireframe-title">Pulse-Ops <span>AI</span></h1>
+              </div>
             </div>
           </div>
+          <p>{current.summary}</p>
         </div>
-      </section>
+        <div className="po-hero-page-lockup" aria-label={`${current.label} current page`}>
+          <div>
+            <span>Current view</span>
+            <strong>{current.label}</strong>
+          </div>
+          <span className="po-hero-page-icon" aria-hidden>
+            <PageIcon strokeWidth={1.8} />
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-      <nav className="po-page-links" aria-label="Pulse-Ops product pages">
-        {[
-          ["Command", "#command"],
-          ["Lifecycle", "#lifecycle"],
-          ["Workflows", "#workflows"],
-          ["Signals", "#signals"],
-          ["Events", "#events"],
-          ["Stack", "#stack"],
-        ].map(([label, href]) => (
-          <a key={label} href={href}>{label}</a>
-        ))}
-      </nav>
+function CommandViewContent() {
+  const criticalSignal = aiInsights[0];
 
+  return (
+    <>
       <LifecycleStackStrip />
 
       <section className="po-section po-section--glance">
@@ -633,9 +801,7 @@ export function PulseOpsCommandWireframe() {
         <div className="po-table-wrap">
           <table className="po-table">
             <thead>
-              <tr>
-                {["Priority", "Signal / opportunity", "Category", "Accounts", "Detected", "Confidence", "Action"].map((head) => <th key={head}>{head}</th>)}
-              </tr>
+              <tr>{["Priority", "Signal / opportunity", "Category", "Accounts", "Detected", "Confidence", "Action"].map((head) => <th key={head}>{head}</th>)}</tr>
             </thead>
             <tbody>
               {aiInsights.map((item) => (
@@ -656,86 +822,163 @@ export function PulseOpsCommandWireframe() {
 
       <section id="workflows" className="po-section po-section--workflows">
         <ModuleHeader title="Workflow performance" text="Live status across lifecycle automations." />
-        <div className="po-workflow-grid">
-          {workflows.map((workflow) => (
-            <OriginalWorkflowCard key={workflow.name} workflow={workflow} />
-          ))}
-        </div>
+        <div className="po-workflow-grid">{workflows.map((workflow) => <OriginalWorkflowCard key={workflow.name} workflow={workflow} />)}</div>
       </section>
 
       <section className="po-section po-section--board">
         <ModuleHeader title="Lifecycle operations board" text="Operational CRM-style account movement across lifecycle stages." />
-        <div className="po-board">
-          {lifecycleBoard.map((column) => (
-            <div className={`po-board__column surface-lane ${column.title === "Intervention" ? "surface-lane--alert" : column.title === "Onboarding" ? "surface-lane--active" : ""}`} key={column.title}>
-              <header>
-                <span>{column.accounts.some(([, score]) => Number(score) < 60) ? <i className="lane-alert-dot animate-live-dot" aria-hidden /> : null}{column.title}</span>
-                <strong>{column.accounts.length}</strong>
-              </header>
-              <div>
-                {column.accounts.map(([account, score, signal, owner]) => (
-                  <button type="button" className={`kanban-card surface-card po-board__account--${healthState(Number(score))}`} key={account}>
-                    <h3>{account}</h3>
-                    <p>{signal}</p>
-                    <div className="po-board__health" aria-hidden>
-                      <i style={{ width: `${score}%` }} />
-                    </div>
-                    <footer>
-                      <span className="po-board__score">Health {score}</span>
-                      <span>{column.title}</span>
-                      <span>{owner}</span>
-                    </footer>
-                  </button>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <LifecycleBoard />
       </section>
 
       <section id="signals" className="po-section po-section--signals-feed">
         <ModuleHeader title="Recent signals" text="Latest AI insights across your customer base." />
-        <div className="po-insight-grid">
-          {aiInsights.map((item) => (
-            <InsightCard key={`recent-${item.title}`} insight={item} />
-          ))}
-        </div>
+        <div className="po-insight-grid">{aiInsights.map((item) => <InsightCard key={`recent-${item.title}`} insight={item} />)}</div>
       </section>
 
       <section id="events" className="po-section po-bottom-grid po-section--operations-footer">
-        <div>
-          <ModuleHeader title="Recent activity / events" text="Most useful recent items from the event stream." />
-          <div className="po-card po-event-list po-event-feed">
-            {recentEvents.map(([time, title, company, type, severity]) => (
-              <div className="po-event-feed__row" key={`${time}-${title}`}>
-                <span className={`po-event-feed__icon po-event-severity--${severity.toLowerCase()}`}>
-                  <EventIcon type={type} severity={severity} />
-                </span>
-                <div>
-                  <strong>{title}</strong>
-                  <small>{company} · {type}</small>
-                </div>
-                <Badge tone={severity === "High" ? "destructive" : severity === "Medium" ? "warning" : "secondary"}>{severity}</Badge>
-                <time>{time}</time>
-              </div>
-            ))}
-            <a href="#events">View all events <ArrowRight size={14} /></a>
-          </div>
-        </div>
-        <div>
-          <ModuleHeader title="Integrations / system status" text="Compact connected-systems summary." />
-          <div className="po-card po-integration-list">
-            {stackIntegrations.map((item) => (
-              <div className={`stack-flow-strip__node stack-flow-strip__node--${item.id}`} key={`status-${item.name}`}>
-                <StackIntegrationMark name={item.name} />
-                <span>{item.name}</span>
-                <small>{item.role}</small>
-                <strong>{item.name === "Pulse-Ops AI" ? "Operational" : "Connected"}</strong>
-              </div>
-            ))}
-          </div>
-        </div>
+        <RecentEventsPanel />
+        <SystemStatusPanel />
       </section>
+    </>
+  );
+}
+
+function LifecycleBoard() {
+  return (
+    <div className="po-board">
+      {lifecycleBoard.map((column) => (
+        <div className={`po-board__column surface-lane ${column.title === "Intervention" ? "surface-lane--alert" : column.title === "Onboarding" ? "surface-lane--active" : ""}`} key={column.title}>
+          <header><span>{column.accounts.some(([, score]) => Number(score) < 60) ? <i className="lane-alert-dot animate-live-dot" aria-hidden /> : null}{column.title}</span><strong>{column.accounts.length}</strong></header>
+          <div>{column.accounts.map(([account, score, signal, owner]) => (
+            <button type="button" className={`kanban-card surface-card po-board__account--${healthState(Number(score))}`} key={account}>
+              <h3>{account}</h3><p>{signal}</p><div className="po-board__health" aria-hidden><i style={{ width: `${score}%` }} /></div><footer><span className="po-board__score">Health {score}</span><span>{column.title}</span><span>{owner}</span></footer>
+            </button>
+          ))}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RecentEventsPanel() {
+  return (
+    <div>
+      <ModuleHeader title="Recent activity / events" text="Most useful recent items from the event stream." />
+      <div className="po-card po-event-list po-event-feed">
+        {recentEvents.map(([time, title, company, type, severity]) => (
+          <div className="po-event-feed__row" key={`${time}-${title}`}>
+            <span className={`po-event-feed__icon po-event-severity--${severity.toLowerCase()}`}><EventIcon type={type} severity={severity} /></span>
+            <div><strong>{title}</strong><small>{company} · {type}</small></div>
+            <Badge tone={severity === "High" ? "destructive" : severity === "Medium" ? "warning" : "secondary"}>{severity}</Badge>
+            <time>{time}</time>
+          </div>
+        ))}
+        <Link href="/projects/pulse-ops/events">View all events <ArrowRight size={14} /></Link>
+      </div>
+    </div>
+  );
+}
+
+function SystemStatusPanel() {
+  return (
+    <div>
+      <ModuleHeader title="Integrations / system status" text="Compact connected-systems summary." />
+      <div className="po-card po-integration-list">
+        {stackIntegrations.map((item) => (
+          <div className={`stack-flow-strip__node stack-flow-strip__node--${item.id}`} key={`status-${item.name}`}>
+            <StackIntegrationMark name={item.name} /><span>{item.name}</span><small>{item.role}</small><strong>{item.name === "Pulse-Ops AI" ? "Operational" : "Connected"}</strong>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ViewMetricRail({ items }: { items: [string, ReactNode, string, string][] }) {
+  return <div className="po-view-metric-grid">{items.map(([label, value, detail, tone]) => <div className={`po-kpi po-view-metric po-view-metric--${tone}`} key={label}><span>{label}</span><strong>{value}</strong><small>{detail}</small></div>)}</div>;
+}
+
+function LifecycleView() {
+  return (
+    <main className="po-view-screen po-view-screen--lifecycle">
+      <section className="po-section po-view-section"><ModuleHeader title="Lifecycle Portfolio" text="Customer health, stage progression and portfolio movement across the full lifecycle pipeline." /><ViewMetricRail items={[["Accounts", "847", "Portfolio size", "lifecycle"], ["At risk", "23", "Critical + watch", "signals"], ["MRR monitored", "$1.2M", "Across active lifecycle", "events"], ["Avg health", "74", "+1.8 vs last week", "lifecycle"]]} /></section>
+      <section className="po-section po-view-section po-view-grid po-view-grid--2-1"><div className="po-card po-module--lifecycle po-lifecycle-journey"><h3>Journey progression</h3>{lifecycleDistribution.map(([label, value], index) => <div className="po-journey-row" key={label}><span>{label}</span><Progress value={Math.min(100, Number(value) / 3.2)} tone={index >= 5 ? "danger" : "health"} /><strong>{value}</strong></div>)}</div><div className="po-card po-module--lifecycle"><h3>Health heatmap</h3><div className="po-health-tiles">{lifecycleCustomers.map(([company, stage, score]) => <span className={`po-health-tile po-board__account--${healthState(Number(score))}`} key={company as string}><strong>{score}</strong><small>{company}</small><em>{stage}</em></span>)}</div></div></section>
+      <section className="po-section po-section--board"><ModuleHeader title="Lifecycle operations board" text="Restored lifecycle lanes with account health and owner context." /><LifecycleBoard /></section>
+      <section className="po-section po-view-section"><ModuleHeader title="Customer portfolio" text="Account-level lifecycle status from the original product model." /><div className="po-table-wrap"><table className="po-table"><thead><tr>{["Account", "Stage", "Health", "Recent signal", "Owner", "MRR"].map((head) => <th key={head}>{head}</th>)}</tr></thead><tbody>{lifecycleCustomers.map(([company, stage, score, signal, owner, mrr]) => <tr key={company as string}><td>{company}</td><td>{stage}</td><td>{score}</td><td>{signal}</td><td>{owner}</td><td>{mrr}</td></tr>)}</tbody></table></div></section>
+    </main>
+  );
+}
+
+function WorkflowsView() {
+  const pausedWorkflow = workflows.find((workflow) => workflow.status === "Paused");
+  return (
+    <main className="po-view-screen po-view-screen--workflows">
+      <section className="po-section po-view-section"><ModuleHeader title="Workflow Orchestration" text="Lifecycle automations triggered from Snowflake events, synced via Hightouch and executed in Braze." /><ViewMetricRail items={[["Active", activeWorkflows, "Lifecycle automations", "lifecycle"], ["Paused", pausedWorkflows, pausedWorkflow?.name ?? "None", "events"], ["Triggers", totalTriggers.toLocaleString(), "Last 7 days", "workflows"], ["Avg completion", `${averageCompletion}%`, "Across workflows", "workflows"]]} /></section>
+      {pausedWorkflow ? <section className="po-section po-view-section"><div className="po-card po-paused-workflow po-module--events"><Pause size={18} aria-hidden /><div><h3>Paused workflow</h3><strong>{pausedWorkflow.name}</strong><p>{pausedWorkflow.recommendation}</p></div><Badge tone="warning">Needs review</Badge></div></section> : null}
+      <section className="po-section po-view-section po-view-grid po-view-grid--2-1"><div className="po-card po-module--workflow"><h3>Orchestration path</h3><StackFlowHorizontal /></div><div className="po-card po-module--workflow"><h3>Completion trend</h3><TrendChart data={engagementTrend} /></div></section>
+      <section className="po-section po-section--workflows"><ModuleHeader title="All workflows" text="Original workflow concepts restored as dedicated orchestration cards." /><div className="po-workflow-grid">{workflows.map((workflow) => <OriginalWorkflowCard key={`workflow-page-${workflow.name}`} workflow={workflow} />)}</div></section>
+    </main>
+  );
+}
+
+function SignalsView() {
+  const criticalSignal = aiInsights[0];
+  const categories = ["Churn Risk", "Expansion", "Onboarding", "Support", "Renewal", "Adoption"];
+  return (
+    <main className="po-view-screen po-view-screen--signals">
+      <section className="po-section po-view-section"><ModuleHeader title="Active Signals" text="Cross-stack signals synthesized into actionable recommendations." /><ViewMetricRail items={[["Active signals", aiInsights.length, "Across six categories", "signals"], ["Critical", 1, "Requires action", "signals"], ["Model", "GPT-4o", "Last analysis 2m ago", "workflows"], ["Confidence", "87%", "Average signal confidence", "lifecycle"]]} /></section>
+      <section className="po-section po-view-section"><div className="critical-signal-banner po-critical-signal"><div className="po-critical-signal__main"><AlertTriangle className="po-critical-signal__icon" aria-hidden /><div><p className="po-alert-label">Critical AI signal</p><h2>{criticalSignal.title}</h2><p>{criticalSignal.summary}</p><small>{criticalSignal.accounts} affected · {criticalSignal.confidence}% confidence · {criticalSignal.impact}</small></div></div><Link href="/projects/pulse-ops/lifecycle">Inspect accounts <ArrowRight size={14} /></Link></div></section>
+      <section className="po-section po-view-section po-view-grid po-view-grid--1-2"><div className="po-card po-module--signals"><h3>Signal categories</h3><div className="po-signal-breakdown po-signal-breakdown--stacked">{categories.map((category, index) => <span key={category}><b>{index === 0 ? 1 : index < 5 ? 1 : 0}</b>{category}</span>)}</div></div><div className="po-insight-grid">{aiInsights.map((item) => <InsightCard key={`signals-page-${item.title}`} insight={item} />)}</div></section>
+    </main>
+  );
+}
+
+function EventsView() {
+  return (
+    <main className="po-view-screen po-view-screen--events">
+      <section className="po-section po-view-section"><ModuleHeader title="Event Processing" text="Customer activity and lifecycle events feeding AI analysis and workflow orchestration in real time." /><ViewMetricRail items={[["Ingestion", "Streaming", "Live event buffer", "lifecycle"], ["Event types", 8, "Product, support, lifecycle", "events"], ["High severity", 3, "Escalation candidates", "signals"], ["Latency", "89ms", "Braze event path", "workflows"]]} /></section>
+      <section className="po-section po-bottom-grid po-section--operations-footer"><RecentEventsPanel /><div><ModuleHeader title="Event sources" text="Systems currently feeding Pulse-Ops AI." /><div className="po-card po-source-list">{eventSources.map(([source, description, latency, status]) => <div className="po-source-row" key={source}><div><strong>{source}</strong><small>{description}</small></div><Badge tone="success">{status}</Badge><time>{latency}</time></div>)}</div></div></section>
+    </main>
+  );
+}
+
+function StackView() {
+  return (
+    <main className="po-view-screen po-view-screen--stack">
+      <LifecycleStackStrip />
+      <section className="po-section po-view-section"><ModuleHeader title="Stack Architecture" text="Pulse-Ops AI sits above warehouse data, reverse ETL activation and lifecycle engagement." /><p className="po-view-copy">Warehouse-native lifecycle operations unify customer data in Snowflake, activate audiences through Hightouch, orchestrate engagement in Braze and layer Pulse-Ops AI intelligence on top.</p></section>
+      <section className="po-section po-view-section po-view-grid po-view-grid--2-1"><div className="po-card po-module--snowflake"><h3>Data flow map</h3><div className="po-flow-list">{dataFlows.map(([from, to, data]) => <div className="po-flow-row" key={`${from}-${to}`}><strong>{from}</strong><ArrowRight size={14} aria-hidden /><strong>{to}</strong><span>{data}</span></div>)}</div></div><SystemStatusPanel /></section>
+      <section className="po-section po-view-section"><ModuleHeader title="Layer responsibilities" text="Original stack concepts restored as a dedicated architecture view." /><div className="po-responsibility-grid">{stackResponsibilities.map(([tool, layer, items]) => <div className="po-card po-responsibility-card" key={tool as string}><h3>{tool}</h3><Badge tone="outline">{layer}</Badge><ul>{(items as string[]).map((item) => <li key={item}>{item}</li>)}</ul></div>)}</div></section>
+    </main>
+  );
+}
+
+function PulseOpsViewContent({ view }: { view: PulseOpsView }) {
+  switch (view) {
+    case "lifecycle": return <LifecycleView />;
+    case "workflows": return <WorkflowsView />;
+    case "signals": return <SignalsView />;
+    case "events": return <EventsView />;
+    case "stack": return <StackView />;
+    case "command":
+    default: return <CommandViewContent />;
+  }
+}
+
+export function PulseOpsCommandWireframe({ view = "command" }: { view?: PulseOpsView }) {
+  const current = pulseOpsViewMap.get(view) ?? pulseOpsViewMap.get("command")!;
+
+  useEffect(() => {
+    document.body.classList.add("pulse-ops-product-body");
+    return () => document.body.classList.remove("pulse-ops-product-body");
+  }, []);
+
+  return (
+    <article className={`po-wireframe po-wireframe--${current.className}`} aria-labelledby="pulse-ops-wireframe-title" style={{ "--po-page-accent": current.accent, "--po-page-accent-rgb": current.accentRgb } as CSSProperties}>
+      <style dangerouslySetInnerHTML={{ __html: `body.site-body { --portfolio-border-size: 0px; background: #eaf3f4 !important; background-image: none !important; } body.site-body::before, body.site-body::after { display: none !important; }` }} />
+      <ProductShellNav current={current} />
+      <PulseOpsHero current={current} />
+      <PulseOpsViewContent view={current.id} />
     </article>
   );
 }
