@@ -397,7 +397,7 @@ function LifecycleStackStrip() {
       <div className="orchestration-strip__inner">
         <div className="orchestration-strip__headline">
           <div className="orchestration-strip__title-row">
-            <h2 className="orchestration-strip__title">Pulse-Ops AI · Lifecycle Stack</h2>
+            <h2 className="orchestration-strip__title">Lifecycle Stack</h2>
             <span className="orchestration-strip__status-pill">All systems operational</span>
           </div>
           <p className="orchestration-strip__thesis">
@@ -531,8 +531,8 @@ export function PulseOpsCommandWireframe() {
         <div className="po-command-banner__inner">
           <div className="po-command-banner__brand">
             <div>
-              <p className="po-eyebrow">Pulse-Ops AI</p>
-              <h1 id="pulse-ops-wireframe-title">Pulse-Ops AI Command Centre</h1>
+              <p className="po-eyebrow">AI lifecycle operations</p>
+              <h1 id="pulse-ops-wireframe-title">Lifecycle Command Centre</h1>
               <p>Lifecycle intelligence, workflow orchestration and customer health monitoring.</p>
             </div>
           </div>
@@ -548,7 +548,7 @@ export function PulseOpsCommandWireframe() {
       <LifecycleStackStrip />
 
       <section className="po-section po-section--glance">
-        <ModuleHeader title="Today at a glance" text="Key signals across your customer lifecycle." />
+        <ModuleHeader title="Command snapshot" text="Key signals across your customer lifecycle." />
         <div className="po-kpi-grid">
           {[
             ["Active workflows", activeWorkflows, "+2 vs last week", [3, 4, 4, 5, 5, activeWorkflows], "#1a1a1a"],
