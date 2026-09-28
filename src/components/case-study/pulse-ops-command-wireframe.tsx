@@ -374,7 +374,7 @@ function StackFlowHorizontal() {
 
 function LifecycleStackStrip() {
   return (
-    <section className="orchestration-strip workspace-context-strip" aria-label="Lifecycle stack">
+    <section id="stack" className="orchestration-strip workspace-context-strip" aria-label="Lifecycle stack">
       <div className="section-band-dark__bg" aria-hidden />
       <div className="orchestration-strip__inner">
         <div className="orchestration-strip__headline">
@@ -490,6 +490,19 @@ export function PulseOpsCommandWireframe() {
           </div>
         </div>
       </section>
+
+      <nav className="po-page-links" aria-label="Pulse-Ops product pages">
+        {[
+          ["Command", "#command"],
+          ["Lifecycle", "#lifecycle"],
+          ["Workflows", "#workflows"],
+          ["Signals", "#signals"],
+          ["Events", "#events"],
+          ["Stack", "#stack"],
+        ].map(([label, href]) => (
+          <a key={label} href={href}>{label}</a>
+        ))}
+      </nav>
 
       <LifecycleStackStrip />
 
@@ -680,7 +693,7 @@ export function PulseOpsCommandWireframe() {
         </div>
       </section>
 
-      <section className="po-section po-section--signals-feed">
+      <section id="signals" className="po-section po-section--signals-feed">
         <ModuleHeader title="Recent signals" text="Latest AI insights across your customer base." />
         <div className="po-insight-grid">
           {aiInsights.map((item) => (
