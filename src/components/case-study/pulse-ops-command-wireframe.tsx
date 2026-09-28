@@ -272,6 +272,20 @@ const averageCompletion = Math.round(
   workflows.reduce((sum, workflow) => sum + workflow.completed, 0) / workflows.length
 );
 
+function PulseOpsMiniLogo() {
+  return (
+    <span className="po-mini-logo" aria-hidden>
+      <svg viewBox="0 0 28 28" fill="none">
+        <path d="M7 7H21" stroke="currentColor" strokeWidth="1.55" strokeLinecap="square" />
+        <path d="M7 7V21M7 14H17M17 14V21M17 21H21M21 7V21" stroke="currentColor" strokeWidth="1.55" strokeLinecap="square" strokeLinejoin="miter" />
+        <rect x="5.7" y="5.7" width="2.6" height="2.6" rx="0.5" fill="currentColor" />
+        <rect x="19.7" y="5.7" width="2.6" height="2.6" rx="0.5" fill="currentColor" />
+        <rect x="15.7" y="19.7" width="2.6" height="2.6" rx="0.5" fill="currentColor" />
+      </svg>
+    </span>
+  );
+}
+
 function StackIntegrationMark({ name }: { name: string }) {
   const Icon = name === "Snowflake" ? Database : name === "Hightouch" ? Layers : name === "Braze" ? MessageSquare : Sparkles;
   return (
@@ -399,19 +413,21 @@ function LifecycleStackStrip() {
           <div className="orchestration-strip__title-row">
             <h2 className="orchestration-strip__title">Lifecycle Stack</h2>
           </div>
-          <p className="orchestration-strip__thesis">
-            Monitors your full lifecycle stack and turns live data into health scores, AI signals, and prioritized actions.
-          </p>
           <p className="orchestration-strip__context">2 at-risk accounts · 5 AI signals active today</p>
-          <div className="orchestration-strip__ops-status" aria-label="Operational status">
-            <span><CheckCircle2 size={13} /> All systems operational</span>
-            <span>{activeWorkflows} active workflows</span>
-            <span>{pausedWorkflows} paused</span>
-            <span>{averageCompletion}% avg completion</span>
-          </div>
         </div>
         <StackFlowHorizontal />
       </div>
+    </section>
+  );
+}
+
+function StackOperationsStatus() {
+  return (
+    <section className="po-stack-status-panel" aria-label="Operational status">
+      <span><CheckCircle2 size={13} /> All systems operational</span>
+      <span>{activeWorkflows} active workflows</span>
+      <span>{pausedWorkflows} paused</span>
+      <span>{averageCompletion}% avg completion</span>
     </section>
   );
 }
@@ -507,8 +523,8 @@ export function PulseOpsCommandWireframe() {
         }}
       />
       <nav className="po-app-nav" aria-label="Pulse-Ops wireframe navigation">
-        <Link href="#command" className="po-app-nav__brand">
-          <span>Pulse-Ops</span>
+        <Link href="#command" className="po-app-nav__brand" aria-label="Pulse-Ops AI home">
+          <PulseOpsMiniLogo />
         </Link>
         <div className="po-app-nav__links">
           {navItems.map((item) => {
@@ -544,6 +560,7 @@ export function PulseOpsCommandWireframe() {
       </section>
 
       <LifecycleStackStrip />
+      <StackOperationsStatus />
 
       <section className="po-section po-section--glance">
         <ModuleHeader title="Command snapshot" text="Key signals across your customer lifecycle." />
