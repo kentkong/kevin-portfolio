@@ -10535,10 +10535,9 @@ body.site-body.pulse-ops-product-body {
       rgba(255, 255, 255, 0.74) 0%,
       rgba(227, 240, 243, 0.78) 55%,
       rgba(var(--po-page-accent-rgb), 0.2) 100%
-    ),
-    var(--po-texture-hero);
-  background-size: cover, cover, cover;
-  background-blend-mode: normal, normal, soft-light;
+    );
+  background-size: cover, cover;
+  background-blend-mode: normal, normal;
 }
 
 .po-product-hero .command-banner__bg::after {
@@ -10556,8 +10555,7 @@ body.site-body.pulse-ops-product-body {
       rgba(255, 255, 255, 0.72) 0%,
       rgba(229, 237, 240, 0.8) 52%,
       rgba(86, 102, 110, 0.22) 100%
-    ),
-    var(--po-texture-hero);
+    );
 }
 
 .orchestration-strip .stack-flow-strip {
