@@ -534,7 +534,7 @@ export function PulseOpsCommandWireframe() {
           __html: `
             body.site-body {
               --portfolio-border-size: 0px;
-              background: #edf2f7 !important;
+              background: #eaf3f4 !important;
               background-image: none !important;
             }
             body.site-body::before,
