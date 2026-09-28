@@ -272,49 +272,6 @@ const averageCompletion = Math.round(
   workflows.reduce((sum, workflow) => sum + workflow.completed, 0) / workflows.length
 );
 
-function PulseOpsMark() {
-  const nodes = [
-    [8, 8],
-    [16, 8],
-    [24, 8],
-    [8, 16],
-    [16, 16],
-    [8, 24],
-    [20, 24],
-  ];
-
-  return (
-    <span className="po-mark logo-mark" aria-hidden>
-      <svg viewBox="0 0 32 32" className="logo-mark__glyph" fill="none">
-        <g stroke="#ffffff" strokeOpacity="0.12" strokeWidth="0.45">
-          <line x1="8" y1="5" x2="8" y2="27" />
-          <line x1="16" y1="5" x2="16" y2="27" />
-          <line x1="24" y1="5" x2="24" y2="27" />
-          <line x1="5" y1="8" x2="27" y2="8" />
-          <line x1="5" y1="16" x2="27" y2="16" />
-          <line x1="5" y1="24" x2="27" y2="24" />
-        </g>
-        <g fill="#ffffff" fillOpacity="0.08">
-          <rect x="14.5" y="22.5" width="3" height="3" rx="0.5" />
-          <rect x="22.5" y="14.5" width="3" height="3" rx="0.5" />
-        </g>
-        <path className="logo-mark__lane-flow" d="M8 8 H24" stroke="#f1c40f" strokeWidth="1.65" strokeLinecap="square" />
-        <g stroke="#f1c40f" strokeWidth="1.65" strokeLinecap="square" strokeLinejoin="miter">
-          <path d="M8 8 V24" />
-          <path d="M8 16 H20" />
-          <path d="M20 16 V24" />
-          <path d="M20 24 H24" />
-          <path d="M24 8 V24" />
-        </g>
-        {nodes.map(([x, y]) => (
-          <rect key={`${x}-${y}`} x={x - 1.5} y={y - 1.5} width="3" height="3" rx="0.65" fill="#f1c40f" />
-        ))}
-        <circle className="logo-mark__hub" cx="24" cy="24" r="2" fill="#f1c40f" />
-      </svg>
-    </span>
-  );
-}
-
 function StackIntegrationMark({ name }: { name: string }) {
   const Icon = name === "Snowflake" ? Database : name === "Hightouch" ? Layers : name === "Braze" ? MessageSquare : Sparkles;
   return (
