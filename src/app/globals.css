@@ -10599,6 +10599,164 @@ body.site-body.pulse-ops-product-body {
   color: #ffe483;
 }
 
+/* Pulse-Ops functional motion layer */
+.po-sparkline polyline {
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+  animation:
+    po-chart-draw 1.15s cubic-bezier(0.2, 0.72, 0.28, 1) forwards,
+    po-chart-pulse 3.8s ease-in-out 1.35s infinite;
+}
+
+.po-sparkline polygon {
+  opacity: 0;
+  animation: po-chart-fill 0.9s ease 0.25s forwards;
+}
+
+.po-progress__bar,
+.po-board__health i,
+.po-bar-list i,
+.po-segment-list i {
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: po-bar-grow 0.95s cubic-bezier(0.2, 0.72, 0.28, 1) forwards;
+}
+
+.po-kpi,
+.po-card,
+.po-workflow-card,
+.po-insight-card,
+.po-board__column,
+.critical-signal-banner {
+  animation: po-module-appear 0.62s ease both;
+}
+
+.po-kpi:nth-child(2),
+.po-card:nth-child(2),
+.po-workflow-card:nth-child(2),
+.po-insight-card:nth-child(2),
+.po-board__column:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.po-kpi:nth-child(3),
+.po-card:nth-child(3),
+.po-workflow-card:nth-child(3),
+.po-insight-card:nth-child(3),
+.po-board__column:nth-child(3) {
+  animation-delay: 0.11s;
+}
+
+.po-kpi:nth-child(4),
+.po-card:nth-child(4),
+.po-workflow-card:nth-child(4),
+.po-insight-card:nth-child(4),
+.po-board__column:nth-child(4) {
+  animation-delay: 0.16s;
+}
+
+.orchestration-strip .stack-flow-strip__node {
+  animation:
+    po-module-appear 0.62s ease both,
+    po-stack-operational-pulse 4.2s ease-in-out 1.2s infinite;
+}
+
+.orchestration-strip .stack-flow-strip__segment:nth-child(2) .stack-flow-strip__node {
+  animation-delay: 0.08s, 1.4s;
+}
+
+.orchestration-strip .stack-flow-strip__segment:nth-child(3) .stack-flow-strip__node {
+  animation-delay: 0.16s, 1.6s;
+}
+
+.orchestration-strip .stack-flow-strip__segment:nth-child(4) .stack-flow-strip__node {
+  animation-delay: 0.24s, 1.8s;
+}
+
+@keyframes po-chart-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes po-chart-fill {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes po-chart-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    opacity: 0.96;
+  }
+  50% {
+    filter: drop-shadow(0 0 7px currentColor);
+    opacity: 1;
+  }
+}
+
+@keyframes po-bar-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes po-module-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes po-stack-operational-pulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow:
+      0 18px 34px rgba(0, 0, 0, 0.26),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+  50% {
+    transform: translateY(-1px);
+    box-shadow:
+      0 24px 42px rgba(0, 0, 0, 0.32),
+      0 0 18px rgba(255, 255, 255, 0.08),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.13);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .po-sparkline polyline,
+  .po-sparkline polygon,
+  .po-progress__bar,
+  .po-board__health i,
+  .po-bar-list i,
+  .po-segment-list i,
+  .po-kpi,
+  .po-card,
+  .po-workflow-card,
+  .po-insight-card,
+  .po-board__column,
+  .critical-signal-banner,
+  .orchestration-strip .stack-flow-strip__node {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
+
 /* Revival simplified approved artwork gallery */
 .revival-gallery {
   --revival-cream: #efe4cf;
