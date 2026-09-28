@@ -1,31 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { useEffect } from "react";
 import {
   ArrowRight,
-  Bell,
-  CheckCircle2,
   AlertTriangle,
-  Brain,
   Clock,
   Database,
-  GitBranch,
   Info,
-  LayoutDashboard,
   Layers,
   Mail,
   MessageSquare,
   Pause,
   Play,
-  Radio,
   RefreshCw,
-  Search,
   Sparkles,
   Ticket,
   TrendingUp,
-  UserCircle,
   Users,
   Zap,
 } from "lucide-react";
@@ -256,35 +247,12 @@ const engagementTrend: TrendPoint[] = [
   { label: "Sun", value: 63, secondary: 60 },
 ];
 
-const navItems = [
-  { label: "Command", icon: LayoutDashboard, hue: "snowflake" },
-  { label: "Lifecycle", icon: Users, hue: "lifecycle" },
-  { label: "Workflows", icon: GitBranch, hue: "hightouch" },
-  { label: "Signals", icon: Brain, hue: "braze" },
-  { label: "Events", icon: Radio, hue: "events" },
-  { label: "Stack", icon: Layers, hue: "architecture" },
-];
-
 const totalTriggers = workflows.reduce((sum, workflow) => sum + workflow.triggered, 0);
 const activeWorkflows = workflows.filter((workflow) => workflow.status === "Active").length;
 const pausedWorkflows = workflows.length - activeWorkflows;
 const averageCompletion = Math.round(
   workflows.reduce((sum, workflow) => sum + workflow.completed, 0) / workflows.length
 );
-
-function PulseOpsMiniLogo() {
-  return (
-    <span className="po-mini-logo" aria-hidden>
-      <svg viewBox="0 0 28 28" fill="none">
-        <path d="M7 7H21" stroke="currentColor" strokeWidth="1.55" strokeLinecap="square" />
-        <path d="M7 7V21M7 14H17M17 14V21M17 21H21M21 7V21" stroke="currentColor" strokeWidth="1.55" strokeLinecap="square" strokeLinejoin="miter" />
-        <rect x="5.7" y="5.7" width="2.6" height="2.6" rx="0.5" fill="currentColor" />
-        <rect x="19.7" y="5.7" width="2.6" height="2.6" rx="0.5" fill="currentColor" />
-        <rect x="15.7" y="19.7" width="2.6" height="2.6" rx="0.5" fill="currentColor" />
-      </svg>
-    </span>
-  );
-}
 
 function StackIntegrationMark({ name }: { name: string }) {
   const Icon = name === "Snowflake" ? Database : name === "Hightouch" ? Layers : name === "Braze" ? MessageSquare : Sparkles;
@@ -421,17 +389,6 @@ function LifecycleStackStrip() {
   );
 }
 
-function StackOperationsStatus() {
-  return (
-    <section className="po-stack-status-panel" aria-label="Operational status">
-      <span><CheckCircle2 size={13} /> All systems operational</span>
-      <span>{activeWorkflows} active workflows</span>
-      <span>{pausedWorkflows} paused</span>
-      <span>{averageCompletion}% avg completion</span>
-    </section>
-  );
-}
-
 function OriginalWorkflowCard({ workflow }: { workflow: (typeof workflows)[number] }) {
   const isPaused = workflow.status === "Paused";
   const StatusIcon = isPaused ? Pause : Play;
@@ -522,31 +479,6 @@ export function PulseOpsCommandWireframe() {
           `,
         }}
       />
-      <nav className="po-app-nav" aria-label="Pulse-Ops wireframe navigation">
-        <Link href="#command" className="po-app-nav__brand" aria-label="Pulse-Ops AI home">
-          <PulseOpsMiniLogo />
-        </Link>
-        <div className="po-app-nav__links">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            return (
-              <a key={item.label} className={`po-nav-tab nav-tab nav-tab--${item.hue}`} href={`#${item.label.toLowerCase()}`}>
-                <span className="po-nav-tab__bg" aria-hidden />
-                <span className="nav-tab__stripe" aria-hidden />
-                <Icon size={13} aria-hidden />
-                {item.label}
-              </a>
-            );
-          })}
-        </div>
-        <div className="po-app-nav__tools">
-          <span>Last 7 days</span>
-          <Search size={15} aria-hidden />
-          <Bell size={15} aria-hidden />
-          <UserCircle size={18} aria-hidden />
-        </div>
-      </nav>
-
       <section id="command" className="po-command-banner command-banner">
         <div className="command-banner__bg" aria-hidden />
         <div className="po-command-banner__inner">
@@ -560,7 +492,6 @@ export function PulseOpsCommandWireframe() {
       </section>
 
       <LifecycleStackStrip />
-      <StackOperationsStatus />
 
       <section className="po-section po-section--glance">
         <ModuleHeader title="Command snapshot" text="Key signals across your customer lifecycle." />
