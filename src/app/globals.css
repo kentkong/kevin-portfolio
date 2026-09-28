@@ -9774,7 +9774,7 @@ body.site-body.pulse-ops-product-body {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.9rem 1.2rem;
-  padding: 0 0 0.55rem;
+  padding: 0 clamp(1rem, 2vw, 2rem) 0.55rem;
   border-bottom: 1px solid rgba(86, 103, 109, 0.26);
 }
 
