@@ -398,12 +398,17 @@ function LifecycleStackStrip() {
         <div className="orchestration-strip__headline">
           <div className="orchestration-strip__title-row">
             <h2 className="orchestration-strip__title">Lifecycle Stack</h2>
-            <span className="orchestration-strip__status-pill">All systems operational</span>
           </div>
           <p className="orchestration-strip__thesis">
             Monitors your full lifecycle stack and turns live data into health scores, AI signals, and prioritized actions.
           </p>
           <p className="orchestration-strip__context">2 at-risk accounts · 5 AI signals active today</p>
+          <div className="orchestration-strip__ops-status" aria-label="Operational status">
+            <span><CheckCircle2 size={13} /> All systems operational</span>
+            <span>{activeWorkflows} active workflows</span>
+            <span>{pausedWorkflows} paused</span>
+            <span>{averageCompletion}% avg completion</span>
+          </div>
         </div>
         <StackFlowHorizontal />
       </div>
@@ -503,7 +508,7 @@ export function PulseOpsCommandWireframe() {
       />
       <nav className="po-app-nav" aria-label="Pulse-Ops wireframe navigation">
         <Link href="#command" className="po-app-nav__brand">
-          <span>Pulse-Ops <strong>AI</strong></span>
+          <span>Pulse-Ops</span>
         </Link>
         <div className="po-app-nav__links">
           {navItems.map((item) => {
@@ -532,15 +537,8 @@ export function PulseOpsCommandWireframe() {
           <div className="po-command-banner__brand">
             <div>
               <p className="po-eyebrow">AI lifecycle operations</p>
-              <h1 id="pulse-ops-wireframe-title">Lifecycle Command Centre</h1>
-              <p>Lifecycle intelligence, workflow orchestration and customer health monitoring.</p>
+              <h1 id="pulse-ops-wireframe-title">Pulse-Ops AI</h1>
             </div>
-          </div>
-          <div className="po-status-row">
-            <span><CheckCircle2 size={14} /> All systems operational</span>
-            <span>{activeWorkflows} active workflows</span>
-            <span>{pausedWorkflows} paused</span>
-            <span>{averageCompletion}% average completion</span>
           </div>
         </div>
       </section>
