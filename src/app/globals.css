@@ -10525,6 +10525,78 @@ body.site-body.pulse-ops-product-body {
   }
 }
 
+/* Pulse-Ops final linked-project colour tightening */
+.po-product-hero .command-banner__bg {
+  background-color: #d7ebee;
+  background-image:
+    radial-gradient(ellipse at 88% 48%, rgba(var(--po-page-accent-rgb), 0.34), transparent 34rem),
+    linear-gradient(
+      118deg,
+      rgba(255, 255, 255, 0.74) 0%,
+      rgba(227, 240, 243, 0.78) 55%,
+      rgba(var(--po-page-accent-rgb), 0.2) 100%
+    ),
+    var(--po-texture-hero);
+  background-size: cover, cover, cover;
+  background-blend-mode: normal, normal, soft-light;
+}
+
+.po-product-hero .command-banner__bg::after {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 72%),
+    radial-gradient(circle at 18% 74%, rgba(var(--po-page-accent-rgb), 0.1), transparent 18rem);
+}
+
+.po-wireframe--stack .po-product-hero .command-banner__bg {
+  background-color: #dce5e8;
+  background-image:
+    radial-gradient(ellipse at 88% 48%, rgba(86, 102, 110, 0.34), transparent 34rem),
+    linear-gradient(
+      118deg,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(229, 237, 240, 0.8) 52%,
+      rgba(86, 102, 110, 0.22) 100%
+    ),
+    var(--po-texture-hero);
+}
+
+.orchestration-strip .stack-flow-strip {
+  position: relative;
+  z-index: 2;
+}
+
+.orchestration-strip .stack-flow-strip__node {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.26),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.orchestration-strip .stack-flow-strip__node--snowflake {
+  border-color: rgba(141, 185, 200, 0.72);
+  background: linear-gradient(180deg, rgba(141, 185, 200, 0.28), rgba(141, 185, 200, 0.16));
+  color: #d7f0f7;
+}
+
+.orchestration-strip .stack-flow-strip__node--hightouch {
+  border-color: rgba(159, 145, 202, 0.7);
+  background: linear-gradient(180deg, rgba(159, 145, 202, 0.28), rgba(159, 145, 202, 0.16));
+  color: #ede7ff;
+}
+
+.orchestration-strip .stack-flow-strip__node--braze {
+  border-color: rgba(213, 163, 173, 0.72);
+  background: linear-gradient(180deg, rgba(213, 163, 173, 0.28), rgba(213, 163, 173, 0.16));
+  color: #ffe1e7;
+}
+
+.orchestration-strip .stack-flow-strip__node--pulseops {
+  border-color: rgba(214, 173, 24, 0.82);
+  background: linear-gradient(180deg, rgba(214, 173, 24, 0.28), rgba(214, 173, 24, 0.16));
+  color: #ffe483;
+}
+
 /* Revival simplified approved artwork gallery */
 .revival-gallery {
   --revival-cream: #efe4cf;
