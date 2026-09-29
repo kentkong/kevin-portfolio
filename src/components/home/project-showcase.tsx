@@ -169,7 +169,7 @@ function SelectedProjectArticle({
           rel="noreferrer"
           className="selected-project__link"
         >
-          View live project ↗
+          {project.slug === "pulse-ops" ? "View full project ↗" : "View live project ↗"}
         </Link>
         {project.slug === "pulse-ops" ? (
           <Link href="/projects/pulse-ops" className="selected-project__link selected-project__link--secondary">

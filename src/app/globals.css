@@ -4265,6 +4265,8 @@ body.site-body > * {
 }
 
 .selected-project__link--secondary {
+  display: flex;
+  width: fit-content;
   margin-top: 0.65rem;
 }
 
