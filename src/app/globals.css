@@ -2305,6 +2305,7 @@ body.site-body > * {
 }
 
 .pulse-overview__device-screen--tablet img {
+  object-fit: fill !important;
   object-position: 54% top;
 }
 
@@ -2324,6 +2325,10 @@ body.site-body > * {
   width: 8.7%;
   height: 39.2%;
   border-radius: 0.7rem;
+}
+
+.pulse-overview__device-screen--phone img {
+  object-fit: fill !important;
 }
 
 .pulse-overview__section-header {

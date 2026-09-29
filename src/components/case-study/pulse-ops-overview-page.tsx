@@ -272,10 +272,10 @@ export function PulseOpsOverviewPage() {
           </figure>
           <figure className="pulse-overview__device-screen pulse-overview__device-screen--phone">
             <Image
-              src={assetPath("/projects/pulse-ops/device-signals-phone.png")}
+              src={assetPath("/projects/pulse-ops/device-signals-phone-hero.png")}
               alt="Pulse-Ops AI Signals view on mobile"
               width={430}
-              height={932}
+              height={620}
             />
           </figure>
         </div>
