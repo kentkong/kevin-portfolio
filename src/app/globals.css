@@ -4251,9 +4251,17 @@ body.site-body > * {
   color: #443d35;
 }
 
+.selected-project__actions {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-top: 1.4rem;
+}
+
 .selected-project__link {
   display: inline-flex;
-  margin-top: 1.4rem;
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
@@ -4262,12 +4270,6 @@ body.site-body > * {
   color: #1f1d1a;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
-}
-
-.selected-project__link--secondary {
-  display: flex;
-  width: fit-content;
-  margin-top: 0.65rem;
 }
 
 .selected-project__details-toggle {
