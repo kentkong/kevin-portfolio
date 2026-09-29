@@ -2246,8 +2246,8 @@ body.site-body > * {
 }
 
 .pulse-overview__hero-visual {
-  width: min(58vw, 46rem);
-  margin: 0;
+  width: min(56vw, 45rem);
+  margin: 0 clamp(-2rem, -3vw, -1rem) 0 0;
   justify-self: end;
 }
 
@@ -2700,6 +2700,7 @@ body.site-body > * {
   .pulse-overview__hero-visual {
     justify-self: start;
     width: min(100%, 46rem);
+    margin: 0;
   }
 
   .pulse-overview__stack-flow,
