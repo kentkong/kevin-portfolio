@@ -2365,7 +2365,16 @@ body.site-body > * {
 .pulse-overview__stack-card--snowflake { border-top: 3px solid rgba(41, 157, 214, 0.85); }
 .pulse-overview__stack-card--hightouch { border-top: 3px solid rgba(64, 222, 158, 0.9); }
 .pulse-overview__stack-card--braze { border-top: 3px solid rgba(21, 19, 15, 0.55); }
-.pulse-overview__stack-card--pulse { border-top: 3px solid rgba(215, 173, 23, 0.9); }
+.pulse-overview__stack-card--pulse {
+  border-top: 3px solid rgba(215, 173, 23, 0.9);
+  background: var(--pulse-card);
+  color: var(--pulse-ink);
+}
+
+.pulse-overview__stack-card--pulse p,
+.pulse-overview__stack-card--pulse ul {
+  color: var(--pulse-muted);
+}
 
 .pulse-overview__connector,
 .pulse-overview__signal-card i,
