@@ -216,7 +216,7 @@ const teams = [
 export function PulseOpsOverviewPage() {
   return (
     <main className="pulse-overview" aria-labelledby="pulse-overview-title">
-      <section className="pulse-overview__hero pulse-overview__section">
+      <section className="site-container pulse-overview__hero pulse-overview__section">
         <div className="pulse-overview__hero-copy">
           <SectionLabel label="Technology / Operations / AI" />
           <h1 id="pulse-overview-title">
@@ -235,8 +235,12 @@ export function PulseOpsOverviewPage() {
             and what to do next.
           </p>
           <div className="pulse-overview__actions">
-            <Link href="/projects/pulse-ops/command">Explore the application →</Link>
-            <a href="#how-it-works">See how it works ↓</a>
+            <Link href="/projects/pulse-ops/command" className="site-btn site-btn--ink">
+              Explore the application →
+            </Link>
+            <a href="#how-it-works" className="site-btn site-btn--paper">
+              See how it works ↓
+            </a>
           </div>
         </div>
         <div className="pulse-overview__device-stage" aria-label="Pulse-Ops AI application mockups">
@@ -265,7 +269,7 @@ export function PulseOpsOverviewPage() {
         </div>
       </section>
 
-      <section className="pulse-overview__section pulse-overview__ecosystem">
+      <section className="site-container pulse-overview__section pulse-overview__ecosystem">
         <SectionHeader
           label="The customer lifecycle ecosystem"
           title="From data to action across your lifecycle stack."
@@ -303,7 +307,7 @@ export function PulseOpsOverviewPage() {
         </p>
       </section>
 
-      <section id="how-it-works" className="pulse-overview__section">
+      <section id="how-it-works" className="site-container pulse-overview__section">
         <SectionHeader
           label="How Pulse-Ops operates"
           title="Turn lifecycle data into operational intelligence."
@@ -320,7 +324,7 @@ export function PulseOpsOverviewPage() {
         </div>
       </section>
 
-      <section className="pulse-overview__section pulse-overview__views">
+      <section className="site-container pulse-overview__section pulse-overview__views">
         <SectionHeader
           label="Six connected operational views"
           title="One ecosystem. Six operational views."
@@ -348,7 +352,7 @@ export function PulseOpsOverviewPage() {
         </div>
       </section>
 
-      <section className="pulse-overview__section pulse-overview__signal">
+      <section className="site-container pulse-overview__section pulse-overview__signal">
         <SectionHeader
           label="From signal to action"
           title="An example: mid-market churn cluster."
@@ -367,7 +371,7 @@ export function PulseOpsOverviewPage() {
         </div>
       </section>
 
-      <section className="pulse-overview__section">
+      <section className="site-container pulse-overview__section">
         <SectionHeader
           label="Designed for the whole organisation"
           title="Different teams. A shared operational view."
@@ -388,7 +392,7 @@ export function PulseOpsOverviewPage() {
         </div>
       </section>
 
-      <section className="pulse-overview__section pulse-overview__final-cta">
+      <section className="site-container pulse-overview__section pulse-overview__final-cta">
         <SectionLabel label="Explore Pulse-Ops AI" />
         <div className="pulse-overview__final-grid">
           <div>
@@ -396,7 +400,9 @@ export function PulseOpsOverviewPage() {
             <p>Six connected views. One customer lifecycle ecosystem.</p>
           </div>
           <div className="pulse-overview__final-actions">
-            <Link href="/projects/pulse-ops/command">Launch Pulse-Ops AI →</Link>
+            <Link href="/projects/pulse-ops/command" className="site-btn site-btn--ink">
+              Launch Pulse-Ops AI →
+            </Link>
             <nav aria-label="Pulse-Ops application views">
               {views.map((view) => (
                 <Link href={view.route} key={view.name}>
@@ -413,10 +419,9 @@ export function PulseOpsOverviewPage() {
 
 function SectionLabel({ label }: { label: string }) {
   return (
-    <div className="pulse-overview__label">
-      <i aria-hidden />
+    <p className="site-label pulse-overview__label">
       <span>{label}</span>
-    </div>
+    </p>
   );
 }
 
