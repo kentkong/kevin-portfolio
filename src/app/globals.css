@@ -2245,34 +2245,96 @@ body.site-body > * {
   min-height: clamp(20rem, 34vw, 28rem);
 }
 
-.pulse-overview__device {
+.pulse-overview__device-shell {
   position: absolute;
-  display: block;
-  height: auto;
-  border: 1px solid var(--pulse-rule);
-  object-fit: cover;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(21, 19, 15, 0.38);
+  background: #15130f;
 }
 
-.pulse-overview__device--laptop {
-  right: 6%;
-  bottom: 6%;
+.pulse-overview__device-shell > span {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pulse-overview__device-shell img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.pulse-overview__device-shell--laptop {
+  right: 5%;
+  bottom: 7%;
   z-index: 2;
   width: min(78%, 39rem);
+  aspect-ratio: 16 / 10;
+  padding: 0.85rem 0.85rem 1.55rem;
+  border-radius: 0.55rem 0.55rem 0.2rem 0.2rem;
 }
 
-.pulse-overview__device--tablet {
+.pulse-overview__device-shell--laptop::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 112%;
+  height: 0.72rem;
+  border: 1px solid rgba(21, 19, 15, 0.35);
+  border-top: 0;
+  background: #d7d0c4;
+  transform: translateX(-50%);
+}
+
+.pulse-overview__device-shell--laptop > span {
+  inset: 0.38rem 0.38rem auto;
+  height: 0.32rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.pulse-overview__device-shell--tablet {
   top: 3%;
   right: 0;
   z-index: 1;
   width: min(47%, 22rem);
-  opacity: 0.92;
+  aspect-ratio: 4 / 5;
+  padding: 0.55rem;
+  border-radius: 0.45rem;
 }
 
-.pulse-overview__device--phone {
+.pulse-overview__device-shell--tablet > span {
+  top: 0.25rem;
+  left: 50%;
+  width: 1.8rem;
+  height: 0.16rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(-50%);
+}
+
+.pulse-overview__device-shell--phone {
   right: 0;
   bottom: 0;
   z-index: 3;
   width: min(24%, 10rem);
+  aspect-ratio: 9 / 18;
+  padding: 0.42rem;
+  border-radius: 0.85rem;
+}
+
+.pulse-overview__device-shell--phone > span {
+  top: 0.3rem;
+  left: 50%;
+  width: 1.45rem;
+  height: 0.18rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(-50%);
 }
 
 .pulse-overview__section-header {
@@ -2318,25 +2380,49 @@ body.site-body > * {
 }
 
 .pulse-overview__logo-block {
-  display: grid;
-  gap: 0.6rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   min-height: 4.25rem;
-}
-
-.pulse-overview__logo-block img {
-  display: block;
-  width: auto;
-  max-width: 8.5rem;
-  height: 2.35rem;
-  object-fit: contain;
-  object-position: left center;
 }
 
 .pulse-overview__logo-block span {
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 0.74rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.pulse-overview__logo-block svg {
+  display: block;
+  width: 1.55rem;
+  height: 1.55rem;
+  color: #29b5e8;
+  fill: currentColor;
+}
+
+.pulse-overview__logo-block--snowflake span {
+  color: #29b5e8;
+}
+
+.pulse-overview__hightouch-mark {
+  width: 0.95rem;
+  height: 0.95rem;
+  background:
+    linear-gradient(90deg, #40de9e 50%, transparent 50%),
+    linear-gradient(#40de9e 50%, transparent 50%);
+  background-size: 100% 100%;
+}
+
+.pulse-overview__logo-block--hightouch span:not(.pulse-overview__hightouch-mark) {
+  color: #101111;
+}
+
+.pulse-overview__logo-block--braze span {
+  font-size: 1.35rem;
+  font-style: italic;
+  letter-spacing: -0.08em;
 }
 
 .pulse-overview__logo-block--pulse span {
@@ -2715,16 +2801,16 @@ body.site-body > * {
     grid-template-columns: 1fr;
   }
 
-  .pulse-overview__device--laptop {
+  .pulse-overview__device-shell--laptop {
     right: 0;
     width: 96%;
   }
 
-  .pulse-overview__device--tablet {
+  .pulse-overview__device-shell--tablet {
     width: 58%;
   }
 
-  .pulse-overview__device--phone {
+  .pulse-overview__device-shell--phone {
     width: 34%;
   }
 }
