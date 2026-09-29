@@ -244,6 +244,41 @@ export function PulseOpsOverviewPage() {
             </a>
           </div>
         </div>
+        <div className="pulse-overview__hero-showcase" aria-label="Pulse-Ops AI corporate device mockups">
+          <Image
+            className="pulse-overview__hero-device-base"
+            src={assetPath("/projects/pulse-ops/hero-device-blank.png")}
+            alt=""
+            width={1600}
+            height={900}
+            priority
+          />
+          <figure className="pulse-overview__device-screen pulse-overview__device-screen--tablet">
+            <Image
+              src={assetPath("/projects/pulse-ops/device-lifecycle-tablet.png")}
+              alt="Pulse-Ops AI Lifecycle view on tablet"
+              width={900}
+              height={1180}
+            />
+          </figure>
+          <figure className="pulse-overview__device-screen pulse-overview__device-screen--laptop">
+            <Image
+              src={assetPath("/projects/pulse-ops/device-command-laptop.png")}
+              alt="Pulse-Ops AI Command view on laptop"
+              width={1440}
+              height={1050}
+              priority
+            />
+          </figure>
+          <figure className="pulse-overview__device-screen pulse-overview__device-screen--phone">
+            <Image
+              src={assetPath("/projects/pulse-ops/device-signals-phone.png")}
+              alt="Pulse-Ops AI Signals view on mobile"
+              width={430}
+              height={932}
+            />
+          </figure>
+        </div>
       </section>
 
       <section className="site-container pulse-overview__section pulse-overview__ecosystem">
