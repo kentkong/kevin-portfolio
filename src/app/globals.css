@@ -2161,9 +2161,10 @@ body.site-body > * {
 }
 
 .pulse-overview__hero {
+  max-width: min(100%, 88rem);
   display: grid;
-  grid-template-columns: minmax(0, 0.42fr) minmax(24rem, 0.58fr);
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+  gap: clamp(2.5rem, 5vw, 5.5rem);
   align-items: center;
   padding-top: 1rem;
 }
@@ -2246,8 +2247,8 @@ body.site-body > * {
 }
 
 .pulse-overview__hero-visual {
-  width: min(54vw, 40rem);
-  margin: 0 clamp(-2rem, -3vw, -1rem) 0 0;
+  width: min(100%, 49rem);
+  margin: 0;
   justify-self: end;
 }
 
