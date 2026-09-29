@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @source "../components/case-study/revival-gallery-case-study.tsx";
+@source "../components/case-study/pulse-ops-overview-page.tsx";
 @source "../components/home/explore-my-work.tsx";
 @source "../components/home/project-showcase.tsx";
 @source "../components/layout/site-nav.tsx";

@@ -22,7 +22,7 @@ const ecosystem = [
   },
   {
     name: "Hightouch",
-    logo: "/logos/pulse-ops/hightouch.webp",
+    logo: "/logos/pulse-ops/hightouch.png",
     role: "Data activation",
     accent: "hightouch",
     items: ["Reverse ETL", "Audience sync", "Lifecycle segmentation", "Risk-score activation"],
