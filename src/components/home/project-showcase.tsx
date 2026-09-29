@@ -171,6 +171,11 @@ function SelectedProjectArticle({
         >
           View live project ↗
         </Link>
+        {project.slug === "pulse-ops" ? (
+          <Link href="/projects/pulse-ops" className="selected-project__link selected-project__link--secondary">
+            Project overview →
+          </Link>
+        ) : null}
         {project.slug === "gen-pulse" ? (
           <details className="selected-project__details-toggle">
             <summary>Project details ↓</summary>

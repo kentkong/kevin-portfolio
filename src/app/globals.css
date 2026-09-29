@@ -4264,6 +4264,10 @@ body.site-body > * {
   border-bottom: 1px solid currentColor;
 }
 
+.selected-project__link--secondary {
+  margin-top: 0.65rem;
+}
+
 .selected-project__details-toggle {
   margin-top: 0.85rem;
 }
