@@ -2247,8 +2247,10 @@ body.site-body > * {
 
 .pulse-overview__device-composite {
   display: block;
-  width: 100%;
+  width: 126%;
+  max-width: none;
   height: auto;
+  justify-self: end;
 }
 
 .pulse-overview__section-header {
@@ -2646,6 +2648,11 @@ body.site-body > * {
   .pulse-overview__section-header,
   .pulse-overview__final-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pulse-overview__device-composite {
+    width: 100%;
+    justify-self: start;
   }
 
   .pulse-overview__device-stage {
