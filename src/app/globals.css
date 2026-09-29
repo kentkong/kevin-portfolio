@@ -2288,12 +2288,13 @@ body.site-body > * {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  min-height: 4.25rem;
+  height: 3.25rem;
+  min-height: 3.25rem;
 }
 
 .pulse-overview__logo-block span {
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1;
@@ -2301,8 +2302,8 @@ body.site-body > * {
 
 .pulse-overview__logo-block svg {
   display: block;
-  width: 1.55rem;
-  height: 1.55rem;
+  width: 1.35rem;
+  height: 1.35rem;
   color: #29b5e8;
   fill: currentColor;
 }
@@ -2324,7 +2325,7 @@ body.site-body > * {
 }
 
 .pulse-overview__logo-block--braze span {
-  font-size: 1.35rem;
+  font-size: 1.08rem;
   font-style: italic;
   letter-spacing: -0.08em;
 }
@@ -2332,14 +2333,14 @@ body.site-body > * {
 .pulse-overview__logo-block--braze img {
   display: block;
   width: auto;
-  max-width: 8rem;
-  height: 2.7rem;
+  max-width: 6.2rem;
+  height: 2rem;
   object-fit: contain;
   object-position: left center;
 }
 
 .pulse-overview__logo-block--pulse span {
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   letter-spacing: -0.055em;
 }
 
@@ -2364,9 +2365,7 @@ body.site-body > * {
 .pulse-overview__stack-card--snowflake { border-top: 3px solid rgba(41, 157, 214, 0.85); }
 .pulse-overview__stack-card--hightouch { border-top: 3px solid rgba(64, 222, 158, 0.9); }
 .pulse-overview__stack-card--braze { border-top: 3px solid rgba(21, 19, 15, 0.55); }
-.pulse-overview__stack-card--pulse { border-top: 3px solid rgba(215, 173, 23, 0.9); background: #15130f; color: #efe4cf; }
-.pulse-overview__stack-card--pulse p,
-.pulse-overview__stack-card--pulse ul { color: rgba(239, 228, 207, 0.76); }
+.pulse-overview__stack-card--pulse { border-top: 3px solid rgba(215, 173, 23, 0.9); }
 
 .pulse-overview__connector,
 .pulse-overview__signal-card i,
@@ -2378,8 +2377,19 @@ body.site-body > * {
 .pulse-overview__connector {
   position: absolute;
   top: 50%;
-  right: -1rem;
+  right: -1.05rem;
   z-index: 2;
+  display: inline-flex;
+  width: 1.65rem;
+  height: 1.65rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(128, 98, 199, 0.45);
+  border-radius: 999px;
+  background: rgba(247, 238, 220, 0.92);
+  color: var(--pulse-purple);
+  font-size: 1.05rem;
+  font-weight: 800;
   transform: translate(50%, -50%);
 }
 
