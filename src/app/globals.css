@@ -2246,7 +2246,7 @@ body.site-body > * {
 }
 
 .pulse-overview__hero-visual {
-  width: min(56vw, 45rem);
+  width: min(54vw, 42.5rem);
   margin: 0 clamp(-2rem, -3vw, -1rem) 0 0;
   justify-self: end;
 }
