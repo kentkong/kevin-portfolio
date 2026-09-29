@@ -2245,90 +2245,17 @@ body.site-body > * {
   margin-top: 1.75rem;
 }
 
-.pulse-overview__hero-showcase {
-  position: relative;
-  width: min(100%, 42rem);
-  justify-self: end;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border: 1px solid rgba(21, 19, 15, 0.13);
-  border-radius: calc(var(--radius-soft) * 2);
-  background:
-    linear-gradient(135deg, rgba(255, 250, 239, 0.82), rgba(220, 211, 194, 0.22)),
-    var(--pulse-card);
-  box-shadow: 0 1.6rem 4.5rem rgba(32, 27, 18, 0.13);
-}
-
-.pulse-overview__hero-showcase::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, rgba(232, 222, 204, 0.32), transparent 16%, transparent 82%, rgba(232, 222, 204, 0.28)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 42%, rgba(29, 27, 23, 0.08));
-  mix-blend-mode: soft-light;
-}
-
-.pulse-overview__hero-device-base {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.pulse-overview__device-screen {
-  position: absolute;
-  z-index: 2;
+.pulse-overview__hero-visual {
+  width: min(58vw, 46rem);
   margin: 0;
-  overflow: hidden;
-  background: #edf2f2;
-  box-shadow: inset 0 0 0 1px rgba(12, 18, 22, 0.08);
+  justify-self: end;
 }
 
-.pulse-overview__device-screen img {
+.pulse-overview__hero-composite {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-}
-
-.pulse-overview__device-screen--tablet {
-  left: 69.5%;
-  top: 15.1%;
-  width: 16.6%;
-  height: 47.5%;
-  border-radius: 0.4rem;
-}
-
-.pulse-overview__device-screen--tablet img {
-  object-fit: fill !important;
-  object-position: 54% top;
-}
-
-.pulse-overview__device-screen--laptop {
-  left: 35.7%;
-  top: 22%;
-  z-index: 3;
-  width: 34.2%;
-  height: 40.6%;
-  border-radius: 0.28rem;
-}
-
-.pulse-overview__device-screen--phone {
-  left: 84.6%;
-  top: 36.9%;
-  z-index: 4;
-  width: 8.7%;
-  height: 39.2%;
-  border-radius: 0.7rem;
-}
-
-.pulse-overview__device-screen--phone img {
-  object-fit: fill !important;
+  height: auto;
+  object-fit: contain;
 }
 
 .pulse-overview__section-header {
@@ -2770,7 +2697,7 @@ body.site-body > * {
     grid-template-columns: 1fr;
   }
 
-  .pulse-overview__hero-showcase {
+  .pulse-overview__hero-visual {
     justify-self: start;
     width: min(100%, 46rem);
   }
@@ -2803,7 +2730,7 @@ body.site-body > * {
     white-space: normal;
   }
 
-  .pulse-overview__hero-showcase {
+  .pulse-overview__hero-visual {
     width: calc(100vw - 3rem);
     margin-top: 0.25rem;
   }
