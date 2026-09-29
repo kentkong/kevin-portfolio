@@ -15,27 +15,28 @@ type View = {
 const ecosystem = [
   {
     name: "Snowflake",
-    logo: "/logos/pulse-ops/snowflake.svg",
+    logo: "/logos/pulse-ops/snowflake-reference.png",
     role: "Data foundation",
     accent: "snowflake",
     items: ["Customer profiles", "Product usage & events", "Subscriptions & billing", "Support history"],
   },
   {
     name: "Hightouch",
-    logo: "/logos/pulse-ops/hightouch.png",
+    logo: "/logos/pulse-ops/hightouch-reference.png",
     role: "Data activation",
     accent: "hightouch",
     items: ["Reverse ETL", "Audience sync", "Lifecycle segmentation", "Risk-score activation"],
   },
   {
     name: "Braze",
-    logo: "/logos/pulse-ops/braze.svg",
+    logo: "/logos/pulse-ops/braze-reference.png",
     role: "Customer engagement",
     accent: "braze",
     items: ["Lifecycle journeys", "Cross-channel messaging", "Onboarding & adoption", "Retention & renewal"],
   },
   {
     name: "Pulse-Ops AI",
+    logo: "/logos/pulse-ops/pulseops-reference.png",
     role: "Intelligence & operations",
     accent: "pulse",
     items: [
@@ -244,34 +245,14 @@ export function PulseOpsOverviewPage() {
           </div>
         </div>
         <div className="pulse-overview__device-stage" aria-label="Pulse-Ops AI application screens">
-          <figure className="pulse-overview__device-shell pulse-overview__device-shell--laptop">
-            <span aria-hidden />
-            <Image
-              src={assetPath("/projects/pulse-ops/screen-command-full.png")}
-              alt="Pulse-Ops AI Command application screen"
-              width={900}
-              height={1000}
-              priority
-            />
-          </figure>
-          <figure className="pulse-overview__device-shell pulse-overview__device-shell--tablet">
-            <span aria-hidden />
-            <Image
-              src={assetPath("/projects/pulse-ops/screen-lifecycle-full.png")}
-              alt="Pulse-Ops AI Lifecycle application screen"
-              width={900}
-              height={1000}
-            />
-          </figure>
-          <figure className="pulse-overview__device-shell pulse-overview__device-shell--phone">
-            <span aria-hidden />
-            <Image
-              src={assetPath("/projects/pulse-ops/screen-signals-full.png")}
-              alt="Pulse-Ops AI Signals application screen"
-              width={900}
-              height={1000}
-            />
-          </figure>
+          <Image
+            className="pulse-overview__device-composite"
+            src={assetPath("/projects/pulse-ops/hero-devices-reference.png")}
+            alt="Pulse-Ops AI shown across desktop, tablet and mobile application screens"
+            width={890}
+            height={610}
+            priority
+          />
         </div>
       </section>
 
@@ -446,23 +427,7 @@ function SectionHeader({ label, title, copy }: { label: string; title: string; c
 function LogoBlock({ item }: { item: (typeof ecosystem)[number] }) {
   return (
     <div className={`pulse-overview__logo-block pulse-overview__logo-block--${item.accent}`} aria-label={`${item.name} logo`}>
-      {item.accent === "snowflake" ? <SnowflakeMark /> : null}
-      {item.accent === "hightouch" ? <span className="pulse-overview__hightouch-mark" aria-hidden /> : null}
-      {item.accent === "pulse" ? (
-        <span>
-          Pulse-Ops <em>AI</em>
-        </span>
-      ) : (
-        <span>{item.name}</span>
-      )}
+      <Image src={assetPath(item.logo)} alt={`${item.name} logo`} width={220} height={80} unoptimized />
     </div>
-  );
-}
-
-function SnowflakeMark() {
-  return (
-    <svg aria-hidden viewBox="0 0 24 24">
-      <path d="M7.6 12.4c.04-.15.08-.3.08-.46 0-.11-.04-.23-.04-.34-.11-.34-.3-.65-.65-.84L2.12 7.99C1.44 7.61.56 7.84.18 8.52c-.38.69-.15 1.56.53 1.94l2.7 1.56-2.7 1.56c-.68.38-.91 1.26-.53 1.94.38.69 1.26.91 1.94.53l4.83-2.78c.34-.27.57-.53.65-.88Zm1.33 2.63c-.27-.04-.57.04-.84.19l-4.83 2.77c-.69.38-.91 1.26-.53 1.94.38.69 1.26.91 1.94.53l2.7-1.56v3.12c0 .8.65 1.41 1.45 1.41s1.41-.65 1.41-1.41v-5.59c0-.76-.57-1.37-1.3-1.41Zm4.95-6.09c.27.04.57-.04.84-.19l4.83-2.78c.69-.38.91-1.26.53-1.94-.38-.69-1.26-.91-1.94-.53l-2.7 1.56V1.98c0-.8-.65-1.41-1.45-1.41s-1.45.61-1.45 1.41v5.55c0 .76.61 1.37 1.33 1.41ZM3.27 5.97 8.1 8.75c.27.15.53.19.84.19.72-.04 1.33-.68 1.33-1.41V1.98c0-.8-.65-1.41-1.41-1.41-.8 0-1.45.65-1.45 1.41v3.12l-2.7-1.56c-.69-.38-1.56-.15-1.94.53-.42.65-.19 1.52.49 1.9Zm8.98 6.28c.08-.08.11-.19.11-.27s-.04-.19-.11-.27l-.57-.57a.35.35 0 0 0-.27-.11c-.08 0-.19.04-.27.11l-.57.57c-.08.08-.11.19-.11.27s.04.19.11.27l.57.57c.08.08.19.11.27.11s.19-.04.27-.11l.57-.57Zm1.7.26-2.02 2.02c-.04.04-.15.11-.23.11h-.61a.41.41 0 0 1-.27-.11l-2.02-2.02a.41.41 0 0 1-.08-.23v-.61c0-.08.04-.19.11-.27l2.02-2.02a.41.41 0 0 1 .27-.11h.61c.08 0 .19.04.27.11l2.02 2.02c.08.08.11.19.11.27v.61c-.08.08-.11.19-.19.23Zm5.6 5.44-4.83-2.78c-.27-.15-.57-.19-.84-.15-.72.04-1.33.68-1.33 1.41v5.55c0 .8.65 1.41 1.41 1.41.8 0 1.45-.65 1.45-1.41v-3.12l2.7 1.56c.69.38 1.56.15 1.94-.53.42-.65.19-1.52-.49-1.94Zm2.55-7.53-2.7 1.56 2.7 1.56c.69.38.91 1.26.53 1.94-.38.69-1.26.91-1.94.53l-4.83-2.78a1.64 1.64 0 0 1-.65-.8 1.8 1.8 0 0 1-.08-.46c0-.11.04-.23.04-.34.11-.34.34-.65.65-.84l4.83-2.78c.69-.38 1.56-.15 1.94.53.46.61.19 1.48-.49 1.86Z" />
-    </svg>
   );
 }
