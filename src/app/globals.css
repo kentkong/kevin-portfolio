@@ -4251,15 +4251,6 @@ body.site-body > * {
   color: #443d35;
 }
 
-.selected-project__actions {
-  display: flex;
-  width: fit-content;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.65rem;
-  margin-top: 1.4rem;
-}
-
 .selected-project__link {
   display: inline-flex;
   font-family: var(--font-display), system-ui, sans-serif;

@@ -163,7 +163,16 @@ function SelectedProjectArticle({
             />
           </div>
         ) : null}
-        <div className="selected-project__actions">
+        <div
+          style={{
+            alignItems: "flex-start",
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.65rem",
+            marginTop: "1.4rem",
+            width: "fit-content",
+          }}
+        >
           <Link
             href={project.liveUrl}
             target="_blank"
