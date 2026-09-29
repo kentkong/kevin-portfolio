@@ -29,7 +29,7 @@ const ecosystem = [
   },
   {
     name: "Braze",
-    logo: "/logos/pulse-ops/braze-reference.png",
+    logo: "/logos/about/braze.svg",
     role: "Customer engagement",
     accent: "braze",
     items: ["Lifecycle journeys", "Cross-channel messaging", "Onboarding & adoption", "Retention & renewal"],
@@ -244,34 +244,6 @@ export function PulseOpsOverviewPage() {
             </a>
           </div>
         </div>
-        <div className="pulse-overview__device-stage" aria-label="Pulse-Ops AI application screens">
-          <figure className="pulse-overview__device pulse-overview__device--tablet">
-            <Image
-              src={assetPath("/projects/pulse-ops/screen-lifecycle-full.png")}
-              alt="Pulse-Ops AI Lifecycle application screen"
-              width={900}
-              height={1000}
-            />
-          </figure>
-          <figure className="pulse-overview__device pulse-overview__device--laptop">
-            <span aria-hidden />
-            <Image
-              src={assetPath("/projects/pulse-ops/screen-command-full.png")}
-              alt="Pulse-Ops AI Command application screen"
-              width={900}
-              height={1000}
-              priority
-            />
-          </figure>
-          <figure className="pulse-overview__device pulse-overview__device--phone">
-            <Image
-              src={assetPath("/projects/pulse-ops/screen-signals-full.png")}
-              alt="Pulse-Ops AI Signals application screen"
-              width={900}
-              height={1000}
-            />
-          </figure>
-        </div>
       </section>
 
       <section className="site-container pulse-overview__section pulse-overview__ecosystem">
@@ -443,6 +415,14 @@ function SectionHeader({ label, title, copy }: { label: string; title: string; c
 }
 
 function LogoBlock({ item }: { item: (typeof ecosystem)[number] }) {
+  if (item.accent === "braze") {
+    return (
+      <div className="pulse-overview__logo-block pulse-overview__logo-block--braze" aria-label="Braze logo">
+        <Image src={assetPath("/logos/about/braze.svg")} alt="Braze logo" width={190} height={72} unoptimized />
+      </div>
+    );
+  }
+
   return (
     <div className={`pulse-overview__logo-block pulse-overview__logo-block--${item.accent}`} aria-label={`${item.name} logo`}>
       {item.accent === "snowflake" ? <SnowflakeMark /> : null}
