@@ -28,9 +28,6 @@ export function HeroSection() {
       <div className="site-container">
         <div className="site-hero__editorial">
           <div className="site-hero__editorial-frame">
-            <p className="site-hero__eyebrow">
-              ENTERPRISE&nbsp; / &nbsp;CUSTOMER EXPERIENCE&nbsp; / &nbsp;PRODUCT DESIGN
-            </p>
             <h1
               className="site-hero__editorial-headline"
               aria-label="CRM Marketing. UX UI Visual Product Design. Enterprise App Solutions."
