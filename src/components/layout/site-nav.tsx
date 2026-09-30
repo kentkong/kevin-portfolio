@@ -43,6 +43,7 @@ export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const isMobileNav = useMobileNav();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -59,7 +60,9 @@ export function SiteNav() {
   }, [menuOpen, isMobileNav]);
 
   return (
-    <header className={`site-nav ${scrolled ? "site-nav--scrolled" : ""}`}>
+    <header
+      className={`site-nav${isHome ? " site-nav--home" : ""}${scrolled ? " site-nav--scrolled" : ""}`}
+    >
       <div className="site-container site-nav__inner">
         <Link href="/" className="site-nav__brand">
           {site.name}
