@@ -76,7 +76,7 @@ const process = [
   {
     number: "04",
     title: "Act",
-    body: "Support contributors, managers, directors and leadership with the right level of operational detail.",
+    body: "Give teams and leaders the information needed for staffing, prioritisation, escalation and delivery decisions.",
   },
 ];
 
@@ -122,55 +122,61 @@ const views: GenPulseView[] = [
 const signalJourney = [
   {
     step: "01",
-    label: "Work",
-    system: "Jira",
-    body: "Current ticket movement, backlog pressure and blockers show where delivery is slowing.",
+    label: "Availability",
+    system: "Workday / calendar",
+    body: "Two senior team members are unavailable and one region has reduced coverage.",
   },
   {
     step: "02",
-    label: "People",
-    system: "Workday",
-    body: "Availability, presence and upcoming leave explain whether the team has enough capacity.",
+    label: "Workload",
+    system: "Jira",
+    body: "High-priority work is concentrated around team members with reduced availability.",
   },
   {
     step: "03",
-    label: "Performance",
-    system: "BI / Reporting",
-    body: "SLA and throughput trends show whether operational pressure is increasing or reducing.",
+    label: "Signals",
+    system: "Slack",
+    body: "Blocker/escalation activity indicates emerging delivery pressure.",
   },
   {
     step: "04",
-    label: "Signals",
-    system: "Slack",
-    body: "Day-to-day updates and blocker language add the live team context behind the metrics.",
+    label: "Performance",
+    system: "SLA / KPI reporting",
+    body: "Performance information shows where that pressure may create delivery risk.",
   },
   {
     step: "05",
     label: "Decision",
     system: "Gen Pulse",
-    body: "The command centre connects the signals so teams can rebalance work, manage risk and act sooner.",
+    body: "Rebalance work, assign temporary coverage and prioritise the areas most exposed to risk.",
+  },
+  {
+    step: "06",
+    label: "Follow-up",
+    system: "Operational cadence",
+    body: "Continue monitoring the same signals as the situation changes.",
   },
 ];
 
 const teams = [
   {
-    name: "Team Contributors",
+    name: "Contributors / Specialists",
     question: "What needs my attention and what is blocked?",
-    areas: ["Work", "Blockers"],
+    areas: ["Developers", "Data", "Design"],
+  },
+  {
+    name: "Project / Operations",
+    question: "Where are work and delivery exposed?",
+    areas: ["Workflow", "Coverage"],
   },
   {
     name: "Managers",
-    question: "Where do I need to adjust workload or coverage?",
-    areas: ["People", "Capacity"],
+    question: "Where should people or priorities be rebalanced?",
+    areas: ["Capacity", "Priorities"],
   },
   {
-    name: "Directors",
-    question: "Where are delivery, SLA or throughput risks emerging?",
-    areas: ["Delivery", "SLA"],
-  },
-  {
-    name: "Leadership",
-    question: "Where are we right now, and what needs attention next?",
+    name: "Directors / Executives",
+    question: "What performance or delivery risks require attention?",
     areas: ["KPIs", "Risk"],
   },
 ];
@@ -183,18 +189,20 @@ export function GenPulseCaseStudy() {
     <article className="pulse-overview gen-pulse-overview" aria-labelledby="gen-pulse-title">
       <section className="site-container pulse-overview__hero pulse-overview__section">
         <div className="pulse-overview__hero-copy">
-          <SectionLabel label="Team Operations / Delivery / Command Centre" />
+          <SectionLabel label="Technology / Operations / Product Design" />
           <h1 id="gen-pulse-title">Gen Pulse</h1>
           <p className="pulse-overview__headline">
-            A team operations command centre for people, work, delivery and risk.
+            Gen Pulse brings the most important team, delivery, people and performance information into one shared operational environment.
           </p>
           <p className="pulse-overview__standfirst">
-            Built from the operational reality of managing the Norton Email team: SLA performance,
-            throughput, Jira activity, availability and blockers all needed to be understood together.
+            Built from my experience managing the Norton Email team, where SLA performance, throughput,
+            Jira activity, team availability, attendance, upcoming leave and blockers all needed to be
+            understood together.
           </p>
           <p className="pulse-overview__body-copy">
-            Gen Pulse brings the most important team, delivery, people and performance information into one
-            shared operational environment.
+            From team contributors, developers and data specialists to designers, project managers, managers,
+            directors and executives, Gen Pulse can be configured around the needs of different teams and
+            organisations — bringing the information that matters most into one desktop and mobile application.
           </p>
           <div className="pulse-overview__actions">
             <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="site-btn site-btn--ink">
@@ -213,8 +221,8 @@ export function GenPulseCaseStudy() {
       <section className="site-container pulse-overview__section gen-pulse-overview__problem">
         <SectionHeader
           label="Original problem"
-          title="The information existed. The operational picture did not."
-          copy="While managing the Norton Email team, leadership regularly needed current SLA performance, weekly throughput, delivery metrics and team work status. Jira, reporting systems, Workday and Slack each held part of the answer. Gen Pulse began with one question."
+          title="Gen Pulse brings your team's most important information from different sources into one desktop and mobile application."
+          copy="While managing the Norton Email team, leadership regularly needed current SLA performance, weekly throughput, delivery metrics and team work status. Jira, reporting systems, Workday and Slack each held part of the answer. Gen Pulse began with one question:"
         />
         <div className="gen-pulse-overview__question">
           WHAT IF THE MOST IMPORTANT OPERATIONAL INFORMATION COULD LIVE IN ONE SHARED COMMAND CENTRE?
@@ -246,7 +254,7 @@ export function GenPulseCaseStudy() {
       <section className="site-container pulse-overview__section pulse-overview__ecosystem">
         <SectionHeader
           label="Operational ecosystem"
-          title="From enterprise systems to one team command centre."
+          title="From fragmented team signals to a shared command layer."
           copy="Jira, Slack, Workday and BI / Reporting represent the Gen Pulse implementation example shown here. The wider concept is configurable around the operational systems relevant to a team."
         />
         <div className="pulse-overview__stack-flow" aria-label="Jira to Slack to Workday to BI Reporting to Gen Pulse">
@@ -328,7 +336,7 @@ export function GenPulseCaseStudy() {
       <section className="site-container pulse-overview__section pulse-overview__signal">
         <SectionHeader
           label="Signal to decision"
-          title="An example: coverage and SLA pressure."
+          title="Monday morning coverage risk."
           copy="How Gen Pulse connects work, people, performance and live team signals into a decision-ready operating view."
         />
         <div className="pulse-overview__signal-flow gen-pulse-overview__signal-flow">
@@ -348,7 +356,7 @@ export function GenPulseCaseStudy() {
         <SectionHeader
           label="Who it serves"
           title="Different roles. One shared operational environment."
-          copy="Team contributors, managers, directors and leadership can consume different levels of information from the same underlying operational data."
+          copy="Gen Pulse is not exclusively a management dashboard. Different users can consume different levels of information from the same operational environment."
         />
         <div className="pulse-overview__team-grid gen-pulse-overview__team-grid">
           {teams.map((team) => (
@@ -368,19 +376,24 @@ export function GenPulseCaseStudy() {
       <section className="site-container pulse-overview__section gen-pulse-overview__evolution">
         <SectionHeader
           label="Product evolution"
-          title="The command-centre thinking later influenced Pulse-Ops AI."
-          copy="Gen Pulse remains a team operations project: people, availability, work, delivery, KPIs, SLA and risk. Its command-centre logic later informed the broader Pulse-Ops AI concept for customer lifecycle intelligence."
+          title="From team operations to lifecycle intelligence."
+          copy="Gen Pulse explored how information from multiple enterprise systems could be brought together into one operational command centre. That command-centre thinking later influenced the broader Pulse-Ops AI concept across the customer lifecycle ecosystem."
         />
         <div className="pulse-overview__team-grid gen-pulse-overview__evolution-grid">
           <article className="pulse-overview__team-card">
             <h3>Gen Pulse</h3>
-            <p>Team operations intelligence for people, work, delivery, KPIs, SLA, risk and coverage.</p>
-            <div><span>Team operations</span></div>
+            <p>Team operations intelligence for people, availability, work, delivery, KPIs, SLA and risk.</p>
+            <div><span>Team operations</span><span>Coverage</span></div>
+          </article>
+          <article className="pulse-overview__team-card">
+            <h3>Command-centre thinking</h3>
+            <p>A shared operating layer that connects fragmented signals and makes them decision-ready.</p>
+            <div><span>Shared model</span></div>
           </article>
           <article className="pulse-overview__team-card">
             <h3>Pulse-Ops AI</h3>
-            <p>Customer lifecycle intelligence for health signals, workflows, AI recommendations and next actions.</p>
-            <div><span>Lifecycle operations</span></div>
+            <p>Customer lifecycle intelligence for health, lifecycle signals, workflows, AI recommendations and recommended actions.</p>
+            <div><span>Lifecycle intelligence</span></div>
           </article>
         </div>
       </section>
@@ -390,7 +403,7 @@ export function GenPulseCaseStudy() {
         <div className="pulse-overview__final-grid">
           <div>
             <h2>See the operational command centre.</h2>
-            <p>Real product screens for people, work, delivery, KPIs, SLA and risk.</p>
+            <p>Desktop and mobile visibility for people, work, delivery and performance.</p>
           </div>
           <div className="pulse-overview__final-actions">
             <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="site-btn site-btn--ink">
@@ -411,29 +424,42 @@ function GenPulseDeviceComposition() {
   return (
     <div className="gen-pulse-devices" aria-label="Gen Pulse shown on laptop, tablet and mobile">
       <div className="gen-pulse-devices__laptop">
-        <Image
-          src={assetPath("/projects/gen-pulse-desktop-dark.png")}
-          alt="Gen Pulse desktop command centre in dark mode"
-          width={1600}
-          height={1000}
-          priority
-        />
+        <div className="gen-pulse-devices__laptop-chrome" aria-hidden>
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="gen-pulse-devices__screen">
+          <Image
+            src={assetPath("/projects/gen-pulse-desktop-dark.png")}
+            alt="Gen Pulse desktop command centre in dark mode"
+            width={1600}
+            height={1000}
+            priority
+          />
+        </div>
       </div>
       <div className="gen-pulse-devices__tablet">
-        <Image
-          src={assetPath("/projects/gen-pulse-tablet-light.png")}
-          alt="Gen Pulse tablet responsive command view"
-          width={834}
-          height={1112}
-        />
+        <span className="gen-pulse-devices__camera" aria-hidden />
+        <div className="gen-pulse-devices__screen">
+          <Image
+            src={assetPath("/projects/gen-pulse-tablet-light.png")}
+            alt="Gen Pulse tablet responsive command view"
+            width={834}
+            height={1112}
+          />
+        </div>
       </div>
       <div className="gen-pulse-devices__phone">
-        <Image
-          src={assetPath("/projects/gen-pulse-mobile-dark.png")}
-          alt="Gen Pulse mobile command view"
-          width={393}
-          height={852}
-        />
+        <span className="gen-pulse-devices__notch" aria-hidden />
+        <div className="gen-pulse-devices__screen">
+          <Image
+            src={assetPath("/projects/gen-pulse-mobile-dark.png")}
+            alt="Gen Pulse mobile command view"
+            width={393}
+            height={852}
+          />
+        </div>
       </div>
     </div>
   );
