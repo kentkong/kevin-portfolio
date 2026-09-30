@@ -2980,6 +2980,47 @@ body.site-body > * {
   letter-spacing: 0.14em;
 }
 
+@media (min-width: 768px) {
+  .site-nav--home .site-nav__inner {
+    display: grid;
+    grid-template-columns: max-content;
+    justify-content: start;
+  }
+
+  .site-nav--home .site-nav__inner::before {
+    content: "UX / UI VISUAL PRODUCT DESIGN";
+    grid-area: 1 / 1;
+    display: block;
+    width: max-content;
+    min-width: min(100%, 72rem);
+    padding-inline: clamp(1.35rem, 3.2vw, 3rem);
+    box-sizing: border-box;
+    color: transparent;
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: clamp(3rem, 5.35vw, 5.35rem);
+    font-weight: var(--display-weight);
+    letter-spacing: -0.065em;
+    line-height: 0.84;
+    pointer-events: none;
+    text-transform: uppercase;
+    visibility: hidden;
+    white-space: nowrap;
+  }
+
+  .site-nav--home .site-nav__brand,
+  .site-nav--home .site-nav__desktop-nav {
+    grid-area: 1 / 1;
+  }
+
+  .site-nav--home .site-nav__brand {
+    justify-self: start;
+  }
+
+  .site-nav--home .site-nav__desktop-nav {
+    justify-self: end;
+  }
+}
+
 .site-nav__brand--active {
   color: #1f1d1a;
 }
