@@ -2957,20 +2957,20 @@ body.site-body > * {
 .site-nav__desktop-nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(2.1rem, 3vw, 2.8rem);
 }
 
 .site-nav__brand {
   position: relative;
   padding-bottom: 0.4rem;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   color: #1f1d1a;
   text-decoration: none;
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .site-nav__brand--active {
@@ -2987,17 +2987,21 @@ body.site-body > * {
   background: #1f1d1a;
 }
 
+.site-nav__brand:hover {
+  transform: translateY(-1px);
+}
+
 .site-nav__link {
   position: relative;
   padding-bottom: 0.4rem;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   color: #5d574f;
   text-decoration: none;
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .site-nav__icon-link {
@@ -3007,7 +3011,7 @@ body.site-body > * {
   padding-bottom: 0.4rem;
   color: #5d574f;
   text-decoration: none;
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .site-nav__linkedin-svg {
@@ -3018,6 +3022,7 @@ body.site-body > * {
 .site-nav__link:hover,
 .site-nav__icon-link:hover {
   color: #1f1d1a;
+  transform: translateY(-1px);
 }
 
 .site-nav__link--active {
