@@ -427,17 +427,23 @@ function GenPulseDeviceComposition() {
   return (
     <div className="gen-pulse-devices" aria-label="Gen Pulse shown on laptop, tablet and mobile">
       <div className="gen-pulse-devices__laptop">
-        <div className="gen-pulse-devices__laptop-chrome" aria-hidden>
-          <span />
+        <div className="gen-pulse-devices__laptop-lid">
+          <div className="gen-pulse-devices__laptop-chrome" aria-hidden>
+            <span />
+          </div>
+          <div className="gen-pulse-devices__screen">
+            <Image
+              src={assetPath("/projects/gen-pulse-desktop-dark.png")}
+              alt="Gen Pulse desktop command centre in dark mode"
+              width={1600}
+              height={1000}
+              priority
+            />
+          </div>
         </div>
-        <div className="gen-pulse-devices__screen">
-          <Image
-            src={assetPath("/projects/gen-pulse-desktop-dark.png")}
-            alt="Gen Pulse desktop command centre in dark mode"
-            width={1600}
-            height={1000}
-            priority
-          />
+        <div className="gen-pulse-devices__laptop-base" aria-hidden>
+          <span className="gen-pulse-devices__keyboard" />
+          <span className="gen-pulse-devices__trackpad" />
         </div>
       </div>
       <div className="gen-pulse-devices__tablet">

@@ -2794,8 +2794,12 @@ body.site-body > * {
   transform: translateY(0.02em);
 }
 
-.gen-pulse-overview__title span {
-  color: var(--pulse-ink);
+.gen-pulse-overview .pulse-overview__hero h1.gen-pulse-overview__title span {
+  color: #5f4b32;
+}
+
+.gen-pulse-overview .pulse-overview__label {
+  color: rgba(29, 27, 23, 0.58);
 }
 
 .gen-pulse-overview__hero-visual {
@@ -2812,84 +2816,163 @@ body.site-body > * {
 .gen-pulse-devices__tablet,
 .gen-pulse-devices__phone {
   position: absolute;
-  display: flex;
   box-sizing: border-box;
-  overflow: hidden;
-  border: 1px solid rgba(91, 86, 78, 0.34);
-  background: linear-gradient(145deg, #f4f1ea 0%, #c5c2bb 42%, #8d8b85 100%);
-  box-shadow:
-    0 1.6rem 4.2rem rgba(29, 27, 23, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.84);
+  overflow: visible;
 }
 
 .gen-pulse-devices__laptop {
-  top: 2%;
-  right: 0;
+  top: 0;
+  right: 1%;
   z-index: 1;
   width: 88%;
-  aspect-ratio: 16 / 10;
-  flex-direction: column;
-  padding: 0.62rem 0.62rem 1.05rem;
-  border-radius: 1.05rem;
+  filter: drop-shadow(0 1.8rem 3.3rem rgba(29, 27, 23, 0.2));
 }
 
-.gen-pulse-devices__laptop::after {
+.gen-pulse-devices__laptop-lid {
+  display: flex;
+  aspect-ratio: 16 / 10;
+  flex-direction: column;
+  padding: 0.62rem 0.62rem 0.78rem;
+  border: 1px solid rgba(91, 86, 78, 0.26);
+  border-radius: 1.05rem 1.05rem 0.6rem 0.6rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(185, 181, 171, 0.62) 38%, rgba(114, 112, 108, 0.68)),
+    #d8d4ca;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    inset 0 -1px 0 rgba(21, 19, 15, 0.16);
+}
+
+.gen-pulse-devices__laptop-base {
+  position: relative;
+  width: 109%;
+  height: clamp(1.15rem, 2vw, 1.65rem);
+  margin-top: -0.14rem;
+  margin-left: -4.5%;
+  border: 1px solid rgba(91, 86, 78, 0.22);
+  border-radius: 0.18rem 0.18rem 1.6rem 1.6rem;
+  background:
+    radial-gradient(45% 130% at 50% -30%, rgba(255, 255, 255, 0.9), transparent 45%),
+    linear-gradient(180deg, #e2ded5 0%, #c1bcb0 48%, #88857e 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    0 0.65rem 1.25rem rgba(29, 27, 23, 0.14);
+}
+
+.gen-pulse-devices__laptop-base::before {
   content: "";
   position: absolute;
-  right: -3.5%;
-  bottom: -0.86rem;
-  left: -3.5%;
-  height: 0.9rem;
-  border: 1px solid rgba(91, 86, 78, 0.26);
-  border-radius: 0 0 2rem 2rem;
-  background:
-    radial-gradient(35% 95% at 50% 0%, rgba(255, 255, 255, 0.78), transparent 52%),
-    linear-gradient(180deg, #dedbd4 0%, #aaa69e 58%, #7f7d78 100%);
-  box-shadow: 0 1rem 1.6rem rgba(29, 27, 23, 0.14);
+  top: 0.16rem;
+  left: 50%;
+  width: 14%;
+  height: 0.16rem;
+  border-radius: 0 0 999px 999px;
+  background: rgba(106, 101, 92, 0.38);
+  transform: translateX(-50%);
+}
+
+.gen-pulse-devices__keyboard,
+.gen-pulse-devices__trackpad {
+  position: absolute;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%);
+}
+
+.gen-pulse-devices__keyboard {
+  top: 0.38rem;
+  width: 58%;
+  height: 0.16rem;
+  border-radius: 999px;
+  background: rgba(21, 19, 15, 0.12);
+}
+
+.gen-pulse-devices__trackpad {
+  bottom: 0.18rem;
+  width: 20%;
+  height: 0.36rem;
+  border: 1px solid rgba(21, 19, 15, 0.1);
+  border-radius: 0.18rem;
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .gen-pulse-devices__laptop-chrome {
   display: flex;
-  flex: 0 0 0.56rem;
+  flex: 0 0 0.48rem;
   align-items: center;
   justify-content: center;
 }
 
 .gen-pulse-devices__laptop-chrome span {
-  width: 0.26rem;
-  height: 0.26rem;
+  width: 0.22rem;
+  height: 0.22rem;
   border-radius: 999px;
-  background: rgba(29, 27, 23, 0.36);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  background: rgba(29, 27, 23, 0.44);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.24),
+    0 0 0.22rem rgba(21, 19, 15, 0.22);
 }
 
 .gen-pulse-devices__tablet {
   left: 3%;
-  bottom: 7%;
+  bottom: 5%;
   z-index: 2;
-  width: 35%;
+  width: 34%;
   aspect-ratio: 3 / 4;
-  padding: 0.82rem;
-  border-radius: 1.5rem;
+  padding: 0.72rem;
+  border: 1px solid rgba(91, 86, 78, 0.28);
+  border-radius: 1.6rem;
+  background:
+    linear-gradient(145deg, #f7f4ec 0%, #b9b5ab 45%, #817f78 100%);
+  box-shadow:
+    0 1.25rem 2.5rem rgba(29, 27, 23, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
 }
 
 .gen-pulse-devices__phone {
-  right: 5%;
-  bottom: 1%;
+  right: 5.5%;
+  bottom: 0;
   z-index: 3;
-  width: 17%;
+  width: 16.5%;
   aspect-ratio: 393 / 852;
-  padding: 0.7rem 0.34rem 0.48rem;
-  border-radius: 1.72rem;
+  padding: 0.62rem 0.32rem 0.46rem;
+  border: 1px solid rgba(21, 19, 15, 0.34);
+  border-radius: 1.85rem;
+  background:
+    linear-gradient(90deg, #494844 0%, #a8a196 8%, #d9d4c9 50%, #8e887e 92%, #343330 100%);
+  box-shadow:
+    0 1.25rem 2.4rem rgba(29, 27, 23, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.38);
+}
+
+.gen-pulse-devices__phone::before,
+.gen-pulse-devices__phone::after {
+  content: "";
+  position: absolute;
+  left: -0.18rem;
+  width: 0.12rem;
+  border-radius: 999px 0 0 999px;
+  background: rgba(78, 74, 68, 0.72);
+}
+
+.gen-pulse-devices__phone::before {
+  top: 18%;
+  height: 8%;
+}
+
+.gen-pulse-devices__phone::after {
+  top: 30%;
+  height: 13%;
 }
 
 .gen-pulse-devices__screen {
   position: relative;
-  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
   min-height: 0;
   overflow: hidden;
-  border: 1px solid rgba(21, 19, 15, 0.38);
-  border-radius: 0.48rem;
+  border: 1px solid rgba(21, 19, 15, 0.34);
+  border-radius: 0.52rem;
   background: #0b1020;
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.03),
@@ -2897,21 +2980,21 @@ body.site-body > * {
 }
 
 .gen-pulse-devices__tablet .gen-pulse-devices__screen {
-  border-radius: 0.86rem;
+  border-radius: 1.02rem;
   background: #f5f1ea;
 }
 
 .gen-pulse-devices__phone .gen-pulse-devices__screen {
-  border-radius: 1.18rem;
+  border-radius: 1.36rem;
 }
 
 .gen-pulse-devices__camera {
   position: absolute;
-  top: 0.36rem;
+  top: 0.32rem;
   left: 50%;
   z-index: 2;
-  width: 0.24rem;
-  height: 0.24rem;
+  width: 0.2rem;
+  height: 0.2rem;
   border-radius: 999px;
   background: rgba(29, 27, 23, 0.42);
   transform: translateX(-50%);
@@ -2919,11 +3002,11 @@ body.site-body > * {
 
 .gen-pulse-devices__notch {
   position: absolute;
-  top: 0.38rem;
+  top: 0.42rem;
   left: 50%;
   z-index: 3;
   width: 34%;
-  height: 0.42rem;
+  height: 0.38rem;
   border-radius: 999px;
   background: rgba(10, 10, 12, 0.92);
   transform: translateX(-50%);
