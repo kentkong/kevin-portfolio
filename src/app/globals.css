@@ -2976,22 +2976,22 @@ body.site-body > * {
 }
 
 @media (min-width: 768px) {
-  .site-nav--home .site-nav__inner {
+  .site-nav__inner {
     display: grid;
     grid-template-columns: minmax(0, min(100%, var(--home-content-boundary)));
     justify-content: start;
   }
 
-  .site-nav--home .site-nav__brand,
-  .site-nav--home .site-nav__desktop-nav {
+  .site-nav__brand,
+  .site-nav__desktop-nav {
     grid-area: 1 / 1;
   }
 
-  .site-nav--home .site-nav__brand {
+  .site-nav__brand {
     justify-self: start;
   }
 
-  .site-nav--home .site-nav__desktop-nav {
+  .site-nav__desktop-nav {
     justify-self: end;
   }
 }
