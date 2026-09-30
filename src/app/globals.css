@@ -4309,6 +4309,8 @@ body.site-body > * {
 
 .selected-project__link {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
@@ -4317,6 +4319,45 @@ body.site-body > * {
   color: #1f1d1a;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
+}
+
+.selected-project__link--overview-focus {
+  min-width: 13.5rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(31, 29, 26, 0.82);
+  background: #1f1d1a;
+  color: #f7f3eb;
+  box-shadow:
+    0 0 0 0 rgba(31, 29, 26, 0.24),
+    0 16px 34px rgba(31, 29, 26, 0.16);
+  animation: selected-project-overview-pulse 2.7s ease-in-out infinite;
+}
+
+.selected-project__link--overview-focus:hover,
+.selected-project__link--overview-focus:focus-visible {
+  background: #0f0e0c;
+  color: #fffaf0;
+}
+
+@keyframes selected-project-overview-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(31, 29, 26, 0.24),
+      0 16px 34px rgba(31, 29, 26, 0.16);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 8px rgba(245, 158, 11, 0.12),
+      0 18px 38px rgba(31, 29, 26, 0.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selected-project__link--overview-focus {
+    animation: none;
+  }
 }
 
 .selected-project__details-toggle {
@@ -4414,6 +4455,11 @@ body.site-body > * {
 
 .selected-project__visual-link {
   display: block;
+}
+
+.selected-project__visual-frame {
+  display: block;
+  cursor: default;
 }
 
 .selected-visual {
