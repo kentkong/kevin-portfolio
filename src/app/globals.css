@@ -37,6 +37,7 @@
   --display-leading: 0.88;
   --display-tracking: -0.035em;
   --portfolio-border-size: 14px;
+  --home-content-boundary: 75.3rem;
 }
 
 @theme inline {
@@ -2983,28 +2984,8 @@ body.site-body > * {
 @media (min-width: 768px) {
   .site-nav--home .site-nav__inner {
     display: grid;
-    grid-template-columns: max-content;
+    grid-template-columns: minmax(0, min(100%, var(--home-content-boundary)));
     justify-content: start;
-  }
-
-  .site-nav--home .site-nav__inner::before {
-    content: "UX / UI VISUAL PRODUCT DESIGN";
-    grid-area: 1 / 1;
-    display: block;
-    width: max-content;
-    min-width: min(100%, 72rem);
-    padding-inline: clamp(1.35rem, 3.2vw, 3rem);
-    box-sizing: border-box;
-    color: transparent;
-    font-family: var(--font-display), system-ui, sans-serif;
-    font-size: clamp(3rem, 5.35vw, 5.35rem);
-    font-weight: var(--display-weight);
-    letter-spacing: -0.065em;
-    line-height: 0.84;
-    pointer-events: none;
-    text-transform: uppercase;
-    visibility: hidden;
-    white-space: nowrap;
   }
 
   .site-nav--home .site-nav__brand,
@@ -3404,9 +3385,8 @@ body.site-body > * {
 }
 
 .site-hero__editorial {
-  width: max-content;
-  min-width: min(100%, 72rem);
-  max-width: none;
+  width: min(100%, var(--home-content-boundary));
+  max-width: var(--home-content-boundary);
 }
 
 .site-hero__editorial-frame {
@@ -4061,6 +4041,12 @@ body.site-body > * {
     width: 100%;
     max-width: none;
     padding: 1rem;
+  }
+
+  .site-hero__editorial {
+    width: max-content;
+    min-width: min(100%, 72rem);
+    max-width: none;
   }
 
   .site-hero__editorial-frame {
