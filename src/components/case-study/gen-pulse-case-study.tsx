@@ -213,6 +213,16 @@ export function GenPulseCaseStudy() {
             </a>
           </div>
         </div>
+        <figure className="pulse-overview__hero-visual gen-pulse-overview__hero-visual">
+          <Image
+            className="gen-pulse-overview__hero-image"
+            src={assetPath("/projects/gen-pulse/hero-device-composition.png")}
+            alt="Gen Pulse displayed across laptop, tablet and mobile devices"
+            width={1448}
+            height={1086}
+            priority
+          />
+        </figure>
       </section>
 
       <section className="site-container pulse-overview__section gen-pulse-overview__problem">

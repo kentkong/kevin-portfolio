@@ -2783,8 +2783,8 @@ body.site-body > * {
 }
 
 .gen-pulse-overview .pulse-overview__hero {
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
+  grid-template-columns: minmax(0, 0.43fr) minmax(0, 0.57fr);
+  align-items: center;
 }
 
 .gen-pulse-overview__title {
@@ -2797,7 +2797,16 @@ body.site-body > * {
 }
 
 .gen-pulse-overview__hero-visual {
-  width: min(100%, 51rem);
+  width: min(100%, 54rem);
+  justify-self: end;
+}
+
+.gen-pulse-overview__hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2rem 3rem rgba(29, 27, 23, 0.18));
 }
 
 .gen-pulse-devices {
@@ -3133,6 +3142,15 @@ body.site-body > * {
 }
 
 @media (max-width: 1080px) {
+  .gen-pulse-overview .pulse-overview__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .gen-pulse-overview__hero-visual {
+    width: min(100%, 48rem);
+    justify-self: start;
+  }
+
   .gen-pulse-devices {
     min-height: clamp(25rem, 68vw, 33rem);
   }
