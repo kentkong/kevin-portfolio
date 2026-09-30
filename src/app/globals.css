@@ -2996,9 +2996,11 @@ body.site-body > * {
 
 .gen-pulse-overview__view-grid .pulse-overview__view-card figure {
   height: clamp(14rem, 22vw, 20rem);
+  background: #090b22;
 }
 
 .gen-pulse-overview__view-grid .pulse-overview__view-card img {
+  object-fit: contain;
   object-position: top center;
 }
 
