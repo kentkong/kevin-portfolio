@@ -4017,7 +4017,7 @@ body.site-body > * {
   }
 
   .site-hero__editorial-frame {
-    padding: 1.2rem;
+    padding: 1.2rem 2.2rem 1.2rem 1.2rem;
   }
 
   .site-hero__editorial-headline {
@@ -13005,7 +13005,8 @@ body.site-body.pulse-ops-product-body {
 
 @media (max-width: 480px) {
   .site-nav__brand {
-    font-size: 0.92rem;
+    font-size: 1rem;
+    font-weight: var(--display-weight);
     letter-spacing: -0.05em;
   }
 
