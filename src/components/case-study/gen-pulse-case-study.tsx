@@ -190,10 +190,7 @@ export function GenPulseCaseStudy() {
       <section className="site-container pulse-overview__hero pulse-overview__section">
         <div className="pulse-overview__hero-copy">
           <SectionLabel label="Technology / Operations / Product Design" />
-          <h1 id="gen-pulse-title" className="gen-pulse-overview__title" aria-label="Gen Pulse">
-            <Image src={assetPath("/logos/about/gen-digital.svg")} alt="" width={108} height={42} unoptimized />
-            <span>Pulse</span>
-          </h1>
+          <h1 id="gen-pulse-title" className="gen-pulse-overview__title">Gen Pulse</h1>
           <p className="pulse-overview__headline">
             Gen Pulse brings the most important team, delivery, people and performance information into one shared operational environment.
           </p>
@@ -216,20 +213,14 @@ export function GenPulseCaseStudy() {
             </a>
           </div>
         </div>
-        <figure className="pulse-overview__hero-visual gen-pulse-overview__hero-visual">
-          <GenPulseDeviceComposition />
-        </figure>
       </section>
 
       <section className="site-container pulse-overview__section gen-pulse-overview__problem">
         <SectionHeader
           label="Original problem"
           title="Gen Pulse brings your team's most important information from different sources into one desktop and mobile application."
-          copy="While managing the Norton Email team, leadership regularly needed current SLA performance, weekly throughput, delivery metrics and team work status. Jira, reporting systems, Workday and Slack each held part of the answer. Gen Pulse began with one question:"
+          copy="While managing the Norton Email team, leadership regularly needed current SLA performance, weekly throughput, delivery metrics and team work status. Jira, reporting systems, Workday and Slack each held part of the answer."
         />
-        <div className="gen-pulse-overview__question">
-          WHAT IF THE MOST IMPORTANT OPERATIONAL INFORMATION COULD LIVE IN ONE SHARED COMMAND CENTRE?
-        </div>
         <div className="pulse-overview__process gen-pulse-overview__problem-points">
           <article className="pulse-overview__process-card">
             <span>01</span>
@@ -420,55 +411,6 @@ export function GenPulseCaseStudy() {
         </div>
       </section>
     </article>
-  );
-}
-
-function GenPulseDeviceComposition() {
-  return (
-    <div className="gen-pulse-devices" aria-label="Gen Pulse shown on laptop, tablet and mobile">
-      <div className="gen-pulse-devices__laptop">
-        <div className="gen-pulse-devices__laptop-lid">
-          <div className="gen-pulse-devices__laptop-chrome" aria-hidden>
-            <span />
-          </div>
-          <div className="gen-pulse-devices__screen">
-            <Image
-              src={assetPath("/projects/gen-pulse-desktop-dark.png")}
-              alt="Gen Pulse desktop command centre in dark mode"
-              width={1600}
-              height={1000}
-              priority
-            />
-          </div>
-        </div>
-        <div className="gen-pulse-devices__laptop-base" aria-hidden>
-          <span className="gen-pulse-devices__keyboard" />
-          <span className="gen-pulse-devices__trackpad" />
-        </div>
-      </div>
-      <div className="gen-pulse-devices__tablet">
-        <span className="gen-pulse-devices__camera" aria-hidden />
-        <div className="gen-pulse-devices__screen">
-          <Image
-            src={assetPath("/projects/gen-pulse-tablet-light.png")}
-            alt="Gen Pulse tablet responsive command view"
-            width={834}
-            height={1112}
-          />
-        </div>
-      </div>
-      <div className="gen-pulse-devices__phone">
-        <span className="gen-pulse-devices__notch" aria-hidden />
-        <div className="gen-pulse-devices__screen">
-          <Image
-            src={assetPath("/projects/gen-pulse-mobile-dark.png")}
-            alt="Gen Pulse mobile command view"
-            width={393}
-            height={852}
-          />
-        </div>
-      </div>
-    </div>
   );
 }
 

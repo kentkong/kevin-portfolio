@@ -2782,20 +2782,14 @@ body.site-body > * {
   color: var(--pulse-ink);
 }
 
+.gen-pulse-overview .pulse-overview__hero {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
 .gen-pulse-overview__title {
-  display: flex;
-  align-items: baseline;
-  gap: 0.14em;
-}
-
-.gen-pulse-overview__title img {
-  width: auto;
-  height: 0.68em;
-  transform: translateY(0.02em);
-}
-
-.gen-pulse-overview .pulse-overview__hero h1.gen-pulse-overview__title span {
-  color: #5f4b32;
+  display: block;
+  color: var(--pulse-ink);
 }
 
 .gen-pulse-overview .pulse-overview__label {
