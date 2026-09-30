@@ -3357,15 +3357,15 @@ body.site-body > * {
 }
 
 .site-hero__editorial {
-  width: min(100%, 74rem);
+  width: max-content;
+  min-width: min(100%, 72rem);
+  max-width: none;
 }
 
 .site-hero__editorial-frame {
   position: relative;
   z-index: 2;
-  width: max-content;
-  min-width: min(100%, 72rem);
-  max-width: none;
+  width: 100%;
   padding: clamp(1.5rem, 2.8vw, 2.6rem) clamp(1.35rem, 3.2vw, 3rem) clamp(1.65rem, 3vw, 2.75rem);
   border: 0;
   background: transparent;
@@ -3441,7 +3441,7 @@ body.site-body > * {
 .site-hero__discipline-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: min(100%, 72rem);
+  width: 100%;
   margin-top: clamp(2rem, 4vw, 3.2rem);
   border-top: 1px solid var(--home-line-primary, rgba(68, 83, 93, 0.2));
   border-bottom: 1px solid var(--home-line-secondary, rgba(68, 83, 93, 0.16));
