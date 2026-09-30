@@ -319,7 +319,7 @@ export function GenPulseCaseStudy() {
           {views.map((view) => (
             <article className={`pulse-overview__view-card pulse-overview__view-card--${view.accent}`} key={view.name}>
               <figure>
-                <Image src={assetPath(view.image)} alt={`${view.name} screen from Gen Pulse`} width={900} height={1000} />
+                <Image src={assetPath(view.image)} alt={`${view.name} screen from Gen Pulse`} width={900} height={1000} loading="eager" />
               </figure>
               <div>
                 <h3>{view.name}</h3>
