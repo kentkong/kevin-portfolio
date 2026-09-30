@@ -33,20 +33,11 @@ export function HeroSection() {
             </p>
             <h1
               className="site-hero__editorial-headline"
-              aria-label="CRM Marketing Operations and Lifecycle. UX UI Product and Visual Design. Enterprise Application Solutions."
+              aria-label="CRM Marketing. UX UI Visual Product Design. Enterprise App Solutions."
             >
-              <span className="site-hero__expertise-line">
-                CRM MARKETING OPERATIONS
-                <small>&amp; <em>LIFECYCLE</em></small>
-              </span>
-              <span className="site-hero__expertise-line">
-                UX / UI <em>PRODUCT</em>
-                <small>&amp; <em>VISUAL DESIGN</em></small>
-              </span>
-              <span className="site-hero__expertise-line">
-                ENTERPRISE <em>APPLICATION</em>
-                <small><em>SOLUTIONS</em></small>
-              </span>
+              <span className="site-hero__expertise-line">CRM MARKETING</span>
+              <span className="site-hero__expertise-line">UX / UI VISUAL PRODUCT DESIGN</span>
+              <span className="site-hero__expertise-line">ENTERPRISE APP SOLUTIONS</span>
             </h1>
             <p className="site-hero__supporting-copy">
               Drawing on experience across CRM, lifecycle marketing, customer experience and operations,
