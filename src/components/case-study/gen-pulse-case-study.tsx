@@ -1,38 +1,58 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ProjectDeviceShowcase } from "@/components/home/project-device-showcase";
+import { assetPath } from "@/lib/asset-path";
 import { getProject } from "@/lib/projects";
 
 const systems = [
   {
     name: "Jira",
+    logo: "jira",
     role: "Delivery activity",
     accent: "blue",
-    items: ["Sprint progress", "Ticket status", "Blocked work", "Delivery velocity"],
+    items: ["Latest delivery", "Ticket status", "Blocked work", "Weekly throughput"],
   },
   {
     name: "Slack",
+    logo: "slack",
     role: "Live team signal",
     accent: "purple",
-    items: ["Escalations", "Blocker mentions", "Stand-up updates", "Operational noise"],
+    items: ["Team updates", "Blocker mentions", "Day-to-day signals", "Operational noise"],
   },
   {
     name: "Workday",
+    logo: "workday",
     role: "People & capacity",
     accent: "green",
-    items: ["PTO", "Availability", "Coverage gaps", "Team structure"],
+    items: ["Upcoming leave", "Availability", "Coverage gaps", "Team structure"],
   },
   {
     name: "BI / Reporting",
+    logo: "bi",
     role: "Performance context",
     accent: "amber",
-    items: ["KPIs", "SLA trends", "Forecasts", "Leadership reporting"],
+    items: ["SLA reports", "Weekly trends", "Delivery metrics", "Leadership reporting"],
   },
   {
     name: "Gen Pulse",
+    logo: "gen-pulse",
     role: "Command centre",
     accent: "gen",
-    items: ["Prioritised risk", "Coverage decisions", "Daily action plan", "Shared visibility"],
+    items: ["Shared picture", "Capacity context", "Delivery risk", "Role-based visibility"],
   },
+];
+
+const exampleApps = [
+  { name: "Jira", logo: "jira", label: "Delivery and tickets" },
+  { name: "Slack", logo: "slack", label: "Team signals" },
+  { name: "Workday", logo: "workday", label: "People and availability" },
+  { name: "BI / Reporting", logo: "bi", label: "SLA and throughput" },
+];
+
+const configurableApps = [
+  { name: "Microsoft Teams", logo: "teams", label: "Collaboration" },
+  { name: "Salesforce", logo: "salesforce", label: "Customer context" },
+  { name: "Figma", logo: "figma", label: "Design and workflow" },
+  { name: "Other systems", logo: "systems", label: "Team-specific tools" },
 ];
 
 const progression = [
@@ -62,7 +82,7 @@ const operatingModel = [
   {
     number: "04",
     title: "Act",
-    body: "Give leaders a morning command view for staffing, escalation and delivery decisions.",
+    body: "Give teams and leaders a shared command view for staffing, escalation and delivery decisions.",
   },
 ];
 
@@ -182,11 +202,6 @@ const audiences = [
     question: "Are teams operating predictably?",
     areas: ["Performance", "Exposure"],
   },
-  {
-    name: "Future Pulse-Ops",
-    question: "How can team operations evolve into customer lifecycle intelligence?",
-    areas: ["Signals", "Actions"],
-  },
 ];
 
 export function GenPulseCaseStudy() {
@@ -203,13 +218,14 @@ export function GenPulseCaseStudy() {
             A team operations command centre for people, work, delivery and risk.
           </p>
           <p className="gp-overview__standfirst">
-            Gen Pulse was conceived as a daily leadership layer for teams that need to understand
-            availability, blockers, workload, KPIs and SLA exposure before the day gets away from them.
+            Gen Pulse came from the operational reality of managing the Norton Email team, where
+            SLA performance, delivery progress, throughput trends, availability and blockers all had
+            to be understood together.
           </p>
           <p className="gp-overview__body-copy">
             The project explores how fragmented signals from delivery, communication, people and reporting
-            systems can become one calm operational view - helping leaders move from status reconstruction to
-            faster, better decisions.
+            systems can become one calm operational view - helping contributors, managers, directors and
+            leadership move from status reconstruction to faster, better decisions.
           </p>
           <div className="gp-overview__actions">
             <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="site-btn site-btn--ink">
@@ -221,26 +237,72 @@ export function GenPulseCaseStudy() {
           </div>
         </div>
         <div className="gp-overview__hero-visual">
-          <ProjectDeviceShowcase project={project} />
+          <GenPulseSystemBoard />
         </div>
       </section>
 
       <section className="site-container gp-overview__section">
-        <SectionHeader
-          label="Original problem"
-          title="Operational reality was split across too many places."
-          copy="Customer-facing teams were relying on Jira, Slack, people systems, reporting dashboards and manual status rituals to understand what was happening. Each system was useful on its own, but no single view explained who was available, what was blocked and where delivery risk was building."
-        />
+        <SectionHeader label="Original problem" title="The idea came from a problem I was experiencing every day." />
+        <div className="gp-overview__origin-copy">
+          <p>
+            While managing the Norton Email team, my director and senior leadership regularly needed SLA reports,
+            weekly throughput trends, delivery metrics and up-to-date information about the team&apos;s work.
+          </p>
+          <p>
+            The challenge wasn&apos;t that the data didn&apos;t exist. It was that it existed everywhere.
+          </p>
+          <p>
+            Jira contained the latest delivery and ticket information. Reporting platforms contained performance
+            metrics and trends. Workday held people and availability data. Slack provided day-to-day team signals.
+            Other parts of the organisation relied on tools such as Salesforce, Teams, Figma and additional
+            specialist platforms.
+          </p>
+          <p>When leadership asked a seemingly simple question -</p>
+          <blockquote>&quot;Where are we right now?&quot;</blockquote>
+          <p>- answering it could mean reconstructing the picture from several different systems.</p>
+          <p>That led to the idea behind Gen Pulse:</p>
+          <blockquote>
+            &quot;What if the most important operational information from all of these systems could be funnelled
+            into one shared command centre?&quot;
+          </blockquote>
+          <p>
+            I initially designed Gen Pulse around the information I needed to manage the Norton Email operation:
+            SLA performance, weekly throughput, Jira activity, workload, blockers and delivery risk.
+          </p>
+          <p>
+            I then developed the concept further by incorporating individual team information - including
+            availability, team presence and upcoming leave - so workload and delivery could be understood alongside
+            actual team capacity.
+          </p>
+          <p>
+            The result became a broader, configurable operational concept: one command centre that can bring
+            together the data that matters to a particular team and make it accessible at the appropriate level to
+            contributors, managers, directors and leadership.
+          </p>
+        </div>
         <div className="gp-overview__problem-grid">
           {[
-            "Coverage and availability were hard to see before assigning work.",
-            "Delivery blockers were buried in tickets, threads and stand-ups.",
-            "SLA pressure surfaced late because risk was not connected to workload.",
-            "Leaders spent mornings rebuilding the picture instead of acting on it.",
+            {
+              title: "Information was fragmented",
+              body: "Performance, delivery and people data lived across multiple enterprise systems.",
+            },
+            {
+              title: "The current picture took time to reconstruct",
+              body: "Up-to-date Jira activity, team availability and operational performance were not available in one place.",
+            },
+            {
+              title: "Delivery risk lacked context",
+              body: "SLA pressure, workload, blockers and team capacity could be viewed separately, but their relationships were harder to see.",
+            },
+            {
+              title: "Reporting was reactive",
+              body: "Time that could be spent making decisions was instead spent gathering information and rebuilding the operational picture.",
+            },
           ].map((item, index) => (
-            <article className="gp-overview__problem-card" key={item}>
+            <article className="gp-overview__problem-card" key={item.title}>
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{item}</p>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
             </article>
           ))}
         </div>
@@ -250,13 +312,15 @@ export function GenPulseCaseStudy() {
         <SectionHeader
           label="The operational system"
           title="From fragmented team signals to a shared command layer."
-          copy="Gen Pulse connects team activity, availability, delivery progress and performance metrics into a leadership workspace designed around daily decisions rather than passive reporting."
+          copy="Gen Pulse connects team activity, availability, delivery progress and performance metrics into a shared operational workspace designed around daily decisions rather than passive reporting."
         />
         <div className="gp-overview__system-flow" aria-label="Jira to Slack to Workday to reporting to Gen Pulse">
           {systems.map((item, index) => (
             <div className="gp-overview__system-wrap" key={item.name}>
               <article className={`gp-overview__system-card gp-overview__system-card--${item.accent}`}>
-                <h3>{item.name}</h3>
+                <div className="gp-overview__system-logo">
+                  <AppLogo kind={item.logo} name={item.name} />
+                </div>
                 <p>{item.role}</p>
                 <ul>
                   {item.items.map((entry) => (
@@ -268,6 +332,12 @@ export function GenPulseCaseStudy() {
             </div>
           ))}
         </div>
+        <p className="gp-overview__note">
+          Jira, Workday, Slack and BI / Reporting represent the Gen Pulse implementation example shown in this
+          case study. The wider product concept is configurable: an organisation could potentially connect the
+          enterprise systems relevant to its own operation, such as Jira, Workday, Slack, Microsoft Teams,
+          Salesforce, reporting / BI platforms and other operational systems.
+        </p>
         <div className="gp-overview__progression">
           {progression.map(([title, body], index) => (
             <div className="gp-overview__progression-item" key={title}>
@@ -283,7 +353,7 @@ export function GenPulseCaseStudy() {
         <SectionHeader
           label="How Gen Pulse operates"
           title="Turn team activity into daily operational decisions."
-          copy="The experience is designed around the questions leaders ask at the start of the day: who is available, what is blocked, which risks matter and what should happen next?"
+          copy="The experience is designed around the operational questions teams and leaders need answered throughout the day: who is available, what is moving, what is blocked, where risk is developing and what needs attention next?"
         />
         <div className="gp-overview__process">
           {operatingModel.map((item, index) => (
@@ -344,7 +414,7 @@ export function GenPulseCaseStudy() {
         <SectionHeader
           label="Designed for operating teams"
           title="Different roles. One shared operational picture."
-          copy="Gen Pulse was designed for teams where individuals, managers and leadership each need a different level of detail without losing alignment around the same underlying signals."
+          copy="Gen Pulse evolved into a shared operational command centre capable of serving team contributors, managers, operations leads, directors and leadership. Different users can consume different levels of detail from the same underlying operational information."
         />
         <div className="gp-overview__audience-grid">
           {audiences.map((audience) => (
@@ -400,6 +470,144 @@ export function GenPulseCaseStudy() {
         </div>
       </section>
     </article>
+  );
+}
+
+function GenPulseSystemBoard() {
+  return (
+    <div className="gp-overview__system-board" aria-label="Gen Pulse configurable source systems">
+      <div>
+        <p className="gp-overview__board-label">Example implementation</p>
+        <div className="gp-overview__logo-grid gp-overview__logo-grid--primary">
+          {exampleApps.map((app) => (
+            <article className="gp-overview__logo-card" key={app.name}>
+              <AppLogo kind={app.logo} name={app.name} />
+              <span>{app.label}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+      <div className="gp-overview__board-flow" aria-hidden>
+        <span />
+        <strong>↓</strong>
+      </div>
+      <div className="gp-overview__board-hub">
+        <AppLogo kind="gen-pulse" name="Gen Pulse" />
+        <p>Shared operational command centre</p>
+      </div>
+      <div>
+        <p className="gp-overview__board-label">Configurable product concept</p>
+        <div className="gp-overview__logo-grid">
+          {configurableApps.map((app) => (
+            <article className="gp-overview__logo-card" key={app.name}>
+              <AppLogo kind={app.logo} name={app.name} />
+              <span>{app.label}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+      <p className="gp-overview__board-note">
+        Configurable architecture concept. These systems illustrate possible operational sources, not a claim that
+        every platform is implemented in the demo.
+      </p>
+    </div>
+  );
+}
+
+function AppLogo({ kind, name }: { kind: string; name: string }) {
+  if (kind === "jira") {
+    return (
+      <Image
+        src={assetPath("/logos/about/jira.svg")}
+        alt={`${name} logo`}
+        width={116}
+        height={34}
+        className="gp-overview__logo-image gp-overview__logo-image--jira"
+        unoptimized
+      />
+    );
+  }
+
+  if (kind === "salesforce") {
+    return (
+      <Image
+        src={assetPath("/logos/about/salesforce.svg")}
+        alt={`${name} logo`}
+        width={120}
+        height={54}
+        className="gp-overview__logo-image gp-overview__logo-image--salesforce"
+        unoptimized
+      />
+    );
+  }
+
+  if (kind === "figma") {
+    return (
+      <Image
+        src={assetPath("/logos/about/figma.svg")}
+        alt={`${name} logo`}
+        width={86}
+        height={34}
+        className="gp-overview__logo-image gp-overview__logo-image--figma"
+        unoptimized
+      />
+    );
+  }
+
+  if (kind === "slack") {
+    return (
+      <span className="gp-overview__logo-mark gp-overview__logo-mark--slack" aria-label={`${name} logo`}>
+        <i />
+        <i />
+        <i />
+        <i />
+        <b>Slack</b>
+      </span>
+    );
+  }
+
+  if (kind === "workday") {
+    return (
+      <span className="gp-overview__logo-mark gp-overview__logo-mark--workday" aria-label={`${name} logo`}>
+        <b>workday</b>
+      </span>
+    );
+  }
+
+  if (kind === "teams") {
+    return (
+      <span className="gp-overview__logo-mark gp-overview__logo-mark--teams" aria-label={`${name} logo`}>
+        <i>T</i>
+        <b>Teams</b>
+      </span>
+    );
+  }
+
+  if (kind === "bi") {
+    return (
+      <span className="gp-overview__logo-mark gp-overview__logo-mark--bi" aria-label={`${name} logo`}>
+        <i />
+        <i />
+        <i />
+        <b>BI / Reporting</b>
+      </span>
+    );
+  }
+
+  if (kind === "gen-pulse") {
+    return (
+      <span className="gp-overview__logo-mark gp-overview__logo-mark--gen-pulse" aria-label={`${name} logo`}>
+        <b>Gen</b>
+        <em>Pulse</em>
+      </span>
+    );
+  }
+
+  return (
+    <span className="gp-overview__logo-mark gp-overview__logo-mark--systems" aria-label={`${name} logo`}>
+      <i />
+      <b>{name}</b>
+    </span>
   );
 }
 
