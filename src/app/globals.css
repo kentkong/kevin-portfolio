@@ -3213,10 +3213,10 @@ body.site-body > * {
 
 /* Hero */
 .home-page {
-  --home-line-primary: rgba(18, 18, 16, 0.74);
-  --home-line-secondary: rgba(18, 18, 16, 0.64);
-  --home-line-tertiary: rgba(31, 29, 26, 0.09);
-  --home-grid-line: rgba(119, 109, 96, 0.02);
+  --home-line-primary: rgba(14, 14, 12, 0.88);
+  --home-line-secondary: rgba(14, 14, 12, 0.78);
+  --home-line-tertiary: rgba(31, 29, 26, 0.12);
+  --home-grid-line: rgba(119, 109, 96, 0.028);
 }
 
 .site-hero {
@@ -3360,15 +3360,26 @@ body.site-body > * {
 }
 
 .site-hero__editorial-frame {
+  position: relative;
+  z-index: 2;
   width: min(100%, 72rem);
   padding: clamp(1.5rem, 2.8vw, 2.6rem) clamp(1.35rem, 3.2vw, 3rem) clamp(1.65rem, 3vw, 2.75rem);
-  border: 1px solid var(--home-line-primary, rgba(68, 83, 93, 0.24));
+  border: 0;
   background: transparent;
+}
+
+.site-hero__editorial-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
 }
 
 .site-hero__editorial-frame .site-hero__eyebrow {
   margin-bottom: clamp(1.15rem, 2.2vw, 1.8rem);
-  color: #1b1b18;
+  color: #11110f;
 }
 
 .site-hero__editorial-headline {
@@ -3398,41 +3409,31 @@ body.site-body > * {
     background-image: linear-gradient(
       100deg,
       #161814 0%,
-      #161814 42%,
-      #243033 48%,
-      #252c38 51%,
-      #2b2933 54%,
-      #161814 61%,
+      #161814 40%,
+      #253638 47%,
+      #293548 50%,
+      #393445 54%,
+      #161814 64%,
       #161814 100%
     );
-    background-size: 340% 100%;
+    background-size: 360% 100%;
     background-position: 0% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    animation: site-hero-muted-ink-sweep 28s ease-in-out infinite;
+    animation: site-hero-muted-ink-sweep 28s linear infinite;
   }
 }
 
 @keyframes site-hero-muted-ink-sweep {
-  0%,
-  100% {
+  0% {
     background-position: 0% 50%;
   }
 
-  50% {
+  100% {
     background-position: 100% 50%;
   }
-}
-
-.site-hero__supporting-copy {
-  max-width: 43rem;
-  margin: clamp(1.25rem, 2vw, 1.65rem) 0 0;
-  color: #252723;
-  font-size: clamp(0.92rem, 1vw, 1.02rem);
-  font-weight: 500;
-  line-height: 1.7;
 }
 
 .site-hero__discipline-grid {
@@ -3463,7 +3464,7 @@ body.site-body > * {
 .site-hero__discipline span {
   display: block;
   margin-bottom: 0.85rem;
-  color: #61727b;
+  color: #32342f;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -3481,7 +3482,7 @@ body.site-body > * {
 .site-hero__discipline p {
   margin: 0.72rem 0 0;
   max-width: 21rem;
-  color: #65615a;
+  color: #3f3b35;
   font-size: 0.92rem;
   font-weight: 500;
   line-height: 1.55;

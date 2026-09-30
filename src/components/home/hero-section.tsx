@@ -39,11 +39,6 @@ export function HeroSection() {
               <span className="site-hero__expertise-line">UX / UI VISUAL PRODUCT DESIGN</span>
               <span className="site-hero__expertise-line">ENTERPRISE APP SOLUTIONS</span>
             </h1>
-            <p className="site-hero__supporting-copy">
-              Drawing on experience across CRM, lifecycle marketing, customer experience and operations,
-              I design applications that improve visibility, decision-making and execution — combining
-              product thinking, UX/UI, data and AI.
-            </p>
           </div>
           <div className="site-hero__discipline-grid" aria-label="Core disciplines">
             {disciplines.map((discipline) => (
