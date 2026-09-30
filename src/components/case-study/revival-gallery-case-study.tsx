@@ -66,7 +66,7 @@ export function RevivalGalleryCaseStudy() {
           <h1
             style={{
               margin: "clamp(2.75rem, 6vw, 5rem) 0 1.3rem",
-              fontFamily: "var(--font-body), Inter, system-ui, sans-serif",
+              fontFamily: "var(--font-display), system-ui, sans-serif",
               fontSize: "clamp(5rem, 9vw, 8.5rem)",
               fontWeight: 500,
               letterSpacing: "-0.08em",
