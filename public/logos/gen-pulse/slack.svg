@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 72" role="img" aria-labelledby="title">
+  <title id="title">Slack</title>
+  <g transform="translate(4 8)">
+    <rect x="0" y="24" width="32" height="14" rx="7" fill="#E01E5A"/>
+    <rect x="18" y="0" width="14" height="32" rx="7" fill="#36C5F0"/>
+    <rect x="24" y="40" width="32" height="14" rx="7" fill="#ECB22E"/>
+    <rect x="40" y="24" width="14" height="32" rx="7" fill="#2EB67D"/>
+    <rect x="40" y="0" width="14" height="22" rx="7" fill="#ECB22E"/>
+    <rect x="34" y="18" width="22" height="14" rx="7" fill="#2EB67D"/>
+    <rect x="0" y="40" width="14" height="22" rx="7" fill="#36C5F0"/>
+    <rect x="0" y="34" width="22" height="14" rx="7" fill="#E01E5A"/>
+  </g>
+  <text x="82" y="47" fill="#1D1C1D" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">Slack</text>
+</svg>

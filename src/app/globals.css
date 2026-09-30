@@ -2767,6 +2767,206 @@ body.site-body > * {
   }
 }
 
+/* Gen Pulse overview uses the Pulse-Ops case-study system with project-specific assets. */
+.gen-pulse-overview {
+  --pulse-blue: #2f69c5;
+  --pulse-green: #328f6f;
+  --pulse-purple: #7054bd;
+  --pulse-red: #c95b64;
+  --pulse-amber: #d18c20;
+  --pulse-slate: #56616b;
+  --pulse-ai: #f59e0b;
+}
+
+.gen-pulse-overview .pulse-overview__hero h1 {
+  color: var(--pulse-ink);
+}
+
+.gen-pulse-overview__hero-visual {
+  width: min(100%, 51rem);
+}
+
+.gen-pulse-devices {
+  position: relative;
+  min-height: clamp(27rem, 40vw, 35rem);
+  width: 100%;
+}
+
+.gen-pulse-devices__laptop,
+.gen-pulse-devices__tablet,
+.gen-pulse-devices__phone {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid rgba(21, 19, 15, 0.24);
+  background: #11131d;
+  box-shadow: 0 24px 55px rgba(29, 27, 23, 0.18);
+}
+
+.gen-pulse-devices__laptop {
+  top: 2%;
+  right: 0;
+  z-index: 1;
+  width: 88%;
+  border-radius: 0.85rem;
+}
+
+.gen-pulse-devices__laptop::after {
+  content: "";
+  display: block;
+  height: 0.8rem;
+  border-top: 1px solid rgba(21, 19, 15, 0.2);
+  background: linear-gradient(180deg, #c8c1b3, #8d887f);
+}
+
+.gen-pulse-devices__tablet {
+  left: 3%;
+  bottom: 7%;
+  z-index: 2;
+  width: 36%;
+  border-radius: 1.05rem;
+  background: #f5f1ea;
+}
+
+.gen-pulse-devices__phone {
+  right: 5%;
+  bottom: 1%;
+  z-index: 3;
+  width: 18%;
+  border-radius: 1.4rem;
+}
+
+.gen-pulse-devices img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gen-pulse-overview__logo-block {
+  align-items: center;
+}
+
+.gen-pulse-overview__logo-block img {
+  display: block;
+  width: auto;
+  max-width: 7.25rem;
+  height: 2.1rem;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.gen-pulse-overview__logo-block--slack img,
+.gen-pulse-overview__logo-block--workday img,
+.gen-pulse-overview__logo-block--reporting img {
+  max-width: 8.4rem;
+}
+
+.gen-pulse-overview__logo-block--gen span {
+  color: #5b4ee6;
+  font-size: 1.08rem;
+  letter-spacing: -0.055em;
+}
+
+.gen-pulse-overview__logo-block--gen em {
+  color: var(--pulse-ai);
+  font-style: normal;
+}
+
+.gen-pulse-overview .pulse-overview__stack-card--jira { border-top: 3px solid rgba(47, 105, 197, 0.85); }
+.gen-pulse-overview .pulse-overview__stack-card--slack { border-top: 3px solid rgba(112, 84, 189, 0.86); }
+.gen-pulse-overview .pulse-overview__stack-card--workday { border-top: 3px solid rgba(50, 143, 111, 0.86); }
+.gen-pulse-overview .pulse-overview__stack-card--reporting { border-top: 3px solid rgba(209, 140, 32, 0.88); }
+.gen-pulse-overview .pulse-overview__stack-card--gen {
+  border-top: 3px solid rgba(245, 158, 11, 0.92);
+  background: rgba(250, 240, 218, 0.82);
+}
+
+.gen-pulse-overview__question {
+  max-width: 48rem;
+  margin: calc(clamp(2rem, 4vw, 3.25rem) * -0.2) 0 clamp(2rem, 4vw, 3rem) auto;
+  padding: clamp(1.2rem, 2vw, 1.6rem);
+  border-left: 3px solid var(--pulse-ai);
+  background: rgba(250, 240, 218, 0.72);
+  color: var(--pulse-ink);
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: clamp(1.35rem, 2.8vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.gen-pulse-overview__problem-points .pulse-overview__process-card {
+  min-height: 10.5rem;
+}
+
+.gen-pulse-overview .pulse-overview__view-grid.gen-pulse-overview__view-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gen-pulse-overview__view-grid .pulse-overview__view-card figure {
+  height: clamp(14rem, 22vw, 20rem);
+}
+
+.gen-pulse-overview__view-grid .pulse-overview__view-card img {
+  object-position: top center;
+}
+
+.gen-pulse-overview .pulse-overview__signal-flow.gen-pulse-overview__signal-flow {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.gen-pulse-overview .pulse-overview__team-grid.gen-pulse-overview__team-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gen-pulse-overview .pulse-overview__team-grid.gen-pulse-overview__evolution-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 1080px) {
+  .gen-pulse-devices {
+    min-height: clamp(25rem, 68vw, 33rem);
+  }
+
+  .gen-pulse-overview .pulse-overview__signal-flow.gen-pulse-overview__signal-flow,
+  .gen-pulse-overview .pulse-overview__team-grid.gen-pulse-overview__team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 780px) {
+  .gen-pulse-devices {
+    min-height: clamp(23rem, 110vw, 30rem);
+  }
+
+  .gen-pulse-devices__laptop {
+    width: 100%;
+  }
+
+  .gen-pulse-devices__tablet {
+    left: 0;
+    width: 42%;
+  }
+
+  .gen-pulse-devices__phone {
+    right: 0;
+    width: 23%;
+  }
+
+  .gen-pulse-overview__question {
+    margin-inline: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .gen-pulse-overview .pulse-overview__view-grid.gen-pulse-overview__view-grid,
+  .gen-pulse-overview .pulse-overview__signal-flow.gen-pulse-overview__signal-flow,
+  .gen-pulse-overview .pulse-overview__team-grid.gen-pulse-overview__team-grid,
+  .gen-pulse-overview .pulse-overview__team-grid.gen-pulse-overview__evolution-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Shared glass panel — hero, featured intro, project resolution boxes */
 .site-panel {
   position: relative;
