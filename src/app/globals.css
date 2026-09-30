@@ -3212,6 +3212,13 @@ body.site-body > * {
 }
 
 /* Hero */
+.home-page {
+  --home-line-primary: rgba(31, 29, 26, 0.34);
+  --home-line-secondary: rgba(31, 29, 26, 0.22);
+  --home-line-tertiary: rgba(31, 29, 26, 0.16);
+  --home-grid-line: rgba(31, 29, 26, 0.12);
+}
+
 .site-hero {
   position: relative;
   isolation: isolate;
@@ -3221,8 +3228,8 @@ body.site-body > * {
   overflow: hidden;
   padding-block: clamp(4.25rem, 6.5vw, 6.25rem) clamp(3.25rem, 5.5vw, 5.25rem);
   background:
-    linear-gradient(90deg, rgba(31, 29, 26, 0.06) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(31, 29, 26, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, var(--home-grid-line, rgba(31, 29, 26, 0.06)) 1px, transparent 1px),
+    linear-gradient(180deg, var(--home-grid-line, rgba(31, 29, 26, 0.045)) 1px, transparent 1px),
     #f7f3eb;
   background-size: 5.5rem 5.5rem;
   color: #1f1d1a;
@@ -3239,7 +3246,7 @@ body.site-body > * {
 .site-hero::before {
   inset: 0;
   background:
-    linear-gradient(118deg, transparent 0 54%, rgba(31, 29, 26, 0.055) 54% 54.35%, transparent 54.35% 100%),
+    linear-gradient(118deg, transparent 0 54%, var(--home-line-tertiary, rgba(31, 29, 26, 0.055)) 54% 54.35%, transparent 54.35% 100%),
     radial-gradient(circle at 85% 20%, rgba(31, 29, 26, 0.08), transparent 22rem);
 }
 
@@ -3248,7 +3255,7 @@ body.site-body > * {
   bottom: -22rem;
   width: min(46rem, 72vw);
   aspect-ratio: 1;
-  border: 1px solid rgba(31, 29, 26, 0.08);
+  border: 1px solid var(--home-line-tertiary, rgba(31, 29, 26, 0.08));
   transform: rotate(-11deg);
 }
 
@@ -3355,7 +3362,7 @@ body.site-body > * {
 .site-hero__editorial-frame {
   width: min(100%, 72rem);
   padding: clamp(1.5rem, 2.8vw, 2.6rem) clamp(1.35rem, 3.2vw, 3rem) clamp(1.65rem, 3vw, 2.75rem);
-  border: 1px solid rgba(68, 83, 93, 0.24);
+  border: 1px solid var(--home-line-primary, rgba(68, 83, 93, 0.24));
   background: transparent;
 }
 
@@ -3365,23 +3372,42 @@ body.site-body > * {
 }
 
 .site-hero__editorial-headline {
+  display: grid;
+  gap: clamp(1.05rem, 2vw, 1.8rem);
   margin: 0;
-  max-width: 16ch;
+  max-width: 20ch;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: clamp(3.15rem, 5.6vw, 5.35rem);
+  font-size: clamp(3.35rem, 6.15vw, 6.2rem);
   font-weight: var(--display-weight);
-  letter-spacing: -0.052em;
-  line-height: 0.94;
+  letter-spacing: -0.06em;
+  line-height: 0.82;
   text-transform: uppercase;
   color: #161814;
 }
 
-.site-hero__editorial-headline span {
+.site-hero__expertise-line,
+.site-hero__expertise-line small {
+  display: block;
+}
+
+.site-hero__expertise-line {
   color: #161814;
 }
 
+.site-hero__expertise-line small {
+  margin-top: 0.14em;
+  font-size: 0.54em;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+}
+
+.site-hero__editorial-headline em {
+  color: #161814;
+  font-style: normal;
+}
+
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .site-hero__editorial-headline span {
+  .site-hero__editorial-headline em {
     background-image: linear-gradient(110deg, #161814 0%, #161814 24%, #68cfd4 42%, #aebfff 58%, #bda7ff 74%, #161814 100%);
     background-size: 260% 100%;
     background-position: 0% 50%;
@@ -3407,13 +3433,13 @@ body.site-body > * {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   width: min(100%, 72rem);
   margin-top: clamp(2rem, 4vw, 3.2rem);
-  border-top: 1px solid rgba(68, 83, 93, 0.2);
-  border-bottom: 1px solid rgba(68, 83, 93, 0.16);
+  border-top: 1px solid var(--home-line-primary, rgba(68, 83, 93, 0.2));
+  border-bottom: 1px solid var(--home-line-secondary, rgba(68, 83, 93, 0.16));
 }
 
 .site-hero__discipline {
   padding: clamp(1.15rem, 2vw, 1.65rem) clamp(1rem, 2.2vw, 1.7rem);
-  border-left: 1px solid rgba(68, 83, 93, 0.16);
+  border-left: 1px solid var(--home-line-secondary, rgba(68, 83, 93, 0.16));
 }
 
 .site-hero__discipline:first-child {
@@ -3733,7 +3759,7 @@ body.site-body > * {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-hero__editorial-headline span {
+  .site-hero__editorial-headline em {
     animation: none;
     background-position: 44% 50%;
   }
@@ -3985,7 +4011,7 @@ body.site-body > * {
   }
 
   .site-hero__editorial-headline {
-    font-size: clamp(2.65rem, 11vw, 4.1rem);
+    font-size: clamp(3rem, 13vw, 4.65rem);
     letter-spacing: -0.055em;
   }
 
@@ -3997,7 +4023,7 @@ body.site-body > * {
   .site-hero__discipline:first-child {
     padding: 1.15rem 0;
     border-left: 0;
-    border-top: 1px solid rgba(68, 83, 93, 0.16);
+    border-top: 1px solid var(--home-line-secondary, rgba(68, 83, 93, 0.16));
   }
 
   .site-hero__discipline:first-child {
@@ -4055,10 +4081,10 @@ body.site-body > * {
   isolation: isolate;
   overflow: hidden;
   padding-block: clamp(5rem, 9vw, 8rem);
-  border-top: 1px solid rgba(31, 29, 26, 0.12);
+  border-top: 1px solid var(--home-line-secondary, rgba(31, 29, 26, 0.12));
   background:
-    linear-gradient(90deg, rgba(31, 29, 26, 0.04) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(31, 29, 26, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, var(--home-grid-line, rgba(31, 29, 26, 0.04)) 1px, transparent 1px),
+    linear-gradient(180deg, var(--home-grid-line, rgba(31, 29, 26, 0.035)) 1px, transparent 1px),
     #f7f3eb;
   background-size: 5.5rem 5.5rem;
   color: #1f1d1a;
@@ -4071,8 +4097,8 @@ body.site-body > * {
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(114deg, transparent 0 18%, rgba(31, 29, 26, 0.05) 18% 18.16%, transparent 18.16% 100%),
-    linear-gradient(156deg, transparent 0 78%, rgba(31, 29, 26, 0.045) 78% 78.14%, transparent 78.14% 100%);
+    linear-gradient(114deg, transparent 0 18%, var(--home-line-tertiary, rgba(31, 29, 26, 0.05)) 18% 18.16%, transparent 18.16% 100%),
+    linear-gradient(156deg, transparent 0 78%, var(--home-line-tertiary, rgba(31, 29, 26, 0.045)) 78% 78.14%, transparent 78.14% 100%);
 }
 
 .selected-work::after {
@@ -4151,7 +4177,7 @@ body.site-body > * {
   gap: clamp(1.75rem, 5vw, 4rem);
   align-items: start;
   padding: clamp(1.75rem, 4vw, 3rem);
-  border-top: 1px solid rgba(31, 29, 26, 0.12);
+  border-top: 1px solid var(--home-line-secondary, rgba(31, 29, 26, 0.12));
 }
 
 .selected-project::before {
@@ -4160,7 +4186,7 @@ body.site-body > * {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  border: 1px solid rgba(31, 29, 26, 0.055);
+  border: 1px solid var(--home-line-tertiary, rgba(31, 29, 26, 0.055));
   background: var(--selected-project-bg, transparent);
 }
 

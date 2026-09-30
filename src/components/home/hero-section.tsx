@@ -1,17 +1,17 @@
 const disciplines = [
   {
     number: "01",
-    title: "CRM MARKETING OPERATIONS & LIFECYCLE",
-    body: "Customer experience, lifecycle strategy, CRM platforms and marketing operations.",
+    title: "CUSTOMER EXPERIENCE",
+    body: "Lifecycle strategy, CRM platforms, marketing operations and customer engagement.",
   },
   {
     number: "02",
-    title: "UX / UI PRODUCT & VISUAL DESIGN",
-    body: "Product thinking, user experience, interface design and visual communication.",
+    title: "PRODUCT EXPERIENCE",
+    body: "Product thinking, UX/UI, visual communication and digital experience design.",
   },
   {
     number: "03",
-    title: "ENTERPRISE APPLICATION SOLUTIONS",
+    title: "APPLICATION INTELLIGENCE",
     body: "AI-enabled applications, workflow automation and operational intelligence.",
   },
 ];
@@ -29,15 +29,24 @@ export function HeroSection() {
         <div className="site-hero__editorial">
           <div className="site-hero__editorial-frame">
             <p className="site-hero__eyebrow">
-              CRM MARKETING OPERATIONS&nbsp; / &nbsp;UX &amp; PRODUCT DESIGN&nbsp; / &nbsp;ENTERPRISE APPLICATIONS
+              ENTERPRISE&nbsp; / &nbsp;CUSTOMER EXPERIENCE&nbsp; / &nbsp;PRODUCT DESIGN
             </p>
             <h1
               className="site-hero__editorial-headline"
-              aria-label="Building practical digital products for real-world teams."
+              aria-label="CRM Marketing Operations and Lifecycle. UX UI Product and Visual Design. Enterprise Application Solutions."
             >
-              BUILDING PRACTICAL <span>DIGITAL PRODUCTS</span>
-              <br />
-              FOR REAL-WORLD TEAMS.
+              <span className="site-hero__expertise-line">
+                CRM MARKETING OPERATIONS
+                <small>&amp; <em>LIFECYCLE</em></small>
+              </span>
+              <span className="site-hero__expertise-line">
+                UX / UI <em>PRODUCT</em>
+                <small>&amp; <em>VISUAL DESIGN</em></small>
+              </span>
+              <span className="site-hero__expertise-line">
+                ENTERPRISE <em>APPLICATION</em>
+                <small><em>SOLUTIONS</em></small>
+              </span>
             </h1>
             <p className="site-hero__supporting-copy">
               Drawing on experience across CRM, lifecycle marketing, customer experience and operations,

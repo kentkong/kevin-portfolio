@@ -7,7 +7,7 @@ export function HomePage() {
   return (
     <>
       <SiteNav />
-      <main>
+      <main className="home-page">
         <HeroSection />
         <ProjectShowcase />
       </main>
