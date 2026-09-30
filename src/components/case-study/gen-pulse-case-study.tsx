@@ -84,38 +84,38 @@ const views: GenPulseView[] = [
   {
     name: "Today at a glance",
     accent: "blue",
-    image: "/projects/gen-pulse-desktop-dark.png",
+    image: "/projects/gen-pulse-today-at-glance.png",
     summary: "The operating snapshot.",
     description:
-      "Online coverage, people out today, blockers and sprint to-do visible before the team has to reconstruct status manually.",
-    helps: ["Team presence", "Blockers", "Sprint to-do"],
+      "A fast view of who is online, who is out, where blockers exist and how much sprint work still needs attention.",
+    helps: ["Online coverage", "Out today", "Blockers", "Sprint to-do"],
   },
   {
     name: "Weekly throughput",
     accent: "amber",
-    image: "/projects/gen-pulse-desktop-light.png",
-    summary: "Performance in context.",
+    image: "/projects/gen-pulse-weekly-throughput.png",
+    summary: "Results and trends in one place.",
     description:
-      "SLA reporting, weekly throughput and ticket lifecycle metrics presented with the operational detail needed for leadership updates.",
-    helps: ["SLA", "Throughput", "Lifecycle"],
+      "Weekly resolved work, backlog health and average ticket lifecycle sit together so delivery performance can be read without rebuilding the picture across tools.",
+    helps: ["Weekly resolved", "Backlog", "Lifecycle"],
   },
   {
-    name: "Responsive command view",
+    name: "Kanban and priority work",
     accent: "purple",
-    image: "/projects/gen-pulse-tablet-light.png",
-    summary: "The same product adapts to the workspace.",
+    image: "/projects/gen-pulse-kanban-snapshot.png",
+    summary: "The important tickets stay close at hand.",
     description:
-      "The command-centre experience remains usable beyond the desktop, preserving the core hierarchy for tablet-sized review.",
-    helps: ["Tablet", "Review", "Responsive"],
+      "The Kanban snapshot keeps priority Jira work visible by status, owner and urgency, with direct access to the work most likely to affect delivery.",
+    helps: ["Kanban", "Priority tickets", "Jira context"],
   },
   {
-    name: "Mobile check-in",
+    name: "Team presence",
     accent: "green",
-    image: "/projects/gen-pulse-mobile-dark.png",
-    summary: "Operational awareness on the move.",
+    image: "/projects/gen-pulse-team-presence.png",
+    summary: "Attendance and availability become operational context.",
     description:
-      "A compact mobile view gives leaders and managers quick access to availability, blocker and priority information.",
-    helps: ["Mobile", "Presence", "Risk"],
+      "Slack status, attendance and Workday leave signals are collaborated into one useful display, helping teams understand coverage and where people are.",
+    helps: ["Attendance", "Slack status", "Workday leave", "Coverage"],
   },
 ];
 
@@ -190,7 +190,10 @@ export function GenPulseCaseStudy() {
       <section className="site-container pulse-overview__hero pulse-overview__section">
         <div className="pulse-overview__hero-copy">
           <SectionLabel label="Technology / Operations / Product Design" />
-          <h1 id="gen-pulse-title">Gen Pulse</h1>
+          <h1 id="gen-pulse-title" className="gen-pulse-overview__title" aria-label="Gen Pulse">
+            <Image src={assetPath("/logos/about/gen-digital.svg")} alt="" width={108} height={42} unoptimized />
+            <span>Pulse</span>
+          </h1>
           <p className="pulse-overview__headline">
             Gen Pulse brings the most important team, delivery, people and performance information into one shared operational environment.
           </p>
@@ -426,8 +429,6 @@ function GenPulseDeviceComposition() {
       <div className="gen-pulse-devices__laptop">
         <div className="gen-pulse-devices__laptop-chrome" aria-hidden>
           <span />
-          <span />
-          <span />
         </div>
         <div className="gen-pulse-devices__screen">
           <Image
@@ -496,7 +497,8 @@ function LogoBlock({ item }: { item: (typeof ecosystem)[number] }) {
 
   return (
     <div className="pulse-overview__logo-block gen-pulse-overview__logo-block gen-pulse-overview__logo-block--gen" aria-label="Gen Pulse logo">
-      <span>Gen <em>Pulse</em></span>
+      <Image src={assetPath("/logos/about/gen-digital.svg")} alt="" width={108} height={42} unoptimized />
+      <span>Pulse</span>
     </div>
   );
 }
