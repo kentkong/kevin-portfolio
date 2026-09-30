@@ -2966,19 +2966,13 @@ body.site-body > * {
   position: relative;
   padding-bottom: 0.4rem;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: clamp(0.95rem, 1.2vw, 1.2rem);
-  font-weight: var(--display-weight);
-  letter-spacing: -0.055em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #1f1d1a;
   text-decoration: none;
   transition: color 0.25s ease, transform 0.25s ease;
-}
-
-.site-nav--home .site-nav__brand {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
 }
 
 @media (min-width: 768px) {
@@ -13038,12 +13032,6 @@ body.site-body.pulse-ops-product-body {
 
 @media (max-width: 480px) {
   .site-nav__brand {
-    font-size: 1rem;
-    font-weight: var(--display-weight);
-    letter-spacing: -0.05em;
-  }
-
-  .site-nav--home .site-nav__brand {
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
