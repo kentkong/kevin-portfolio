@@ -3932,8 +3932,81 @@ body.site-body > * {
 }
 
 .site-hero__editorial {
+  position: relative;
+  isolation: isolate;
   width: min(100%, var(--home-content-boundary));
   max-width: var(--home-content-boundary);
+}
+
+.site-hero__granite-backdrop {
+  position: absolute;
+  z-index: 0;
+  top: clamp(-2.5rem, -4vw, -1.25rem);
+  left: clamp(-1.5rem, -2vw, -0.5rem);
+  right: clamp(-0.75rem, -1vw, 0);
+  height: clamp(15rem, 42vw, 26rem);
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 0.2rem;
+  -webkit-mask-image: linear-gradient(
+    118deg,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.72) 42%,
+    rgba(0, 0, 0, 0.28) 72%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    118deg,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.72) 42%,
+    rgba(0, 0, 0, 0.28) 72%,
+    transparent 100%
+  );
+}
+
+.site-hero__granite-layer {
+  position: absolute;
+  inset: -28%;
+  transform: rotate(-4deg);
+}
+
+.site-hero__granite-layer--face {
+  background:
+    radial-gradient(ellipse 130% 90% at 14% 38%, rgba(58, 54, 50, 0.72), transparent 58%),
+    radial-gradient(ellipse 95% 75% at 82% 22%, rgba(96, 90, 82, 0.55), transparent 62%),
+    radial-gradient(circle at 46% 68%, rgba(42, 40, 38, 0.62), transparent 48%),
+    radial-gradient(circle at 68% 58%, rgba(120, 112, 102, 0.35), transparent 36%),
+    linear-gradient(
+      132deg,
+      #9a9288 0%,
+      #6f6962 18%,
+      #8b847a 34%,
+      #56524c 52%,
+      #7a746c 68%,
+      #4a4743 84%,
+      #8f897f 100%
+    );
+  filter: blur(34px) saturate(0.68) contrast(1.12);
+  opacity: 0.34;
+  mix-blend-mode: multiply;
+}
+
+.site-hero__granite-layer--grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.62'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  opacity: 0.22;
+  filter: blur(2px) contrast(1.35);
+  mix-blend-mode: overlay;
+}
+
+.site-hero__granite-layer--vein {
+  background:
+    linear-gradient(108deg, transparent 28%, rgba(247, 243, 235, 0.42) 41%, transparent 52%),
+    linear-gradient(164deg, transparent 52%, rgba(210, 204, 194, 0.28) 60%, transparent 68%),
+    linear-gradient(72deg, transparent 62%, rgba(255, 252, 246, 0.18) 66%, transparent 74%);
+  filter: blur(16px);
+  opacity: 0.55;
+  mix-blend-mode: soft-light;
 }
 
 .site-hero__editorial-frame {
@@ -4322,6 +4395,11 @@ body.site-body > * {
     animation: none;
     opacity: 0.12;
   }
+
+  .site-hero__granite-layer--face {
+    filter: blur(28px) saturate(0.68) contrast(1.08);
+    opacity: 0.28;
+  }
 }
 
 .site-hero__concept--long {
@@ -4557,6 +4635,12 @@ body.site-body > * {
 
   .site-hero__editorial-frame {
     padding: 1.2rem 2.2rem 1.2rem 1.2rem;
+  }
+
+  .site-hero__granite-backdrop {
+    top: -1rem;
+    left: -0.75rem;
+    height: clamp(11rem, 52vw, 16rem);
   }
 
   .site-hero__editorial-headline {

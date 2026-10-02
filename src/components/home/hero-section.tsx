@@ -27,6 +27,11 @@ export function HeroSection() {
       </div>
       <div className="site-container">
         <div className="site-hero__editorial">
+          <div className="site-hero__granite-backdrop" aria-hidden="true">
+            <span className="site-hero__granite-layer site-hero__granite-layer--face" />
+            <span className="site-hero__granite-layer site-hero__granite-layer--grain" />
+            <span className="site-hero__granite-layer site-hero__granite-layer--vein" />
+          </div>
           <div className="site-hero__editorial-frame">
             <h1
               className="site-hero__editorial-headline"
