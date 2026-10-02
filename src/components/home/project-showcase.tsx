@@ -131,7 +131,10 @@ function SelectedProjectArticle({
             ? "/projects/lifecycle-architecture-studio"
             : null;
   const titleHref = overviewHref ?? project.liveUrl;
-  const titleLinkProps = overviewHref ? {} : { target: "_blank", rel: "noreferrer" };
+  const liveLinkProps = project.liveUrl.startsWith("http")
+    ? { target: "_blank" as const, rel: "noreferrer" as const }
+    : {};
+  const titleLinkProps = overviewHref ? {} : liveLinkProps;
 
   return (
     <article
@@ -182,13 +185,12 @@ function SelectedProjectArticle({
               Project overview →
             </Link>
           ) : null}
-          <Link
-            href={project.liveUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="selected-project__link"
-          >
-            {project.slug === "pulse-ops" ? "View full project ↗" : "View live project ↗"}
+          <Link href={project.liveUrl} {...liveLinkProps} className="selected-project__link">
+            {project.slug === "pulse-ops"
+              ? "View full project ↗"
+              : project.slug === "lifecycle-architecture-studio"
+                ? "Open studio app →"
+                : "View live project ↗"}
           </Link>
         </div>
       </div>

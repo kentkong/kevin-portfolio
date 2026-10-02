@@ -12,6 +12,7 @@ export type Project = {
   summary: string;
   overview: string;
   liveUrl: string;
+  externalDemoUrl?: string;
   previewImageDesktop: string;
   previewImageDesktopLight?: string;
   previewImagesDesktop?: string[];
@@ -80,7 +81,8 @@ export const projects: Project[] = [
     summary:
       "Lifecycle Architecture Studio helps users understand how platforms such as Salesforce, Snowflake, Hightouch, Braze, Segment, and OpenAI work together within modern enterprise ecosystems.",
     overview: "",
-    liveUrl: "https://kentkong.github.io/lifecycle-architecture-studio/",
+    liveUrl: "/projects/lifecycle-architecture-studio/app/modern-composable",
+    externalDemoUrl: "https://kentkong.github.io/lifecycle-architecture-studio/",
     previewImageDesktop: "/projects/lifecycle-architecture-studio/modern-composable.png",
     previewImagesDesktop: [
       "/projects/lifecycle-architecture-studio/modern-composable.png",

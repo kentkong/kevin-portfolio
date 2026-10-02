@@ -212,12 +212,18 @@ export function LifecycleArchitectureStudioCaseStudy() {
             inspect integrations and model a stack that reflects your organisation.
           </p>
           <div className="pulse-overview__actions">
-            <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="site-btn site-btn--ink">
-              Open live demo →
+            <Link href={project.liveUrl} className="site-btn site-btn--ink">
+              Open studio app →
             </Link>
-            <a href="#how-lifecycle-studio-works" className="site-btn site-btn--paper">
-              See how it works ↓
-            </a>
+            {project.externalDemoUrl ? (
+              <Link href={project.externalDemoUrl} target="_blank" rel="noreferrer" className="site-btn site-btn--paper">
+                GitHub demo ↗
+              </Link>
+            ) : (
+              <a href="#how-lifecycle-studio-works" className="site-btn site-btn--paper">
+                See how it works ↓
+              </a>
+            )}
           </div>
         </div>
         <figure className="pulse-overview__hero-visual lifecycle-studio-overview__hero-visual">
@@ -401,8 +407,8 @@ export function LifecycleArchitectureStudioCaseStudy() {
             <p>Interactive architecture exploration for CRM, data, activation, engagement, analytics and AI.</p>
           </div>
           <div className="pulse-overview__final-actions">
-            <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="site-btn site-btn--ink">
-              Launch studio →
+            <Link href={project.liveUrl} className="site-btn site-btn--ink">
+              Open studio app →
             </Link>
             <nav aria-label="Related portfolio projects">
               <Link href="/projects/pulse-ops">Pulse-Ops AI</Link>
