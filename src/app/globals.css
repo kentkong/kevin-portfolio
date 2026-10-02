@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @source "../components/case-study/revival-gallery-case-study.tsx";
 @source "../components/case-study/pulse-ops-overview-page.tsx";
+@source "../components/case-study/gen-pulse-case-study.tsx";
+@source "../components/case-study/sprintiq-case-study.tsx";
 @source "../components/home/explore-my-work.tsx";
 @source "../components/home/project-showcase.tsx";
 @source "../components/layout/site-nav.tsx";
@@ -3195,6 +3197,120 @@ body.site-body > * {
   .gen-pulse-overview .pulse-overview__signal-flow.gen-pulse-overview__signal-flow,
   .gen-pulse-overview .pulse-overview__team-grid.gen-pulse-overview__team-grid,
   .gen-pulse-overview .pulse-overview__team-grid.gen-pulse-overview__evolution-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SprintIQ overview uses the Pulse-Ops case-study system with project-specific art direction. */
+.sprintiq-overview {
+  --pulse-blue: #22d3ee;
+  --pulse-green: #20b9a6;
+  --pulse-purple: #8b5cf6;
+  --pulse-red: #d946ef;
+  --pulse-amber: #a78bfa;
+  --pulse-slate: #53616c;
+  --pulse-ai: #22d3ee;
+}
+
+.sprintiq-overview .pulse-overview__hero h1 span,
+.sprintiq-overview .pulse-overview__label {
+  color: #168f95;
+}
+
+.sprintiq-overview__hero-visual {
+  width: min(100%, 50rem);
+  justify-self: end;
+}
+
+.sprintiq-overview__hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(21, 19, 15, 0.18);
+  box-shadow: 0 2rem 4rem rgba(29, 27, 23, 0.16);
+}
+
+.sprintiq-overview__logo-block span {
+  color: var(--pulse-ink);
+  font-size: 1rem;
+  letter-spacing: -0.035em;
+}
+
+.sprintiq-overview .pulse-overview__stack-card--objective { border-top: 3px solid rgba(34, 211, 238, 0.86); }
+.sprintiq-overview .pulse-overview__stack-card--sprintiq { border-top: 3px solid rgba(139, 92, 246, 0.86); }
+.sprintiq-overview .pulse-overview__stack-card--blueprint { border-top: 3px solid rgba(32, 185, 166, 0.86); }
+.sprintiq-overview .pulse-overview__stack-card--copilot { border-top: 3px solid rgba(217, 70, 239, 0.86); }
+.sprintiq-overview .pulse-overview__stack-card--ready { border-top: 3px solid rgba(167, 139, 250, 0.9); }
+
+.sprintiq-overview .pulse-overview__stack-flow.sprintiq-overview__stack-flow {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.sprintiq-overview .sprintiq-overview__stack-flow .pulse-overview__stack-card {
+  min-height: 12.5rem;
+  padding: 0.78rem;
+}
+
+.sprintiq-overview .sprintiq-overview__stack-flow .pulse-overview__logo-block {
+  height: 2.6rem;
+  min-height: 2.6rem;
+}
+
+.sprintiq-overview .sprintiq-overview__stack-flow .pulse-overview__stack-card p {
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.sprintiq-overview .sprintiq-overview__stack-flow .pulse-overview__stack-card ul {
+  gap: 0.22rem;
+  margin-top: 0.65rem;
+  padding-left: 0.85rem;
+  font-size: 0.68rem;
+  line-height: 1.3;
+}
+
+.sprintiq-overview .sprintiq-overview__stack-flow .pulse-overview__connector {
+  right: -0.82rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  font-size: 0.9rem;
+}
+
+.sprintiq-overview .pulse-overview__view-grid.sprintiq-overview__view-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sprintiq-overview__view-grid .pulse-overview__view-card figure {
+  height: clamp(15rem, 24vw, 21rem);
+  background: #07111c;
+}
+
+.sprintiq-overview__view-grid .pulse-overview__view-card img {
+  object-position: top center;
+}
+
+.sprintiq-overview .pulse-overview__signal-flow.sprintiq-overview__signal-flow {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.sprintiq-overview .pulse-overview__team-grid.sprintiq-overview__team-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1080px) {
+  .sprintiq-overview .pulse-overview__stack-flow.sprintiq-overview__stack-flow,
+  .sprintiq-overview .pulse-overview__signal-flow.sprintiq-overview__signal-flow,
+  .sprintiq-overview .pulse-overview__team-grid.sprintiq-overview__team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .sprintiq-overview .pulse-overview__stack-flow.sprintiq-overview__stack-flow,
+  .sprintiq-overview .pulse-overview__view-grid.sprintiq-overview__view-grid,
+  .sprintiq-overview .pulse-overview__signal-flow.sprintiq-overview__signal-flow,
+  .sprintiq-overview .pulse-overview__team-grid.sprintiq-overview__team-grid {
     grid-template-columns: 1fr;
   }
 }
