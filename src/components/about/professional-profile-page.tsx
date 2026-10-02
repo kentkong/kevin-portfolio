@@ -8,7 +8,6 @@ export function ProfessionalProfilePage() {
     <main className="about-profile" aria-labelledby="about-profile-title">
       <section className="about-profile__hero">
         <div className="site-container about-profile__hero-container">
-          <SectionLabel label="About" />
           <div className="site-hero__editorial about-profile__editorial">
             <div className="about-profile__hero-frame">
               <div className="about-profile__hero-grid">
