@@ -5,7 +5,6 @@ import { PulseOpsCommandWireframe } from "@/components/case-study/pulse-ops-comm
 import { RevivalGalleryCaseStudy } from "@/components/case-study/revival-gallery-case-study";
 import { SprintIQCaseStudy } from "@/components/case-study/sprintiq-case-study";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteNav } from "@/components/layout/site-nav";
 import type { Project } from "@/lib/projects";
 import { getProject } from "@/lib/projects";
 
@@ -20,7 +19,6 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
   if (slug === "gen-pulse") {
     return (
       <>
-        <SiteNav />
         <main>
           <GenPulseCaseStudy />
         </main>
@@ -32,7 +30,6 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
   if (slug === "revival") {
     return (
       <>
-        <SiteNav />
         <main>
           <RevivalGalleryCaseStudy />
         </main>
@@ -44,7 +41,6 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
   if (slug === "sprintiq") {
     return (
       <>
-        <SiteNav />
         <main>
           <SprintIQCaseStudy />
         </main>
@@ -59,7 +55,6 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
 
   return (
     <>
-      <SiteNav />
       <main>
         <CaseStudyHero project={project} />
         <CaseStudyBody project={project} />

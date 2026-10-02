@@ -1,12 +1,10 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteNav } from "@/components/layout/site-nav";
 import { site } from "@/lib/site";
 
 export default function ContactPage() {
   return (
     <>
-      <SiteNav />
       <main className="site-page">
         <div className="site-container site-page__inner">
           <p className="site-label">Contact</p>
