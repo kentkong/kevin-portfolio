@@ -1660,7 +1660,7 @@ body.site-body > * {
   width: 100%;
   color: var(--about-accent);
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: 0.68rem;
+  font-size: clamp(0.82rem, 1.05vw, 0.96rem);
   font-weight: 700;
   letter-spacing: 0.18em;
   line-height: 1;
