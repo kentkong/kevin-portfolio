@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import "./lifecycle-studio-app.css";
 
 export const metadata: Metadata = {
   title: "Lifecycle Architecture Studio — App",

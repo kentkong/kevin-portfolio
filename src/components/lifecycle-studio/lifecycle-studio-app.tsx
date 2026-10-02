@@ -75,16 +75,18 @@ export function LifecycleStudioApp({ patternSlug }: Props) {
       <main className="las-app__main">
         <section className="las-app__canvas" aria-label={pattern.shortName}>
           <div className="las-app__canvas-frame">
-            <Image
-              key={pattern.slug}
-              src={assetPath(pattern.image)}
-              alt={`${pattern.shortName} diagram`}
-              width={1600}
-              height={1000}
-              priority
-              unoptimized
-              className="las-app__canvas-image"
-            />
+            <div className="las-app__canvas-viewport">
+              <Image
+                key={pattern.slug}
+                src={assetPath(pattern.image)}
+                alt={`${pattern.shortName} diagram`}
+                fill
+                priority
+                unoptimized
+                sizes="(max-width: 960px) 100vw, min(88rem, 70vw)"
+                className="las-app__canvas-image"
+              />
+            </div>
           </div>
         </section>
 
