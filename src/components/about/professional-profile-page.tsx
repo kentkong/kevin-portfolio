@@ -84,7 +84,7 @@ export function ProfessionalProfilePage() {
         </section>
 
         <section className="about-profile__section">
-          <SectionLabel label="Tools &amp; Platforms" />
+          <SectionLabel label="Tools & Platforms" />
           <div className="about-profile__tools">
             {toolRows.map((row) => (
               <div className="about-profile__tool-row" key={row.category}>
