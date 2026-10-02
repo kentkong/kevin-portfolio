@@ -1,0 +1,17 @@
+{
+  "name": "Kevin portfolio",
+  "install": "npm ci",
+  "terminals": [
+    {
+      "name": "portfolio-dev",
+      "command": "npm run dev",
+      "description": "Next.js portfolio dev server on http://127.0.0.1:3002"
+    }
+  ],
+  "ports": [
+    {
+      "port": 3002,
+      "name": "Portfolio"
+    }
+  ]
+}
