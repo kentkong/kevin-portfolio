@@ -3396,26 +3396,36 @@ body.site-body > * {
   min-width: 0;
 }
 
-.lifecycle-studio-overview .pulse-overview__hero h1,
-.lifecycle-studio-overview__title {
-  white-space: normal;
-  font-size: clamp(2.45rem, 4.2vw, 4.25rem);
-  letter-spacing: -0.07em;
-  line-height: 0.92;
-}
-
 .lifecycle-studio-overview__title-line {
   display: block;
-  color: var(--pulse-ink);
+  color: #161814;
 }
 
 .lifecycle-studio-overview__title-accent {
   display: block;
-  color: var(--pulse-ai);
+  color: #161814;
 }
 
-.lifecycle-studio-overview .pulse-overview__label {
-  color: #6f665b;
+.lifecycle-studio-overview .pulse-overview__hero-copy .site-label.pulse-overview__label,
+.lifecycle-studio-overview .pulse-overview__hero-copy .pulse-overview__label {
+  margin: 0 0 0.85rem;
+  font-size: clamp(0.96rem, 1.18vw, 1.18rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.24;
+  text-transform: uppercase;
+  color: #1f1d1a;
+  opacity: 1;
+}
+
+.lifecycle-studio-overview .pulse-overview__hero h1,
+.lifecycle-studio-overview__title {
+  white-space: normal;
+  font-size: clamp(2.45rem, 4.2vw, 4.25rem);
+  font-weight: var(--display-weight);
+  letter-spacing: -0.065em;
+  line-height: 0.88;
+  color: #161814;
 }
 
 .lifecycle-studio-overview__hero-visual {
