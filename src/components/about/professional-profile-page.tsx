@@ -50,7 +50,7 @@ export function ProfessionalProfilePage() {
       <div className="site-container about-profile__sheet">
         <div className="about-profile__body">
         <section className="about-profile__section">
-          <SectionLabel number="02" label="Core Expertise" />
+          <SectionLabel label="Core Expertise" />
           <div className="about-profile__expertise">
             {expertiseColumns.map((column) => (
               <ul key={column.join("-")}>
@@ -63,7 +63,7 @@ export function ProfessionalProfilePage() {
         </section>
 
         <section className="about-profile__section">
-          <SectionLabel number="03" label="Selected Experience" />
+          <SectionLabel label="Selected Experience" />
           <div className="about-profile__timeline">
             {experience.map((role) => (
               <article className="about-profile__experience-item" key={role.company}>
@@ -84,7 +84,7 @@ export function ProfessionalProfilePage() {
         </section>
 
         <section className="about-profile__section">
-          <SectionLabel number="04" label="Tools & Platforms" />
+          <SectionLabel label="Tools &amp; Platforms" />
           <div className="about-profile__tools">
             {toolRows.map((row) => (
               <div className="about-profile__tool-row" key={row.category}>
@@ -100,7 +100,7 @@ export function ProfessionalProfilePage() {
         </section>
 
         <section className="about-profile__section about-profile__cta">
-          <SectionLabel number="05" label="Let's Talk" />
+          <SectionLabel label="Let's Talk" />
           <div className="about-profile__cta-grid">
             <div>
               <h2>Interested in working together?</h2>

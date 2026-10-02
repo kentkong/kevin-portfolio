@@ -1766,8 +1766,8 @@ body.site-body > * {
 }
 
 .about-profile__expertise li {
-  font-size: clamp(1rem, 1.15vw, 1.12rem);
-  line-height: 1.32;
+  font-size: clamp(0.86rem, 0.95vw, 0.94rem);
+  line-height: 1.38;
 }
 
 .about-profile__timeline {
@@ -1912,13 +1912,11 @@ body.site-body > * {
 
 .about-profile__tool-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: 2rem;
   align-items: center;
-  justify-items: center;
   padding-block: clamp(2rem, 3.5vw, 3rem);
   border-top: 1px solid var(--about-rule);
-  text-align: center;
 }
 
 .about-profile__tool-row:first-child {
@@ -1927,7 +1925,7 @@ body.site-body > * {
 }
 
 .about-profile__tool-row h2 {
-  max-width: none;
+  max-width: 9.5rem;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -2056,6 +2054,13 @@ body.site-body > * {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 2rem;
   align-items: center;
+}
+
+.about-profile__cta h2 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 0.95;
 }
 
 .about-profile__cta p {
