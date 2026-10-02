@@ -4804,8 +4804,12 @@ body.site-body > * {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  border: 1px solid var(--home-line-secondary, rgba(14, 14, 12, 0.78));
+  border: 1px solid var(--home-line-tertiary, rgba(31, 29, 26, 0.1));
   background: var(--selected-project-bg, transparent);
+}
+
+.home-page .selected-project::before {
+  border-color: transparent;
 }
 
 .selected-project--gen-pulse {
@@ -5085,9 +5089,31 @@ body.site-body > * {
   cursor: default;
 }
 
+/* Showcase screenshots — same stroke as hero discipline grid / editorial frame */
+.home-page .selected-project__visual-link,
+.home-page .selected-project__visual-frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-page .selected-project__visual-link::before,
+.home-page .selected-project__visual-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  border: 1px solid rgba(14, 14, 12, 0.88);
+  border: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
+}
+
+.home-page .selected-revival-frame,
+.home-page .selected-browser {
+  border: 0;
+}
+
 .home-page .selected-project__visual-link:has(.device-laptop),
 .home-page .selected-project__visual-frame:has(.device-laptop) {
-  border: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
   padding: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
@@ -5104,7 +5130,7 @@ body.site-body > * {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 10;
-  border: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
+  border: 0;
   background: #ebe3d6;
   box-shadow: 0 26px 70px rgba(31, 29, 26, 0.16);
 }
@@ -5210,7 +5236,7 @@ body.site-body > * {
 
 .selected-browser {
   overflow: hidden;
-  border: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
+  border: 0;
   background: #171717;
 }
 
