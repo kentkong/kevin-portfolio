@@ -3822,6 +3822,7 @@ body.site-body > * {
 
 .home-page__main,
 .home-page > .site-nav,
+.home-page > .site-slate-band,
 .home-page > .site-footer {
   position: relative;
   z-index: 1;
@@ -6914,14 +6915,8 @@ body.site-body > * {
   color: var(--accent-soft);
 }
 
-/* Footer */
-.site-footer {
-  margin-top: 4rem;
-  padding: 0;
-  border: none;
-}
-
-.site-footer__slate-band {
+/* Slate stone band (footer + home top accent from legacy portfolio) */
+.site-slate-band {
   width: 100%;
   height: clamp(4rem, 7vw, 5.5rem);
   border: 4px solid #000000;
@@ -6935,12 +6930,23 @@ body.site-body > * {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
+.site-slate-band--home-top {
+  margin: 0;
+}
+
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-  .site-footer__slate-band {
+  .site-slate-band {
     background-image:
       linear-gradient(180deg, rgba(14, 17, 20, 0.35) 0%, rgba(14, 17, 20, 0.92) 100%),
       var(--texture-slate-hd);
   }
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 4rem;
+  padding: 0;
+  border: none;
 }
 
 /* Inner pages */
