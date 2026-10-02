@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteNav } from "@/components/layout/site-nav";
 import { thinkingPosts } from "@/lib/thinking";
 
 type PageProps = {
@@ -18,6 +19,7 @@ export default async function ThinkingArticlePage({ params }: PageProps) {
 
   return (
     <>
+      <SiteNav />
       <main className="site-page">
         <div className="site-container site-page__inner">
           <Link href="/thinking" className="site-back-link">

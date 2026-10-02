@@ -1,5 +1,6 @@
 import { ResumeRequestForm } from "@/components/resume/resume-request-form";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteNav } from "@/components/layout/site-nav";
 import { isResumeAvailable } from "@/lib/resume-access";
 import { isStaticResumeHost } from "@/lib/resume-submit";
 
@@ -8,6 +9,7 @@ export default async function ResumePage() {
 
   return (
     <>
+      <SiteNav />
       <main className="site-page site-page--resume">
         <div className="site-container site-page__inner">
           <div className="site-panel resume-page__panel">

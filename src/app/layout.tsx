@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { DM_Sans, Inter, Space_Grotesk } from "next/font/google";
-import { SiteChrome } from "@/components/layout/site-chrome";
 import { site } from "@/lib/site";
 import { basePath } from "@/lib/site-config";
 import "./globals.css";
@@ -68,7 +67,7 @@ export default function RootLayout({
           ["--texture-slate-hd" as string]: `url('${basePath}/textures/slate-stone.jpg')`,
         }}
       >
-        <SiteChrome>{children}</SiteChrome>
+        {children}
       </body>
     </html>
   );
