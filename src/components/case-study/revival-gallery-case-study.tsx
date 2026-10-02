@@ -127,8 +127,8 @@ export function RevivalGalleryCaseStudy() {
             >
               Independent product concept / high-fidelity prototype
             </span>
-            <a href="#revival-masters" style={{ color: "rgba(29, 27, 23, 0.52)" }}>
-              View Revival case study ↗
+            <a href={assetPath("/projects/revival/case-study-full-page.png")} target="_blank" rel="noreferrer" style={{ color: "rgba(29, 27, 23, 0.52)" }}>
+              Open full case study page (PNG) ↗
             </a>
           </div>
         </header>
