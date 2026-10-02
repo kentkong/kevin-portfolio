@@ -23,50 +23,149 @@ const masterScreens = [
 
 export function RevivalGalleryCaseStudy() {
   return (
-    <article className="revival-editorial revival-editorial--home-skin">
-      <section className="revival-editorial--home-skin__inner" aria-label="Approved Revival master designs">
-        <header className="revival-editorial--home-skin__header">
-          <div className="revival-editorial--home-skin__meta">
+    <article
+      className="revival-editorial"
+      style={{
+        background: "var(--home-paper)",
+        color: "#1d1b17",
+        minHeight: "100vh",
+        padding: "clamp(5rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem)",
+      }}
+    >
+      <section
+        aria-label="Approved Revival master designs"
+        style={{
+          width: "min(100% - 3rem, 93.75rem)",
+          marginInline: "auto",
+        }}
+      >
+        <header
+          style={{
+            marginBottom: "clamp(2rem, 4vw, 3.25rem)",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: "1rem",
+              paddingBottom: "1.25rem",
+              borderBottom: "1px solid rgba(29, 27, 23, 0.65)",
+              fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+              fontSize: "clamp(0.7rem, 1vw, 1rem)",
+              fontWeight: 600,
+              letterSpacing: "0.16em",
+              textTransform: "uppercase",
+              color: "rgba(29, 27, 23, 0.72)",
+            }}
+          >
             <span>01</span>
-            <span>UX &amp; Product Design</span>
+            <span>UX &amp; PRODUCT DESIGN</span>
           </div>
 
-          <h1>Revival</h1>
-          <p className="revival-editorial--home-skin__lede">
+          <h1
+            style={{
+              margin: "clamp(2.75rem, 6vw, 5rem) 0 1.3rem",
+              fontFamily: "var(--font-display), system-ui, sans-serif",
+              fontSize: "clamp(5rem, 9vw, 8.5rem)",
+              fontWeight: 500,
+              letterSpacing: "-0.08em",
+              lineHeight: 0.88,
+              textTransform: "none",
+            }}
+          >
+            Revival
+          </h1>
+          <p
+            style={{
+              maxWidth: "64rem",
+              margin: "0",
+              fontFamily: "var(--font-body), Inter, system-ui, sans-serif",
+              fontSize: "clamp(1.2rem, 2vw, 2.15rem)",
+              fontWeight: 500,
+              letterSpacing: "-0.045em",
+              lineHeight: 1.18,
+            }}
+          >
             Is a UX/Product Design concept for planning a custom Triumph Desert Sled. The concept
-            explores a visual configurator where riders can start with their original motorcycle,
-            experiment with components and styling, and see those decisions come together as a complete
-            build concept that can be shared with a motorcycle workshop.
+            explores a visual configurator where riders can start with their original
+            motorcycle, experiment with components and styling, and see those decisions come
+            together as a complete build concept that can be shared with a motorcycle workshop.
           </p>
-          <p className="revival-editorial--home-skin__body">
-            The goal was simple: make it easier to design the bike you want before spending money or
-            making irreversible changes.
+          <p
+            style={{
+              maxWidth: "46rem",
+              margin: "0.85rem 0 0",
+              fontSize: "clamp(0.98rem, 1.2vw, 1.24rem)",
+              lineHeight: 1.62,
+              color: "rgba(29, 27, 23, 0.62)",
+            }}
+          >
+            The goal was simple: make it easier to design the bike you want before spending money
+            or making irreversible changes.
           </p>
-          <div className="revival-editorial--home-skin__actions">
-            <span className="revival-editorial--home-skin__tag">
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "0.75rem",
+              alignItems: "center",
+              marginTop: "clamp(1.4rem, 2vw, 2rem)",
+              fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
+              fontSize: "0.72rem",
+              fontWeight: 600,
+              letterSpacing: "0.13em",
+              textTransform: "uppercase",
+            }}
+          >
+            <span
+              style={{
+                padding: "0.72rem 0.9rem",
+                border: "1px solid rgba(29, 27, 23, 0.45)",
+                color: "rgba(29, 27, 23, 0.66)",
+              }}
+            >
               Independent product concept / high-fidelity prototype
             </span>
             <a
               href={assetPath("/projects/revival/case-study-full-page.png")}
               target="_blank"
               rel="noreferrer"
-              className="revival-editorial--home-skin__link"
+              style={{ color: "rgba(29, 27, 23, 0.52)" }}
             >
               Open full case study page (PNG) ↗
             </a>
           </div>
         </header>
 
-        <div id="revival-masters" className="revival-editorial__screen-stack">
+        <div
+          id="revival-masters"
+          className="revival-editorial__screen-stack"
+          style={{
+            width: "100%",
+          }}
+        >
           {masterScreens.map((screen) => (
             <figure className="revival-editorial__screen" key={screen.image}>
-              <figcaption>
+              <figcaption
+                style={{
+                  color: "#e94f1d",
+                }}
+              >
                 <span>{screen.label}</span>
                 <Link href={assetPath(screen.image)} target="_blank" rel="noreferrer">
-                  Open full-size PNG ↗
+                  OPEN FULL-SIZE PNG ↗
                 </Link>
               </figcaption>
-              <Link href={assetPath(screen.image)} target="_blank" rel="noreferrer">
+              <Link
+                href={assetPath(screen.image)}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  background: "transparent",
+                  borderColor: "rgba(29, 27, 23, 0.18)",
+                }}
+              >
                 <Image
                   src={assetPath(screen.image)}
                   alt={`Approved Revival master design for ${screen.label}`}

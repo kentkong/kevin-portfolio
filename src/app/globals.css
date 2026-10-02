@@ -1559,12 +1559,6 @@ body.site-body > * {
   background-color: var(--home-paper);
 }
 
-.home-page > .revival-editorial--home-skin {
-  position: relative;
-  z-index: 1;
-  isolation: isolate;
-}
-
 .home-page::before,
 .about-profile::before,
 .pulse-overview::before {
@@ -1586,8 +1580,7 @@ body.site-body > * {
 }
 
 .about-profile > *,
-.pulse-overview > *,
-.home-page > .revival-editorial--home-skin {
+.pulse-overview > * {
   position: relative;
   z-index: 1;
 }
@@ -13203,136 +13196,6 @@ body.site-body.pulse-ops-product-body {
 
 .revival-editorial p {
   margin: 0;
-}
-
-/* Revival gallery on home paper ( /projects/revival ) */
-.revival-editorial--home-skin {
-  overflow: visible;
-  min-height: 100vh;
-  padding: clamp(5rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
-  background: transparent;
-  color: #1f1d1a;
-}
-
-.revival-editorial--home-skin__inner {
-  width: min(100% - 3rem, var(--home-content-boundary));
-  margin-inline: auto;
-}
-
-.revival-editorial--home-skin__header {
-  margin-bottom: clamp(2rem, 4vw, 3.25rem);
-}
-
-.revival-editorial--home-skin__meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid rgba(31, 29, 26, 0.22);
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: var(--home-label-size);
-  font-weight: 700;
-  letter-spacing: var(--home-label-tracking);
-  line-height: 1.35;
-  text-transform: uppercase;
-  color: #1f1d1a;
-}
-
-.revival-editorial--home-skin h1 {
-  margin: clamp(2rem, 4vw, 3.25rem) 0 1.1rem;
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: var(--home-project-name-size);
-  font-weight: var(--display-weight);
-  letter-spacing: -0.065em;
-  line-height: 0.88;
-  text-transform: none;
-  color: #161814;
-}
-
-.revival-editorial--home-skin__lede {
-  max-width: 42rem;
-  font-family: var(--font-body), system-ui, sans-serif;
-  font-size: clamp(1rem, 1.35vw, 1.2rem);
-  font-weight: 500;
-  line-height: 1.55;
-  color: #3f3b35;
-}
-
-.revival-editorial--home-skin__body {
-  max-width: 36rem;
-  margin-top: 0.85rem;
-  font-family: var(--font-body), system-ui, sans-serif;
-  font-size: 0.92rem;
-  font-weight: 500;
-  line-height: 1.55;
-  color: #6f675d;
-}
-
-.revival-editorial--home-skin__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
-  margin-top: clamp(1.4rem, 2vw, 2rem);
-}
-
-.revival-editorial--home-skin__tag {
-  padding: 0.72rem 0.9rem;
-  border: 1px solid rgba(31, 29, 26, 0.22);
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: var(--home-label-size);
-  font-weight: 700;
-  letter-spacing: var(--home-label-tracking);
-  text-transform: uppercase;
-  color: #32342f;
-}
-
-.revival-editorial--home-skin__link {
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: var(--home-label-size);
-  font-weight: 700;
-  letter-spacing: var(--home-label-tracking);
-  text-transform: uppercase;
-  color: #6f675d;
-  text-decoration: none;
-}
-
-.revival-editorial--home-skin__link:hover {
-  color: #161814;
-}
-
-.revival-editorial--home-skin .revival-editorial__screen-stack {
-  width: 100%;
-}
-
-.revival-editorial--home-skin .revival-editorial__screen figcaption {
-  color: #3f3b35;
-}
-
-.revival-editorial--home-skin .revival-editorial__screen figcaption span {
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: var(--home-label-size);
-  font-weight: 700;
-  letter-spacing: var(--home-label-tracking);
-  text-transform: uppercase;
-  color: #bf5c23;
-}
-
-.revival-editorial--home-skin .revival-editorial__screen figcaption a {
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: var(--home-label-size);
-  font-weight: 700;
-  letter-spacing: var(--home-label-tracking);
-  text-transform: uppercase;
-  color: #6f675d;
-}
-
-.revival-editorial--home-skin .revival-editorial__screen figcaption a:hover {
-  color: #161814;
-}
-
-.revival-editorial--home-skin .revival-editorial__screen > a {
-  border-color: rgba(31, 29, 26, 0.14);
 }
 
 .revival-editorial__hero,
