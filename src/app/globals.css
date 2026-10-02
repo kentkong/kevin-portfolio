@@ -1600,7 +1600,7 @@ body.site-body > * {
 
 .about-profile__body {
   width: min(100%, var(--home-content-boundary));
-  margin-inline: auto;
+  max-width: var(--home-content-boundary);
 }
 
 .about-profile__section {
@@ -1653,11 +1653,10 @@ body.site-body > * {
 }
 
 .about-profile__section-label {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem 0.9rem;
+  gap: 0.9rem;
   width: 100%;
   color: var(--about-accent);
   font-family: var(--font-display), system-ui, sans-serif;
@@ -1669,14 +1668,13 @@ body.site-body > * {
 }
 
 .about-profile__section-label--solo {
-  justify-content: center;
+  grid-template-columns: auto 1fr;
 }
 
 .about-profile__section-label i {
   display: block;
-  flex: 1 1 4rem;
+  width: 100%;
   min-width: 2.2rem;
-  max-width: 8rem;
   height: 1px;
   background: var(--about-rule);
 }
@@ -1751,19 +1749,15 @@ body.site-body > * {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   width: 100%;
-  justify-items: center;
 }
 
 .about-profile__expertise ul {
   display: grid;
   gap: 0.72rem;
-  width: 100%;
-  max-width: 18rem;
   margin: 0;
-  padding: 0 1.25rem;
+  padding: 0 2rem;
   list-style: none;
   border-left: 1px solid var(--about-rule);
-  text-align: center;
 }
 
 .about-profile__expertise ul:first-child {
@@ -1945,9 +1939,6 @@ body.site-body > * {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
-  width: 100%;
-  max-width: 36rem;
-  margin-inline: auto;
 }
 
 .about-profile__tool-logos > * {
@@ -2062,22 +2053,14 @@ body.site-body > * {
 
 .about-profile__cta-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: clamp(1.5rem, 3vw, 2rem);
-  justify-items: center;
-  text-align: center;
-}
-
-.about-profile__cta h2 {
-  font-size: clamp(2rem, 3.2vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.065em;
-  line-height: 0.95;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
 }
 
 .about-profile__cta p {
   max-width: 48rem;
-  margin: 0.8rem auto 0;
+  margin: 0.8rem 0 0;
   color: var(--about-muted);
   font-size: 1rem;
   line-height: 1.4;
