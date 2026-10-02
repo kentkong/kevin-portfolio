@@ -196,8 +196,9 @@ export function LifecycleArchitectureStudioCaseStudy() {
       <section className="site-container pulse-overview__hero pulse-overview__section">
         <div className="pulse-overview__hero-copy">
           <SectionLabel label="CRM / Customer Experience / Journey Architecture" />
-          <h1 id="lifecycle-studio-title">
-            Lifecycle Architecture <span>Studio</span>
+          <h1 id="lifecycle-studio-title" className="lifecycle-studio-overview__title">
+            <span className="lifecycle-studio-overview__title-line">Lifecycle Architecture</span>
+            <span className="lifecycle-studio-overview__title-accent">Studio</span>
           </h1>
           <p className="pulse-overview__headline">
             An interactive explorer for modern CRM, data, activation, engagement, analytics and AI ecosystems.
