@@ -63,8 +63,10 @@ export function ProjectShowcase() {
     <section id="projects" className="selected-work" aria-labelledby="selected-work-title">
       <div className="site-container selected-work__container">
         <header className="selected-work__intro">
+          <p className="selected-work__eyebrow">Selected work</p>
           <h2 id="selected-work-title" className="selected-work__title">
-            Applications &amp; Case Studies
+            <span className="selected-work__title-line">Applications</span>
+            <span className="selected-work__title-line">&amp; Case Studies</span>
           </h2>
         </header>
 
