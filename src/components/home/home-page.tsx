@@ -5,13 +5,13 @@ import { SiteNav } from "@/components/layout/site-nav";
 
 export function HomePage() {
   return (
-    <>
+    <div className="home-page">
       <SiteNav />
-      <main className="home-page">
+      <main className="home-page__main">
         <HeroSection />
         <ProjectShowcase />
       </main>
       <SiteFooter />
-    </>
+    </div>
   );
 }
