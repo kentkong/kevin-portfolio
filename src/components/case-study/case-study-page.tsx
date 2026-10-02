@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GenPulseCaseStudy } from "@/components/case-study/gen-pulse-case-study";
 import { PulseOpsCommandWireframe } from "@/components/case-study/pulse-ops-command-wireframe";
-import { RevivalGalleryCaseStudy } from "@/components/case-study/revival-gallery-case-study";
+import { RevivalCaseStudy } from "@/components/case-study/revival-case-study";
 import { LifecycleArchitectureStudioCaseStudy } from "@/components/case-study/lifecycle-architecture-studio-case-study";
 import { SprintIQCaseStudy } from "@/components/case-study/sprintiq-case-study";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -35,7 +35,7 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
       <>
         <SiteNav />
         <main>
-          <RevivalGalleryCaseStudy />
+          <RevivalCaseStudy />
         </main>
         <SiteFooter />
       </>
