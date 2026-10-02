@@ -291,20 +291,38 @@ function LifecycleVisual({ project }: { project: Project }) {
 }
 
 function PulseOpsVisual({ project }: { project: Project }) {
+  const mobileSrc =
+    project.previewImageMobile ?? "/projects/pulse-ops/screen-signals-full.png";
+
   return (
     <div className="selected-visual selected-visual--pulse-ops">
-      <LaptopFrame
-        slides={project.previewImagesDesktop}
-        rotationIntervalMs={project.previewRotationIntervalMs}
-        alt="Pulse-Ops AI operational intelligence screens"
-        label="Desktop"
-        fallbackTitle={project.name}
-        fallbackCopy={project.tagline}
-        accentClass={project.accent}
-        priority
-        imageFit="cover"
-        screenBg="#f4f4f4"
-      />
+      <div className="selected-visual__laptops">
+        <LaptopFrame
+          slides={project.previewImagesDesktop}
+          rotationIntervalMs={project.previewRotationIntervalMs}
+          alt="Pulse-Ops AI operational intelligence screens"
+          label="Desktop"
+          fallbackTitle={project.name}
+          fallbackCopy={project.tagline}
+          accentClass={project.accent}
+          priority
+          imageFit="cover"
+          screenBg="#f4f4f4"
+        />
+      </div>
+      <div className="selected-visual__phone">
+        <PhoneFrame
+          src={mobileSrc}
+          alt="Pulse-Ops AI signals and lifecycle intelligence"
+          label="Signals"
+          fallbackTitle={project.name}
+          fallbackCopy="AI-driven lifecycle signals"
+          accentClass={project.accent}
+          imageFit="cover"
+          screenBg="#f4f4f4"
+          aspectRatio={project.previewMobileAspectRatio ?? "393 / 852"}
+        />
+      </div>
     </div>
   );
 }

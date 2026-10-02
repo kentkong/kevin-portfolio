@@ -155,6 +155,7 @@ export const projects: Project[] = [
     liveUrl: "/projects/pulse-ops/command",
     previewImageDesktop: "/projects/pulse-ops/operations.png",
     previewImagesDesktop: ["/projects/pulse-ops/operations.png"],
+    previewImageMobile: "/projects/pulse-ops/screen-signals-full.png",
     previewRotationIntervalMs: 3200,
     accent: "from-yellow-500/15 via-zinc-500/10 to-transparent",
     themeColor: "#eab308",

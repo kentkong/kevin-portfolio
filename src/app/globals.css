@@ -5402,8 +5402,15 @@ body.site-body > * {
 }
 
 .selected-visual--pulse-ops {
+  --gen-pulse-phone-width: clamp(5.5rem, 8.4vw, 7.8rem);
   min-height: clamp(22rem, 36vw, 32rem);
   padding-block: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.selected-project--pulse-ops:has(.selected-project__details-toggle[open]) .selected-visual__phone {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-0.5rem);
 }
 
 .selected-visual--sprintiq {
@@ -5448,7 +5455,8 @@ body.site-body > * {
     padding-block: 4rem;
   }
 
-  .selected-visual--gen-pulse {
+  .selected-visual--gen-pulse,
+  .selected-visual--pulse-ops {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
