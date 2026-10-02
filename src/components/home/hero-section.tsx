@@ -19,11 +19,12 @@ const disciplines = [
 export function HeroSection() {
   return (
     <section className="site-hero">
-      <div className="site-hero__ambient" aria-hidden="true">
-        <span className="site-hero__ambient-field site-hero__ambient-field--lavender" />
-        <span className="site-hero__ambient-field site-hero__ambient-field--cyan" />
-        <span className="site-hero__ambient-field site-hero__ambient-field--blush" />
-        <span className="site-hero__ambient-field site-hero__ambient-field--warm" />
+      <div className="site-hero__mesh" aria-hidden="true">
+        <span className="site-hero__mesh-blob site-hero__mesh-blob--amber" />
+        <span className="site-hero__mesh-blob site-hero__mesh-blob--rose" />
+        <span className="site-hero__mesh-blob site-hero__mesh-blob--indigo" />
+        <span className="site-hero__mesh-blob site-hero__mesh-blob--teal" />
+        <span className="site-hero__mesh-grain" />
       </div>
       <div className="site-container">
         <div className="site-hero__editorial">

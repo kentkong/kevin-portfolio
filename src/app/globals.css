@@ -3841,12 +3841,90 @@ body.site-body > * {
   max-width: 88rem;
 }
 
+.site-hero__mesh {
+  position: absolute;
+  inset: -12% -8% -28% -15%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.site-hero__mesh-blob {
+  position: absolute;
+  display: block;
+  border-radius: 9999px;
+  filter: blur(6.5rem);
+  mix-blend-mode: multiply;
+  will-change: transform;
+  animation: site-hero-mesh-drift 48s ease-in-out infinite alternate;
+}
+
+.site-hero__mesh-blob--amber {
+  top: -6%;
+  right: -4%;
+  width: min(44rem, 62vw);
+  aspect-ratio: 1.15;
+  background: radial-gradient(circle at 42% 42%, rgba(255, 154, 64, 0.82), transparent 68%);
+  opacity: 0.52;
+  animation-delay: 0s;
+}
+
+.site-hero__mesh-blob--rose {
+  top: 18%;
+  right: 16%;
+  width: min(34rem, 48vw);
+  aspect-ratio: 1.05;
+  background: radial-gradient(circle at 50% 50%, rgba(206, 88, 132, 0.68), transparent 66%);
+  opacity: 0.46;
+  animation-delay: -12s;
+}
+
+.site-hero__mesh-blob--indigo {
+  right: -10%;
+  bottom: 0;
+  width: min(46rem, 58vw);
+  aspect-ratio: 1.2;
+  background: radial-gradient(circle at 40% 40%, rgba(72, 86, 196, 0.62), transparent 70%);
+  opacity: 0.44;
+  animation-delay: -24s;
+}
+
+.site-hero__mesh-blob--teal {
+  top: 6%;
+  right: 34%;
+  width: min(20rem, 28vw);
+  aspect-ratio: 1;
+  background: radial-gradient(circle at 50% 50%, rgba(94, 196, 196, 0.55), transparent 72%);
+  opacity: 0.34;
+  animation-delay: -8s;
+}
+
+.site-hero__mesh-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+@keyframes site-hero-mesh-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate3d(-1.5%, 2.5%, 0) scale(1.04);
+  }
+}
+
 .site-hero__ambient {
   position: absolute;
   inset: -22% -18%;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  display: none;
 }
 
 .site-hero__ambient-field {
@@ -3943,41 +4021,7 @@ body.site-body > * {
   width: 100%;
   padding: clamp(1.5rem, 2.8vw, 2.6rem) clamp(1.35rem, 3.2vw, 3rem) clamp(1.65rem, 3vw, 2.75rem);
   border: 0;
-  overflow: hidden;
-  background: linear-gradient(
-    165deg,
-    rgba(247, 243, 235, 0.52) 0%,
-    rgba(247, 243, 235, 0.28) 48%,
-    rgba(247, 243, 235, 0.18) 100%
-  );
-}
-
-.site-hero__editorial-frame::after {
-  content: "";
-  position: absolute;
-  inset: -18% -10% -12% -8%;
-  z-index: 0;
-  pointer-events: none;
-  transform: rotate(-3deg) scale(1.04);
-  background:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E")
-      0 0 / 200px 200px,
-    linear-gradient(108deg, transparent 30%, rgba(247, 243, 235, 0.35) 42%, transparent 54%),
-    radial-gradient(ellipse 125% 90% at 12% 40%, rgba(62, 58, 54, 0.95), transparent 56%),
-    radial-gradient(ellipse 95% 75% at 88% 18%, rgba(104, 98, 90, 0.78), transparent 58%),
-    radial-gradient(circle at 48% 72%, rgba(44, 42, 38, 0.88), transparent 46%),
-    linear-gradient(
-      128deg,
-      #8f877c 0%,
-      #5a5650 16%,
-      #9c9488 32%,
-      #4a4642 50%,
-      #726c64 68%,
-      #3f3c38 82%,
-      #8a8276 100%
-    );
-  filter: blur(20px) saturate(0.82) contrast(1.18);
-  opacity: 0.62;
+  background: transparent;
 }
 
 .site-hero__editorial-frame::before {
@@ -4359,6 +4403,10 @@ body.site-body > * {
     animation: none;
     opacity: 0.12;
   }
+
+  .site-hero__mesh-blob {
+    animation: none;
+  }
 }
 
 .site-hero__concept--long {
@@ -4596,10 +4644,14 @@ body.site-body > * {
     padding: 1.2rem 2.2rem 1.2rem 1.2rem;
   }
 
-  .site-hero__editorial-frame::after {
-    inset: -12% -8% -10% -6%;
-    filter: blur(16px) saturate(0.82) contrast(1.12);
-    opacity: 0.58;
+  .site-hero__mesh-blob--amber {
+    width: min(28rem, 88vw);
+    right: -18%;
+  }
+
+  .site-hero__mesh-blob--rose,
+  .site-hero__mesh-blob--indigo {
+    width: min(24rem, 78vw);
   }
 
   .site-hero__editorial-headline {
