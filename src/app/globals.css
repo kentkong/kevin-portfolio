@@ -4985,7 +4985,7 @@ body.site-body > * {
 }
 
 .selected-project--revival {
-  --selected-project-bg: rgba(191, 92, 35, 0.045);
+  --selected-project-bg: transparent;
 }
 
 .selected-project--lifecycle-architecture-studio {
@@ -5271,7 +5271,7 @@ body.site-body > * {
   overflow: hidden;
   aspect-ratio: 16 / 10;
   border: 0;
-  background: #ebe3d6;
+  background: transparent;
   box-shadow: 0 26px 70px rgba(31, 29, 26, 0.16);
 }
 
