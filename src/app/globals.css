@@ -3,6 +3,7 @@
 @source "../components/case-study/pulse-ops-overview-page.tsx";
 @source "../components/case-study/gen-pulse-case-study.tsx";
 @source "../components/case-study/sprintiq-case-study.tsx";
+@source "../components/case-study/lifecycle-architecture-studio-case-study.tsx";
 @source "../components/home/explore-my-work.tsx";
 @source "../components/home/project-showcase.tsx";
 @source "../components/layout/site-nav.tsx";
@@ -3373,6 +3374,122 @@ body.site-body > * {
   }
 }
 
+/* Lifecycle Architecture Studio overview — same system as SprintIQ, CRM / data art direction */
+.lifecycle-studio-overview {
+  --pulse-blue: #60a5fa;
+  --pulse-green: #2dd4bf;
+  --pulse-purple: #818cf8;
+  --pulse-red: #38bdf8;
+  --pulse-amber: #94a3b8;
+  --pulse-slate: #475569;
+  --pulse-ai: #22d3ee;
+}
+
+.lifecycle-studio-overview .pulse-overview__hero h1 span,
+.lifecycle-studio-overview .pulse-overview__label {
+  color: #2563eb;
+}
+
+.lifecycle-studio-overview__hero-visual {
+  width: min(100%, 50rem);
+  justify-self: end;
+}
+
+.lifecycle-studio-overview__hero-visual .device-laptop {
+  width: 100%;
+}
+
+.lifecycle-studio-overview__hero-visual .device-laptop__lid {
+  box-shadow: 0 26px 70px rgba(31, 29, 26, 0.18);
+}
+
+.lifecycle-studio-overview__logo-block span {
+  color: var(--pulse-ink);
+  font-size: 1rem;
+  letter-spacing: -0.035em;
+}
+
+.lifecycle-studio-overview .pulse-overview__stack-card--data { border-top: 3px solid rgba(96, 165, 250, 0.86); }
+.lifecycle-studio-overview .pulse-overview__stack-card--crm { border-top: 3px solid rgba(99, 102, 241, 0.86); }
+.lifecycle-studio-overview .pulse-overview__stack-card--activation { border-top: 3px solid rgba(34, 211, 238, 0.86); }
+.lifecycle-studio-overview .pulse-overview__stack-card--engagement { border-top: 3px solid rgba(251, 146, 60, 0.86); }
+.lifecycle-studio-overview .pulse-overview__stack-card--analytics { border-top: 3px solid rgba(45, 212, 191, 0.86); }
+.lifecycle-studio-overview .pulse-overview__stack-card--ai { border-top: 3px solid rgba(129, 140, 248, 0.9); }
+
+.lifecycle-studio-overview .pulse-overview__stack-flow.lifecycle-studio-overview__stack-flow {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(0.55rem, 1.1vw, 0.85rem);
+}
+
+.lifecycle-studio-overview .lifecycle-studio-overview__stack-flow .pulse-overview__stack-card {
+  min-height: 100%;
+  padding: clamp(0.85rem, 1.4vw, 1.05rem);
+}
+
+.lifecycle-studio-overview .lifecycle-studio-overview__stack-flow .pulse-overview__logo-block {
+  min-height: 2.35rem;
+  margin-bottom: 0.55rem;
+}
+
+.lifecycle-studio-overview .lifecycle-studio-overview__stack-flow .pulse-overview__stack-card p {
+  margin: 0 0 0.55rem;
+  font-size: 0.72rem;
+}
+
+.lifecycle-studio-overview .lifecycle-studio-overview__stack-flow .pulse-overview__stack-card ul {
+  gap: 0.28rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.68rem;
+}
+
+.lifecycle-studio-overview .lifecycle-studio-overview__stack-flow .pulse-overview__connector {
+  align-self: center;
+  padding-inline: 0.1rem;
+  font-size: 0.85rem;
+  opacity: 0.45;
+}
+
+.lifecycle-studio-overview .pulse-overview__view-grid.lifecycle-studio-overview__view-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lifecycle-studio-overview__view-grid .pulse-overview__view-card figure {
+  height: clamp(14rem, 22vw, 20rem);
+  background: #0b1020;
+}
+
+.lifecycle-studio-overview__view-grid .pulse-overview__view-card img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.lifecycle-studio-overview .pulse-overview__signal-flow.lifecycle-studio-overview__signal-flow {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.lifecycle-studio-overview .pulse-overview__team-grid.lifecycle-studio-overview__team-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1080px) {
+  .lifecycle-studio-overview .pulse-overview__stack-flow.lifecycle-studio-overview__stack-flow,
+  .lifecycle-studio-overview .pulse-overview__signal-flow.lifecycle-studio-overview__signal-flow,
+  .lifecycle-studio-overview .pulse-overview__team-grid.lifecycle-studio-overview__team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .lifecycle-studio-overview .pulse-overview__stack-flow.lifecycle-studio-overview__stack-flow,
+  .lifecycle-studio-overview .pulse-overview__view-grid.lifecycle-studio-overview__view-grid,
+  .lifecycle-studio-overview .pulse-overview__signal-flow.lifecycle-studio-overview__signal-flow,
+  .lifecycle-studio-overview .pulse-overview__team-grid.lifecycle-studio-overview__team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Shared glass panel — hero, featured intro, project resolution boxes */
 .site-panel {
   position: relative;
@@ -5238,6 +5355,10 @@ body.site-body > * {
   padding-block: clamp(1rem, 2.5vw, 2.5rem);
 }
 
+.selected-visual--lifecycle-studio {
+  padding-block: clamp(1rem, 2.5vw, 2.5rem);
+}
+
 @media (max-width: 1024px) {
   .selected-work__intro,
   .selected-project,
@@ -5296,6 +5417,10 @@ body.site-body > * {
   }
 
   .selected-visual--sprintiq {
+    padding-block: 0;
+  }
+
+  .selected-visual--lifecycle-studio {
     padding-block: 0;
   }
 }

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { LaptopFrame, PhoneFrame } from "@/components/ui/device-frame";
-import { RotatingDeviceScreen } from "@/components/ui/rotating-device-screen";
 import { assetPath } from "@/lib/asset-path";
 import type { Project } from "@/lib/projects";
 import { projects } from "@/lib/projects";
@@ -128,7 +127,9 @@ function SelectedProjectArticle({
         ? "/projects/pulse-ops"
         : project.slug === "sprintiq"
           ? "/projects/sprintiq"
-          : null;
+          : project.slug === "lifecycle-architecture-studio"
+            ? "/projects/lifecycle-architecture-studio"
+            : null;
   const titleHref = overviewHref ?? project.liveUrl;
   const titleLinkProps = overviewHref ? {} : { target: "_blank", rel: "noreferrer" };
 
@@ -270,22 +271,19 @@ function GenPulseVisual({ project }: { project: Project }) {
 
 function LifecycleVisual({ project }: { project: Project }) {
   return (
-    <div className="selected-visual selected-visual--browser">
-      <div className="selected-browser">
-        <div className="selected-browser__bar" aria-hidden>
-          <span />
-          <span />
-          <span />
-        </div>
-        <RotatingDeviceScreen
-          images={project.previewImagesDesktop ?? [project.previewImageDesktop]}
-          alt="Lifecycle Architecture Studio architecture state"
-          intervalMs={project.previewRotationIntervalMs}
-          imageFit="cover"
-          screenBg="#0b1020"
-          priority
-        />
-      </div>
+    <div className="selected-visual selected-visual--lifecycle-studio">
+      <LaptopFrame
+        slides={project.previewImagesDesktop ?? [project.previewImageDesktop]}
+        rotationIntervalMs={project.previewRotationIntervalMs}
+        alt="Lifecycle Architecture Studio reference architectures on MacBook"
+        label="Desktop"
+        fallbackTitle={project.name}
+        fallbackCopy={project.tagline}
+        accentClass={project.accent}
+        priority
+        imageFit="cover"
+        screenBg="#0b1020"
+      />
     </div>
   );
 }
