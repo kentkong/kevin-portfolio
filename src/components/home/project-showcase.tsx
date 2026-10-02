@@ -125,7 +125,9 @@ function SelectedProjectArticle({
       ? "/projects/gen-pulse"
       : project.slug === "pulse-ops"
         ? "/projects/pulse-ops"
-        : null;
+        : project.slug === "sprintiq"
+          ? "/projects/sprintiq"
+          : null;
   const titleHref = overviewHref ?? project.liveUrl;
   const titleLinkProps = overviewHref ? {} : { target: "_blank", rel: "noreferrer" };
 
