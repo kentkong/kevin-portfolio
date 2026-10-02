@@ -1594,16 +1594,19 @@ body.site-body > * {
   color: var(--about-ink);
 }
 
-.about-profile__sheet {
-  width: min(100%, 76rem);
+.about-profile__sheet.site-container {
+  max-width: 88rem;
+}
+
+.about-profile__body {
+  width: min(100%, var(--home-content-boundary));
   margin-inline: auto;
-  padding-inline: clamp(1.35rem, 4vw, 4rem);
 }
 
 .about-profile__section {
   display: grid;
-  grid-template-columns: 12rem minmax(0, 1fr);
-  gap: clamp(2rem, 3.8vw, 4rem);
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   padding-block: clamp(3.75rem, 6.2vw, 6.25rem);
   border-bottom: 1px solid var(--about-rule);
 }
@@ -1650,11 +1653,12 @@ body.site-body > * {
 }
 
 .about-profile__section-label {
-  display: grid;
-  grid-template-columns: auto auto 1fr;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.9rem;
-  align-self: start;
+  justify-content: center;
+  gap: 0.75rem 0.9rem;
+  width: 100%;
   color: var(--about-accent);
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: 0.68rem;
@@ -1665,12 +1669,14 @@ body.site-body > * {
 }
 
 .about-profile__section-label--solo {
-  grid-template-columns: auto 1fr;
+  justify-content: center;
 }
 
 .about-profile__section-label i {
   display: block;
-  width: 2.2rem;
+  flex: 1 1 4rem;
+  min-width: 2.2rem;
+  max-width: 8rem;
   height: 1px;
   background: var(--about-rule);
 }
@@ -1744,15 +1750,20 @@ body.site-body > * {
 .about-profile__expertise {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  justify-items: center;
 }
 
 .about-profile__expertise ul {
   display: grid;
   gap: 0.72rem;
+  width: 100%;
+  max-width: 18rem;
   margin: 0;
-  padding: 0 2rem;
+  padding: 0 1.25rem;
   list-style: none;
   border-left: 1px solid var(--about-rule);
+  text-align: center;
 }
 
 .about-profile__expertise ul:first-child {
@@ -1769,6 +1780,9 @@ body.site-body > * {
   position: relative;
   display: grid;
   gap: clamp(2.25rem, 4vw, 3.4rem);
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
 }
 
 .about-profile__timeline::before {
@@ -1899,15 +1913,18 @@ body.site-body > * {
 
 .about-profile__tools {
   display: grid;
+  width: 100%;
 }
 
 .about-profile__tool-row {
   display: grid;
-  grid-template-columns: 12rem minmax(0, 1fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
   align-items: center;
+  justify-items: center;
   padding-block: clamp(2rem, 3.5vw, 3rem);
   border-top: 1px solid var(--about-rule);
+  text-align: center;
 }
 
 .about-profile__tool-row:first-child {
@@ -1916,7 +1933,7 @@ body.site-body > * {
 }
 
 .about-profile__tool-row h2 {
-  max-width: 9.5rem;
+  max-width: none;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -1928,6 +1945,9 @@ body.site-body > * {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
+  width: 100%;
+  max-width: 36rem;
+  margin-inline: auto;
 }
 
 .about-profile__tool-logos > * {
@@ -2042,9 +2062,10 @@ body.site-body > * {
 
 .about-profile__cta-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 2rem;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  justify-items: center;
+  text-align: center;
 }
 
 .about-profile__cta h2 {
@@ -2056,7 +2077,7 @@ body.site-body > * {
 
 .about-profile__cta p {
   max-width: 48rem;
-  margin: 0.8rem 0 0;
+  margin: 0.8rem auto 0;
   color: var(--about-muted);
   font-size: 1rem;
   line-height: 1.4;
@@ -2167,10 +2188,6 @@ body.site-body > * {
 }
 
 @media (max-width: 640px) {
-  .about-profile__sheet {
-    padding-inline: 1rem;
-  }
-
   .about-profile__intro h1 {
     font-size: clamp(2.8rem, 16vw, 4rem);
   }

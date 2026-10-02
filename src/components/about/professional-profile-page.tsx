@@ -47,7 +47,8 @@ export function ProfessionalProfilePage() {
         </div>
       </section>
 
-      <div className="about-profile__sheet">
+      <div className="site-container about-profile__sheet">
+        <div className="about-profile__body">
         <section className="about-profile__section">
           <SectionLabel number="02" label="Core Expertise" />
           <div className="about-profile__expertise">
@@ -124,6 +125,7 @@ export function ProfessionalProfilePage() {
             </div>
           </div>
         </section>
+        </div>
       </div>
     </main>
   );
