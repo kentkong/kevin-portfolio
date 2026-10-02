@@ -6,43 +6,49 @@ import { site } from "@/lib/site";
 export function ProfessionalProfilePage() {
   return (
     <main className="about-profile" aria-labelledby="about-profile-title">
-      <div className="about-profile__sheet">
-        <section className="about-profile__section about-profile__hero">
+      <section className="about-profile__hero">
+        <div className="site-container about-profile__hero-container">
           <SectionLabel label="About" />
-          <div className="about-profile__hero-grid">
-            <div className="about-profile__intro">
-              <h1 id="about-profile-title">Kevin Alan Mold</h1>
-              <p className="about-profile__positioning">
-                <span>CRM, Marketing &amp; Operations Manager</span>
-                <span>with a background in UX/UI &amp; Visual Design</span>
-              </p>
-              <div className="about-profile__copy">
-                <p>
-                  I&apos;m a marketing, operations and customer experience manager with over 17 years of
-                  international corporate experience across CRM and lifecycle marketing, customer
-                  platforms, business analysis, project management, Agile delivery, technology and people
-                  leadership.
-                </p>
-                <p>
-                  My background in graphic and web design gives me a strong visual and user-centred
-                  perspective to the way I approach products, systems and customer experiences —
-                  connecting customer needs, data, technology and design to create better business
-                  outcomes.
-                </p>
+          <div className="site-hero__editorial about-profile__editorial">
+            <div className="site-hero__editorial-frame">
+              <div className="about-profile__hero-grid">
+                <div className="about-profile__intro about-profile__intro--framed">
+                  <h1 id="about-profile-title">Kevin Alan Mold</h1>
+                  <p className="about-profile__positioning">
+                    <span>CRM, Marketing &amp; Operations Manager</span>
+                    <span>with a background in UX/UI &amp; Visual Design</span>
+                  </p>
+                </div>
+                <figure className="about-profile__portrait">
+                  <Image
+                    src={assetPath("/kevin-profile.jpg")}
+                    alt="Portrait of Kevin Alan Mold"
+                    width={420}
+                    height={420}
+                    priority
+                  />
+                </figure>
               </div>
             </div>
-            <figure className="about-profile__portrait">
-              <Image
-                src={assetPath("/kevin-profile.jpg")}
-                alt="Portrait of Kevin Alan Mold"
-                width={420}
-                height={420}
-                priority
-              />
-            </figure>
+            <div className="about-profile__copy">
+              <p>
+                I&apos;m a marketing, operations and customer experience manager with over 17 years of
+                international corporate experience across CRM and lifecycle marketing, customer
+                platforms, business analysis, project management, Agile delivery, technology and people
+                leadership.
+              </p>
+              <p>
+                My background in graphic and web design gives me a strong visual and user-centred
+                perspective to the way I approach products, systems and customer experiences —
+                connecting customer needs, data, technology and design to create better business
+                outcomes.
+              </p>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
+      <div className="about-profile__sheet">
         <section className="about-profile__section">
           <SectionLabel number="02" label="Core Expertise" />
           <div className="about-profile__expertise">
