@@ -15,6 +15,11 @@ type SelectedProject = {
 
 const selectedProjects: SelectedProject[] = [
   {
+    slug: "revival",
+    discipline: "UX / Product Design / Visual Design",
+    description: "Visualise your dream Triumph Desert Sled motorcycle build before you buy it.",
+  },
+  {
     slug: "gen-pulse",
     discipline: "Operations / Internal Product / Digital Experience",
     description: "Real-time operational visibility for modern teams.",
@@ -30,11 +35,6 @@ const selectedProjects: SelectedProject[] = [
     discipline: "AI / Workflow / Operational Optimisation",
     description:
       "A workflow concept that turns business objectives into structured delivery plans, milestones, risks and next steps.",
-  },
-  {
-    slug: "revival",
-    discipline: "UX / Product Design / Visual Design",
-    description: "Visualise your dream Triumph Desert Sled motorcycle build before you buy it.",
   },
   {
     slug: "lifecycle-architecture-studio",
