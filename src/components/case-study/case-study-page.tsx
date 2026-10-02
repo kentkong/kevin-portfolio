@@ -34,7 +34,7 @@ export function CaseStudyPage({ slug }: CaseStudyPageProps) {
     return (
       <>
         <SiteNav />
-        <main>
+        <main className="home-page">
           <RevivalGalleryCaseStudy />
         </main>
         <SiteFooter />
