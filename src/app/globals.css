@@ -3222,12 +3222,12 @@ body.site-body > * {
   justify-self: end;
 }
 
-.sprintiq-overview__hero-image {
-  display: block;
+.sprintiq-overview__hero-visual .device-laptop {
   width: 100%;
-  height: auto;
-  border: 1px solid rgba(21, 19, 15, 0.18);
-  box-shadow: 0 2rem 4rem rgba(29, 27, 23, 0.16);
+}
+
+.sprintiq-overview__hero-visual .device-laptop__lid {
+  box-shadow: 0 26px 70px rgba(31, 29, 26, 0.18);
 }
 
 .sprintiq-overview__logo-block span {
@@ -4721,7 +4721,6 @@ body.site-body > * {
   gap: clamp(1.75rem, 5vw, 4rem);
   align-items: start;
   padding: clamp(1.75rem, 4vw, 3rem);
-  border-top: 1px solid var(--home-line-secondary, rgba(31, 29, 26, 0.12));
 }
 
 .selected-project::before {

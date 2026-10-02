@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { LaptopFrame } from "@/components/ui/device-frame";
 import { assetPath } from "@/lib/asset-path";
 import { getProject } from "@/lib/projects";
 
@@ -210,13 +211,17 @@ export function SprintIQCaseStudy() {
           </div>
         </div>
         <figure className="pulse-overview__hero-visual sprintiq-overview__hero-visual">
-          <Image
-            className="sprintiq-overview__hero-image"
-            src={assetPath("/projects/sprintiq-desktop.png")}
-            alt="SprintIQ objective screen"
-            width={1024}
-            height={640}
+          <LaptopFrame
+            slides={project.previewImagesDesktop ?? [project.previewImageDesktop]}
+            rotationIntervalMs={project.previewRotationIntervalMs}
+            alt="SprintIQ planning workflow on MacBook"
+            label="Desktop"
+            fallbackTitle={project.name}
+            fallbackCopy={project.tagline}
+            accentClass={project.accent}
             priority
+            imageFit="cover"
+            screenBg="#f4f7fb"
           />
         </figure>
       </section>
