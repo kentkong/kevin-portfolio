@@ -3376,13 +3376,13 @@ body.site-body > * {
 
 /* Lifecycle Architecture Studio overview — same system as SprintIQ, CRM / data art direction */
 .lifecycle-studio-overview {
-  --pulse-blue: #60a5fa;
-  --pulse-green: #2dd4bf;
-  --pulse-purple: #818cf8;
-  --pulse-red: #38bdf8;
-  --pulse-amber: #94a3b8;
-  --pulse-slate: #475569;
-  --pulse-ai: #22d3ee;
+  --pulse-blue: #2f7fc5;
+  --pulse-green: #2f9c7e;
+  --pulse-purple: #8062c7;
+  --pulse-red: #db6f7f;
+  --pulse-amber: #d99a28;
+  --pulse-slate: #53616c;
+  --pulse-ai: #d7ad17;
 }
 
 .lifecycle-studio-overview .pulse-overview__hero {
@@ -3411,11 +3411,11 @@ body.site-body > * {
 
 .lifecycle-studio-overview__title-accent {
   display: block;
-  color: #2563eb;
+  color: var(--pulse-ai);
 }
 
 .lifecycle-studio-overview .pulse-overview__label {
-  color: #2563eb;
+  color: #6f665b;
 }
 
 .lifecycle-studio-overview__hero-visual {
