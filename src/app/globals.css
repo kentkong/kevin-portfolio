@@ -4804,7 +4804,7 @@ body.site-body > * {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  border: 1px solid var(--home-line-tertiary, rgba(31, 29, 26, 0.1));
+  border: 0;
   background: var(--selected-project-bg, transparent);
 }
 
@@ -5083,28 +5083,6 @@ body.site-body > * {
 .selected-project__visual-frame {
   display: block;
   cursor: default;
-}
-
-/* Discipline-line frame: Revival + Lifecycle browser only (not laptop thumbnails) */
-.home-page .selected-project__visual-link:has(.selected-visual--revival),
-.home-page .selected-project__visual-link:has(.selected-visual--browser) {
-  position: relative;
-  isolation: isolate;
-}
-
-.home-page .selected-project__visual-link:has(.selected-visual--revival)::before,
-.home-page .selected-project__visual-link:has(.selected-visual--browser)::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 6;
-  pointer-events: none;
-  border: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
-}
-
-.home-page .selected-revival-frame,
-.home-page .selected-browser {
-  border: 0;
 }
 
 .selected-visual {
