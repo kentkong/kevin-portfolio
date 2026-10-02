@@ -1,0 +1,451 @@
+.revival-v2-main {
+  background: var(--revival-v2-cream);
+}
+
+.revival-v2 {
+  --revival-v2-cream: #f0e8d8;
+  --revival-v2-cream-soft: #f7f0e3;
+  --revival-v2-ink: #15130f;
+  --revival-v2-muted: rgba(21, 19, 15, 0.62);
+  --revival-v2-rule: rgba(21, 19, 15, 0.16);
+  --revival-v2-accent: #e94f1d;
+  --revival-v2-max: 93.75rem;
+  --revival-v2-gutter: clamp(1.25rem, 2.4vw, 1.75rem);
+  position: relative;
+  overflow: hidden;
+  color: var(--revival-v2-ink);
+  background: var(--revival-v2-cream);
+}
+
+.revival-v2__grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(21, 19, 15, 0.045) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(21, 19, 15, 0.045) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.35));
+}
+
+.revival-v2__sheet {
+  position: relative;
+  z-index: 1;
+  width: min(100% - var(--revival-v2-gutter) * 2, var(--revival-v2-max));
+  margin-inline: auto;
+  padding-block: clamp(4.5rem, 7vw, 6.5rem) clamp(4rem, 8vw, 7rem);
+}
+
+.revival-v2__sheet-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(21, 19, 15, 0.55);
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: clamp(0.68rem, 0.95vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(21, 19, 15, 0.72);
+}
+
+.revival-v2 h1,
+.revival-v2 h2,
+.revival-v2 h3 {
+  margin: 0;
+  font-family: var(--font-display), "Barlow Condensed", Impact, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.revival-v2 p {
+  margin: 0;
+}
+
+.revival-v2__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr);
+  gap: clamp(2rem, 4.5vw, 4.75rem);
+  align-items: end;
+  padding-block: clamp(2.75rem, 5vw, 4.5rem) clamp(3rem, 5vw, 4.25rem);
+}
+
+.revival-v2__kicker,
+.revival-v2__section-rail,
+.revival-v2__process-number {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.revival-v2__kicker {
+  margin-bottom: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: 0.68rem;
+  color: var(--revival-v2-accent);
+}
+
+.revival-v2__hero h1 {
+  font-size: clamp(5.5rem, 12.5vw, 11.5rem);
+  text-transform: none;
+  letter-spacing: -0.08em;
+}
+
+.revival-v2__hero-lede {
+  max-width: 26rem;
+  margin-top: clamp(1rem, 2vw, 1.6rem);
+  font-family: var(--font-display), "Barlow Condensed", Impact, sans-serif;
+  font-size: clamp(2rem, 3.8vw, 3.65rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.revival-v2__hero-body {
+  max-width: 34rem;
+  margin-top: 1.35rem;
+  font-family: var(--font-body), Inter, system-ui, sans-serif;
+  font-size: clamp(0.98rem, 1.15vw, 1.08rem);
+  line-height: 1.65;
+  color: var(--revival-v2-muted);
+}
+
+.revival-v2__hero-tagline {
+  max-width: 22rem;
+  margin-top: clamp(1.4rem, 2.2vw, 2rem);
+  font-family: var(--font-display), "Barlow Condensed", Impact, sans-serif;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.revival-v2__hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: clamp(1.6rem, 2.5vw, 2.25rem);
+}
+
+.revival-v2__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.65rem;
+  padding: 0.65rem 1.15rem;
+  border: 1px solid transparent;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.revival-v2__btn--solid {
+  background: var(--revival-v2-ink);
+  color: var(--revival-v2-cream-soft);
+}
+
+.revival-v2__btn--solid:hover {
+  background: #2a2722;
+}
+
+.revival-v2__btn--ghost {
+  border-color: rgba(21, 19, 15, 0.35);
+  color: var(--revival-v2-ink);
+  background: transparent;
+}
+
+.revival-v2__btn--ghost:hover {
+  border-color: var(--revival-v2-ink);
+}
+
+.revival-v2__hero-visual {
+  position: relative;
+  min-height: clamp(18rem, 32vw, 28rem);
+  padding: clamp(1rem, 2vw, 1.75rem);
+  border: 1px solid var(--revival-v2-rule);
+  background:
+    linear-gradient(90deg, rgba(21, 19, 15, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(21, 19, 15, 0.04) 1px, transparent 1px),
+    var(--revival-v2-cream-soft);
+  background-size: 3rem 3rem;
+}
+
+.revival-v2__hero-device {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid rgba(21, 19, 15, 0.22);
+  background: #111;
+  box-shadow: 0 22px 60px rgba(21, 19, 15, 0.16);
+}
+
+.revival-v2__hero-device img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.revival-v2__hero-device--laptop {
+  right: 8%;
+  bottom: 6%;
+  width: min(92%, 36rem);
+  z-index: 3;
+}
+
+.revival-v2__hero-device--tablet {
+  right: 0;
+  top: 4%;
+  width: min(48%, 14rem);
+  z-index: 2;
+  transform: rotate(2deg);
+}
+
+.revival-v2__hero-device--phone {
+  left: 2%;
+  bottom: 10%;
+  width: min(28%, 7.5rem);
+  z-index: 4;
+  transform: rotate(-4deg);
+}
+
+.revival-v2__section {
+  padding-block: clamp(2.75rem, 5vw, 4.5rem);
+  border-top: 1px solid rgba(21, 19, 15, 0.55);
+}
+
+.revival-v2__section-rail {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(0.66rem, 0.9vw, 0.78rem);
+  color: var(--revival-v2-accent);
+}
+
+.revival-v2__section-rail a {
+  color: rgba(21, 19, 15, 0.48);
+  text-decoration: none;
+}
+
+.revival-v2__section-rail a:hover {
+  color: var(--revival-v2-ink);
+}
+
+.revival-v2__opportunity-top {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.revival-v2__opportunity-copy h2 {
+  max-width: 18ch;
+  font-size: clamp(2.6rem, 5.8vw, 5.6rem);
+}
+
+.revival-v2__opportunity-copy p {
+  max-width: 38rem;
+  margin-top: 1.1rem;
+  font-size: clamp(0.98rem, 1.12vw, 1.06rem);
+  line-height: 1.62;
+  color: var(--revival-v2-muted);
+}
+
+.revival-v2__opportunity-photo {
+  margin: 0;
+  padding: clamp(0.65rem, 1.2vw, 0.9rem);
+  border: 1px solid var(--revival-v2-rule);
+  background: var(--revival-v2-cream-soft);
+}
+
+.revival-v2__opportunity-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.revival-v2__opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+  border-top: 1px solid var(--revival-v2-rule);
+  border-bottom: 1px solid var(--revival-v2-rule);
+}
+
+.revival-v2__opportunity-card {
+  padding: clamp(1.2rem, 2vw, 1.75rem) clamp(1rem, 1.6vw, 1.35rem);
+  border-right: 1px solid var(--revival-v2-rule);
+}
+
+.revival-v2__opportunity-card:last-child {
+  border-right: 0;
+}
+
+.revival-v2__opportunity-icon {
+  width: 1.65rem;
+  height: 1.65rem;
+  margin-bottom: 1rem;
+  color: var(--revival-v2-accent);
+}
+
+.revival-v2__opportunity-card h3 {
+  margin-bottom: 0.65rem;
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+}
+
+.revival-v2__opportunity-card p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--revival-v2-muted);
+}
+
+.revival-v2__process-intro {
+  max-width: 46rem;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+}
+
+.revival-v2__process-intro h2 {
+  max-width: 16ch;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+}
+
+.revival-v2__process-intro p {
+  margin-top: 1rem;
+  max-width: 40rem;
+  font-size: clamp(0.96rem, 1.1vw, 1.05rem);
+  line-height: 1.62;
+  color: var(--revival-v2-muted);
+}
+
+.revival-v2__process-steps {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--revival-v2-rule);
+}
+
+.revival-v2__process-step {
+  position: relative;
+  display: grid;
+  gap: 0.55rem;
+  align-content: start;
+  min-height: 100%;
+  padding: clamp(0.95rem, 1.4vw, 1.25rem);
+  border-right: 1px solid var(--revival-v2-rule);
+  background: var(--revival-v2-cream-soft);
+}
+
+.revival-v2__process-step:last-child {
+  border-right: 0;
+}
+
+.revival-v2__process-number {
+  font-size: 0.66rem;
+  color: var(--revival-v2-accent);
+}
+
+.revival-v2__process-step h3 {
+  font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+}
+
+.revival-v2__process-step p {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--revival-v2-muted);
+}
+
+.revival-v2__process-arrow {
+  position: absolute;
+  top: 50%;
+  right: -0.55rem;
+  z-index: 2;
+  transform: translateY(-50%);
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--revival-v2-accent);
+}
+
+@media (max-width: 1100px) {
+  .revival-v2__hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .revival-v2__hero-visual {
+    min-height: 20rem;
+  }
+
+  .revival-v2__opportunity-top {
+    grid-template-columns: 1fr;
+  }
+
+  .revival-v2__opportunity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .revival-v2__opportunity-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .revival-v2__opportunity-card:nth-child(1),
+  .revival-v2__opportunity-card:nth-child(2) {
+    border-bottom: 1px solid var(--revival-v2-rule);
+  }
+
+  .revival-v2__process-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .revival-v2__process-step {
+    border-bottom: 1px solid var(--revival-v2-rule);
+  }
+
+  .revival-v2__process-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .revival-v2__sheet-meta,
+  .revival-v2__section-rail {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .revival-v2__opportunity-grid,
+  .revival-v2__process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .revival-v2__opportunity-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--revival-v2-rule);
+  }
+
+  .revival-v2__hero-device--tablet,
+  .revival-v2__hero-device--phone {
+    display: none;
+  }
+
+  .revival-v2__hero-device--laptop {
+    position: relative;
+    inset: auto;
+    width: 100%;
+  }
+}
