@@ -71,31 +71,31 @@ export function ProjectShowcase() {
 
         <div className="selected-work__projects">
           <SelectedProjectArticle
-            project={genPulse}
+            project={revival}
             config={selectedProjects[0]}
+            variant="wide"
+            visual={<RevivalVisual project={revival} />}
+          />
+
+          <SelectedProjectArticle
+            project={genPulse}
+            config={selectedProjects[1]}
             variant="flagship"
             visual={<GenPulseVisual project={genPulse} />}
           />
 
           <SelectedProjectArticle
             project={pulseOps}
-            config={selectedProjects[1]}
+            config={selectedProjects[2]}
             variant="technology"
             visual={<PulseOpsVisual project={pulseOps} />}
           />
 
           <SelectedProjectArticle
             project={sprintIq}
-            config={selectedProjects[2]}
+            config={selectedProjects[3]}
             variant="sequence"
             visual={<SprintIqVisual project={sprintIq} />}
-          />
-
-          <SelectedProjectArticle
-            project={revival}
-            config={selectedProjects[3]}
-            variant="wide"
-            visual={<RevivalVisual project={revival} />}
           />
 
           <SelectedProjectArticle
