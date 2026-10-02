@@ -4808,10 +4808,6 @@ body.site-body > * {
   background: var(--selected-project-bg, transparent);
 }
 
-.home-page .selected-project::before {
-  border-color: transparent;
-}
-
 .selected-project--gen-pulse {
   --selected-project-bg: rgba(45, 40, 118, 0.035);
 }
@@ -5089,32 +5085,26 @@ body.site-body > * {
   cursor: default;
 }
 
-/* Showcase screenshots — same stroke as hero discipline grid / editorial frame */
-.home-page .selected-project__visual-link,
-.home-page .selected-project__visual-frame {
+/* Discipline-line frame: Revival + Lifecycle browser only (not laptop thumbnails) */
+.home-page .selected-project__visual-link:has(.selected-visual--revival),
+.home-page .selected-project__visual-link:has(.selected-visual--browser) {
   position: relative;
   isolation: isolate;
 }
 
-.home-page .selected-project__visual-link::before,
-.home-page .selected-project__visual-frame::before {
+.home-page .selected-project__visual-link:has(.selected-visual--revival)::before,
+.home-page .selected-project__visual-link:has(.selected-visual--browser)::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 6;
   pointer-events: none;
-  border: 1px solid rgba(14, 14, 12, 0.88);
   border: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
 }
 
 .home-page .selected-revival-frame,
 .home-page .selected-browser {
   border: 0;
-}
-
-.home-page .selected-project__visual-link:has(.device-laptop),
-.home-page .selected-project__visual-frame:has(.device-laptop) {
-  padding: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
 .selected-visual {
