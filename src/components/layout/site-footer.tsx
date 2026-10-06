@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { site } from "@/lib/site";
 import { SiteSlateBand } from "@/components/layout/site-slate-band";
 
@@ -7,8 +6,8 @@ function LinkedInIcon() {
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      width="22"
-      height="22"
+      width="24"
+      height="24"
       focusable="false"
       className="site-footer__linkedin-svg"
     >
@@ -25,17 +24,19 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-footer__slate-wrap">
         <SiteSlateBand className="site-footer__slate" />
-        <div className="site-container site-footer__meta">
-          <p className="site-footer__copyright">© 2026 {site.name}</p>
-          <Link
-            href={site.linkedin}
-            className="site-footer__linkedin"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Kevin Alan Mold on LinkedIn"
-          >
-            <LinkedInIcon />
-          </Link>
+        <div className="site-container site-footer__meta-outer">
+          <div className="site-footer__meta">
+            <p className="site-footer__copyright">© 2026 {site.name}</p>
+            <a
+              href={site.linkedin}
+              className="site-footer__linkedin"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Kevin Alan Mold on LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -31,14 +31,21 @@ export function HeroSection() {
               <span className="site-hero__expertise-line">ENTERPRISE APP SOLUTIONS</span>
             </h1>
           </div>
-          <div className="site-hero__discipline-grid" aria-label="Core disciplines">
-            {disciplines.map((discipline) => (
-              <article className="site-hero__discipline" key={discipline.number}>
-                <span>{discipline.number}</span>
-                <h2>{discipline.title}</h2>
-                <p>{discipline.body}</p>
-              </article>
-            ))}
+          <div className="site-hero__discipline-band">
+            <p className="site-hero__portfolio-lead">
+              A selection of application concepts and case studies from CRM and lifecycle
+              marketing, UX and product design, and AI-assisted operational tools — including
+              interactive demos.
+            </p>
+            <div className="site-hero__discipline-grid" aria-label="Core disciplines">
+              {disciplines.map((discipline) => (
+                <article className="site-hero__discipline" key={discipline.number}>
+                  <span>{discipline.number}</span>
+                  <h2>{discipline.title}</h2>
+                  <p>{discipline.body}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </div>

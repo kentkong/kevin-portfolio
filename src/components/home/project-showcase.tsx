@@ -66,10 +66,6 @@ export function ProjectShowcase() {
             <span className="selected-work__title-line">Applications</span>
             <span className="selected-work__title-line">&amp; Case Studies</span>
           </h2>
-          <p className="selected-work__lead">
-            A selection of application concepts and case studies from CRM and lifecycle marketing,
-            UX and product design, and AI-assisted operational tools — including interactive demos.
-          </p>
         </header>
 
         <div className="selected-work__projects">
