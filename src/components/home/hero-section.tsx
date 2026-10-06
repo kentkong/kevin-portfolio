@@ -35,22 +35,23 @@ export function HeroSection() {
             </h1>
           </div>
 
-          <div className="site-hero__focus-sheet">
+          <div className="site-hero__statement-sheet">
             <p className="site-hero__portfolio-statement">{portfolioStatement}</p>
-            <div className="site-hero__discipline-grid" aria-label="Portfolio focus areas">
-              {disciplines.map((discipline) => (
-                <article className="site-hero__discipline" key={discipline.number}>
-                  <h2 className="site-hero__discipline-heading">
-                    <span className="site-hero__discipline-index">{discipline.number}</span>
-                    <span className="site-hero__discipline-dash" aria-hidden="true">
-                      —
-                    </span>
-                    <span className="site-hero__discipline-title">{discipline.title}</span>
-                  </h2>
-                  <p className="site-hero__discipline-body">{discipline.body}</p>
-                </article>
-              ))}
-            </div>
+          </div>
+
+          <div className="site-hero__focus-categories" aria-label="Portfolio focus areas">
+            {disciplines.map((discipline) => (
+              <article className="site-hero__discipline" key={discipline.number}>
+                <h2 className="site-hero__discipline-heading">
+                  <span className="site-hero__discipline-index">{discipline.number}</span>
+                  <span className="site-hero__discipline-dash" aria-hidden="true">
+                    —
+                  </span>
+                  <span className="site-hero__discipline-title">{discipline.title}</span>
+                </h2>
+                <p className="site-hero__discipline-body">{discipline.body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>
