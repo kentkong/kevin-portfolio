@@ -9,11 +9,11 @@ export function HeroSection() {
           <div className="site-hero__editorial-frame">
             <h1
               className="site-hero__editorial-headline"
-              aria-label="CRM marketing. Product concepts. AI and operational tools."
+              aria-label="CRM marketing. Product concepts. AI and operations."
             >
               <span className="site-hero__expertise-line">CRM MARKETING</span>
               <span className="site-hero__expertise-line">PRODUCT CONCEPTS</span>
-              <span className="site-hero__expertise-line">AI &amp; OPERATIONAL TOOLS</span>
+              <span className="site-hero__expertise-line">AI &amp; OPERATIONS</span>
             </h1>
           </div>
 

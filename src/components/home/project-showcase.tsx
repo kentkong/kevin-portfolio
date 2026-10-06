@@ -63,8 +63,7 @@ export function ProjectShowcase() {
       <div className="site-container selected-work__container">
         <header className="selected-work__intro">
           <h2 id="selected-work-title" className="selected-work__title">
-            <span className="selected-work__title-line">Applications</span>
-            <span className="selected-work__title-line">&amp; Case Studies</span>
+            <span className="selected-work__title-line">Applications &amp; Case Studies</span>
           </h2>
         </header>
 
