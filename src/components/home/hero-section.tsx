@@ -1,23 +1,23 @@
 const disciplines = [
   {
     number: "01",
-    title: "CRM & MARKETING OPERATIONS",
-    body: "Lifecycle marketing, campaign operations, CRM platforms and team performance.",
+    title: "CRM & MARKETING",
+    body: "Lifecycle, campaign operations and CRM platforms.",
   },
   {
     number: "02",
-    title: "PRODUCT & INTERFACE CONCEPTS",
-    body: "UX/UI exploration, dashboards, workflows and digital product concepts.",
+    title: "PRODUCT CONCEPTS",
+    body: "Dashboards, interfaces and UX/UI exploration.",
   },
   {
     number: "03",
-    title: "AI & OPERATIONAL TOOLS",
-    body: "AI-assisted workflows, team intelligence and operational applications.",
+    title: "AI & OPERATIONS",
+    body: "Workflow tools, team intelligence and automation.",
   },
 ];
 
-const portfolioLead =
-  "A growing portfolio of CRM, marketing operations, product and AI-assisted application concepts, combining my professional experience with hands-on experimentation in UX/UI, workflow design and operational tools.";
+const portfolioStatement =
+  "A growing portfolio combining my experience in CRM and marketing operations with hands-on work in product concepts, UX/UI and AI-assisted operational tools.";
 
 export function HeroSection() {
   return (
@@ -28,16 +28,16 @@ export function HeroSection() {
             <div className="site-hero__editorial-frame">
               <h1
                 className="site-hero__editorial-headline"
-                aria-label="CRM Marketing. UX UI Visual Product Design. Enterprise App Solutions."
+                aria-label="CRM Marketing. Product and interface concepts. AI and operational tools."
               >
                 <span className="site-hero__expertise-line">CRM MARKETING</span>
-                <span className="site-hero__expertise-line">UX / UI VISUAL PRODUCT DESIGN</span>
-                <span className="site-hero__expertise-line">ENTERPRISE APP SOLUTIONS</span>
+                <span className="site-hero__expertise-line">PRODUCT &amp; INTERFACE CONCEPTS</span>
+                <span className="site-hero__expertise-line">AI &amp; OPERATIONAL TOOLS</span>
               </h1>
             </div>
 
             <div className="site-hero__discipline-band">
-              <p className="site-hero__portfolio-lead">{portfolioLead}</p>
+              <p className="site-hero__portfolio-statement">{portfolioStatement}</p>
               <div className="site-hero__discipline-grid" aria-label="Portfolio focus areas">
                 {disciplines.map((discipline) => (
                   <article className="site-hero__discipline" key={discipline.number}>
