@@ -46,7 +46,7 @@
   --home-paper-soft: #f5f5f3;
   --home-grid-line: rgba(72, 70, 66, 0.045);
   --site-hero-padding-start: clamp(4.25rem, 6.5vw, 6.25rem);
-  --site-hero-padding-end: clamp(2.25rem, 4vw, 3.5rem);
+  --site-hero-padding-end: clamp(1.75rem, 3vw, 2.75rem);
 }
 
 @theme inline {
@@ -4190,11 +4190,10 @@ body.site-body > * {
   border: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
 }
 
-.site-hero__focus-sheet,
 .site-hero__statement-sheet {
   box-sizing: border-box;
   width: 100%;
-  margin-top: clamp(1.35rem, 2.8vw, 2rem);
+  margin-top: clamp(1.25rem, 2.4vw, 1.75rem);
   overflow: hidden;
   border: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
   background: rgba(255, 255, 255, 0.12);
@@ -4203,7 +4202,7 @@ body.site-body > * {
 .site-hero__portfolio-statement {
   margin: 0;
   padding: clamp(1.55rem, 2.8vw, 2.15rem) clamp(1.35rem, 3.2vw, 3rem);
-  max-width: 46rem;
+  max-width: 48rem;
   color: #2a2724;
   font-size: clamp(1.15rem, 1.62vw, 1.42rem);
   font-weight: 500;
@@ -4211,15 +4210,6 @@ body.site-body > * {
   letter-spacing: -0.014em;
   text-align: left;
   text-wrap: pretty;
-}
-
-.site-hero__focus-categories {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: 100%;
-  margin-top: clamp(1.35rem, 2.5vw, 1.85rem);
-  padding-top: clamp(1.1rem, 2vw, 1.35rem);
-  border-top: 1px solid var(--home-line-secondary, rgba(68, 83, 93, 0.22));
 }
 
 .site-hero__editorial-headline {
@@ -4244,69 +4234,14 @@ body.site-body > * {
   max-width: 100%;
   color: #161814;
   white-space: normal;
-  overflow-wrap: normal;
-  word-break: normal;
 }
 
-.site-hero__discipline {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  min-height: 100%;
-  padding: 0 clamp(1rem, 1.75vw, 1.35rem);
-  border-left: 1px solid var(--home-line-secondary, rgba(68, 83, 93, 0.16));
-}
-
-.site-hero__focus-categories .site-hero__discipline:first-child {
-  padding-left: 0;
-  border-left: 0;
-}
-
-.site-hero__focus-categories .site-hero__discipline:last-child {
-  padding-right: 0;
-}
-
-.site-hero__discipline-heading {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.28rem 0.38rem;
-  margin: 0;
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: clamp(0.68rem, 0.78vw, 0.74rem);
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  line-height: 1.3;
-  text-transform: uppercase;
-  color: #4a443c;
-}
-
-.site-hero__discipline-index {
-  flex: none;
-  color: #6f675d;
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-}
-
-.site-hero__discipline-dash {
-  flex: none;
-  color: rgba(111, 103, 93, 0.65);
-  font-weight: 500;
-  letter-spacing: 0;
-}
-
-.site-hero__discipline-title {
-  flex: 1 1 10rem;
-  min-width: 0;
-}
-
-.site-hero__discipline-body {
-  margin: 0;
-  color: #7a7268;
-  font-size: clamp(0.78rem, 0.88vw, 0.82rem);
-  font-weight: 500;
-  line-height: 1.48;
-  text-wrap: pretty;
+@media (min-width: 960px) {
+  .site-hero__expertise-line {
+    width: max-content;
+    max-width: 100%;
+    white-space: nowrap;
+  }
 }
 
 .site-hero__grid--paired {
@@ -4865,29 +4800,6 @@ body.site-body > * {
     text-align: left;
   }
 
-  .site-hero__focus-categories {
-    grid-template-columns: 1fr;
-    margin-top: 1.15rem;
-    padding-top: 0;
-    border-top: 0;
-  }
-
-  .site-hero__focus-categories .site-hero__discipline,
-  .site-hero__focus-categories .site-hero__discipline:first-child {
-    padding: 1rem 0 0;
-    border-left: 0;
-    border-top: 1px solid var(--home-line-secondary, rgba(68, 83, 93, 0.2));
-  }
-
-  .site-hero__focus-categories .site-hero__discipline:first-child {
-    border-top: 0;
-    padding-top: 0;
-  }
-
-  .site-hero__discipline-heading {
-    gap: 0.3rem 0.4rem;
-  }
-
   .site-hero__headline-frame--poster {
     padding: 0 !important;
   }
@@ -5018,7 +4930,7 @@ body.site-body > * {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding-block: clamp(2.5rem, 4vw, 3.5rem) clamp(5rem, 9vw, 8rem);
+  padding-block: clamp(2rem, 3.5vw, 3rem) clamp(5rem, 9vw, 8rem);
   border-top: 1px solid var(--home-line-primary, rgba(14, 14, 12, 0.88));
   background:
     linear-gradient(90deg, var(--home-grid-line, rgba(72, 70, 66, 0.045)) 1px, transparent 1px),
