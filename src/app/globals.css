@@ -6,7 +6,6 @@
 @source "../components/case-study/lifecycle-architecture-studio-case-study.tsx";
 @source "../components/lifecycle-studio/lifecycle-studio-app.tsx";
 @source "../components/home/explore-my-work.tsx";
-@source "../components/home/portfolio-work-intro.tsx";
 @source "../components/home/project-showcase.tsx";
 @source "../components/layout/site-nav.tsx";
 @source "../components/cv/cv-page-one-prototype.tsx";
@@ -4993,19 +4992,12 @@ body.site-body > * {
 }
 
 .selected-work__intro {
-  display: block;
-  max-width: var(--home-content-boundary);
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  max-width: none;
   margin-bottom: clamp(2.75rem, 5.5vw, 4.75rem);
-}
-
-.selected-work__eyebrow {
-  margin: 0 0 0.85rem;
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-size: var(--home-label-size);
-  font-weight: 700;
-  letter-spacing: var(--home-label-tracking);
-  text-transform: uppercase;
-  color: #32342f;
 }
 
 .selected-work__title {
@@ -5053,11 +5045,25 @@ body.site-body > * {
 }
 
 .selected-work__lead {
-  max-width: 32rem;
+  max-width: 36rem;
   margin: 0;
-  font-size: clamp(1rem, 1.35vw, 1.2rem);
-  line-height: 1.7;
+  justify-self: end;
+  font-size: clamp(0.98rem, 1.12vw, 1.06rem);
+  font-weight: 500;
+  line-height: 1.62;
   color: #6f675d;
+}
+
+@media (max-width: 900px) {
+  .selected-work__intro {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .selected-work__lead {
+    justify-self: start;
+    max-width: 42rem;
+  }
 }
 
 .selected-work__projects {
