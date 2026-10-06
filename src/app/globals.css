@@ -4201,15 +4201,17 @@ body.site-body > * {
 
 .site-hero__portfolio-statement {
   margin: 0;
-  padding: clamp(1.55rem, 2.8vw, 2.15rem) clamp(1.35rem, 3.2vw, 3rem);
-  max-width: 48rem;
-  color: #2a2724;
-  font-size: clamp(1.15rem, 1.62vw, 1.42rem);
+  padding: clamp(1.45rem, 2.6vw, 2rem) clamp(1.35rem, 3.2vw, 3rem);
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  color: #6a635a;
+  font-size: clamp(1.06rem, 1.38vw, 1.28rem);
   font-weight: 500;
-  line-height: 1.58;
-  letter-spacing: -0.014em;
+  line-height: 1.52;
+  letter-spacing: 0.005em;
   text-align: left;
-  text-wrap: pretty;
+  text-wrap: balance;
 }
 
 .site-hero__editorial-headline {
@@ -4794,10 +4796,10 @@ body.site-body > * {
   }
 
   .site-hero__portfolio-statement {
-    padding: 1.35rem 1.2rem 1.5rem;
-    max-width: none;
-    font-size: clamp(1.05rem, 4.6vw, 1.22rem);
-    text-align: left;
+    padding: 1.25rem 1.2rem 1.4rem;
+    font-size: clamp(1.02rem, 4.2vw, 1.16rem);
+    line-height: 1.5;
+    text-wrap: pretty;
   }
 
   .site-hero__headline-frame--poster {
