@@ -62,6 +62,7 @@ export function ProjectShowcase() {
     <section id="projects" className="selected-work" aria-labelledby="selected-work-title">
       <div className="site-container selected-work__container">
         <header className="selected-work__intro">
+          <p className="selected-work__eyebrow">Section 01</p>
           <h2 id="selected-work-title" className="selected-work__title">
             <span className="selected-work__title-line">Applications</span>
             <span className="selected-work__title-line">&amp; Case Studies</span>
@@ -121,7 +122,9 @@ function SelectedProjectArticle({
   visual: ReactNode;
 }) {
   const overviewHref =
-    project.slug === "gen-pulse"
+    project.slug === "revival"
+      ? "/projects/revival"
+      : project.slug === "gen-pulse"
       ? "/projects/gen-pulse"
       : project.slug === "pulse-ops"
         ? "/projects/pulse-ops"

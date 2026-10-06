@@ -3,16 +3,23 @@ import Link from "next/link";
 import { assetPath } from "@/lib/asset-path";
 
 const plannedRoutes = {
-  ux: "/work/ux-product-design",
-  crm: "/work/crm-customer-experience",
-  ai: "/work/ai-automation",
   visual: "/work/visual-photography",
 };
 
 export function ExploreMyWork() {
   return (
-    <section id="explore-work" className="explore-work" aria-label="Explore my work">
+    <section id="explore-work" className="explore-work" aria-labelledby="explore-work-title">
       <div className="site-container explore-work__container">
+        <header className="explore-work__intro">
+          <p className="explore-work__eyebrow">Section 02</p>
+          <h2 id="explore-work-title" className="explore-work__title">
+            Explore my work
+          </h2>
+          <p className="explore-work__lead">
+            Four disciplines — UX and product, CRM and customer experience, AI and automation, and
+            visual design — mapped to representative projects from this portfolio.
+          </p>
+        </header>
         <div className="explore-work__grid" aria-label="Portfolio work disciplines">
           <article className="explore-chapter explore-chapter--ux">
             <div className="explore-chapter__copy">
@@ -31,7 +38,7 @@ export function ExploreMyWork() {
                 <p className="explore-chapter__status">
                   Independent product concept / high-fidelity prototype
                 </p>
-                <Link href="/projects/revival" className="explore-chapter__route">
+                <Link href={assetPath("/projects/revival")} className="explore-chapter__route">
                   View Revival case study ↗
                 </Link>
               </div>
@@ -63,10 +70,12 @@ export function ExploreMyWork() {
               </div>
               <h3>Lifecycle systems and journey architecture.</h3>
               <p>
-                CRM systems, lifecycle strategy and customer journeys designed around how
-                people actually move through products and services.
+                CRM systems, lifecycle strategy and customer journeys designed around how people
+                actually move through products and services.
               </p>
-              <p className="explore-chapter__route">Future destination: {plannedRoutes.crm}</p>
+              <Link href={assetPath("/projects/lifecycle-architecture-studio")} className="explore-chapter__route">
+                Lifecycle Architecture Studio overview ↗
+              </Link>
             </div>
 
             <div className="explore-chapter__visual explore-chapter__visual--crm">
@@ -88,10 +97,12 @@ export function ExploreMyWork() {
               </div>
               <h3>Applied workflows and operational intelligence.</h3>
               <p>
-                AI-assisted experiences, workflow transformation and operational intelligence
-                built around practical decisions and next actions.
+                AI-assisted experiences, workflow transformation and operational intelligence built
+                around practical decisions and next actions.
               </p>
-              <p className="explore-chapter__route">Future destination: {plannedRoutes.ai}</p>
+              <Link href={assetPath("/projects/pulse-ops")} className="explore-chapter__route">
+                Pulse-Ops AI overview ↗
+              </Link>
             </div>
 
             <div className="explore-chapter__visual explore-chapter__visual--ai">

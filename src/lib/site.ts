@@ -2,7 +2,7 @@ export const site = {
   name: "Kevin Alan Mold",
   title: "Kevin Alan Mold — Design, Marketing & Technology",
   description:
-    "A multidisciplinary portfolio spanning CRM and marketing, visual design, digital products, applications, customer experience and technology solutions for corporate teams.",
+    "Portfolio of product concepts, case studies, and interactive demos spanning CRM and lifecycle marketing, UX and product design, and AI-assisted operational applications.",
   email: "jovianuk@gmail.com",
   linkedin: "https://www.linkedin.com/in/kevinmold",
   github: "https://github.com/kentkong",
