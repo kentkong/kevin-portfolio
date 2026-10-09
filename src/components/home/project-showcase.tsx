@@ -39,7 +39,7 @@ const selectedProjects: SelectedProject[] = [
     slug: "lifecycle-architecture-studio",
     discipline: "CRM / Customer Experience / Journey Architecture",
     description:
-      "An interactive architecture explorer for understanding how CRM, data, activation, engagement, analytics and AI systems connect.",
+      "An interactive lifecycle architecture and CRM technology reference for exploring how capability categories connect.",
   },
 ];
 
@@ -278,14 +278,14 @@ function LifecycleVisual({ project }: { project: Project }) {
       <LaptopFrame
         slides={project.previewImagesDesktop ?? [project.previewImageDesktop]}
         rotationIntervalMs={project.previewRotationIntervalMs}
-        alt="Lifecycle Architecture Studio reference architectures on MacBook"
+        alt="Lifecycle Architecture Studio V14 app on MacBook"
         label="Desktop"
         fallbackTitle={project.name}
         fallbackCopy={project.tagline}
         accentClass={project.accent}
         priority
         imageFit="cover"
-        screenBg="#0b1020"
+        screenBg="#0a0a09"
       />
     </div>
   );

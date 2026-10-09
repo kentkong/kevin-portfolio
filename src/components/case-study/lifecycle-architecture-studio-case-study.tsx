@@ -6,40 +6,40 @@ import { getProject } from "@/lib/projects";
 
 const ecosystem = [
   {
-    name: "Data",
-    role: "Warehouse & identity",
-    accent: "data",
-    items: ["Snowflake", "Unified profiles", "Event history", "Source of truth"],
+    name: "CRM",
+    role: "Customer & account context",
+    accent: "crm",
+    items: ["Salesforce", "HubSpot", "Dynamics 365"],
   },
   {
-    name: "CRM",
-    role: "Customer record",
-    accent: "crm",
-    items: ["Salesforce", "Account context", "Lifecycle stages", "Service history"],
+    name: "Data",
+    role: "Collection, warehouse, models",
+    accent: "data",
+    items: ["Fivetran", "Snowflake", "dbt"],
   },
   {
     name: "Activation",
-    role: "Reverse ETL",
+    role: "Audience & attribute sync",
     accent: "activation",
-    items: ["Hightouch", "Audience sync", "Modelled traits", "Destination routing"],
+    items: ["Hightouch", "Census", "APIs"],
   },
   {
     name: "Engagement",
-    role: "Orchestration",
+    role: "Journeys & messaging",
     accent: "engagement",
-    items: ["Braze", "Journeys", "Campaigns", "In-product messaging"],
-  },
-  {
-    name: "Analytics",
-    role: "Behaviour & measurement",
-    accent: "analytics",
-    items: ["Segment", "Event capture", "Funnel visibility", "Experimentation"],
+    items: ["Braze", "Iterable", "Klaviyo"],
   },
   {
     name: "AI",
-    role: "Intelligence layer",
+    role: "Prediction & decisioning",
     accent: "ai",
-    items: ["OpenAI", "Assistive workflows", "Signal enrichment", "Next-best action"],
+    items: ["OpenAI", "Claude", "Internal ML"],
+  },
+  {
+    name: "Analytics",
+    role: "Measurement & insight",
+    accent: "analytics",
+    items: ["Looker", "Power BI", "Amplitude"],
   },
 ];
 
@@ -71,39 +71,57 @@ const process = [
   },
 ];
 
+const studioViews = [
+  {
+    src: "/projects/lifecycle-architecture-studio/v14-overview.png",
+    title: "Overview",
+    strong: "Architecture + personalisation loop.",
+    body:
+      "A representative composable stack with channels, systems and sources — plus a simple loop from customer behaviour to personalised communication.",
+  },
+  {
+    src: "/projects/lifecycle-architecture-studio/v14-technology-explorer.png",
+    title: "Technology Explorer",
+    strong: "Capability first, then example platforms.",
+    body:
+      "Eight categories — CRM, collection, warehouse, transformation, activation, engagement, AI and analytics — with illustrative vendors, not a prescribed stack.",
+  },
+  {
+    src: "/projects/lifecycle-architecture-studio/v14-customer-journey.png",
+    title: "Customer Journey",
+    strong: "The architecture working for one person.",
+    body:
+      "An eight-step welcome example from signup through profile, decisioning, audience sync, journey trigger, message and measured result.",
+  },
+];
+
 const signalJourney = [
   {
     step: "01",
     label: "Question",
     system: "Architecture gap",
-    body: "A team needs to explain how CRM, data and engagement platforms connect for a lifecycle initiative.",
+    body: "A team needs to explain how CRM, data and engagement capabilities connect for a lifecycle initiative.",
   },
   {
     step: "02",
-    label: "Reference",
-    system: "Pattern library",
-    body: "Lifecycle Architecture Studio opens on a reference model such as Modern Composable or Customer 360.",
+    label: "Overview",
+    system: "Shared map",
+    body: "The studio opens on the architecture centrepiece and the customer-data to personalisation loop.",
   },
   {
     step: "03",
-    label: "Traverse",
-    system: "Interactive map",
-    body: "Users explore platform roles, integrations and data flows without reading a static diagram deck.",
+    label: "Explore",
+    system: "Capability reference",
+    body: "Technology Explorer explains each layer’s role first, then shows representative platforms.",
   },
   {
     step: "04",
-    label: "Compare",
-    system: "Alternate stacks",
-    body: "Switching patterns reveals how maturity, tooling and orchestration change across architectures.",
+    label: "Journey",
+    system: "Worked example",
+    body: "Customer Journey walks one person through ingestion, decisioning, activation and messaging.",
   },
   {
     step: "05",
-    label: "Adapt",
-    system: "Custom stack",
-    body: "Teams adjust the model to reflect their own vendors, flows and lifecycle priorities.",
-  },
-  {
-    step: "06",
     label: "Align",
     system: "Shared language",
     body: "Stakeholders leave with a clearer picture of how the ecosystem fits together.",
@@ -150,17 +168,15 @@ export function LifecycleArchitectureStudioCaseStudy() {
             <span className="lifecycle-studio-overview__title-accent">Studio</span>
           </h1>
           <p className="pulse-overview__headline">
-            An interactive explorer for modern CRM, data, activation, engagement, analytics and AI ecosystems.
+            An interactive lifecycle architecture and CRM technology reference.
           </p>
           <p className="pulse-overview__standfirst">
-            Lifecycle Architecture Studio helps teams understand how capability categories — CRM, collection, warehouse,
-            transformation, activation, engagement, AI and analytics — connect within a representative composable
-            stack.
+            Explore how CRM, data, activation, engagement, analytics and AI capabilities connect across a modern
+            customer lifecycle — with representative technologies, not a prescribed vendor stack.
           </p>
           <p className="pulse-overview__body-copy">
-            The live app has three sections: an architecture overview with a personalisation loop, a technology
-            explorer organised by capability, and a step-through customer journey that shows the stack working for one
-            person.
+            Three sections: Overview maps the architecture and personalisation loop; Technology Explorer explains each
+            capability; Customer Journey shows the stack working for one person.
           </p>
           <div className="pulse-overview__actions">
             <Link href={project.liveUrl} className="site-btn site-btn--ink">
@@ -181,14 +197,14 @@ export function LifecycleArchitectureStudioCaseStudy() {
           <LaptopFrame
             slides={project.previewImagesDesktop ?? [project.previewImageDesktop]}
             rotationIntervalMs={project.previewRotationIntervalMs}
-            alt="Lifecycle Architecture Studio on MacBook"
+            alt="Lifecycle Architecture Studio V14 app on MacBook"
             label="Desktop"
             fallbackTitle={project.name}
             fallbackCopy={project.tagline}
             accentClass={project.accent}
             priority
             imageFit="cover"
-            screenBg="#0b1020"
+            screenBg="#0a0a09"
           />
         </figure>
       </section>
@@ -227,7 +243,7 @@ export function LifecycleArchitectureStudioCaseStudy() {
         <SectionHeader
           label="Lifecycle ecosystem"
           title="From data foundation to engagement and intelligence."
-          copy="The studio organises the stack around the platforms and flows teams need to discuss most: data, CRM, activation, engagement, analytics and AI."
+          copy="The studio organises the stack by capability. Named products are examples of how each layer can be implemented."
         />
         <div
           className="pulse-overview__stack-flow lifecycle-studio-overview__stack-flow"
@@ -284,25 +300,24 @@ export function LifecycleArchitectureStudioCaseStudy() {
           copy="Open the app for the full graphite/copper experience: architecture connectors, capability-first technology explorer and an eight-step welcome journey."
         />
         <div className="pulse-overview__view-grid lifecycle-studio-overview__view-grid">
-          <article className="pulse-overview__view-card pulse-overview__view-card--blue">
-            <figure>
-              <Image
-                src={assetPath("/projects/lifecycle-architecture-studio/modern-composable.png")}
-                alt="Lifecycle Architecture Studio overview architecture"
-                width={1024}
-                height={640}
-                loading="eager"
-              />
-            </figure>
-            <div>
-              <h3>Overview</h3>
-              <strong>Architecture + personalisation loop.</strong>
-              <p>
-                Representative channels, systems and sources with deliberate connector paths, plus a simple loop from
-                behaviour to personalised communication and back into customer data.
-              </p>
-            </div>
-          </article>
+          {studioViews.map((view) => (
+            <article className="pulse-overview__view-card pulse-overview__view-card--blue" key={view.title}>
+              <figure>
+                <Image
+                  src={assetPath(view.src)}
+                  alt={`Lifecycle Architecture Studio ${view.title}`}
+                  width={1600}
+                  height={1000}
+                  loading="eager"
+                />
+              </figure>
+              <div>
+                <h3>{view.title}</h3>
+                <strong>{view.strong}</strong>
+                <p>{view.body}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -310,7 +325,7 @@ export function LifecycleArchitectureStudioCaseStudy() {
         <SectionHeader
           label="Question to alignment"
           title="An example: explaining a modern lifecycle stack."
-          copy="How teams use the studio to move from a vague integration question to a shared architectural picture."
+          copy="How teams use the three V14 sections to move from a vague integration question to a shared architectural picture."
         />
         <div className="pulse-overview__signal-flow lifecycle-studio-overview__signal-flow">
           {signalJourney.map((item, index) => (
@@ -351,7 +366,7 @@ export function LifecycleArchitectureStudioCaseStudy() {
         <div className="pulse-overview__final-grid">
           <div>
             <h2>Make complex lifecycle stacks easier to explain.</h2>
-            <p>Interactive architecture exploration for CRM, data, activation, engagement, analytics and AI.</p>
+            <p>A capability-first explorer for CRM, data, activation, engagement, analytics and AI.</p>
           </div>
           <div className="pulse-overview__final-actions">
             <Link href={project.liveUrl} className="site-btn site-btn--ink">

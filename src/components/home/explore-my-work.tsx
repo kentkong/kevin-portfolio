@@ -80,8 +80,8 @@ export function ExploreMyWork() {
 
             <div className="explore-chapter__visual explore-chapter__visual--crm">
               <Image
-                src={assetPath("/projects/lifecycle-architecture-studio/customer-360.png")}
-                alt="Lifecycle Architecture Studio customer 360 architecture visual"
+                src={assetPath("/projects/lifecycle-architecture-studio/v14-overview.png")}
+                alt="Lifecycle Architecture Studio V14 architecture overview"
                 fill
                 unoptimized
                 sizes="(max-width: 900px) 100vw, 42vw"

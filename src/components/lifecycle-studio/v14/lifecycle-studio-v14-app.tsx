@@ -211,8 +211,7 @@ type Props = {
 
 export function LifecycleStudioV14App({ initialPage = "p1" }: Props) {
   const project = getProject("lifecycle-architecture-studio");
-  const externalDemo =
-    project?.externalDemoUrl ?? "https://kentkong.github.io/lifecycle-architecture-studio/";
+  const externalDemo = project?.externalDemoUrl;
 
   const [page, setPage] = useState<LasV14PageId>(initialPage);
   const [techKey, setTechKey] = useState<TechCategoryKey>("CRM");
@@ -233,7 +232,9 @@ export function LifecycleStudioV14App({ initialPage = "p1" }: Props) {
         <div className="las-v14-portfolio-bar__inner">
           <Link href="/projects/lifecycle-architecture-studio">Project overview</Link>
           <Link href="/#projects">All projects</Link>
-          <a href={externalDemo} target="_blank" rel="noreferrer">GitHub demo ↗</a>
+          {externalDemo ? (
+            <a href={externalDemo} target="_blank" rel="noreferrer">GitHub demo ↗</a>
+          ) : null}
         </div>
       </div>
       <div className="shell">

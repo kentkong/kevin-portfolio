@@ -4,7 +4,7 @@ import "./lifecycle-studio-app.css";
 
 export const metadata: Metadata = {
   title: "Lifecycle Architecture Studio — App",
-  description: "Explore reference lifecycle architecture stacks in the portfolio studio app.",
+  description: "Interactive lifecycle architecture and CRM technology explorer.",
 };
 
 export default function LifecycleStudioAppLayout({ children }: { children: ReactNode }) {
