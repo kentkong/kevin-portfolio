@@ -4,15 +4,6 @@ import { LaptopFrame } from "@/components/ui/device-frame";
 import { assetPath } from "@/lib/asset-path";
 import { getProject } from "@/lib/projects";
 
-type StudioView = {
-  name: string;
-  accent: string;
-  image: string;
-  summary: string;
-  description: string;
-  helps: string[];
-};
-
 const ecosystem = [
   {
     name: "Data",
@@ -53,72 +44,30 @@ const ecosystem = [
 ];
 
 const progression = [
-  ["Explore", "Browse reference architectures"],
-  ["Compare", "See how stacks differ"],
-  ["Learn", "Understand platform roles"],
-  ["Model", "Sketch your own stack"],
+  ["Overview", "See the architecture centrepiece and loop"],
+  ["Explore", "Learn capability categories first"],
+  ["Journey", "Follow one customer example"],
   ["Align", "Share a clearer picture"],
 ];
 
 const process = [
   {
     number: "01",
-    title: "Orient",
-    body: "Start with a reference architecture such as Legacy Enterprise, Modern Composable or Customer 360.",
+    title: "Overview",
+    body:
+      "Start with the architecture diagram and Customer Data → Personalisation Loop to see how signals become experiences.",
   },
   {
     number: "02",
-    title: "Explore",
-    body: "Move through the stack visually to see how CRM, data, activation, engagement, analytics and AI connect.",
+    title: "Technology Explorer",
+    body:
+      "Browse eight capability categories — role first, then representative vendors — without treating one stack as the only answer.",
   },
   {
     number: "03",
-    title: "Compare",
-    body: "Switch between architecture patterns to understand trade-offs across lifecycle maturity models.",
-  },
-  {
-    number: "04",
-    title: "Model",
-    body: "Use the studio to build or adapt a stack that reflects your organisation’s platforms and flows.",
-  },
-];
-
-const views: StudioView[] = [
-  {
-    name: "Modern Composable",
-    accent: "blue",
-    image: "/projects/lifecycle-architecture-studio/modern-composable.png",
-    summary: "Best-of-breed connected stack.",
-    description:
-      "Shows how modern teams wire warehouse, reverse-ETL, engagement and analytics tools into a composable lifecycle architecture.",
-    helps: ["Snowflake", "Hightouch", "Braze"],
-  },
-  {
-    name: "Legacy Enterprise",
-    accent: "slate",
-    image: "/projects/lifecycle-architecture-studio/legacy-enterprise.png",
-    summary: "Monolith-to-modern bridge.",
-    description:
-      "Illustrates how established CRM-centric organisations often evolve toward more modular data and activation patterns.",
-    helps: ["Salesforce", "Integrations", "Reporting"],
-  },
-  {
-    name: "AI-Powered Lifecycle",
-    accent: "violet",
-    image: "/projects/lifecycle-architecture-studio/ai-powered-lifecycle.png",
-    summary: "Intelligence across the stack.",
-    description:
-      "Maps where AI services sit alongside data, engagement and analytics to support smarter lifecycle operations.",
-    helps: ["OpenAI", "Signals", "Automation"],
-  },
-  {
-    name: "Customer 360",
-    accent: "teal",
-    image: "/projects/lifecycle-architecture-studio/customer-360.png",
-    summary: "Unified customer context.",
-    description:
-      "Focuses on identity, profile enrichment and activation paths that power a shared view of the customer.",
-    helps: ["Profiles", "Traits", "Journeys"],
+    title: "Customer Journey",
+    body:
+      "Step through welcome onboarding to see ingestion, modelling, activation and engagement working for an individual customer.",
   },
 ];
 
@@ -204,12 +153,14 @@ export function LifecycleArchitectureStudioCaseStudy() {
             An interactive explorer for modern CRM, data, activation, engagement, analytics and AI ecosystems.
           </p>
           <p className="pulse-overview__standfirst">
-            Lifecycle Architecture Studio helps teams understand how platforms such as Salesforce, Snowflake,
-            Hightouch, Braze, Segment and OpenAI connect within real-world lifecycle stacks.
+            Lifecycle Architecture Studio helps teams understand how capability categories — CRM, collection, warehouse,
+            transformation, activation, engagement, AI and analytics — connect within a representative composable
+            stack.
           </p>
           <p className="pulse-overview__body-copy">
-            The experience is built for learning and alignment: browse reference architectures, compare patterns,
-            inspect integrations and model a stack that reflects your organisation.
+            The live app has three sections: an architecture overview with a personalisation loop, a technology
+            explorer organised by capability, and a step-through customer journey that shows the stack working for one
+            person.
           </p>
           <div className="pulse-overview__actions">
             <Link href={project.liveUrl} className="site-btn site-btn--ink">
@@ -311,8 +262,8 @@ export function LifecycleArchitectureStudioCaseStudy() {
       <section id="how-lifecycle-studio-works" className="site-container pulse-overview__section">
         <SectionHeader
           label="How the studio works"
-          title="Explore, compare and model lifecycle architectures."
-          copy="The product keeps the workflow focused on clarity: pick a reference pattern, traverse the stack, compare alternatives and adapt the model for your organisation."
+          title="Three sections. One composable lifecycle story."
+          copy="Overview, Technology Explorer and Customer Journey keep the workflow focused on comprehension — not a maze of tabs or static screenshots."
         />
         <div className="pulse-overview__process">
           {process.map((item, index) => (
@@ -329,33 +280,29 @@ export function LifecycleArchitectureStudioCaseStudy() {
       <section className="site-container pulse-overview__section pulse-overview__views">
         <SectionHeader
           label="Real product experience"
-          title="Four reference architecture states."
-          copy="The live studio includes patterns such as Modern Composable, Legacy Enterprise, AI-Powered Lifecycle and Customer 360."
+          title="Interactive V14 studio — not static diagrams."
+          copy="Open the app for the full graphite/copper experience: architecture connectors, capability-first technology explorer and an eight-step welcome journey."
         />
         <div className="pulse-overview__view-grid lifecycle-studio-overview__view-grid">
-          {views.map((view) => (
-            <article className={`pulse-overview__view-card pulse-overview__view-card--${view.accent}`} key={view.name}>
-              <figure>
-                <Image
-                  src={assetPath(view.image)}
-                  alt={`${view.name} architecture in Lifecycle Architecture Studio`}
-                  width={1024}
-                  height={640}
-                  loading="eager"
-                />
-              </figure>
-              <div>
-                <h3>{view.name}</h3>
-                <strong>{view.summary}</strong>
-                <p>{view.description}</p>
-                <ul>
-                  {view.helps.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </article>
-          ))}
+          <article className="pulse-overview__view-card pulse-overview__view-card--blue">
+            <figure>
+              <Image
+                src={assetPath("/projects/lifecycle-architecture-studio/modern-composable.png")}
+                alt="Lifecycle Architecture Studio overview architecture"
+                width={1024}
+                height={640}
+                loading="eager"
+              />
+            </figure>
+            <div>
+              <h3>Overview</h3>
+              <strong>Architecture + personalisation loop.</strong>
+              <p>
+                Representative channels, systems and sources with deliberate connector paths, plus a simple loop from
+                behaviour to personalised communication and back into customer data.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 

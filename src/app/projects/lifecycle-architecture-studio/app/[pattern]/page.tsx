@@ -1,26 +1,11 @@
-import { notFound } from "next/navigation";
-import { LifecycleStudioApp } from "@/components/lifecycle-studio/lifecycle-studio-app";
-import {
-  getLifecycleStudioPattern,
-  lifecycleStudioPatternSlugs,
-  type LifecycleStudioPatternSlug,
-} from "@/lib/lifecycle-studio-patterns";
+import { redirect } from "next/navigation";
 
 type PageProps = {
   params: Promise<{ pattern: string }>;
 };
 
-export function generateStaticParams() {
-  return lifecycleStudioPatternSlugs.map((pattern) => ({ pattern }));
-}
-
+/** Legacy pattern URLs redirect to the V14 studio app. */
 export default async function LifecycleStudioAppPatternPage({ params }: PageProps) {
-  const { pattern: patternParam } = await params;
-  const pattern = getLifecycleStudioPattern(patternParam);
-
-  if (!pattern) {
-    notFound();
-  }
-
-  return <LifecycleStudioApp patternSlug={pattern.slug as LifecycleStudioPatternSlug} />;
+  await params;
+  redirect("/projects/lifecycle-architecture-studio/app");
 }

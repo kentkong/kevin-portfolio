@@ -1,6 +1,5 @@
-import { redirect } from "next/navigation";
-import { lifecycleStudioAppPath, lifecycleStudioDefaultSlug } from "@/lib/lifecycle-studio-patterns";
+import { LifecycleStudioApp } from "@/components/lifecycle-studio/lifecycle-studio-app";
 
 export default function LifecycleStudioAppIndexPage() {
-  redirect(lifecycleStudioAppPath(lifecycleStudioDefaultSlug));
+  return <LifecycleStudioApp />;
 }

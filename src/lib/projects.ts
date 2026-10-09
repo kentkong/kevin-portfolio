@@ -81,7 +81,7 @@ export const projects: Project[] = [
     summary:
       "Lifecycle Architecture Studio helps users understand how platforms such as Salesforce, Snowflake, Hightouch, Braze, Segment, and OpenAI work together within modern enterprise ecosystems.",
     overview: "",
-    liveUrl: "/projects/lifecycle-architecture-studio/app/modern-composable",
+    liveUrl: "/projects/lifecycle-architecture-studio/app",
     externalDemoUrl: "https://kentkong.github.io/lifecycle-architecture-studio/",
     previewImageDesktop: "/projects/lifecycle-architecture-studio/modern-composable.png",
     previewImagesDesktop: [
