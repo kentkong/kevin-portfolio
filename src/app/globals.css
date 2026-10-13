@@ -4178,7 +4178,7 @@ body.site-body > * {
   box-sizing: border-box;
   width: 100%;
   overflow: visible;
-  padding: clamp(1.5rem, 2.8vw, 2.6rem) clamp(1.35rem, 3.2vw, 3rem) clamp(1.65rem, 3vw, 2.75rem);
+  padding: clamp(1.5rem, 2.8vw, 2.6rem) clamp(1.35rem, 3.2vw, 3rem) clamp(1.65rem, 3vw, 2.75rem) 1px;
   border: 0;
   background: transparent;
 }
@@ -4203,7 +4203,7 @@ body.site-body > * {
 
 .site-hero__portfolio-statement {
   margin: 0;
-  padding: clamp(0.85rem, 1.5vw, 1.1rem) clamp(1.35rem, 3.2vw, 3rem);
+  padding: clamp(0.85rem, 1.5vw, 1.1rem) clamp(1.35rem, 3.2vw, 3rem) clamp(0.85rem, 1.5vw, 1.1rem) 1px;
   width: 100%;
   max-width: none;
   box-sizing: border-box;
@@ -4781,7 +4781,7 @@ body.site-body > * {
   }
 
   .site-hero__editorial-frame {
-    padding: 1.2rem 1.2rem 1.35rem;
+    padding: 1.2rem 1.2rem 1.35rem 1px;
   }
 
   .about-profile__hero-frame {
@@ -4805,7 +4805,7 @@ body.site-body > * {
   }
 
   .site-hero__portfolio-statement {
-    padding: 0.9rem 1.2rem 1.05rem;
+    padding: 0.9rem 1.2rem 1.05rem 1px;
     font-size: 0.8rem;
     letter-spacing: 0.07em;
     line-height: 1.5;
