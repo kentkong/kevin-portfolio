@@ -14,15 +14,16 @@ type SelectedProject = {
 
 const selectedProjects: SelectedProject[] = [
   {
-    slug: "revival",
-    discipline: "UX / Product Design / Visual Design",
-    description: "Visualise your dream Triumph Desert Sled motorcycle build before you buy it.",
-  },
-  {
     slug: "gen-pulse",
     discipline: "Marketing operations / a problem from inside the team",
     description:
       "On the Norton Email team, work, people and performance lived in different tools. I designed one shared view, pitched it to my director, a senior developer and a senior manager, and it was approved.",
+  },
+  {
+    slug: "lifecycle-architecture-studio",
+    discipline: "CRM / marketing teams / how the stack actually connects",
+    description:
+      "How I help marketing, CRM and data people see a modern stack as one customer journey — so a welcome, a renewal or a winback is not a pile of tools.",
   },
   {
     slug: "pulse-ops",
@@ -37,10 +38,9 @@ const selectedProjects: SelectedProject[] = [
       "A workflow concept that turns business objectives into structured delivery plans, milestones, risks and next steps.",
   },
   {
-    slug: "lifecycle-architecture-studio",
-    discipline: "CRM / marketing teams / how the stack actually connects",
-    description:
-      "How I help marketing, CRM and data people see a modern stack as one customer journey — so a welcome, a renewal or a winback is not a pile of tools.",
+    slug: "revival",
+    discipline: "UX / Product Design / Visual Design",
+    description: "Visualise your dream Triumph Desert Sled motorcycle build before you buy it.",
   },
 ];
 
@@ -76,17 +76,17 @@ export function ProjectShowcase() {
 
         <div className="selected-work__projects">
           <SelectedProjectArticle
-            project={revival}
+            project={genPulse}
             config={selectedProjects[0]}
-            variant="wide"
-            visual={<RevivalVisual project={revival} />}
+            variant="flagship"
+            visual={<GenPulseVisual project={genPulse} />}
           />
 
           <SelectedProjectArticle
-            project={genPulse}
+            project={lifecycleStudio}
             config={selectedProjects[1]}
-            variant="flagship"
-            visual={<GenPulseVisual project={genPulse} />}
+            variant="wide"
+            visual={<LifecycleVisual project={lifecycleStudio} />}
           />
 
           <SelectedProjectArticle
@@ -104,10 +104,10 @@ export function ProjectShowcase() {
           />
 
           <SelectedProjectArticle
-            project={lifecycleStudio}
+            project={revival}
             config={selectedProjects[4]}
             variant="wide"
-            visual={<LifecycleVisual project={lifecycleStudio} />}
+            visual={<RevivalVisual project={revival} />}
           />
         </div>
       </div>
@@ -233,7 +233,6 @@ function RevivalVisual({ project }: { project: Project }) {
           unoptimized
           sizes="(max-width: 900px) 100vw, 56vw"
           className="selected-revival-frame__image"
-          priority
         />
       </div>
     </div>
