@@ -4177,7 +4177,7 @@ body.site-body > * {
   z-index: 1;
   box-sizing: border-box;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   padding: clamp(1.5rem, 2.8vw, 2.6rem) clamp(1.35rem, 3.2vw, 3rem) clamp(1.65rem, 3vw, 2.75rem);
   border: 0;
   background: transparent;
@@ -4203,36 +4203,38 @@ body.site-body > * {
 
 .site-hero__portfolio-statement {
   margin: 0;
-  padding: clamp(1.45rem, 2.6vw, 2rem) clamp(1.35rem, 3.2vw, 3rem);
+  padding: clamp(0.85rem, 1.5vw, 1.1rem) clamp(1.35rem, 3.2vw, 3rem);
   width: 100%;
   max-width: none;
   box-sizing: border-box;
-  color: #6a635a;
-  font-size: clamp(1.06rem, 1.38vw, 1.28rem);
-  font-weight: 500;
-  line-height: 1.52;
-  letter-spacing: 0.005em;
+  color: #5d574f;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
   text-align: left;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .site-hero__editorial-headline {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: clamp(1rem, 1.8vw, 1.65rem);
+  gap: clamp(0.7rem, 1.35vw, 1.15rem);
   margin: 0;
   max-width: 100%;
   font-family: var(--font-display), system-ui, sans-serif;
-  font-size: var(--home-hero-headline-size);
+  font-size: clamp(3.2rem, 6.45vw, 6.1rem);
   font-weight: var(--display-weight);
-  letter-spacing: -0.065em;
-  line-height: 0.84;
+  letter-spacing: -0.07em;
+  line-height: 0.86;
   text-transform: uppercase;
   color: #161814;
 }
 
 .site-hero__expertise-line {
+  position: relative;
   display: block;
   width: 100%;
   max-width: 100%;
@@ -4240,7 +4242,75 @@ body.site-body > * {
   white-space: normal;
 }
 
-@media (min-width: 960px) {
+.site-hero__expertise-text {
+  position: relative;
+  z-index: 0;
+}
+
+.site-hero__expertise-light {
+  display: none;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .site-hero__expertise-light {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    background-image: linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 32%,
+      rgba(65, 164, 255, 0.15) 38%,
+      rgba(65, 164, 255, 1) 42%,
+      rgba(78, 214, 234, 1) 48%,
+      rgba(246, 217, 104, 1) 54%,
+      rgba(255, 157, 74, 1) 60%,
+      rgba(104, 216, 142, 1) 66%,
+      rgba(241, 148, 182, 1) 72%,
+      transparent 78%,
+      transparent 100%
+    );
+    background-size: 240% 100%;
+    background-position: 130% 50%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    pointer-events: none;
+    animation: site-hero-border-pulse 5.8s ease-in-out infinite;
+  }
+
+  .site-hero__expertise-line:nth-child(2) .site-hero__expertise-light {
+    animation-delay: 0.45s;
+  }
+
+  .site-hero__expertise-line:nth-child(3) .site-hero__expertise-light {
+    animation-delay: 0.9s;
+  }
+}
+
+@keyframes site-hero-border-pulse {
+  0%,
+  12% {
+    background-position: 130% 50%;
+    opacity: 0.2;
+  }
+
+  46% {
+    background-position: 40% 50%;
+    opacity: 1;
+  }
+
+  88%,
+  100% {
+    background-position: -30% 50%;
+    opacity: 0.15;
+  }
+}
+
+@media (min-width: 1180px) {
   .site-hero__expertise-line {
     width: max-content;
     max-width: 100%;
@@ -4527,6 +4597,12 @@ body.site-body > * {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-hero__expertise-light {
+    animation: none;
+    background-position: 40% 50%;
+    opacity: 0.45;
+  }
+
   .site-hero__concept-light {
     animation: none;
     background-position: 16% 38%, 62% 18%, 78% 58%, 48% 48%, 30% 78%, 68% 74%;
@@ -4794,13 +4870,19 @@ body.site-body > * {
     line-height: 0.84;
   }
 
+  .site-hero__editorial-headline {
+    font-size: clamp(2.15rem, 9.4vw, 3.6rem);
+    letter-spacing: -0.07em;
+  }
+
   .selected-work__title-line {
     width: auto;
   }
 
   .site-hero__portfolio-statement {
-    padding: 1.25rem 1.2rem 1.4rem;
-    font-size: clamp(1.02rem, 4.2vw, 1.16rem);
+    padding: 0.9rem 1.2rem 1.05rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.07em;
     line-height: 1.5;
     text-wrap: pretty;
   }
