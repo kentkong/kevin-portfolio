@@ -189,20 +189,21 @@ export function GenPulseCaseStudy() {
     <article className="pulse-overview gen-pulse-overview" aria-labelledby="gen-pulse-title">
       <section className="site-container pulse-overview__hero pulse-overview__section">
         <div className="pulse-overview__hero-copy">
-          <SectionLabel label="Technology / Operations / Product Design" />
+          <SectionLabel label="Marketing operations / a problem from inside the team" />
           <h1 id="gen-pulse-title" className="gen-pulse-overview__title">Gen Pulse</h1>
           <p className="pulse-overview__headline">
-            Gen Pulse brings the most important team, delivery, people and performance information into one shared operational environment.
+            An issue on the Norton Email team, turned into a shared operating view — then pitched and approved.
           </p>
           <p className="pulse-overview__standfirst">
-            Built from my experience managing the Norton Email team, where SLA performance, throughput,
-            Jira activity, team availability, attendance, upcoming leave and blockers all needed to be
-            understood together.
+            SLA performance, throughput, Jira, availability, leave and blockers all lived in different tools.
+            Nobody had one picture of the day. I designed Gen Pulse so the team could see people, work and
+            risk together, then pitched it to my director, a senior developer and a senior manager. It was
+            approved, with strong support, because it solved a problem the team already had.
           </p>
           <p className="pulse-overview__body-copy">
-            From team contributors, developers and data specialists to designers, project managers, managers,
-            directors and executives, Gen Pulse can be configured around the needs of different teams and
-            organisations — bringing the information that matters most into one desktop and mobile application.
+            That is the working method: find the friction inside the marketing operation, design a view people
+            can actually run with, and get engineering and leadership aligned before you ask the wider
+            organisation to change how they work.
           </p>
           <div className="pulse-overview__actions">
             <Link href={project.liveUrl} target="_blank" rel="noreferrer" className="site-btn site-btn--ink">
@@ -228,8 +229,8 @@ export function GenPulseCaseStudy() {
       <section className="site-container pulse-overview__section gen-pulse-overview__problem">
         <SectionHeader
           label="Original problem"
-          title="Gen Pulse brings your team's most important information from different sources into one desktop and mobile application."
-          copy="While managing the Norton Email team, leadership regularly needed current SLA performance, weekly throughput, delivery metrics and team work status. Jira, reporting systems, Workday and Slack each held part of the answer."
+          title="The team could not answer “where are we right now?” without rebuilding the day from four systems."
+          copy="While managing the Norton Email team, leadership needed current SLA performance, weekly throughput, delivery status and who was actually available. Jira, reporting, Workday and Slack each held part of the answer. The work was not a product idea looking for a home — it was an operating problem looking for one picture."
         />
         <div className="pulse-overview__process gen-pulse-overview__problem-points">
           <article className="pulse-overview__process-card">

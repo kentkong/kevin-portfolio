@@ -76,8 +76,8 @@ export const projects: Project[] = [
   {
     slug: "lifecycle-architecture-studio",
     name: "Lifecycle Architecture Studio",
-    tagline: "Interactive lifecycle architecture and CRM technology explorer.",
-    headline: "Interactive lifecycle architecture and CRM technology explorer.",
+    tagline: "How I help marketing teams see a modern stack as one customer journey.",
+    headline: "How I help marketing teams see a modern stack as one customer journey.",
     summary:
       "An interactive reference for exploring how CRM, data, activation, engagement, analytics and AI capabilities connect across a modern customer lifecycle — with representative technologies, not a prescribed vendor stack.",
     overview: "",
@@ -113,10 +113,10 @@ export const projects: Project[] = [
   {
     slug: "gen-pulse",
     name: "Gen Pulse",
-    tagline: "Real-time operational visibility for modern teams.",
-    headline: "Real-time operational visibility for modern teams",
+    tagline: "A Norton Email team problem, turned into one shared operating view.",
+    headline: "A problem from inside the team, designed into a system leadership could approve.",
     summary:
-      "Gen Pulse brings together delivery health, team presence, operational KPIs, workload, blockers, and business reporting into a single desktop and mobile experience.",
+      "On the Norton Email team, work, people and performance lived across Jira, Slack, Workday and reporting. I designed Gen Pulse as one shared view, pitched it to my director, a senior developer and a senior manager, and it was approved because it solved an issue the team already had.",
     overview: "",
     liveUrl: "https://kentkong.github.io/gen-pulse-dashboard/",
     previewImageDesktop: "/projects/gen-pulse-desktop-dark.png",
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     challenge:
       "Critical operational data lives across Jira, Slack, Workday, reporting platforms, calendars, and spreadsheets, making it difficult for teams and leaders to maintain a real-time view of delivery, capacity, and performance.",
     observation:
-      "Create a single operational command centre that gives everyone—from team members to directors—a live view of what matters most.",
+      "Solve it from inside the team: one shared picture of people, work and risk, designed clearly enough that a director, a senior developer and a senior manager can say yes.",
     hypothesis: "",
     solution:
       "Gen Pulse brings together delivery health, team presence, operational KPIs, workload, blockers, and business reporting into a single desktop and mobile experience. By combining data from systems such as Jira, Slack, Workday, and BI platforms, teams gain a shared real-time view of execution and performance without relying on status meetings or manual reporting.",

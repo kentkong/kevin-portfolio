@@ -1,8 +1,8 @@
 export const site = {
   name: "Kevin Alan Mold",
-  title: "Kevin Alan Mold — Design, Marketing & Technology",
+  title: "Kevin Alan Mold — How I solve problems in marketing teams",
   description:
-    "Portfolio of product concepts, case studies, and interactive demos spanning CRM and lifecycle marketing, UX and product design, and AI-assisted operational applications.",
+    "Working views of how I take issues from inside marketing and lifecycle teams and turn them into systems people can run — including Gen Pulse, pitched and approved from the Norton Email team, and how modern stacks connect across a customer journey.",
   email: "jovianuk@gmail.com",
   linkedin: "https://www.linkedin.com/in/kevinmold",
   github: "https://github.com/kentkong",

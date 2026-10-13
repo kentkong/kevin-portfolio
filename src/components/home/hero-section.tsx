@@ -1,5 +1,5 @@
 const portfolioStatement =
-  "A growing portfolio combining my experience in CRM and marketing operations with hands-on work in product concepts, UX/UI and AI-assisted operational tools.";
+  "I take problems from inside marketing and lifecycle teams and turn them into something the team can actually run with — a clearer operating view, a stack people can see, a journey they can share. These pieces are how I think, not a second CV.";
 
 export function HeroSection() {
   return (
@@ -9,11 +9,11 @@ export function HeroSection() {
           <div className="site-hero__editorial-frame">
             <h1
               className="site-hero__editorial-headline"
-              aria-label="CRM marketing. Product concepts. AI and operations."
+              aria-label="Team problems. Working systems. Modern stacks."
             >
-              <span className="site-hero__expertise-line">CRM MARKETING</span>
-              <span className="site-hero__expertise-line">PRODUCT CONCEPTS</span>
-              <span className="site-hero__expertise-line">AI &amp; OPERATIONS</span>
+              <span className="site-hero__expertise-line">TEAM PROBLEMS</span>
+              <span className="site-hero__expertise-line">WORKING SYSTEMS</span>
+              <span className="site-hero__expertise-line">MODERN STACKS</span>
             </h1>
           </div>
 

@@ -4974,7 +4974,8 @@ body.site-body > * {
 }
 
 .selected-work__title {
-  display: block;
+  display: grid;
+  gap: clamp(0.7rem, 1.4vw, 1.2rem);
   margin: 0;
   font-family: var(--font-display), system-ui, sans-serif;
   font-size: var(--home-hero-headline-size);
@@ -4991,6 +4992,15 @@ body.site-body > * {
   max-width: 100%;
   color: #161814;
   white-space: nowrap;
+}
+
+.selected-work__intro-copy {
+  margin: clamp(1.1rem, 2vw, 1.6rem) 0 0;
+  max-width: 42rem;
+  color: #6a635a;
+  font-size: clamp(1.02rem, 1.28vw, 1.18rem);
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 @media (max-width: 720px) {

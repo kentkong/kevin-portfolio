@@ -20,8 +20,9 @@ const selectedProjects: SelectedProject[] = [
   },
   {
     slug: "gen-pulse",
-    discipline: "Operations / Internal Product / Digital Experience",
-    description: "Real-time operational visibility for modern teams.",
+    discipline: "Marketing operations / a problem from inside the team",
+    description:
+      "On the Norton Email team, work, people and performance lived in different tools. I designed one shared view, pitched it to my director, a senior developer and a senior manager, and it was approved.",
   },
   {
     slug: "pulse-ops",
@@ -37,9 +38,9 @@ const selectedProjects: SelectedProject[] = [
   },
   {
     slug: "lifecycle-architecture-studio",
-    discipline: "CRM / Customer Experience / Journey Architecture",
+    discipline: "CRM / marketing teams / how the stack actually connects",
     description:
-      "An interactive lifecycle architecture and CRM technology reference for exploring how capability categories connect.",
+      "How I help marketing, CRM and data people see a modern stack as one customer journey — so a welcome, a renewal or a winback is not a pile of tools.",
   },
 ];
 
@@ -63,8 +64,14 @@ export function ProjectShowcase() {
       <div className="site-container selected-work__container">
         <header className="selected-work__intro">
           <h2 id="selected-work-title" className="selected-work__title">
-            <span className="selected-work__title-line">Applications &amp; Case Studies</span>
+            <span className="selected-work__title-line">Working through</span>
+            <span className="selected-work__title-line">team problems</span>
           </h2>
+          <p className="selected-work__intro-copy">
+            Each piece starts with friction in the work, then a view the team can use. Gen Pulse is the
+            clearest example: an internal issue, a designed system, then a pitch that leadership and
+            engineering backed.
+          </p>
         </header>
 
         <div className="selected-work__projects">
