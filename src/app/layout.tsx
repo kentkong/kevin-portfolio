@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 import { basePath } from "@/lib/site-config";
 import "./globals.css";
 
-const siteUrl = "https://kentkong.github.io/kevin-portfolio-complete";
+const siteUrl = "https://kentkong.github.io/kevin-portfolio/complete";
 const ogImageUrl = `${siteUrl}/og-linkedin.png`;
 
 const spaceGrotesk = Space_Grotesk({

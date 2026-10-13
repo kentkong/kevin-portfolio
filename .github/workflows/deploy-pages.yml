@@ -19,29 +19,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
+      # New interview-extra site at /kevin-portfolio/complete/
       - run: npm ci
-
-      # Static export is incompatible with API routes
       - run: rm -rf src/app/api
-
       - run: npm run build
         env:
           GITHUB_PAGES: true
           NEXT_PUBLIC_GITHUB_PAGES: true
-          NEXT_PUBLIC_BASE_PATH: /kevin-portfolio-complete
+          NEXT_PUBLIC_BASE_PATH: /kevin-portfolio/complete
           NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
 
-      - run: touch out/.nojekyll
+      - name: Place new site in /complete and keep the previous portfolio at the root
+        run: |
+          git worktree add /tmp/old-portfolio 1075e0b285501a79046d7e4228a223f4614d81d2
+          cd /tmp/old-portfolio
+          npm ci
+          rm -rf src/app/api
+          GITHUB_PAGES=true NEXT_PUBLIC_GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/kevin-portfolio npm run build
+
+          mkdir -p "$GITHUB_WORKSPACE/pages"
+          cp -a out/. "$GITHUB_WORKSPACE/pages/"
+          rm -rf "$GITHUB_WORKSPACE/pages/complete"
+          mkdir -p "$GITHUB_WORKSPACE/pages/complete"
+          cp -a "$GITHUB_WORKSPACE/out/." "$GITHUB_WORKSPACE/pages/complete/"
+          touch "$GITHUB_WORKSPACE/pages/.nojekyll"
+          touch "$GITHUB_WORKSPACE/pages/complete/.nojekyll"
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: pages
 
   deploy:
     needs: build
