@@ -34,7 +34,7 @@ jobs:
         env:
           GITHUB_PAGES: true
           NEXT_PUBLIC_GITHUB_PAGES: true
-          NEXT_PUBLIC_BASE_PATH: /kevin-portfolio
+          NEXT_PUBLIC_BASE_PATH: /kevin-portfolio-complete
           NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
 
       - run: touch out/.nojekyll

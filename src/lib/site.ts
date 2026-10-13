@@ -6,6 +6,8 @@ export const site = {
   email: "jovianuk@gmail.com",
   linkedin: "https://www.linkedin.com/in/kevinmold",
   github: "https://github.com/kentkong",
+  previousPortfolioUrl: "https://kentkong.github.io/kevin-portfolio/",
+  livePortfolioUrl: "https://kentkong.github.io/kevin-portfolio-complete/",
   label: "Design · Marketing · Technology",
   headline: "Design. Marketing. & Technology.",
   heroTagline: [
