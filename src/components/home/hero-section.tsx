@@ -1,5 +1,5 @@
 const portfolioStatement =
-  "This is not a second CV. It is how I work: find the friction in a marketing team, design a view people can actually use, then get directors, engineers and managers aligned.";
+  "They grew out of the job: thinking through modern CRM marketing, unifying data, and helping teams see problems clearly enough to work more efficiently.";
 
 export function HeroSection() {
   return (
@@ -9,11 +9,11 @@ export function HeroSection() {
           <div className="site-hero__editorial-frame">
             <h1
               className="site-hero__editorial-headline"
-              aria-label="As a CRM manager, I solve team problems from the inside."
+              aria-label="As a CRM manager, I build useful apps for marketing teams."
             >
               <span className="site-hero__expertise-line">As a CRM manager</span>
-              <span className="site-hero__expertise-line">I solve team problems</span>
-              <span className="site-hero__expertise-line">from the inside</span>
+              <span className="site-hero__expertise-line">I build useful apps</span>
+              <span className="site-hero__expertise-line">for marketing teams</span>
             </h1>
           </div>
 
