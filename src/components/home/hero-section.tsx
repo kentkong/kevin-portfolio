@@ -1,16 +1,5 @@
 const portfolioStatement =
-  "These pieces are how I work through friction on marketing and lifecycle teams — a clearer operating view, a stack people can see, a journey they can share.";
-
-function HeroLine({ children }: { children: string }) {
-  return (
-    <span className="site-hero__expertise-line">
-      <span className="site-hero__expertise-text">{children}</span>
-      <span className="site-hero__expertise-light" aria-hidden="true">
-        {children}
-      </span>
-    </span>
-  );
-}
+  "This is not a second CV. It is how I work: find the friction in a marketing team, design a view people can actually use, then get directors, engineers and managers aligned.";
 
 export function HeroSection() {
   return (
@@ -20,11 +9,11 @@ export function HeroSection() {
           <div className="site-hero__editorial-frame">
             <h1
               className="site-hero__editorial-headline"
-              aria-label="As a CRM manager, I use this work to solve team problems."
+              aria-label="As a CRM manager, I solve team problems from the inside."
             >
-              <HeroLine>As a CRM manager</HeroLine>
-              <HeroLine>I use this work</HeroLine>
-              <HeroLine>to solve team problems</HeroLine>
+              <span className="site-hero__expertise-line">As a CRM manager</span>
+              <span className="site-hero__expertise-line">I solve team problems</span>
+              <span className="site-hero__expertise-line">from the inside</span>
             </h1>
           </div>
 

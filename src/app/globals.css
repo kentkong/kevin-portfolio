@@ -4234,80 +4234,11 @@ body.site-body > * {
 }
 
 .site-hero__expertise-line {
-  position: relative;
   display: block;
   width: 100%;
   max-width: 100%;
   color: #161814;
   white-space: normal;
-}
-
-.site-hero__expertise-text {
-  position: relative;
-  z-index: 0;
-}
-
-.site-hero__expertise-light {
-  display: none;
-}
-
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .site-hero__expertise-light {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    display: block;
-    background-image: linear-gradient(
-      105deg,
-      transparent 0%,
-      transparent 32%,
-      rgba(65, 164, 255, 0.15) 38%,
-      rgba(65, 164, 255, 1) 42%,
-      rgba(78, 214, 234, 1) 48%,
-      rgba(246, 217, 104, 1) 54%,
-      rgba(255, 157, 74, 1) 60%,
-      rgba(104, 216, 142, 1) 66%,
-      rgba(241, 148, 182, 1) 72%,
-      transparent 78%,
-      transparent 100%
-    );
-    background-size: 240% 100%;
-    background-position: 130% 50%;
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    pointer-events: none;
-    animation: site-hero-border-pulse 5.8s ease-in-out infinite;
-  }
-
-  .site-hero__expertise-line:nth-child(2) .site-hero__expertise-light {
-    animation-delay: 0.45s;
-  }
-
-  .site-hero__expertise-line:nth-child(3) .site-hero__expertise-light {
-    animation-delay: 0.9s;
-  }
-}
-
-@keyframes site-hero-border-pulse {
-  0%,
-  12% {
-    background-position: 130% 50%;
-    opacity: 0.2;
-  }
-
-  46% {
-    background-position: 40% 50%;
-    opacity: 1;
-  }
-
-  88%,
-  100% {
-    background-position: -30% 50%;
-    opacity: 0.15;
-  }
 }
 
 @media (min-width: 1180px) {
@@ -4597,12 +4528,6 @@ body.site-body > * {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-hero__expertise-light {
-    animation: none;
-    background-position: 40% 50%;
-    opacity: 0.45;
-  }
-
   .site-hero__concept-light {
     animation: none;
     background-position: 16% 38%, 62% 18%, 78% 58%, 48% 48%, 30% 78%, 68% 74%;
